@@ -1,0 +1,18 @@
+.o_form_sheet > .o_field_freight_state_selection {
+    float: right;
+
+    .dropdown-toggle .o_status {
+        height: $h3-font-size;
+        width: $h3-font-size;
+    }
+}
+
+.o_status {
+    &.o_status_orange {
+        @extend .bg-warning;
+    }
+
+    &.o_status_blue {
+        @extend .bg-info;
+    }
+}

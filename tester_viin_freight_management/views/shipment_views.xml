@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="freight_shipment_tree_view" model="ir.ui.view">
+        <field name="name">freight.shipment.tree.view</field>
+        <field name="model">freight.shipment</field>
+        <field name="arch" type="xml">
+            <tree string="Shipments"
+                decoration-info="last_tracking_status == 'to_define'"
+                decoration-success="last_tracking_status == 'on_track'"
+                decoration-warning="last_tracking_status == 'at_risk'"
+                decoration-danger="last_tracking_status == 'off_track'"
+                decoration-primary="last_tracking_status == 'on_hold'">
+                <field name="name"/>
+                <field name="direction" optional="show"/>
+                <field name="customer_id" optional="show"/>
+                <field name="last_tracking_status" column_invisible="1"/>
+                <field name="transport_mode" optional="show"/>
+                <field name="display_origin" string="Origin"/>
+                <field name="display_destination" string="Destination"/>
+                <field name="display_carrier" string="Carrier" optional="hide"/>
+                <field name="is_multi_carrier" column_invisible="1"/>
+                <field name="etd" string="ETD"/>
+                <field name="eta" string="ETA"/>
+                <field name="is_closed" column_invisible="1"/>
+                <field name="master_bill_number" optional="hide"/>
+                <field name="house_bill_number" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="freight_shipment_form_view" model="ir.ui.view">
+        <field name="name">freight.shipment.form.view</field>
+        <field name="model">freight.shipment</field>
+        <field name="arch" type="xml">
+            <form string="Shipment">
+                <header>
+                    <!-- Business button -->
+                    <button name="action_generator_quotation" type="object" class="btn-primary"
+                        groups="sales_team.group_sale_salesman"
+                        invisible="not visible_quotation_button"
+                        string="Create Quotation" />
+                    <field name="visible_quotation_button" invisible="1"/>
+                    <button name="action_generate_bookings" type="object" class="btn-primary"
+                        invisible="not can_generate_bookings"
+                        string="Booking" />
+                    <button name="action_update_shipment_tracking" type="object"
+                        string="Update Progress" />
+                    <field name="has_templates_to_generate" invisible="1"/>
+                    <field name="is_closed" invisible="1"/>
+                    <field name="current_stage_id" widget="statusbar" 
+                        options="{'clickable': '1', 'fold_field': 'is_closed'}"
+                        domain="[('id', 'in', stage_ids)]"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_packages" type="object" class="oe_stat_button" icon="fa-cubes"
+                            invisible="total_packages == 0" >
+                            <field name="total_packages" widget="statinfo" string="Packages"/>
+                            <field name="package_ids" invisible="1"/>
+                        </button>
+                        <button name="action_view_cargo_commodities" type="object" class="oe_stat_button" icon="fa-th-list"
+                            invisible="total_cargo_commodities == 0" >
+                            <field name="total_cargo_commodities" widget="statinfo" string="Cargo Details"/>
+                            <field name="cargo_commodity_ids" invisible="1"/>
+                        </button>
+                        <button name="action_view_bookings" type="object" class="oe_stat_button" icon="fa-calendar"
+                            invisible="booking_count == 0">
+                            <field name="booking_count" widget="statinfo" string="Bookings"/>
+                            <field name="booking_ids" invisible="1"/>
+                        </button>
+                        <button name="action_portal_preview" type="object" class="oe_stat_button" icon="fa-eye"
+                            string="Preview" />
+                        <button name="action_view_shipment_tracking" type="object" class="oe_stat_button" icon="fa-map-marker"
+                            string="Dashboard"
+                            invisible="not shipment_tracking_ids">
+                            <field name="shipment_tracking_ids" invisible="1"/>
+                        </button>
+                        <button class="oe_stat_button" type="object"
+                            groups="analytic.group_analytic_accounting"
+                            name="action_view_gross_margin" icon="fa-usd" invisible="1">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Gross Margin</span>
+                                <span class="o_stat_value">
+                                    <field name="balance" widget='monetary'/>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <field name="last_tracking_status" widget="freight_state_selection" class=""/>
+                    <field name="booking_status" widget="badge" class="float-end me-2"
+                        decoration-danger="booking_status=='not_booked'"
+                        decoration-warning="booking_status=='booking_in_progress'"
+                        decoration-success="booking_status == 'booked'"/>
+                    <field name="booking_status" invisible="1"/>
+                    <div class="oe_title">
+                        <h1 class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex w-100">
+                                <field name="name" placeholder="Shipment Title..."/>
+                            </div>
+                        </h1>
+                    </div>
+                    <group string="General" name="general">
+                        <group>
+                            <field name="shipper_id" widget="many2one_avatar"/>
+                            <field name="consignee_id" widget="many2one_avatar"/>
+                            <field name="notify_party_id" widget="many2one_avatar"/>
+                            <field name="customer_id" widget="many2one_avatar" invisible="sale_order_id"/>
+                        </group>
+                        <group>
+                            <field name="direction" widget="radio" options="{'horizontal': true}"/>
+                            <field name="transport_mode" widget="radio"/>
+                        </group>
+                    </group>
+                    <group string="Bill Of Lading" name="bill_of_lading">
+                        <group>
+                            <field name="house_bill_number" />
+                        </group>
+                        <group invisible="multiple_leg_route">
+                            <field name="master_bill_number" />
+                        </group>
+                    </group>
+                    <group string="Schedule" name="schedule">
+                        <group>
+                            <label for="eta" string="Estimated Time" />
+                            <div name="dates" class="o_row">
+                                <field name="etd" widget="daterange" options="{&quot;related_end_date&quot;: &quot;eta&quot;}" readonly="multiple_leg_route"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon" title="Arrow"/>
+                                <i class="fa fa-long-arrow-right mx-2 oe_read_only" aria-label="Arrow icon" title="Arrow" />
+                                <field name="eta" widget="daterange" options="{&quot;related_start_date&quot;: &quot;etd&quot;}" readonly="multiple_leg_route"/>
+                            </div>
+                            <field name="atd" invisible="not atd"/>
+                        </group>
+                        <group>
+                            <field name="cutoff" readonly="multiple_leg_route"/>
+                            <field name="ata" invisible="not ata"/>
+                        </group>
+                    </group>
+                    <group string="Main Transport" name="main_transport_info"
+                        invisible="multiple_leg_route">
+                        <group>
+                            <field name="route_id" widget="selection"/>
+                            <field name="service_type"/>
+                            <field name="origin_id" />
+                            <field name="port_of_loading_id" />
+                            <field name="port_of_discharge_id" />
+                            <field name="destination_id" />
+                        </group>
+                        <group>
+                            <!-- Ocean -->
+                            <field name="ocean_shipping_method_id" string="Loading Method"
+                                invisible="transport_mode != 'sea'"
+                                required="transport_mode == 'sea' and not multiple_leg_route"/>
+                            <field name="vessel_name"
+                                invisible="transport_mode != 'sea' or not booking_ids"/>
+                            <field name="vessel_voyage_number"
+                                invisible="transport_mode != 'sea' or not booking_ids"/>
+                            <!-- Air -->
+                            <field name="air_shipping_method_id" string="Loading Method"
+                                invisible="transport_mode != 'air'"
+                                required="transport_mode == 'air' and not multiple_leg_route"/>
+                            <field name="air_name"
+                                invisible="transport_mode != 'air' or not booking_ids"/>
+                            <field name="air_voyage_number"
+                                invisible="transport_mode != 'air' or not booking_ids"/>
+                            <!-- Land -->
+                            <field name="land_shipping_method_id" string="Loading Method"
+                                invisible="transport_mode != 'land'"
+                                required="transport_mode == 'land' and not multiple_leg_route"/>
+                            <field name="driver_id"
+                                invisible="transport_mode != 'land' or not booking_ids"/>
+                            <field name="truck_name"
+                                invisible="transport_mode != 'land' or not booking_ids"/>
+                            <field name="carrier_id" widget="many2one_avatar"/>
+                            <field name="agent_id" widget="many2one_avatar"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description"/>
+                        </page>
+                        <page string="Cargo Commodities" name="cargo_commodities" >
+                            <group>
+                                <group>
+                                    <field name="total_cargo_commodities" />
+                                    <field name="total_packages" />
+                                </group>
+                                <group>
+                                    <label for="total_weight" string="Total Weight"/>
+                                    <div class="o_row">
+                                        <field name="total_weight"/>
+                                        <field name="weight_uom_name"/>
+                                    </div>
+                                    <label for="total_volume" string="Total Volume"/>
+                                    <div class="o_row">
+                                        <field name="total_volume"/>
+                                        <field name="volume_uom_name"/>
+                                    </div>
+                                </group>
+                            </group>
+                            <div class="d-flex align-items-center mb-3">
+                                <separator string="Initial Cargo Template" class="me-3"/>
+                                <button name="generator_from_cargo_templates" type="object" class="btn-primary"
+                                    string="Generate Cargo From Templates"
+                                    help="Automatically generate Packages or Cargo Commodities based on the initial Cargo Templates. 
+                                        This action helps save data entry time by converting cargo template data information 
+                                        (such as quantity, cargo type, weight, volume, HS code, etc.) into operational shipment data, 
+                                            ready for assignment to specific routes, containers, or legs."
+                                        invisible="not cargo_template_ids or not has_templates_to_generate" />
+                            </div>
+                            <field name="cargo_template_ids">
+                                <tree editable="bottom">
+                                    <field name="name" column_invisible="1"/>
+                                    <field name="cargo_template_data_id" create="false"/>
+                                    <field name="quantity"/>
+                                </tree>
+                            </field>
+                            <separator string="Packaging List"/>
+                            <field name="package_ids" />
+                            <separator string="Cargo Details" invisible="package_ids"/>
+                            <field name="cargo_commodity_ids" invisible="package_ids or cargo_mode != 'structured_entry'" />
+                            <field name="cargo_note_details" invisible="cargo_mode == 'structured_entry' or package_ids" />
+                        </page>
+                        <page name="routes" string="Route Legs" invisible="not multiple_leg_route">
+                            <field name="freight_route_ids" context="{'active_shipment_id': id}"/>
+                            <field name="can_generate_bookings" invisible="1"/>
+                        </page>
+                        <page string="Other Information" name="other">
+                            <group string="Shipment">
+                                <group>
+                                    <field name="responsible_id" widget="many2one_avatar_user"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="company_id" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="cargo_mode" widget="radio"/>
+                                    <field name="multiple_leg_route" />
+                                </group>
+                            </group>
+                            <group string="Sales Order" name="sales_order">
+                                <group>
+                                    <field name="sale_order_id" groups="sales_team.group_sale_salesman" readonly="1"/>
+                                    <field name="sale_order_id" invisible="not sale_order_id"/>
+                                    <field name="customer_id" widget="many2one_avatar"/>
+                                </group>
+                                <group>
+                                    <field name="incoterm_id"/>
+                                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting" />
+                                </group>
+                            </group>
+                            <separator string="Shipment Stages"/>
+                            <field name="stage_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="freight_shipment_search_view" model="ir.ui.view">
+        <field name="name">freight.shipment.search.view</field>
+        <field name="model">freight.shipment</field>
+        <field name="arch" type="xml">
+            <search string="Search Shipments">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="route_id"/>
+                <field name="origin_id"/>
+                <field name="destination_id"/>
+                <field name="master_bill_number"/>
+                <field name="house_bill_number"/>
+                <separator/>
+                <filter string="My Shipments" name="filter_my_shipments" domain="[('responsible_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Not Booked" name="ftr_not_booked" domain="[('booking_status', '=', 'not_booked')]"/>
+                <filter string="Booking in Progress" name="ftr_booking_in_progress" domain="[('booking_status', '=', 'booking_in_progress')]"/>
+                <filter string="Booked" name="ftr_booked" domain="[('booking_status', '=', 'booked')]"/>
+                <separator/>
+                <filter string="Open" name="filter_open" domain="[('is_closed', '=', False)]"/>
+                <filter string="Closed" name="filter_closed" domain="[('is_closed', '=', True)]"/>
+                <separator/>
+                <filter string="Multiple Leg Route" name="ftr_multi_leg" domain="[('multiple_leg_route', '=', True)]"/>
+                <filter string="Single Leg Route" name="ftr_single_leg" domain="[('multiple_leg_route', '=', False)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Booking Status" name="grp_by_booking_status" context="{'group_by': 'booking_status'}"/>
+                    <filter string="Direction" name="grp_by_direction" context="{'group_by': 'direction'}"/>
+                    <filter string="Transport Mode" name="grp_by_transport_mode" context="{'group_by': 'transport_mode'}"/>
+                    <filter string="Service Type" name="grp_by_service_type" context="{'group_by': 'service_type'}"/>
+                    <filter string="Stage" name="grp_by_stage" context="{'group_by': 'current_stage_id'}"/>
+                    <filter string="Route" name="grp_by_route" context="{'group_by': 'route_id'}"/>
+                    <separator/>
+                    <filter string="Customer" name="grp_by_customer" context="{'group_by': 'customer_id'}"/>
+                    <filter string="Shipper" name="grp_by_shipper" context="{'group_by': 'shipper_id'}"/>
+                    <filter string="Consignee" name="grp_by_consignee" context="{'group_by': 'consignee_id'}"/>
+                    <filter string="Carrier" name="grp_by_carrier" context="{'group_by': 'carrier_id'}"/>
+                    <filter string="Agent" name="grp_by_agent" context="{'group_by': 'agent_id'}"/>
+                    <separator/>
+                    <filter string="Estimated Departure Time" name="grp_by_etd" context="{'group_by': 'etd'}"/>
+                    <filter string="Estimated Arrival Time" name="grp_by_eta" context="{'group_by': 'eta'}"/>
+                    <filter string="Actual Departure Time" name="grp_by_atd" context="{'group_by': 'atd'}"/>
+                    <filter string="Actual Arrival Time" name="grp_by_ata" context="{'group_by': 'ata'}"/>
+                    <filter string="Cutoff Time" name="grp_by_cutoff" context="{'group_by': 'cutoff'}"/>
+                    <separator/>
+                    <filter string="Port of Loading" name="grp_by_port_of_loading" context="{'group_by': 'port_of_loading_id'}"/>
+                    <filter string="Port of Discharge" name="grp_by_port_of_discharge" context="{'group_by': 'port_of_discharge_id'}"/>
+                    <separator/>
+                    <filter string="Responsible" name="grp_by_responsible" context="{'group_by': 'responsible_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Calendar View -->
+    <record id="freight_shipment_calendar_view" model="ir.ui.view">
+        <field name="name">freight.shipment.calendar.view</field>
+        <field name="model">freight.shipment</field>
+        <field name="arch" type="xml">
+            <calendar string="Shipments" date_start="etd" color="current_stage_id" mode="month">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="responsible_id"/>
+                <field name="shipper_id"/>
+                <field name="consignee_id"/>
+                <field name="display_origin" string="Origin"/>
+                <field name="display_destination" string="Destination"/>
+                <field name="transport_mode"/>
+                <field name="etd" string="ETD"/>
+                <field name="eta" string="ETA"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="freight_shipment_graph_view" model="ir.ui.view">
+        <field name="name">freight.shipment.graph.view</field>
+        <field name="model">freight.shipment</field>
+        <field name="arch" type="xml">
+            <graph string="Shipments Analysis">
+                <field name="current_stage_id" />
+                <field name="transport_mode" />
+            </graph>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_freight_shipment_kanban" model="ir.ui.view">
+        <field name="name">freight.shipment.kanban</field>
+        <field name="model">freight.shipment</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="current_stage_id" 
+                    class="o_shipment_kanban o_kanban_dashboard" 
+                    group_create="false"
+                    group_delete="false"
+                    group_edit="false"
+                    records_draggable="false"
+                    fold_field="is_closed">
+                <field name="current_stage_id"/>
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="responsible_id"/>
+                <field name="origin_id"/>
+                <field name="destination_id"/>
+                <field name="display_origin"/>
+                <field name="display_destination"/>
+                <field name="transport_mode"/>
+                <field name="last_tracking_status"/>
+                <field name="eta"/>
+                <field name="etd"/>
+                <field name="master_bill_number"/>
+                <field name="house_bill_number"/>
+                <field name="vessel_name"/>
+                <field name="vessel_voyage_number"/>
+                <field name="air_name"/>
+                <field name="air_voyage_number"/>
+                <field name="truck_name"/>
+                <field name="driver_id"/>
+                <field name="freight_route_ids"/>
+                <templates>
+                    <t t-name="kanban-menu" groups="base.group_user">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 o_kanban_card_manage_section o_kanban_manage_view freight_kanban_settings">
+                                    <h5 role="menuitem" class="o_kanban_card_manage_title">
+                                        <span>View</span>
+                                    </h5>
+                                    <div role="menuitem">
+                                        <a name="action_view_bookings" type="object">Bookings</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 o_kanban_card_manage_section o_kanban_manage_reporting freight_kanban_settings">
+                                    <h5 role="menuitem" class="o_kanban_card_manage_title">
+                                        <span>Reports</span>
+                                    </h5>
+                                    <div role="menuitem">
+                                        <a name="action_view_shipment_tracking" type="object">Overview</a>
+                                    </div>
+                                    <div role="menuitem">
+                                        <a name="action_view_progress" type="object">Progress</a>
+                                    </div>
+                                    <div role="menuitem">
+                                        <a name="action_view_profitability" type="object">Profitability</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click o_has_icon oe_kanban_content">
+                            <div class="o_shipment_kanban_main">
+                                <div class="o_kanban_card_content mw-100">
+                                    <div class="o_kanban_primary_left">
+                                        <div class="o_primary">
+                                            <div class="o_kanban_record_top">
+                                                <div class="o_kanban_record_headings">
+                                                    <span class="o_text_overflow" t-att-title="record.name.value"><t t-esc="record.name.value"/></span>
+                                                </div>
+                                            </div>
+                                            <div class="o_kanban_record_body">
+                                                <div class="mt-1">
+                                                    <strong>
+                                                        <field name="booking_status" widget="badge"
+                                                            decoration-danger="booking_status=='not_booked'"
+                                                            decoration-warning="booking_status=='booking_in_progress'"
+                                                            decoration-success="booking_status == 'booked'"/>
+                                                    </strong>
+                                                </div>
+                                                <div class="text-muted mt-2 o_text_overflow" style="width: 100%;" t-if="record.customer_id.value">
+                                                    <field name="customer_id" widget="many2one_avatar"/>
+                                                </div>
+                                                <div t-if="record.display_origin.value" class="mt-2 o_text_overflow">
+                                                    <label for="display_origin" class="o_kanban_record_label">
+                                                        <i class="fa fa-map-marker me-1" aria-label="Origin" title="Origin"/>
+                                                    </label>
+                                                    <span class="ms-2">
+                                                        <field name="display_origin"/>
+                                                    </span>
+                                                </div>
+                                                <div t-if="record.display_destination.value" class="mt-2 o_text_overflow">
+                                                    <label for="display_destination" class="o_kanban_record_label">
+                                                        <i class="fa fa-bullseye me-1" aria-label="Destination" title="Destination"/>
+                                                    </label>
+                                                    <span class="ms-2">
+                                                        <field name="display_destination"/>
+                                                    </span>
+                                                </div>
+                                                <div t-if="record.etd.value and record.eta.value" class="text-muted mt-2 o_text_overflow">
+                                                    <label for="etd" class="o_kanban_record_label">
+                                                        <i class="fa fa-clock-o me-1" aria-label="ETD" title="ETD"/>
+                                                    </label>
+                                                    <span t-if="record.etd.value and record.eta.value">
+                                                        <field name="etd" widget="datetime" options="{'show_time': false}"/> → <field name="eta" widget="datetime" options="{'show_time': false}"/>
+                                                    </span>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span>
+                                                        <i t-if="record.transport_mode.raw_value == 'sea'" class="fa fa-ship me-1" role="img" aria-label="Sea" title="Sea"/>
+                                                        <i t-elif="record.transport_mode.raw_value == 'air'" class="fa fa-plane me-1" role="img" aria-label="Air" title="Air"/>
+                                                        <i t-elif="record.transport_mode.raw_value == 'land'" class="fa fa-truck me-1" role="img" aria-label="Land" title="Land"/>
+                                                    </span>
+                                                    <span t-if="record.transport_mode.raw_value == 'sea' and (record.vessel_name.value || record.vessel_voyage_number.value)" class="ms-1 text-muted">
+                                                        <t t-esc="record.vessel_name.value || ''" /> <t t-if="record.vessel_name.value and record.vessel_voyage_number.value">-</t> <t t-esc="record.vessel_voyage_number.value || ''" />
+                                                    </span>
+                                                    <span t-elif="record.transport_mode.raw_value == 'air' and (record.air_name.value || record.air_voyage_number.value)" class="ms-1 text-muted">
+                                                        <t t-esc="record.air_name.value || ''" /> <t t-if="record.air_name.value and record.air_voyage_number.value">-</t> <t t-esc="record.air_voyage_number.value || ''" />
+                                                    </span>
+                                                    <span t-elif="record.transport_mode.raw_value == 'land' and (record.truck_name.value || record.driver_id.value)" class="ms-1 text-muted">
+                                                        <t t-esc="record.truck_name.value || ''" /> <t t-if="record.truck_name.value and record.driver_id.value">-</t> <t t-esc="record.driver_id.value || ''" />
+                                                    </span>
+                                                </div>
+                                                <div t-if="record.master_bill_number.value" class="mt-2">
+                                                    <span t-if="record.master_bill_number.value">
+                                                        <label for="master_bill_number" class="o_kanban_record_label">MBL: </label>
+                                                        <span class="ms-2">
+                                                            <field name="master_bill_number"/>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div t-if="record.house_bill_number.value" class="mt-2">
+                                                    <span t-if="record.house_bill_number.value">
+                                                        <label for="house_bill_number" class="o_kanban_record_label">HBL: </label>
+                                                        <span class="ms-2">
+                                                            <field name="house_bill_number"/>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field t-if="record.last_tracking_status.value &amp;&amp; widget.editable" name="last_tracking_status" widget="freight_state_selection" options="{'color_field': 'last_update_color', 'hide_label': 1}"/>
+                                        <span t-if="record.last_tracking_status.value &amp;&amp; !widget.editable" t-att-class="'o_status_bubble mx-0 o_color_bubble_' + record.last_update_color.value" t-att-title="record.last_update_status.value"/>
+                                        <field name="responsible_id" widget="many2one_avatar_user" t-if="record.responsible_id.raw_value"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_freight_shipment" model="ir.actions.act_window">
+        <field name="name">Shipments</field>
+        <field name="res_model">freight.shipment</field>
+        <field name="view_mode">kanban,tree,form,calendar,graph</field>
+        <field name="search_view_id" ref="freight_shipment_search_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Shipment!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="freight_operation_menu_shipment" name="Shipments"
+        parent="freight_operation_menu_root"
+        action="action_freight_shipment"
+        groups="viin_freight_management.group_freight_user"
+        sequence="10"/>
+</odoo>

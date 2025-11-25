@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- =========================================== -->
+    <!-- STANDARD CARGO TYPES -->
+    <!-- =========================================== -->
+    <record id="cargo_type_general" model="cargo.type">
+        <field name="code">General Cargo</field>
+        <field name="description">Packed goods like clothes or electronics, shipped in boxes or pallets</field>
+    </record>
+
+    <record id="cargo_type_refrigerated" model="cargo.type">
+	    <field name="code">Refrigerated Cargo</field>
+	    <field name="description">Frozen food such as seafood, meat, or ice cream; requires constant low temperature transport (cold chain)</field>
+	</record>
+
+    <record id="cargo_type_dry_bulk" model="cargo.type">
+        <field name="code">Dry-Bulk Cargo</field>
+        <field name="description">Loose materials like grains, coal, cement shipped without packaging</field>
+    </record>
+
+    <record id="cargo_type_liquid_bulk" model="cargo.type">
+        <field name="code">Liquid-Bulk Cargo</field>
+        <field name="description">Liquid, chemicals shipped without packaging</field>
+    </record>
+
+    <record id="cargo_type_hazardous" model="cargo.type">
+	    <field name="code">Hazardous Cargo</field>
+	    <field name="description">Substances or materials classified as dangerous goods (DG) under transport regulations. Includes flammable liquids (e.g. alcohol), explosives, gases, corrosives, toxic chemicals, oxidizers, and radioactive materials. Requires special documentation, labeling, and handling procedures</field>
+	</record>
+
+    <record id="cargo_type_containerized" model="cargo.type">
+        <field name="code">Containerized Cargo</field>
+        <field name="description">Any goods packed into standard shipping containers</field>
+    </record>
+
+    <record id="cargo_type_project" model="cargo.type">
+        <field name="code">Project Cargo</field>
+        <field name="description">Big, complex cargo for a specific project, like wind turbines or factory parts</field>
+    </record>
+
+    <record id="cargo_type_oversized" model="cargo.type">
+        <field name="code">Oversized Cargo</field>
+        <field name="description">Too large for standard transport, needs special permits and planning</field>
+    </record>
+
+	<record id="cargo_type_heavy_lift" model="cargo.type">
+	    <field name="code">Heavy Lift Cargo</field>
+	    <field name="description">Very heavy individual items like steel coils, turbines, or industrial equipment requiring cranes or special handling</field>
+	</record>
+
+    <record id="cargo_type_special" model="cargo.type">
+        <field name="code">Special Cargo</field>
+        <field name="description">valuable items like jewelry, perfume and others</field>
+    </record>
+
+    <record id="cargo_type_livestock" model="cargo.type">
+        <field name="code">Live Stock Cargo</field>
+        <field name="description">Live animals, plants or others</field>
+    </record>
+
+	<record id="cargo_type_other" model="cargo.type">
+	    <field name="code">Uncategorized Cargo</field>
+	    <field name="description">Cargo that does not fit standard categories</field>
+	</record>
+</odoo>

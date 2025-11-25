@@ -1,0 +1,84 @@
+<odoo noupdate="1">
+
+    <record id="res_partner_carrier_maersk" model="res.partner">
+        <field name="name">Maersk Line Vietnam - Hai Phong Branch</field>
+        <field name="country_id" ref="base.vn"/>
+        <field name="state_id" ref="base.state_vn_VN-HP"/>
+        <field name="city">Hai Phong</field>
+        <field name="street">15A Hoang Dieu Street</field>
+        <field name="street2">7th Floor, ACB Building, Hong Bang District</field>
+        <field name="phone">+84 28 5678 5803</field>
+        <field name="website">https://www.maersk.com/</field>
+        <field name="email">vn.import@maersk.com</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">1</field>
+    </record>
+
+    <record id="res_partner_carrier_cma" model="res.partner">
+        <field name="name">CMA CGM Vietnam - Ho Chi Minh Branch</field>
+        <field name="country_id" ref="base.vn"/>
+        <field name="state_id" ref="base.state_vn_VN-SG"/>
+        <field name="city">Ho Chi Minh</field>
+        <field name="street">81-85 Ham Nghi Street</field>
+        <field name="street2">8th Floor, Ruby Tower, Nguyen Thai Binh Ward, District 1</field>
+        <field name="phone">+84 28 3914 8400</field>
+        <field name="website">https://www.cma-cgm.com/local/vietnam</field>
+        <field name="email">sgn.genmbox@cma-cgm.com</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">2</field>
+    </record>
+
+    <record id="res_partner_carrier_cosco" model="res.partner">
+        <field name="name">COSCO SHIPPING LINES (Vietnam) Company Limited</field>
+        <field name="country_id" ref="base.vn"/>
+        <field name="state_id" ref="base.state_vn_VN-SG"/>
+        <field name="city">Ho Chi Minh</field>
+        <field name="street">5 Ho Bieu Chanh Street</field>
+        <field name="street2">Ward 12, Phu Nhuan District</field>
+        <field name="phone">+84 28 3829 0000</field>
+        <field name="website">https://lines.coscoshipping.com/</field>
+        <field name="email">sales.vietnam@coscon.com</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">3</field>
+    </record>
+
+    <record id="res_partner_evergreen" model="res.partner">
+        <field name="name">Evergreen</field>
+        <field name="company_type">company</field>
+        <field name="country_id" ref="base.tw"/>
+        <field name="city">Taoyuan City</field>
+        <field name="street">No.163, Sec. 1, Xinnan Rd.</field>
+        <field name="street2">Luzhu District, 338302</field>
+        <field name="phone">+886-3-3123508</field>
+        <field name="website">https://www.evergreen-marine.com/</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">1</field>
+    </record>
+
+    <record id="res_partner_one_line" model="res.partner">
+        <field name="name">ONE Line</field>
+        <field name="company_type">company</field>
+        <field name="country_id" ref="base.jp"/>
+        <field name="city">Tokyo</field>
+        <field name="street">2-1-1 Irifune</field>
+        <field name="street2">Chuo-ku</field>
+        <field name="phone">+81-3-3212-1111</field>
+        <field name="website">https://www.one-line.com</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">1</field>
+    </record>
+
+    <record id="res_partner_hapag_lloyd" model="res.partner">
+        <field name="name">Hapag-Lloyd</field>
+        <field name="company_type">company</field>
+        <field name="country_id" ref="base.de"/>
+        <field name="city">Hamburg</field>
+        <field name="street">Ballindamm 25</field>
+        <field name="street2"/>
+        <field name="phone">+49 40 3001 0</field>
+        <field name="website">https://www.hapag-lloyd.com/</field>
+        <field name="email">info@hlag.com</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">1</field>
+    </record>
+</odoo>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Portal Home Menu Entry -->
+    <template id="portal_my_home_freight" name="Portal My Home : Freight" inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Shipments</t>
+                <t t-set="url" t-value="'/my/shipments'"/>
+                <t t-set="placeholder_count" t-value="'shipment_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Breadcrumb Template -->
+    <template id="portal_breadcrumbs" name="Portal Breadcrumbs: Freight" inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <!-- For Shipments List Page -->
+            <li t-if="page_name == 'shipment' and not shipment" class="breadcrumb-item">
+                <a href="/my/shipments">Shipments</a>
+            </li>
+            <!-- For Single Shipment Page -->
+            <li t-if="page_name == 'shipment' and shipment" class="breadcrumb-item">
+                <a href="/my/shipments">Shipments</a>
+            </li>
+            <li t-if="page_name == 'shipment' and shipment" class="breadcrumb-item active">
+                <t t-esc="shipment.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <!-- Shipments List -->
+    <template id="portal_my_shipments" name="My Shipments">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Shipments</t>
+            </t>
+
+            <t t-if="not shipments">
+                <div class="alert alert-info text-center" role="alert">
+                    There are currently no shipments for your account.
+                </div>
+            </t>
+            <t t-if="shipments">
+                <!-- Shipments Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover o_portal_my_doc_table">
+                        <thead>
+                            <tr class="active">
+                                <th>Reference</th>
+                                <th>Transport Mode</th>
+                                <th>Origin</th>
+                                <th>Destination</th>
+                                <th>Current Stage</th>
+                                <th>Carrier</th>
+                                <th>Creation Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="shipments" t-as="shipment">
+                                <tr>
+                                    <td>
+                                        <a t-attf-href="/my/shipment/#{shipment.id}" class="text-decoration-none">
+                                            <span t-field="shipment.name"/>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <t t-if="shipment.transport_mode == 'multiple'">
+                                            <span class="badge bg-info">Multi-modal</span>
+                                            <div class="mt-1">
+                                                <i class="fa fa-ship"></i>
+                                                <i class="fa fa-plane ms-1"></i>
+                                                <i class="fa fa-truck ms-1"></i>
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="shipment.transport_mode"/>
+                                            <i t-attf-class="fa ms-2 #{shipment.transport_mode_icon}"/>
+                                        </t>
+                                    </td>
+                                    <td><span t-field="shipment.display_origin.name"/></td>
+                                    <td><span t-field="shipment.display_destination.name"/></td>
+                                    <td>
+                                        <span t-field="shipment.current_stage_id.name" 
+                                            t-attf-class="badge bg-#{shipment.current_stage_id.is_closed and 'success' or 'primary'}"
+                                            style="opacity: 0.9; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="shipment.is_multi_carrier">
+                                            <span t-field="shipment.display_carrier_name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="shipment.display_carrier.name"/>
+                                        </t>
+                                    </td>
+                                    <td><span t-field="shipment.create_date" t-options='{"widget": "date"}'/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pager -->
+                <div class="o_portal_pager" t-if="pager">
+                    <t t-call="portal.pager"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Main Shipment Information Template -->
+    <template id="portal_shipment_main_info" name="Shipment Main Information">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <span t-field="shipment.name"/> 
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <strong>Direction:</strong> <span t-field="shipment.direction"/>
+                        </div>
+                        <div class="col-6">
+                            <strong>Creation Date:</strong> <span t-field="shipment.create_date" t-options='{"widget": "date"}'/>
+                        </div>
+                        <div class="col-6">
+                            <strong>Transport Mode:</strong> <span t-field="shipment.transport_mode"/>
+                        </div>
+                        <div class="col-6">
+                            <strong>Service Type:</strong> <span t-field="shipment.service_type"/>
+                        </div>
+                    </div>
+
+                    <h5>Route Information</h5>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <strong>Origin:</strong> <span t-field="shipment.display_origin.name"/>
+                        </div>
+                        <div class="col-6">
+                            <strong>Destination:</strong> <span t-field="shipment.display_destination.name"/>
+                        </div>
+                    </div>
+
+                    <h5>Current Status</h5>
+                    <div class="alert alert-secondary">
+                        <strong>Current Stage:</strong> <span t-field="shipment.current_stage_id.name"/>
+                        <div t-if="shipment.current_stage_id.description">
+                            <t t-esc="shipment.current_stage_id.description"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Sidebar Information Template -->
+    <template id="portal_shipment_sidebar" name="Shipment Sidebar Information">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Related Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Carrier:</strong> <span t-field="shipment.display_carrier_name"/>
+                    </div>
+                    <div class="mb-3">
+                        <strong>ETD:</strong> <span t-field="shipment.etd"/>
+                    </div>
+                    <div class="mb-3">
+                        <strong>ETA:</strong> <span t-field="shipment.eta"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Parties</h5>
+                </div>
+                <div class="card-body">
+                    <div t-if="shipment.customer_id" class="mb-3">
+                        <strong>Customer:</strong> <span t-field="shipment.customer_id.name"/>
+                    </div>
+                    <div t-if="shipment.shipper_id" class="mb-3">
+                        <strong>Shipper:</strong> <span t-field="shipment.shipper_id.name"/>
+                    </div>
+                    <div t-if="shipment.consignee_id" class="mb-3">
+                        <strong>Consignee:</strong> <span t-field="shipment.consignee_id.name"/>
+                    </div>
+                    <div t-if="shipment.notify_party_id" class="mb-3">
+                        <strong>Notify Party:</strong> <span t-field="shipment.notify_party_id.name"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Tracking Timeline Template -->
+    <template id="portal_shipment_timeline" name="Shipment Tracking Timeline">
+        <div class="col-12 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Tracking Timeline 📍</h4>
+                </div>
+                <div class="card-body p-0">
+                    <t t-if="not tracking_history">
+                        <div class="alert alert-info m-3">
+                            No tracking information available yet 📦
+                        </div>
+                    </t>
+                    <t t-if="tracking_history">
+                        <div class="timeline position-relative px-4 pt-4">
+                            <!-- Main Timeline Line -->
+                            <div class="timeline-main-line"></div>
+
+                            <!-- Group tracking history by stages -->
+                            <t t-foreach="shipment.stage_ids.sorted(key=lambda s: s.sequence, reverse=True)" t-as="stage">
+                                <div class="stage-group position-relative mb-2">
+                                    <!-- Stage Header with Stage Dot -->
+                                    <div class="stage-header d-flex align-items-center mb-3 position-relative">
+                                        <div class="stage-dot-container">
+                                            <div t-attf-class="stage-dot #{stage == shipment.current_stage_id and 'current' or ''}"></div>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h5 class="mb-0">
+                                                <span t-field="stage.name"/>
+                                                <small class="text-muted ms-2">
+                                                    <t t-if="stage == shipment.current_stage_id">(Current Stage)</t>
+                                                </small>
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filter tracking events for current stage -->
+                                    <t t-set="stage_events" t-value="tracking_history.filtered(lambda x: x.stage_id == stage)"/>
+                                    <t t-if="stage_events">
+                                        <div class="timeline-events ms-5">
+                                            <t t-foreach="stage_events.sorted(key=lambda x: x.event_time, reverse=True)" t-as="tracking">
+                                                <div class="timeline-item d-flex mb-3">
+                                                    <!-- Time Column -->
+                                                    <div class="timeline-time text-muted" style="width: 120px; min-width: 120px;">
+                                                        <div><t t-esc="tracking.event_time.strftime('%d Th%m')"/></div>
+                                                        <div><t t-esc="tracking.event_time.strftime('%H:%M')"/></div>
+                                                    </div>
+                                                    
+                                                    <!-- Content Column -->
+                                                    <div class="timeline-content flex-grow-1 ms-4">
+                                                        <div class="timeline-item-card">
+                                                            <div class="timeline-item-header">
+                                                                <span t-field="tracking.title_template_id" class="timeline-title"/>
+                                                            </div>
+                                                            <div class="timeline-item-body">
+                                                                <div t-if="tracking.location" class="timeline-location">
+                                                                    <i class="fa fa-map-marker"/> <span t-field="tracking.location"/>
+                                                                </div>
+                                                                <div t-if="tracking.details" class="timeline-details mt-2">
+                                                                    <span t-field="tracking.details"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="alert alert-light mb-0 ms-5">
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+    <!-- Packages & Cargos Information -->
+    <template id="portal_shipment_cargo_info" name="Cargo Information">
+        <div class="col-12 mt-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        <i class="fa fa-cubes me-2"></i>Cargo Information
+                    </h4>
+                </div>
+                <div class="card-body p-0">
+                    <!-- Summary Cards -->
+                    <div class="row m-0 p-3">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="summary-card border rounded p-3 text-center">
+                                <h3 class="mb-1"><t t-esc="shipment.total_packages"/></h3>
+                                <span class="text-muted">Packages</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="summary-card border rounded p-3 text-center">
+                                <h3 class="mb-1"><t t-esc="shipment.total_cargo_commodities"/></h3>
+                                <span class="text-muted">Cargo</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="summary-card border rounded p-3 text-center">
+                                <h3 class="mb-1"><t t-esc="shipment.total_weight"/></h3>
+                                <span class="text-muted">Total Weight</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="summary-card border rounded p-3 text-center">
+                                <h3 class="mb-1"><t t-esc="shipment.total_volume"/></h3>
+                                <span class="text-muted">Total Volume</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Packages Table -->
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Package Reference</th>
+                                    <th>Type</th>
+                                    <th>Container No.</th>
+                                    <th>Seal No.</th>
+                                    <th>Weight</th>
+                                    <th>Volume</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="shipment.package_ids" t-as="package">
+                                    <tr>
+                                        <td>
+                                            <span t-field="package.name"/>
+                                        </td>
+                                        <td><span t-field="package.package_type_id.name"/></td>
+                                        <td>
+                                            <t t-if="package.container_number">
+                                                <span class="text-monospace" t-field="package.container_number"/>
+                                            </t>
+                                            <t t-else="">-</t>
+                                        </td>
+                                        <td>
+                                            <t t-if="package.seal_number">
+                                                <span class="text-monospace" t-field="package.seal_number"/>
+                                            </t>
+                                            <t t-else="">-</t>
+                                        </td>
+                                        <td>
+                                            <span t-field="package.weight"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="package.volume"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Main Template -->
+    <template id="portal_my_shipment" name="My Shipment">
+        <t t-call="portal.portal_layout">
+            <t t-set="o_portal_fullwidth_alert" groups="viin_freight_management.group_freight_user">
+                <t t-call="portal.portal_back_in_edit_mode">
+                    <t t-set="backend_url" t-value="'/web#model=%s&amp;id=%s&amp;action=%s&amp;view_type=form' % (shipment._name, shipment.id, shipment.env.ref('viin_freight_management.action_freight_shipment').id)"/>
+                </t>
+            </t>
+
+            <div class="row mt16">
+                <!-- Main Information -->
+                <t t-call="viin_freight_management.portal_shipment_main_info"/>
+
+                <!-- Sidebar -->
+                <t t-call="viin_freight_management.portal_shipment_sidebar"/>
+
+                <!-- New Cargo Information Section -->
+                <t t-call="viin_freight_management.portal_shipment_cargo_info"/>
+
+                <!-- Timeline -->
+                <t t-call="viin_freight_management.portal_shipment_timeline"/>
+
+                <!-- chatter -->
+                <div id="shipment_communication" class="mt-4">
+                    <h2>History</h2>
+                    <t t-call="portal.message_thread">
+                        <t t-set="object" t-value="shipment"/>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

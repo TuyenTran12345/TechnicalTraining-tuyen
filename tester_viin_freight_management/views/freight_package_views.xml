@@ -1,0 +1,91 @@
+<odoo>
+    <record id="freight_package_view_form" model="ir.ui.view">
+        <field name="name">freight.package.form</field>
+        <field name="model">freight.package</field>
+        <field name="arch" type="xml">
+            <form string="Package">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="quantity"/>
+                            <field name="shipment_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="package_type_id"/>
+                            <field name="is_container" invisible="1"/>
+                            <field name="cargo_mode" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Physical Properties" name="physical_properties">
+                        <group >
+                            <label for="weight" string="Weight"/>
+                            <div class="o_row">
+                                <field name="weight"/>
+                                <field name="weight_uom_name"/>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="volume" string="Volume"/>
+                            <div class="o_row">
+                                <field name="volume"/>
+                                <field name="volume_uom_name"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group string="Tracking" name="tracking">
+                        <field name="seal_number"/>
+                        <field name="container_number" invisible="not is_container"/>
+                        <field name="shipping_mark"/>
+                    </group>
+                    <notebook>
+                        <page name="handling_instructions" string="Handling Instructions">
+                            <field name="handling_instructions" />
+                        </page>
+                        <page string="Cargo Details" name="cargo_commodities" invisible="cargo_mode != 'structured_entry'">
+                            <field name="cargo_commodity_ids"
+                                context="{'default_shipment_id': shipment_id}"
+                                domain="[('shipment_id', '=', shipment_id)]" />
+                        </page>
+                        <page string="Cargo Details" name="cargo_note_details" invisible="cargo_mode == 'structured_entry'">
+                            <field name="cargo_note_details" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="freight_package_view_tree" model="ir.ui.view">
+        <field name="name">freight.package.tree</field>
+        <field name="model">freight.package</field>
+        <field name="arch" type="xml">
+            <tree string="Packages">
+                <field name="name"/>
+                <field name="package_type_id"/>
+                <field name="volume"/>
+                <field name="weight"/>
+                <field name="container_number" optional="hide"/>
+                <field name="seal_number" optional="hide"/>
+                <field name="shipping_mark" optional="hide"/>
+                <field name="cargo_commodity_ids" column_invisible="1"/>
+                <field name="cargo_note_details" column_invisible="1"/>
+                <field name="cargo_mode" column_invisible="1"/>
+                <button name="action_add_cargo_commodity" string="Add Cargo" type="object" class="btn-secondary"
+                    invisible="cargo_mode != 'structured_entry'"
+                    icon="fa-plus" />
+                <button name="action_view_cargo_commodities" string="View Cargo" type="object" class="btn-secondary"
+                    invisible="not cargo_commodity_ids or cargo_mode != 'structured_entry'" icon="fa-eye" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="freight_package_action_convert_to_template" model="ir.actions.server">
+        <field name="name">Convert to Template</field>
+        <field name="model_id" ref="model_freight_package"/>
+        <field name="state">code</field>
+        <field name="binding_model_id" ref="model_freight_package"/>
+        <field name="code">action = records.sudo().convert_to_template()</field>
+    </record>
+
+</odoo>

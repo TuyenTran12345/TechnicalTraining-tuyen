@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="cargo_template_tree_view" model="ir.ui.view">
+        <field name="name">cargo.template.tree.view</field>
+        <field name="model">cargo.template</field>
+        <field name="arch" type="xml">
+            <tree string="Cargo Template" editable="bottom">
+                <field name="name" optional="hide"/>
+                <field name="cargo_template_data_id"/>
+                <field name="quantity"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="cargo_template_form_view" model="ir.ui.view">
+        <field name="name">cargo.template.form.view</field>
+        <field name="model">cargo.template</field>
+        <field name="arch" type="xml">
+            <form string="Cargo Template">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Cargo Template Description..."/>
+                        </group>
+                        <group>
+                            <field name="cargo_template_data_id"/>
+                            <field name="quantity"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="cargo_template_search_view" model="ir.ui.view">
+        <field name="name">cargo.template.search.view</field>
+        <field name="model">cargo.template</field>
+        <field name="arch" type="xml">
+            <search string="Search Cargo Template">
+                <field name="name"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Cargo Template Data" name="grp_cargo_template_data" context="{'group_by': 'cargo_template_data_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_cargo_template" model="ir.actions.act_window">
+        <field name="name">Cargo Template</field>
+        <field name="res_model">cargo.template</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="cargo_template_search_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Cargo Template!
+            </p>
+        </field>
+    </record>
+</odoo>

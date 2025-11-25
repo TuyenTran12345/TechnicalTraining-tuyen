@@ -1,0 +1,64 @@
+<odoo noupdate="1">
+    <!-- Planning -->
+    <record id="shipment_stage_planning_demo" model="freight.shipment.stage">
+        <field name="name">Planning</field>
+        <field name="sequence">10</field>
+        <field name="description">Initial planning, routing, and service selection.</field>
+        <field name="is_closed">false</field>
+        <field name="color">1</field>
+    </record>
+
+    <!-- Customs Clearance -->
+    <record id="shipment_stage_customs_clearance" model="freight.shipment.stage">
+        <field name="name">Customs Clearance</field>
+        <field name="sequence">20</field>
+        <field name="description">Export/import clearance procedures, documentation preparation and submission.</field>
+        <field name="is_closed">false</field>
+        <field name="color">2</field>
+    </record>
+
+    <!-- Origin Port Handling -->
+    <record id="shipment_stage_origin_port_handling" model="freight.shipment.stage">
+        <field name="name">Origin Port Handling</field>
+        <field name="sequence">30</field>
+        <field name="description">Cargo receiving, container stuffing, terminal handling, and loading onto vessel or aircraft.</field>
+        <field name="is_closed">false</field>
+        <field name="color">3</field>
+    </record>
+
+    <!-- International Transport -->
+    <record id="shipment_stage_international_transport" model="freight.shipment.stage">
+        <field name="name">International Transport</field>
+        <field name="sequence">40</field>
+        <field name="description">International transportation by sea, air, or cross-border land freight.</field>
+        <field name="is_closed">false</field>
+        <field name="color">4</field>
+    </record>
+
+    <!-- Destination Port Handling -->
+    <record id="shipment_stage_destination_port_handling" model="freight.shipment.stage">
+        <field name="name">Destination Port Handling</field>
+        <field name="sequence">50</field>
+        <field name="description">Unloading, terminal handling, customs inspection, and delivery order issuance at destination port.</field>
+        <field name="is_closed">true</field>
+        <field name="color">5</field>
+    </record>
+
+    <!-- Domestic Delivery -->
+    <record id="shipment_stage_domestic_delivery" model="freight.shipment.stage">
+        <field name="name">Domestic Delivery</field>
+        <field name="sequence">60</field>
+        <field name="description">Final inland transportation from destination port to consignee warehouse or customer site.</field>
+        <field name="is_closed">true</field>
+        <field name="color">6</field>
+    </record>
+
+    <!-- Shipment Completed -->
+    <record id="shipment_stage_completed" model="freight.shipment.stage">
+        <field name="name">Shipment Completed</field>
+        <field name="sequence">70</field>
+        <field name="description">All processes finished: delivery confirmed, documentation submitted, freight payment closed.</field>
+        <field name="is_closed">true</field>
+        <field name="color">7</field>
+    </record>
+</odoo>

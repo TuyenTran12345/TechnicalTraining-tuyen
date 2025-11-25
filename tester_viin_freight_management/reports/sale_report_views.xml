@@ -1,0 +1,22 @@
+<odoo>
+    <record id="sale_report_view_search_freight" model="ir.ui.view">
+        <field name="name">sale.report.search.freight</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/field[@name='industry_id']" position="after">
+                <separator/>
+                <filter string="Export" name="export" domain="[('direction', '=', 'export')]"/>
+                <filter string="Import" name="import" domain="[('direction', '=', 'import')]"/>
+                <filter string="Domestic" name="domestic" domain="[('direction', '=', 'domestic')]"/>
+                <separator/>
+                <filter string="FCL" name="fcl" domain="['|','|', ('ocean_shipping_method_id.name', 'ilike', 'FCL'), ('air_shipping_method_id.name', 'ilike', 'FCL'), ('land_shipping_method_id.name', 'ilike', 'FCL')]"/>
+                <filter string="LCL" name="lcl" domain="['|','|', ('ocean_shipping_method_id.name', 'ilike', 'LCL'), ('air_shipping_method_id.name', 'ilike', 'LCL'), ('land_shipping_method_id.name', 'ilike', 'LCL')]"/>
+            </xpath>
+            <xpath expr="//search/group[@expand='1']" position="inside">
+                <filter string="Direction" name="direction" domain="[]" context="{'group_by': 'direction'}"/>
+                <filter string="Shipping Method" name="shipping_method" domain="[]" context="{'group_by': 'shipping_method_name'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

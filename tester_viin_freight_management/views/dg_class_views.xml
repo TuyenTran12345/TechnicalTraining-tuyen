@@ -1,0 +1,83 @@
+<odoo>
+
+    <record id="dg_class_view_form" model="ir.ui.view">
+        <field name="name">freight.dg.class.form</field>
+        <field name="model">freight.dg.class</field>
+        <field name="arch" type="xml">
+            <form string="DG Class">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" string="View UN Numbers" type="object"
+                            icon="fa-bars"
+                            name="action_view_un_numbers">
+                            <div class="o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="un_number_count"/>
+                                </span>
+                                <span class="o_stat_text">
+                                    UN Numbers
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code" />
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="special_handling" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description" />
+                        </page>
+                        <page string="UN Numbers" name="un_numbers">
+                            <field name="un_number_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dg_class_view_tree" model="ir.ui.view">
+        <field name="name">freight.dg.class.tree</field>
+        <field name="model">freight.dg.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="dg_class_view_search" model="ir.ui.view">
+        <field name="name">freight.dg.class.search</field>
+        <field name="model">freight.dg.class</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code" />
+                <field name="name" />
+                <separator />
+                <filter name="ftr_active" string="Active" domain="[('active', '=', True)]" />
+                <filter name="ftr_inactive" string="Inactive" domain="[('active', '=', False)]" />
+                <separator />
+            </search>
+        </field>
+    </record>
+
+    <record id="dg_class_action" model="ir.actions.act_window">
+        <field name="name">DG Classes</field>
+        <field name="res_model">freight.dg.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="freight_dg_class_menu" name="DG Classes"
+        parent="freight_menu_config_cargo_info"
+        sequence="40"
+        action="dg_class_action"
+        groups="viin_freight_management.group_freight_manager" />
+
+</odoo>

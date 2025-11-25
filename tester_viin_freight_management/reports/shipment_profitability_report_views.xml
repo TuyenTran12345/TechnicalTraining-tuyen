@@ -1,0 +1,117 @@
+<odoo>
+    <record id="shipment_profitability_report_view_tree" model="ir.ui.view">
+        <field name="name">shipment.profitability.report.tree.view</field>
+        <field name="model">shipment.profitability.report</field>
+        <field name="arch" type="xml">
+            <tree string="Shipment Profitability">
+                <field name="shipment_id"/>
+                <field name="customer_id"/>
+                <field name="shipper_id" optional="show"/>
+                <field name="consignee_id" optional="show"/>
+                <field name="shipping_method" optional="show"/>
+                <field name="transport_mode" optional="show"/>
+                <field name="status" optional="hide"/>
+                <field name="price_subtotal" optional="hide"/>
+                <field name="cost" optional="hide"/>
+                <field name="profit" optional="hide"/>
+                <field name="currency_id" optional="hide"/>
+                <field name="date" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="shipment_profitability_report_view_pivot" model="ir.ui.view">
+        <field name="name">shipment.profitability.report.pivot</field>
+        <field name="model">shipment.profitability.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Shipment Profitability">
+                <field name="date" type="row" string="Date" interval="month"/>
+                <field name="shipment_id" type="row" string="Shipment"/>
+                <field name="price_subtotal" type="measure"/>
+                <field name="cost" type="measure"/>
+                <field name="profit" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="shipment_profitability_report_view_graph" model="ir.ui.view">
+        <field name="name">shipment.profitability.report.graph.view</field>
+        <field name="model">shipment.profitability.report</field>
+        <field name="arch" type="xml">
+            <graph string="Shipment Profitability">
+                <field name="price_subtotal" type="measure"/>
+                <field name="date"  string="Date" interval="month"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="shipment_profitability_report_view_search" model="ir.ui.view">
+        <field name="name">shipment.profitability.report.search</field>
+        <field name="model">shipment.profitability.report</field>
+        <field name="arch" type="xml">
+            <search string="Shipment Profitability">
+                <field name="shipment_id"/>
+                <field name="route_id"/>
+                <separator/>
+                <field name="customer_id"/>
+                <field name="shipper_id"/>
+                <field name="consignee_id"/>
+                <separator/>
+                <field name="sale_person_id"/>
+                <field name="responsible_id"/>
+                <separator/>
+                <field name="shipping_method"/>
+                <field name="transport_mode"/>
+                <field name="status"/>
+                <field name="delivery_status"/>
+                <field name="date"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Shipment" name="grp_shipment" context="{'group_by':'shipment_id'}"/>
+                    <filter string="Route" name="grp_route" context="{'group_by':'route_id'}"/>
+                    <separator/>
+                    <filter string="Customer" name="grp_customer" context="{'group_by':'customer_id'}"/>
+                    <filter string="Shipper" name="grp_shipper" context="{'group_by':'shipper_id'}"/>
+                    <filter string="Consignee" name="grp_consignee" context="{'group_by':'consignee_id'}"/>
+                    <separator/>
+                    <filter string="Sale Person" name="grp_sale_person" context="{'group_by':'sale_person_id'}"/>
+                    <filter string="Responsible" name="grp_responsible" context="{'group_by':'responsible_id'}"/>
+                    <separator/>
+                    <filter string="Status" name="grp_status" context="{'group_by':'status'}"/>
+                    <filter string="Delivery Status" name="grp_delivery_status" context="{'group_by':'delivery_status'}"/>
+                    <filter string="Method" name="grp_shipping_method" context="{'group_by':'shipping_method'}"/>
+                    <filter string="Transport Mode" name="grp_transport_mode" context="{'group_by':'transport_mode'}"/>
+                    <separator/>
+                    <filter string="Date" name="grp_date" context="{'group_by':'date'}"/>
+                </group>
+                <filter string="Early" name="ftr_early" domain="[('delivery_status','=','early')]"/>
+                <filter string="Late" name="ftr_delayed" domain="[('delivery_status','=','late')]"/>
+                <filter string="On Time" name="ftr_on_time" domain="[('delivery_status','=','on_time')]"/>
+                <filter string="In Transit" name="ftr_in_transit" domain="[('delivery_status','=','in_transit')]"/>
+                <separator/>
+                <filter string="Last 7 Days" name="ftr_last_7_days"
+                    domain="[('date', '&gt;=', (context_today() - relativedelta(days=7)).strftime('%%Y-%%m-%%d')), ('date', '&lt;=', context_today().strftime('%%Y-%%m-%%d'))]"/>
+                <filter string="This Month" name="ftr_this_month"
+                    domain="[('date','&gt;=',(context_today()-relativedelta(day=1)).strftime('%%Y-%%m-%%d')), ('date','&lt;=',context_today().strftime('%%Y-%%m-%%d'))]"/>
+                <filter string="This Year" name="ftr_this_year"
+                    domain="[('date','&gt;=',context_today().strftime('%%Y-01-01')), ('date','&lt;=',context_today().strftime('%%Y-%%m-%%d'))]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_shipment_profitability_report" model="ir.actions.act_window">
+        <field name="name">Shipment Profitability</field>
+        <field name="res_model">shipment.profitability.report</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="search_view_id" ref="shipment_profitability_report_view_search"/>
+        <field name="context">{}</field>
+        <field name="help">This report allows you to analyze your shipments per shipment (not per route leg).</field>
+    </record>
+
+    <menuitem
+        id="menu_freight_shipment_report"
+        name="Shipment Profitability Report"
+        parent="viin_freight_management.freight_report_menu_root"
+        action="action_shipment_profitability_report"
+        sequence="20"/>
+</odoo>

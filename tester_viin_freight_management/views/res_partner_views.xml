@@ -1,0 +1,147 @@
+<odoo>
+
+    <record id="freight_port_tree" model="ir.ui.view">
+        <field name="name">freight.port.tree</field>
+        <field name="model">res.partner</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Ports" sample="1" editable="top">
+                <field name="display_name" string="Name"/>
+                <field name="name" string="Name" />
+                <field name="ref" string="Port Code"/>
+                <field name="country_id" string="Country"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="freight_port_form" model="ir.ui.view">
+        <field name="name">freight.port.form</field>
+        <field name="model">res.partner</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Port" sample="1">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="Name" required="1"/>
+                            <field name="ref" string="Port Code"/>
+                            <field name="country_id" string="Country"/>
+                        </group>
+                        <group>
+                            <field name="street" string="Street"/>
+                            <field name="street2" string="Street 2"/>
+                            <field name="city" string="City"/>
+                            <field name="state_id" string="State"/>
+                            <field name="zip" string="ZIP"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Geolocation" name="geo_location">
+                            <group>
+                                <group>
+                                    <label for="date_localization" string="Geo Location"/>
+                                    <div>
+                                        <span>Lat : <field name="partner_latitude" nolabel="1" class="oe_inline"/></span>
+                                        <br/>
+                                        <span>Long: <field name="partner_longitude" nolabel="1" class="oe_inline"/></span>
+                                        <br/>
+                                        <span invisible="not date_localization">Updated on:
+                                            <field name="date_localization" nolabel="1" readonly="1" class="oe_inline"/>
+                                            <br/>
+                                        </span>
+                                        <button invisible="partner_latitude != 0 or partner_longitude != 0" 
+                                            icon="fa-gear" string="Compute based on address" title="Compute Localization"
+                                            name="geo_localize" type="object" class="btn btn-link p-0"/>
+                                        <button invisible="partner_latitude == 0 and partner_longitude == 0" 
+                                            icon="fa-refresh" string="Refresh" title="Refresh Localization"
+                                            name="geo_localize" type="object" class="btn btn-link p-0"/>
+                                    </div>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">freight.res.partner.form.freight.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="is_port" />
+                <field name="ref" invisible="not is_port" string="Port Code" />
+                </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="shipment_count" invisible="1"/>
+                <button name="action_view_shipments" string="Shipments" type="object"
+                    invisible="shipment_count == 0"
+                    class="oe_stat_button" icon="fa-truck">
+                    <field name="shipment_count" widget="statinfo" string="Shipments"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_freight_port_filter" model="ir.ui.view">
+        <field name="name">viin.freight.res.partner.port.filter</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="Search Port">
+                <field name="name" />
+                <field name="ref" string="Port Code"/>
+                <field name="country_id" />
+                <filter name="ftr_archived" string="Archived" domain="[('active', '=', False)]" />
+                <group expand="0" string="Group By">
+                    <filter string="Company" name="grp_company_id" context="{'group_by': 'company_id'}" />
+                    <filter string="Country" name="grp_country_id" context="{'group_by': 'country_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">viin.freight.res.partner.filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <separator/>
+                <filter name="ftr_port" string="Is Port" domain="[('is_port', '=', True)]" />
+                <filter name="ftr_not_port" string="Not Port" domain="[('is_port', '=', False)]" />
+                <separator/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="freight_port_action" model="ir.actions.act_window">
+        <field name="name">Ports</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_freight_port_filter"></field>
+        <field name="domain">[('is_port', '=', True)]</field>
+        <field name="context">{'default_is_port': True}</field>
+    </record>
+
+    <record id="freight_port_action_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="freight_port_tree"/>
+        <field name="act_window_id" ref="freight_port_action"/>
+    </record>
+
+    <record id="freight_port_action_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="freight_port_form"/>
+        <field name="act_window_id" ref="freight_port_action"/>
+    </record>
+
+    <menuitem id="freight_port_menu" name="Ports"
+        parent="viin_freight_management.freight_location_menu_root"
+        action="freight_port_action"
+        sequence="10"
+        groups="viin_freight_management.group_freight_user"/>
+</odoo>

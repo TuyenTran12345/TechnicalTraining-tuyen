@@ -1,0 +1,58 @@
+<odoo>
+
+    <!-- 1. Planning: Booking Success -->
+    <record id="shipment_tracking_booking_success_demo" model="freight.shipment.tracking">
+        <field name="shipment_id" ref="shipment_sea_fcl_single_route_demo" />
+        <field name="event_time" eval="(DateTime.now() - timedelta(days=42))" />
+        <field name="location">Dinh Vu - Hai Phong</field>
+        <field name="title_template_id" ref="shipment_status_complete"/>
+        <field name="details">Successfully booked with the carrier. Waiting for vessel schedule confirmation.</field>
+        <field name="stage_id" ref="shipment_stage_planning_demo" />
+        <field name="status">on_track</field>
+    </record>
+
+    <!-- 2. Cargo Receiving: Container Picked Up -->
+    <record id="shipment_tracking_container_picked_demo" model="freight.shipment.tracking">
+        <field name="shipment_id" ref="shipment_sea_fcl_single_route_demo" />
+        <field name="event_time" eval="(DateTime.now() - timedelta(days=40))" />
+        <field name="location">Deport Dinh Vu</field>
+        <field name="title_template_id" ref="shipment_status_complete"/>
+        <field name="details">Driver picked up empty container for stuffing preparation.</field>
+        <field name="stage_id" ref="shipment_stage_origin_port_handling" />
+        <field name="status">on_track</field>
+    </record>
+
+    <!-- 3. Inland Transport: Container D to Port -->
+    <record id="shipment_tracking_container_delivered_demo" model="freight.shipment.tracking">
+        <field name="shipment_id" ref="shipment_sea_fcl_single_route_demo" />
+        <field name="event_time" eval="(DateTime.now() - timedelta(days=39))" />
+        <field name="location">ICD Dinh Vu</field>
+        <field name="title_template_id" ref="shipment_status_complete"/>
+        <field name="details">Container transported and delivered to Dinh Vu port, awaiting vessel loading.</field>
+        <field name="stage_id" ref="shipment_stage_international_transport" />
+        <field name="status">on_track</field>
+    </record>
+
+    <!-- 4. Ocean Freight: Vessel Departure -->
+    <record id="shipment_tracking_vessel_departure_demo" model="freight.shipment.tracking">
+        <field name="shipment_id" ref="shipment_sea_fcl_single_route_demo" />
+        <field name="event_time" eval="(DateTime.now() - timedelta(days=38))" />
+        <field name="location">Dinh Vu Port</field>
+        <field name="title_template_id" ref="shipment_status_complete"/>
+        <field name="details">Vessel departed from Dinh Vu port, en route to Los Angeles.</field>
+        <field name="stage_id" ref="shipment_stage_international_transport" />
+        <field name="status">on_track</field>
+    </record>
+
+    <!-- 5. Final Delivery: Vessel Arrived -->
+    <record id="shipment_tracking_vessel_arrival_demo" model="freight.shipment.tracking">
+        <field name="shipment_id" ref="shipment_sea_fcl_single_route_demo" />
+        <field name="event_time" eval="(DateTime.now() - timedelta(days=10))" />
+        <field name="location">Los Angeles Port</field>
+        <field name="title_template_id" ref="shipment_status_incident"/>
+        <field name="details">Container delayed at Los Angeles port due to customs inspection. Awaiting clearance and release authorization.</field>
+        <field name="stage_id" ref="shipment_stage_destination_port_handling" />
+        <field name="status">on_track</field>
+    </record>
+
+</odoo>

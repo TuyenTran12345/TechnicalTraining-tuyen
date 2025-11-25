@@ -1,0 +1,71 @@
+<odoo>
+    <record id="shipment_stage_view_form" model="ir.ui.view">
+        <field name="name">shipment.stage.view.form</field>
+        <field name="model">freight.shipment.stage</field>
+        <field name="arch" type="xml">
+            <form string="Shipment Stage">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="e.g. Planning"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="color" widget="selection"/>
+                            <field name="is_closed"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description" placeholder="Add a description for this stage..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="shipment_stage_view_tree" model="ir.ui.view">
+        <field name="name">shipment.stage.view.tree</field>
+        <field name="model">freight.shipment.stage</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+                <field name="is_closed"/>
+                <field name="description" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="shipment_stage_view_search" model="ir.ui.view">
+        <field name="name">shipment.stage.view.search</field>
+        <field name="model">freight.shipment.stage</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter string="Closed Stages" name="closed" domain="[('is_closed', '=', True)]"/>
+                <separator/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="shipment_stage_action" model="ir.actions.act_window">
+        <field name="name">Shipment Stages</field>
+        <field name="res_model">freight.shipment.stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_shipment_stage_config"
+        name="Shipment Stages"
+        groups="group_freight_manager"
+        parent="freight_menu_config_other"
+        action="shipment_stage_action"
+        sequence="10"
+    />
+</odoo>

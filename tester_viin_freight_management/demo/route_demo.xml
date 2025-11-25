@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- =========================================== -->
+    <!-- ROUTE SECTION -->
+    <!-- =========================================== -->
+    <!--  Ocean Routes  -->
+    <record id="section_dinhvu_to_usa" model="route.section">
+        <field name="address_from_id" ref="VNDVU"/>
+        <field name="address_to_id" ref="USLAX"/>
+        <field name="distance">12964</field>
+        <field name="ave_speed">37</field>
+    </record>
+
+    <record id="section_dinhvu_to_singapore" model="route.section">
+        <field name="address_from_id" ref="VNDVU"/>
+        <field name="address_to_id" ref="SGSIN"/>
+        <field name="distance">2222</field>
+        <field name="ave_speed">33</field>
+    </record>
+
+    <!-- ✈ Air Routes -->
+    <record id="section_hanoi_to_singapore" model="route.section">
+        <field name="address_from_id" ref="VN_HAN"/>
+        <field name="address_to_id" ref="SGSIN"/>
+        <field name="distance">2200</field>
+        <field name="ave_speed">850</field>
+    </record>
+
+    <record id="section_saigon_to_hanoi" model="route.section">
+        <field name="address_from_id" ref="VN_SGN"/>
+        <field name="address_to_id" ref="VN_HAN"/>
+        <field name="distance">1160</field>
+        <field name="ave_speed">800</field>
+    </record>
+
+    <record id="section_hanoi_to_saigon" model="route.section">
+        <field name="address_from_id" ref="VN_HAN"/>
+        <field name="address_to_id" ref="VN_SGN"/>
+        <field name="distance">1160</field>
+        <field name="ave_speed">800</field>
+    </record>
+
+    <!--  Land Routes -->
+    <record id="section_hanoi_to_haiphong" model="route.section">
+        <field name="address_from_id" ref="VN_HAN"/>
+        <field name="address_to_id" ref="VNHPH"/>
+        <field name="distance">120</field>
+        <field name="ave_speed">50</field>
+    </record>
+
+    <record id="section_maersk_to_hanoi" model="route.section">
+        <field name="address_from_id" ref="res_partner_carrier_maersk"/>
+        <field name="address_to_id" ref="VN_HAN"/>
+        <field name="distance">120</field>
+        <field name="ave_speed">50</field>
+    </record>
+
+    <record id="section_saigon_to_cosco" model="route.section">
+        <field name="address_from_id" ref="VN_SGN"/>
+        <field name="address_to_id" ref="res_partner_carrier_cosco"/>
+        <field name="distance">10</field>
+        <field name="ave_speed">50</field>
+    </record>
+
+    <record id="section_dinhvu_to_hanoi" model="route.section">
+        <field name="address_from_id" ref="VNDVU"/>
+        <field name="address_to_id" ref="VN_HAN"/>
+        <field name="distance">130</field>
+        <field name="ave_speed">50</field>
+    </record>
+
+    <record id="section_dinhvu_to_daisyco" model="route.section">
+        <field name="address_from_id" ref="VNDVU"/>
+        <field name="address_to_id" ref="res_partner_daisyco_hanoi"/>
+        <field name="distance">130</field>
+        <field name="ave_speed">50</field>
+    </record>
+
+    <record id="section_cma_to_saigon" model="route.section">
+        <field name="address_from_id" ref="res_partner_carrier_cma"/>
+        <field name="address_to_id" ref="VN_SGN"/>
+        <field name="distance">10</field>
+        <field name="ave_speed">30</field>
+    </record>
+
+    <record id="section_hanoi_to_dinhvu" model="route.section">
+        <field name="address_from_id" ref="VN_HAN"/>
+        <field name="address_to_id" ref="VNDVU"/>
+        <field name="distance">130</field>
+        <field name="ave_speed">50</field>
+    </record>
+
+
+    <!-- =========================================== -->
+    <!-- ROUTE DEFINITIONS -->
+    <!-- =========================================== -->
+    <!-- Ocean Routes -->
+
+    <record id="route_dinhvu_usa" model="route.route">
+        <field name="name">Dinh vu to Los Angeles</field>
+        <field name="transport_mode">sailing</field>
+    </record>
+
+    <record id="route_dinhvu_to_singapore" model="route.route">
+        <field name="name">Dinh vu to Singapore</field>
+        <field name="transport_mode">sailing</field>
+    </record>
+
+    <!-- Air Routes -->
+    <record id="route_hanoi_singapore" model="route.route">
+        <field name="name">Noi Bai to Singapore</field>
+        <field name="transport_mode">flying</field>
+    </record>
+
+    <!-- Land Routes -->
+
+    <record id="route_hanoi_hai_phong" model="route.route">
+        <field name="name">Hanoi to Hai Phong</field>
+        <field name="transport_mode">truck</field>
+    </record>
+
+    <record id="route_dinhvu_to_hanoi" model="route.route">
+        <field name="name">Dinh vu to Hanoi</field>
+        <field name="transport_mode">truck</field>
+    </record>
+
+    <record id="route_dinhvu_to_hanoi_2" model="route.route">
+        <field name="name">Dinh vu to Ha Noi(Cau Giay)</field>
+        <field name="transport_mode">truck</field>
+    </record>
+
+    <!-- =========================================== -->
+    <!-- WAYPOINTS -->
+    <!-- =========================================== -->
+    <!-- Ocean Routes Waypoints -->
+
+    <record id="waypoint_06" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_usa"/>
+        <field name="sequence">10</field>
+        <field name="address_id" ref="VNDVU"/>
+    </record>
+    <record id="waypoint_07" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_usa"/>
+        <field name="sequence">20</field>
+        <field name="address_id" ref="USLAX"/>
+    </record>
+
+    <record id="waypoint_dinhvu_singapore_1" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_to_singapore"/>
+        <field name="sequence">10</field>
+        <field name="address_id" ref="VNDVU"/>
+    </record>
+    <record id="waypoint_dinhvu_singapore_2" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_to_singapore"/>
+        <field name="sequence">20</field>
+        <field name="address_id" ref="SGSIN"/>
+    </record>
+
+    <!-- Air Routes Waypoints -->
+    <record id="waypoint_route_hanoi_singapore_noibai" model="route.waypoint">
+        <field name="route_id" ref="route_hanoi_singapore"/>
+        <field name="sequence">10</field>
+        <field name="address_id" ref="VN_HAN"/>
+    </record>
+    <record id="waypoint_route_hanoi_singapore_singapore" model="route.waypoint">
+        <field name="route_id" ref="route_hanoi_singapore"/>
+        <field name="sequence">20</field>
+        <field name="address_id" ref="SGSIN"/>
+    </record>
+
+    <!-- Land Routes Waypoints -->
+    <record id="waypoint_10" model="route.waypoint">
+        <field name="route_id" ref="route_hanoi_hai_phong"/>
+        <field name="sequence">10</field>
+        <field name="address_id" ref="VN_HAN"/>
+    </record>
+    <record id="waypoint_11" model="route.waypoint">
+        <field name="route_id" ref="route_hanoi_hai_phong"/>
+        <field name="sequence">20</field>
+        <field name="address_id" ref="VNHPH"/>
+    </record>
+    <record id="waypoint_dinhvu_hanoi_1" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_to_hanoi"/>
+        <field name="sequence">10</field>
+        <field name="address_id" ref="VNDVU"/>
+    </record>
+    <record id="waypoint_dinhvu_hanoi_2" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_to_hanoi"/>
+        <field name="sequence">20</field>
+        <field name="address_id" ref="VN_HAN"/>
+    </record>
+
+    <record id="waypoint_dinhvu_hanoi_3" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_to_hanoi_2"/>
+        <field name="sequence">10</field>
+        <field name="address_id" ref="VNDVU"/>
+    </record>
+
+    <record id="waypoint_dinhvu_hanoi_4" model="route.waypoint">
+        <field name="route_id" ref="route_dinhvu_to_hanoi_2"/>
+        <field name="sequence">20</field>
+        <field name="address_id" ref="res_partner_daisyco_hanoi"/>
+    </record>
+</odoo>

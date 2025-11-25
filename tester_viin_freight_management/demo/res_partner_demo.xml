@@ -1,0 +1,89 @@
+<odoo>
+
+    <!-- =========================================== -->
+    <!-- PORTS & AIRPORTS -->
+    <!-- =========================================== -->
+    <record id="VNDVU" model="res.partner">
+        <field name="state_id" ref="base.state_vn_VN-HP" />
+        <field name="city">Haiphong</field>
+        <field name="street">Dong Hai 2</field>
+        <field name="street2">Hai An</field>
+    </record>
+
+    <record id="VNCL1" model="res.partner">
+        <field name="state_id" ref="base.state_vn_VN-SG" />
+        <field name="city">Ho Chi Minh</field>
+        <field name="street">Nguyen Thi Dinh Street</field>
+        <field name="street2">Thu Duc City</field>
+    </record>
+
+    <record id="VN_HAN" model="res.partner">
+        <field name="state_id" ref="base.state_vn_VN-HN" />
+        <field name="city">Hanoi</field>
+        <field name="street">Phu Minh, Soc Son</field>
+        <field name="street2">Noi Bai</field>
+    </record>
+
+    <record id="SGSIN" model="res.partner">
+        <field name="city">Singapore</field>
+        <field name="street">460 Alexandra Road</field>
+        <field name="street2">PSA Building</field>
+    </record>
+
+    <record id="USLAX" model="res.partner">
+        <field name="state_id" ref="base.state_us_5" />
+        <field name="city">Los Angeles</field>
+        <field name="street">425 S. Palos Verdes Street</field>
+        <field name="street2">San Pedro</field>
+    </record>
+
+    <record id="VNHPH" model="res.partner">
+        <field name="state_id" ref="base.state_vn_VN-HP" />
+        <field name="city">Haiphong</field>
+        <field name="street">8A Tran Phu Street</field>
+        <field name="street2">Ngo Quyen District</field>
+    </record>
+
+    <record id="CN_PVG" model="res.partner">
+        <field name="city">Shanghai</field>
+        <field name="street">6000 Yingbin Avenue</field>
+        <field name="street2">Pudong New Area</field>
+    </record>
+
+    <record id="DEHAM" model="res.partner">
+        <field name="city">Hamburg</field>
+        <field name="street">Bei den St. Pauli Landungsbrücken</field>
+        <field name="street2">Hamburg Port Authority</field>
+    </record>
+
+    <!-- Logistics Carrier -->
+
+    <record id="res_partner_tts_logistics_demo" model="res.partner">
+        <field name="name">TTS Logistics</field>
+        <field name="company_type">company</field>
+        <field name="country_id" ref="base.us"/>
+        <field name="email">ttslogistics@example.viindoo.com</field>
+    </record>
+
+    <!-- Maersk Driver -->
+    <record id="res_partner_maersk_driver_1" model="res.partner">
+        <field name="name">Scoot</field>
+        <field name="email">scoot@example.viindoo.com</field>
+        <field name="parent_id" ref="res_partner_carrier_maersk"/>
+    </record>
+
+    <record id="res_partner_daisyco_hanoi" model="res.partner">
+        <field name="name">DAISYCO Vietnam - Hanoi Branch</field>
+        <field name="country_id" ref="base.vn"/>
+        <field name="state_id" ref="base.state_vn_VN-HN"/>
+        <field name="city">Ha Noi</field>
+        <field name="street">No. 6, Ton That Thuyet Street</field>
+        <field name="street2">7th Floor, Charmvit Tower, Cau Giay District</field>
+        <field name="phone">+84 24 5678 5803</field>
+        <field name="website">https://www.daisyco.com/</field>
+        <field name="email">vn.hanoi@daisyco.com</field>
+        <field name="is_company">1</field>
+        <field name="supplier_rank">1</field>
+    </record>
+
+</odoo>

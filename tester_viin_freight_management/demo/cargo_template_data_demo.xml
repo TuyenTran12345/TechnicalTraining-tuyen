@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cargo_template_data_sea_fcl_single_route_demo" model="freight.cargo.template.data">
+        <field name="name">Container 40' Ready made Clothes</field>
+        <field name="packing_mode">package</field>
+        <field name="package_type_id" ref="stock_package_type_40gp"/>
+        <field name="volume">33.2</field>
+        <field name="weight">18000</field>
+    </record>
+
+    <record id="item_sea_fcl_single_route_demo" model="freight.cargo.template.data.line">
+        <field name="name">Fiberboard Box Ready made Clothes</field>
+        <field name="quantity">50</field>
+        <field name="is_individual_package">True</field>
+        <field name="package_type_id" ref="stock_package_fiberboard_box" />
+        <field name="cargo_template_data_id" ref="cargo_template_data_sea_fcl_single_route_demo"/>
+        <field name="weight">14000</field>
+        <field name="volume">46</field>
+        <field name="cargo_type_id" ref="cargo_type_general" />
+        <field name="hs_code_id" ref="hs_code_6201" />
+        <field name="country_of_origin_id" ref="base.vn" />
+        <field name="handling_instructions">
+            Store in a dry, clean environment. Avoid contact with water and strong odors.
+            Do not stack more than 3 layers to prevent box deformation.
+            Handle with care to avoid crushing the fiberboard boxes.
+            Ensure proper ventilation.
+        </field>
+    </record>
+
+    <record id="shipment_sea_lcl_order_box_demo" model="freight.cargo.template.data">
+        <field name="name">Box Ready made Clothes</field>
+        <field name="packing_mode">package</field>
+        <field name="package_type_id" ref="stock_package_fiberboard_box"/>
+        <field name="volume">1</field>
+        <field name="weight">30</field>
+    </record>
+
+    <record id="box_1_item_1_sea_lcl_single_route_demo" model="freight.cargo.template.data.line">
+        <field name="name">Ready made Clothes</field>
+        <field name="quantity">100</field>
+        <field name="cargo_template_data_id" ref="shipment_sea_lcl_order_box_demo"/>
+        <field name="weight">16</field>
+        <field name="volume">0.05</field>
+        <field name="cargo_type_id" ref="cargo_type_general" />
+        <field name="hs_code_id" ref="hs_code_6201" />
+        <field name="country_of_origin_id" ref="base.cn" />
+        <field name="need_marking">True</field>
+    </record>
+
+    <record id="shipment_sea_bulk_rice_order_demo" model="freight.cargo.template.data">
+        <field name="name">Rice</field>
+        <field name="packing_mode">bulk</field>
+        <field name="volume">15000</field>
+        <field name="weight">24000</field>
+        <field name="cargo_type_id" ref="cargo_type_dry_bulk"/>
+        <field name="hs_code_id" ref="hs_code_1006"/>
+        <field name="country_of_origin_id" ref="base.vn"/>
+        <field name="is_danger">False</field>
+        <field name="need_marking">False</field>
+        <field name="handling_instructions">Store in cool and dry place</field>
+    </record>
+
+</odoo>

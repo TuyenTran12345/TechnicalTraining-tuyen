@@ -1,0 +1,80 @@
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.freight</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="mail.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Freight" string="Freight Management" name="viin_freight_management" groups="viin_freight_management.group_freight_manager">
+                    <h2 id="freight_feature">Analytic Account</h2>
+                    <div class="row mt16 o_settings_container" name="freight_analytic_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="suffix_sale_account_analytic">
+                            <div class="o_setting_left_pane">
+                                <field name="custom_sale_account_analytic_suffix"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="custom_sale_account_analytic_suffix"/>
+                                <div class="text-muted">
+                                    If enabled, will display the shipment name alongside the analytic account name in reports and dropdowns for easier identification. You can also search analytic accounts by shipment name. Example: SO0001 displays as 'SO0001 - SHP0001'
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 id="freight_feature">Cargo</h2>
+                    <div class="row mt16 o_settings_container" name="freight_cargo_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="shipment_cargo_mode">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="shipment_cargo_mode"/>
+                                <div class="text-muted">
+                                    Select how you want to input cargo details for shipments:<br/>
+                                    • <strong>Quick Note Entry</strong>: Use free-form text to summarize cargo.<br/>
+                                    • <strong>Detailed Structured Entry</strong>: Create packages, items, HS Codes, etc.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="shipment_cargo_mode" widget="radio" class="o_light_label"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 id="freight_feature">Sale Order</h2>
+                    <div class="row mt16 o_settings_container" name="freight_shipment_setting_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box" id="prevent_unlink_sales_having_transport_related">
+                            <div class="o_setting_left_pane">
+                                <field name="prevent_unlink_sales_having_transport_related"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="prevent_unlink_sales_having_transport_related"/>
+                                <div class="text-muted">
+                                    If enabled, will prevent unlinking sales order lines that have a shipment, route or booking linked to them.
+                                    <br/>
+                                    <br/>
+                                    <strong>Note:</strong> This setting is only applicable to sales order lines that have a shipment, route or booking linked to them.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="freight_config_setting_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'viin_freight_management', 'bin_size': False}</field>
+    </record>
+
+    <menuitem id="freight_config_menu"
+        name="Settings"
+        parent="freight_menu_config_root"
+        sequence="5"
+        action="freight_config_setting_action"
+        groups="group_freight_manager"/>
+
+</odoo>

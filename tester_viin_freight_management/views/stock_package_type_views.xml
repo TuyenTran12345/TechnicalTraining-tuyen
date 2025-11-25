@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Form View -->
+    <record id="stock_package_type_form_view_inherit" model="ir.ui.view">
+        <field name="name">stock.package.type.form.inherit.freight</field>
+        <field name="model">stock.package.type</field>
+        <field name="inherit_id" ref="stock.stock_package_type_form"/>
+        <field name="arch" type="xml">
+            <!-- Add volume fields after dimensions -->
+            <xpath expr="//label[@for='base_weight']" position="before">
+                <field name="volume" />
+            </xpath>
+            <xpath expr="//field[@name='barcode']" position="before">
+                <field name="is_container"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit Tree View -->
+    <record id="stock_package_type_tree_view_inherit" model="ir.ui.view">
+        <field name="name">stock.package.type.tree.inherit.freight</field>
+        <field name="model">stock.package.type</field>
+        <field name="inherit_id" ref="stock.stock_package_type_tree"/>
+        <field name="arch" type="xml">
+            <!-- Add volume field to tree view -->
+            <xpath expr="//field[@name='height']" position="after">
+                <field name="volume"/>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="freight_package_type_menu" name="Package Types"
+        parent="freight_menu_config_other"
+        action="stock.action_package_type_view"
+        groups="stock.group_tracking_lot"
+        sequence="10" />
+</odoo>

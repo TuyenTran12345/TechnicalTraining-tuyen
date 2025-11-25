@@ -1,0 +1,79 @@
+/* Shipment Timeline Styles */
+
+// Timeline Container
+.timeline {
+    padding-left: 20px; // Space for the main line
+}
+
+// Main Vertical Line
+.timeline-main-line {
+    position: absolute;
+    left: 24px; // Align with stage dots
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e0e0;
+    z-index: 1; // Ensure line stays behind dots
+}
+
+// Stage Dot Container
+.stage-dot-container {
+    position: absolute;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; // Ensure dots appear above line
+}
+
+// Stage Dot
+.stage-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 0 0 3px #fff; // White outline to cover the line
+
+    &.current {
+        background-color: #82d173;
+        border-color: #82d173;
+    }
+}
+
+// Timeline Content
+.timeline {
+    &-time {
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: #6c757d;
+    }
+
+    &-content {
+        position: relative;
+    }
+
+    &-item-card {
+        background-color: #f8f9fa;
+        padding: 0.75rem;
+        border-radius: 0.25rem;
+        border: 1px solid #e9ecef;
+    }
+
+    &-title {
+        font-weight: 500;
+        color: #212529;
+    }
+
+    &-location {
+        color: #6c757d;
+        font-size: 0.875rem;
+    }
+
+    &-details {
+        color: #495057;
+        font-size: 0.875rem;
+    }
+}

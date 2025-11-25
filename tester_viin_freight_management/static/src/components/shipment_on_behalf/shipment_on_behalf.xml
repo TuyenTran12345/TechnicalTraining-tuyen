@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="viin_freight_management.ShipmentOnBehalf" owl="1">
+        <div class="d-flex justify-content-between h4 fw-bold mt-3">
+            <span>On Behalf Items</span>
+        </div>
+        <div class="o_profitability_grid">
+            <!-- Header -->
+            <div class="row text-muted small border-bottom mx-0 px-3 pb-1 mb-1">
+                <div class="col-5">Description</div>
+                <div class="col text-end">Collected</div>
+                <div class="col text-end">
+                    Remaining
+                    <i class="fa fa-info-circle ms-1" t-att-title="remainingAmountTooltip"/>
+                </div>
+                <div class="col text-end">Expected</div>
+            </div>
+            <!-- Body -->
+            <t t-foreach="props.data.data" t-as="line" t-key="line.id">
+                <div class="row mx-0 px-3 py-1 align-items-center">
+                    <div class="col-5 text-truncate" t-att-title="line.name">
+                        <t t-esc="line.name"/>
+                    </div>
+                    <div class="col text-end"><t t-esc="format(line.billed_amount)"/></div>
+                    <div t-att-class="'col text-end ' + getRemainingAmountClass(line)"><t t-esc="format(line.to_bill_amount)"/></div>
+                    <div class="col text-end"><t t-esc="format(line.amount)"/></div>
+                </div>
+            </t>
+            <!-- Footer -->
+            <div class="row border-top mx-0 px-3 pt-1 mt-1">
+                <div class="col-5"><strong>Total</strong></div>
+                <div class="col text-end fw-bold"><t t-esc="format(totalOnBehalf.billed)"/></div>
+                <div class="col text-end fw-bold"><t t-esc="format(totalOnBehalf.to_bill)"/></div>
+                <div class="col text-end fw-bold"><t t-esc="format(totalOnBehalf.expected)"/></div>
+            </div>
+        </div>
+    </t>
+
+</templates>

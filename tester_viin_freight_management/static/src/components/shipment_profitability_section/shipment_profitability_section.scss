@@ -1,0 +1,30 @@
+.v_shipment_profitability_sidebar {
+    // Kế thừa các biến và style chung từ .o_rightpanel của project
+    $o-rightpanel-p: $o-horizontal-padding;
+    $o-rightpanel-p-small: $o-horizontal-padding * 0.5;
+
+    padding: $o-rightpanel-p-small $o-rightpanel-p $o-rightpanel-p * 2 $o-rightpanel-p;
+    min-width: 350px;
+    max-width: 500px;
+
+    .o_kanban_card_header {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 1rem;
+    }
+
+    .container-fluid {
+        padding: 0 !important;
+    }
+
+    strong {
+        color: var(--o-main-text-color);
+    }
+    h4 {
+        color: var(--o-main-text-color);
+    }
+
+    .row {
+        align-items: center;
+    }
+}

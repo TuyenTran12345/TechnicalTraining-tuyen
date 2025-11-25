@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="cargo_template_data_line_tree_view" model="ir.ui.view">
+        <field name="name">freight.cargo.template.data.line.tree.view</field>
+        <field name="model">freight.cargo.template.data.line</field>
+        <field name="arch" type="xml">
+            <tree string="Cargo Template Data Lines">
+                <field name="name"/>
+                <field name="is_individual_package"/>
+                <field name="package_type_id" optional="hide"/>
+                <field name="uom_id" optional="hide"/>
+                <field name="quantity"/>
+                <field name="weight"/>
+                <field name="volume"/>
+                <field name="cargo_type_id" optional="show"/>
+                <field name="weight_uom_name" column_invisible="1"/>
+                <field name="volume_uom_name" column_invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="cargo_template_data_line_form_view" model="ir.ui.view">
+        <field name="name">freight.cargo.template.data.line.form.view</field>
+        <field name="model">freight.cargo.template.data.line</field>
+        <field name="arch" type="xml">
+            <form string="Cargo Template Data Line">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="is_individual_package"/>
+                            <field name="package_type_id"
+                                required="is_individual_package"
+                                invisible="not is_individual_package"/>
+                            <field name="uom_id"/>
+                        </group>
+                        <group>
+                            <field name="quantity"/>
+                            <label for="weight" string="Weight"/>
+                            <div class="o_row">
+                                <field name="weight"/>
+                                <field name="weight_uom_name"/>
+                            </div>
+                            <label for="volume" string="Volume"/>
+                            <div class="o_row">
+                                <field name="volume"/>
+                                <field name="volume_uom_name"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group string="Classification" name="classification">
+                        <group>
+                            <field name="cargo_type_id"/>
+                            <field name="hs_code_id"/>
+                            <field name="country_of_origin_id"/>
+                            <field name="import_tax_rate"
+                                invisible="not hs_code_id or not country_of_origin_id"/>
+                        </group>
+                        <group>
+                            <field name="is_danger"/>
+                            <field name="dg_class_id" invisible="not is_danger"/>
+                            <field name="un_number_id" options="{'no_create': True}"
+                                domain="[('dg_class_id', '=', dg_class_id)]"
+                                invisible="not is_danger"/>
+                            <field name="packaging_group" invisible="not is_danger"/>
+                            <field name="flash_point" invisible="not is_danger"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Marking &amp; Handling" name="marking">
+                            <group>
+                                <field name="need_marking"/>
+                            </group>
+                            <field name="handling_instructions"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="cargo_template_data_line_search_view" model="ir.ui.view">
+        <field name="name">freight.cargo.template.data.line.search.view</field>
+        <field name="model">freight.cargo.template.data.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Cargo Template Data Lines">
+                <field name="name"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Package Type" name="grp_package_type" context="{'group_by': 'package_type_id'}"/>
+                    <filter string="Cargo Type" name="grp_cargo_type" context="{'group_by': 'cargo_type_id'}"/>
+                    <filter string="Dangerous Goods" name="grp_is_danger" context="{'group_by': 'is_danger'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_freight_cargo_template_data_line" model="ir.actions.act_window">
+        <field name="name">Cargo Template Data Lines</field>
+        <field name="res_model">freight.cargo.template.data.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="cargo_template_data_line_search_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Cargo Template Data Line!
+            </p>
+        </field>
+    </record>
+</odoo>

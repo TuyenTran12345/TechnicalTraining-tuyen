@@ -1,0 +1,25 @@
+<odoo noupdate="1">
+    <record id="shipment_status_complete" model="freight.shipment.status.template">
+        <field name="name">Completed</field>
+    </record>
+
+    <record id="shipment_status_on_track" model="freight.shipment.status.template">
+        <field name="name">On Track</field>
+    </record>
+
+    <record id="shipment_status_import_customs_clearance" model="freight.shipment.status.template">
+        <field name="name">Import Customs Clearance</field>
+    </record>
+
+    <record id="shipment_status_export_customs_clearance" model="freight.shipment.status.template">
+        <field name="name">Export Customs Clearance</field>
+    </record>
+
+    <record id="shipment_status_incident" model="freight.shipment.status.template">
+        <field name="name">Incident</field>
+    </record>
+
+    <record id="shipment_status_cancelled" model="freight.shipment.status.template">
+        <field name="name">Cancelled</field>
+    </record>
+</odoo>

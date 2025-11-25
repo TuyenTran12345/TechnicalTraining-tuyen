@@ -1,0 +1,66 @@
+id,name,country_id:id,ref,is_port
+AE_DXB,Dubai International Airport,base.ae,DXB,1
+AUMEL,Port of Melbourne,base.au,MEL,1
+AUSYD,Port Botany (Sydney),base.au,SYD,1
+BEANR,Port of Antwerp,base.be,ANR,1
+CN_PVG,Shanghai Pudong International Airport,base.cn,PVG,1
+CNXMN,Xiamen Port,base.cn,XMN,1
+CNNGB,Ningbo-Zhoushan Port,base.cn,NGB,1
+CNSWA,Shantou Port,base.cn,SWA,1
+CNSHA,Shanghai Port,base.cn,SHA,1
+CNSZX,Shenzhen Port,base.cn,SZX,1
+DEBRV,Port of Bremerhaven,base.de,BRV,1
+DEHAM,Port of Hamburg,base.de,HAM,1
+ESBCN,Port of Barcelona,base.es,BCN,1
+FRLEH,Port of Le Havre,base.fr,LEH,1
+HK_HKG,Hong Kong International Airport,base.hk,HKG,1
+IDSUB,Port of Surabaya,base.id,SUB,1
+IDTPK,Tanjung Priok Port,base.id,TPK,1
+INMAA,Chennai Port,base.in,MAA,1
+INBOM,Mumbai Port,base.in,BOM,1
+ITGOA,Port of Genoa,base.it,GOA,1
+JP_NRT,Narita International Airport,base.jp,NRT,1
+JPOSA,Port of Osaka,base.jp,OSA,1
+JPKOB,Port of Kobe,base.jp,KOB,1
+JPNGO,Port of Nagoya,base.jp,NGO,1
+JPYOK,Port of Yokohama,base.jp,YOK,1
+KHRPH,Port of Phnom Penh,base.kh,RPH,1
+KR_ICN,Incheon International Airport,base.kr,ICN,1
+KRPUS,Port of Busan,base.kr,PUS,1
+KRINC,Port of Incheon,base.kr,KRINC,1
+MMRGN,Port of Yangon,base.mm,RGN,1
+MYTPP,Tanjung Pelepas Port,base.my,TPP,1
+MYPKG,Port Klang,base.my,PKG,1
+NLRTM,Port of Rotterdam,base.nl,RTM,1
+PHMNL,Port of Manila,base.ph,MNL,1
+RUVVO,Port of Vladivostok,base.ru,VVO,1
+RUSTP,Port of St. Petersburg,base.ru,STP,1
+SGSIN,Port of Singapore,base.sg,SGSIN,1
+SG_SIN,Singapore Changi Airport,base.sg,SIN,1
+THLCH,Laem Chabang Port,base.th,LCH,1
+TH_BKK,Suvarnabhumi Airport,base.th,THBKK,1
+THBKK,Bangkok Port,base.th,BKK,1
+USSAV,Port of Savannah,base.us,SAV,1
+USHOU,Port of Houston,base.us,HOU,1
+USLAX,Port of Los Angeles,base.us,USLAX,1
+USLGB,Port of Long Beach,base.us,LGB,1
+US_LAX,Los Angeles International Airport,base.us,LAX,1
+USNYC,Port of New York/New Jersey,base.us,NYC,1
+VNCM1,Cai Mep Port,base.vn,CM1,1
+VN_DAD,Da Nang International Airport,base.vn,DAD,1
+VNHPH,Hai Phong Port,base.vn,HPH,1
+VNDVU,Dinh Vu Port,base.vn,DVU,1
+VN_SGN,Tan Son Nhat International Airport,base.vn,SGN,1
+VNDAN,Da Nang Port,base.vn,DAN,1
+VNTHO,Tho Quang Port,base.vn,THO,1
+VNNSG,Nghi Son Port,base.vn,NSG,1
+VNQNH,Quang Ninh Port,base.vn,QNH,1
+VNVTU,Vung Tau Port,base.vn,VTU,1
+VNCAN,Can Tho Port,base.vn,CAN,1
+VN_HAN,Noi Bai International Airport,base.vn,HAN,1
+VNCL1,Cat Lai Port,base.vn,CL1,1
+VNCLO,Cua Lo Port,base.vn,CLO,1
+VNDQP,Dung Quat Port,base.vn,DQP,1
+VNCMP,Chan May Port,base.vn,CMP,1
+VNQNP,Quy Nhon Port,base.vn,QNP,1
+VNVA1,Vung Ang Port,base.vn,VA1,1

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Quotation Template for Sea Freight - Dinh Vu to Singapore Container 40ft -->
+        <record id="freight_sea_dinhvu_usa_40ft_template" model="sale.order.template">
+            <field name="name">Sea Freight - Dinh Vu to USA - Container 40ft</field>
+            <field name="number_of_days">30</field>
+            <field name="note" type="html">
+                <section class="pt32 pb32">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <li>Rates are valid for 30 days from quotation date</li>
+                                <li>All prices are in USD unless otherwise specified</li>
+                                <li>Transit times are estimates and not guaranteed</li>
+                                <li>Subject to carrier's terms and conditions</li>
+                                <li>Excludes customs duties and taxes at destination</li>
+                                <li>Shipments subject to inspection and security screening</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </field>
+        </record>
+
+        <!-- Main freight service line -->
+        <record id="freight_sea_dinhvu_usa_40ft_template_line_1" model="sale.order.template.line">
+            <field name="sale_order_template_id" ref="freight_sea_dinhvu_usa_40ft_template"/>
+            <field name="name">Sea Freight 40ft Container - Dinh Vu to USA</field>
+            <field name="product_id" ref="viin_freight_management.product_variant_freight_route_dinhvu_usa_sea_fcl_40ft_hc_demo"/>
+            <field name="product_uom_qty">1</field>
+        </record>
+
+        <record id="freight_sea_dinhvu_usa_40ft_template_line_2" model="sale.order.template.line">
+            <field name="sale_order_template_id" ref="freight_sea_dinhvu_usa_40ft_template"/>
+            <field name="name">Terminal Handling Charge (THC) - Dinh Vu Port - 40ft Container</field>
+            <field name="product_id" ref="viin_freight_management.product_variant_thc_dinhvu_container_40ft_dry_demo"/>
+            <field name="product_uom_qty">1</field>
+        </record>
+
+        <record id="freight_sea_dinhvu_usa_40ft_template_line_3" model="sale.order.template.line">
+            <field name="sale_order_template_id" ref="freight_sea_dinhvu_usa_40ft_template"/>
+            <field name="name">Customs Clearance - Dinh Vu Port - 40ft Container</field>
+            <field name="product_id" ref="viin_freight_management.product_variant_customs_clearance_dinhvu_demo"/>
+            <field name="product_uom_qty">1</field>
+        </record>
+        
+        <record id="freight_sea_dinhvu_usa_40ft_template_option_1" model="sale.order.template.option">
+            <field name="sale_order_template_id" ref="freight_sea_dinhvu_usa_40ft_template"/>
+            <field name="name">Documentation Fee</field>
+            <field name="product_id" ref="viin_freight_management.product_variant_documentation_fee_dinhvu_demo"/>
+            <field name="quantity">1</field>
+        </record>
+        
+        <record id="freight_sea_dinhvu_usa_40ft_template_option_2" model="sale.order.template.option">
+            <field name="sale_order_template_id" ref="freight_sea_dinhvu_usa_40ft_template"/>
+            <field name="name">Container Cleaning Fee</field>
+            <field name="product_id" ref="viin_freight_management.product_variant_container_cleaning_dinhvu_port_demo"/>
+            <field name="quantity">1</field>
+        </record>
+    </data>
+</odoo>

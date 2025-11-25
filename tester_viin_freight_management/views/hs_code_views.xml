@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="hs_code_tree_view" model="ir.ui.view">
+        <field name="name">hs.code.tree.view</field>
+        <field name="model">hs.code</field>
+        <field name="arch" type="xml">
+            <tree string="HS Codes">
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="hs_code_form_view" model="ir.ui.view">
+        <field name="name">hs.code.form.view</field>
+        <field name="model">hs.code</field>
+        <field name="arch" type="xml">
+            <form string="HS Code">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="hs_code_search_view" model="ir.ui.view">
+        <field name="name">hs.code.search.view</field>
+        <field name="model">hs.code</field>
+        <field name="arch" type="xml">
+            <search string="Search HS Codes">
+                <field name="code"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_hs_code" model="ir.actions.act_window">
+        <field name="name">HS Codes</field>
+        <field name="res_model">hs.code</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="hs_code_search_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first HS Code!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="freight_menu_config_cargo_info_hs_code"
+        name="HS Codes"
+        parent="freight_menu_config_cargo_info"
+        action="action_hs_code"
+        sequence="20"/>
+</odoo>

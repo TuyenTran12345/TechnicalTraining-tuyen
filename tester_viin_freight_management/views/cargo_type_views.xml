@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="cargo_type_tree_view" model="ir.ui.view">
+        <field name="name">cargo.type.tree.view</field>
+        <field name="model">cargo.type</field>
+        <field name="arch" type="xml">
+            <tree string="Cargo Types">
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="cargo_type_form_view" model="ir.ui.view">
+        <field name="name">cargo.type.form.view</field>
+        <field name="model">cargo.type</field>
+        <field name="arch" type="xml">
+            <form string="Cargo Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="cargo_type_search_view" model="ir.ui.view">
+        <field name="name">cargo.type.search.view</field>
+        <field name="model">cargo.type</field>
+        <field name="arch" type="xml">
+            <search string="Search Cargo Types">
+                <field name="code"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_cargo_type" model="ir.actions.act_window">
+        <field name="name">Cargo Types</field>
+        <field name="res_model">cargo.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="cargo_type_search_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Cargo Type!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="freight_menu_config_cargo_info_cargo_type"
+        name="Cargo Types"
+        parent="freight_menu_config_cargo_info"
+        action="action_cargo_type"
+        sequence="10"/>
+</odoo>
