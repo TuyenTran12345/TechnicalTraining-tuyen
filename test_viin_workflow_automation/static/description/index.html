@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Automation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+</head>
+<body class="bg-light" style="line-height:1.25">
+<div class="container py-4">
+    <section class="mb-4 rounded-4 shadow-sm p-4 p-lg-5 text-white" style="background-image: linear-gradient(120deg, #00BBCE, #7F4282)">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge bg-dark"><i class="fa fa-check-circle-o me-1"></i>Community</span>
+                    <span class="badge bg-dark"><i class="fa fa-check-circle-o me-1"></i>Business Process</span>
+                </div>
+                <p class="text-uppercase small fw-semibold mb-1" style=" font-size:13px; line-height:1.2">BPMN 2.0 for Odoo</p>
+                <h1 class="h2 fw-bold mb-3 text-white" style=" font-size:32px; line-height:1.15; letter-spacing:0.2px">Workflow Automation</h1>
+                <p class="mb-4" style=" font-size:13px; line-height:1.25">Design, execute, and monitor enterprise workflows visually in Odoo with BPMN 2.0 diagrams, flexible triggers, smart task orchestration, and real-time execution visibility.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="border rounded-4 shadow-sm overflow-hidden bg-white p-2">
+                    <div class="media_iframe_video w-100 rounded-4" data-oe-expression="//www.youtube.com/embed/-iNgRuxvz0Q?si=PkCPFk0L3V0bE2Xo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(135deg, #eefbfc, #f5eef5); border:1px solid #eadfeb">
+            <div class="row g-3 align-items-end mb-3">
+                <div class="col-lg-7">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge" style="background-color:#7F4282 !important; color:white !important"><i class="fa fa-sliders me-1"></i>Features</span>
+                        <span class="small fw-semibold" style=" font-size:13px; line-height:1.2; color:#7F4282">Built for real-world process orchestration</span>
+                    </div>
+                    <h2 class="h3 fw-bold mb-2" style=" font-size:28px; line-height:1.15; color:#0b2336; letter-spacing:0.2px">Core capabilities</h2>
+                    <p class="text-muted mb-0" style=" font-size:13px; line-height:1.25">From BPMN design to monitoring and governance, the module covers the full workflow lifecycle in a way that feels native to Odoo.</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="h-100 rounded-4 p-4 shadow-sm d-flex flex-column" style="background-color:#ffffff; border:1px solid #d8f4f7; box-shadow:0 12px 30px #e7eaef; min-height:225px">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:48px; height:48px; background-color:#def6f8; color:#00BBCE">
+                            <i class="fa fa-sitemap"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style=" font-size:16px; line-height:1.2; color:#0b2336">Visual designer</h5>
+                        <p class="small text-muted mb-3" style=" font-size:13px; line-height:1.25; flex-grow:1">Drag-and-drop BPMN 2.0 editor with tasks, gateways, events, pools, lanes, XML editing, and workflow versioning.</p>
+                        <div class="small fw-semibold mt-auto" style="color:#00BBCE">Design once, publish with control</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 rounded-4 p-4 shadow-sm d-flex flex-column" style="background-color:#ffffff; border:1px solid #e8dceb; box-shadow:0 12px 30px #e7eaef; min-height:225px">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:48px; height:48px; background-color:#efe6f0; color:#7F4282">
+                            <i class="fa fa-play-circle"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style=" font-size:16px; line-height:1.2; color:#0b2336">Flexible triggering</h5>
+                        <p class="small text-muted mb-3" style=" font-size:13px; line-height:1.25; flex-grow:1">Start workflows manually, from record events, or on recurring schedules with configurable recurrence patterns.</p>
+                        <div class="small fw-semibold mt-auto" style="color:#7F4282">React to users, data, or time</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 rounded-4 p-4 shadow-sm d-flex flex-column" style="background-color:#ffffff; border:1px solid #d6f2e7; box-shadow:0 12px 30px #e7eaef; min-height:225px">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:48px; height:48px; background-color:#e0f7ef; color:#12a66a">
+                            <i class="fa fa-cogs"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2" style=" font-size:16px; line-height:1.2; color:#0b2336">Execution engine</h5>
+                        <p class="small text-muted mb-3" style=" font-size:13px; line-height:1.25; flex-grow:1">State-driven BPMN execution with automatic tasks, manual assignments, waiting states, and priority-based scheduling.</p>
+                        <div class="small fw-semibold mt-auto" style="color:#12a66a">Reliable flow control at runtime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(180deg, #f8faff, #f3f5ff); border:1px solid #edf0f4">
+            <div class="row g-3 align-items-end mb-3">
+                <div class="col-lg-7">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-success"><i class="fa fa-check me-1"></i>Why it matters</span>
+                        <span class="small fw-semibold" style=" font-size:13px; line-height:1.2; color:#14824f">Business impact</span>
+                    </div>
+                    <h2 class="h3 fw-bold mb-2" style=" font-size:28px; line-height:1.15; color:#0b2336; letter-spacing:0.2px">Benefits</h2>
+                    <p class="text-muted mb-0" style=" font-size:13px; line-height:1.25">The module is not just a designer. It shortens rollout time, improves consistency, and gives operators the control they usually only get from custom-built workflow systems.</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="h-100 bg-white rounded-4 p-4 shadow-sm d-flex align-items-start gap-3" style="box-shadow:0 12px 28px #e7eaef">
+                        <span class="d-inline-flex flex-column align-items-center justify-content-center flex-shrink-0 rounded-4 fw-bold" style="width:58px; min-height:64px; background-image: linear-gradient(180deg, #ddf6e7, #f1fbf5); color:#1f8f49; border:1px solid #d2efdd; line-height:1">
+                            <span style="font-size:24px">01</span>
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-1" style=" font-size:16px; line-height:1.2; color:#0b2336">Accelerated automation</h5>
+                            <p class="small text-muted mb-0" style=" font-size:13px; line-height:1.25">Model complex workflows visually in hours instead of building custom approval logic from scratch.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100 bg-white rounded-4 p-4 shadow-sm d-flex align-items-start gap-3" style="box-shadow:0 12px 28px #e7eaef">
+                        <span class="d-inline-flex flex-column align-items-center justify-content-center flex-shrink-0 rounded-4 fw-bold" style="width:58px; min-height:64px; background-image: linear-gradient(180deg, #eee5ef, #f7f2f7); color:#7F4282; border:1px solid #e8dceb; line-height:1">
+                            <span style="font-size:24px">02</span>
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-1" style=" font-size:16px; line-height:1.2; color:#0b2336">Real-time visibility</h5>
+                            <p class="small text-muted mb-0" style=" font-size:13px; line-height:1.25">See where each workflow instance is, who is responsible, and where bottlenecks happen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100 bg-white rounded-4 p-4 shadow-sm d-flex align-items-start gap-3" style="box-shadow:0 12px 28px #e7eaef">
+                        <span class="d-inline-flex flex-column align-items-center justify-content-center flex-shrink-0 rounded-4 fw-bold" style="width:58px; min-height:64px; background-image: linear-gradient(180deg, #fdf0d3, #fff7e8); color:#c98a08; border:1px solid #fbe8c5; line-height:1">
+                            <span style="font-size:24px">03</span>
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-1" style=" font-size:16px; line-height:1.2; color:#0b2336">Consistent execution</h5>
+                            <p class="small text-muted mb-0" style=" font-size:13px; line-height:1.25">Automated flow control reduces manual errors and ensures every instance follows the same logic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100 bg-white rounded-4 p-4 shadow-sm d-flex align-items-start gap-3" style="box-shadow:0 12px 28px #e7eaef">
+                        <span class="d-inline-flex flex-column align-items-center justify-content-center flex-shrink-0 rounded-4 fw-bold" style="width:58px; min-height:64px; background-image: linear-gradient(180deg, #dff4f8, #f0fbfd); color:#1f96af; border:1px solid #d3edf3; line-height:1">
+                            <span style="font-size:24px">04</span>
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-1" style=" font-size:16px; line-height:1.2; color:#0b2336">Compliance &amp; auditability</h5>
+                            <p class="small text-muted mb-0" style=" font-size:13px; line-height:1.25">Maintain execution history, version control, timestamps, responsible users, and detailed failure traces.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100 bg-white rounded-4 p-4 shadow-sm d-flex align-items-start gap-3" style="box-shadow:0 12px 28px #e7eaef">
+                        <span class="d-inline-flex flex-column align-items-center justify-content-center flex-shrink-0 rounded-4 fw-bold" style="width:58px; min-height:64px; background-image: linear-gradient(180deg, #e7e9ed, #f4f5f7); color:#111827; border:1px solid #dfe3e8; line-height:1">
+                            <span style="font-size:24px">05</span>
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-1" style=" font-size:16px; line-height:1.2; color:#0b2336">Scalable process management</h5>
+                            <p class="small text-muted mb-0" style=" font-size:13px; line-height:1.25">Support concurrent instances, reusable subprocesses, and efficient state-based execution at scale.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="h-100 bg-white rounded-4 p-4 shadow-sm d-flex align-items-start gap-3" style="box-shadow:0 12px 28px #e7eaef">
+                        <span class="d-inline-flex flex-column align-items-center justify-content-center flex-shrink-0 rounded-4 fw-bold" style="width:58px; min-height:64px; background-image: linear-gradient(180deg, #f0e4f0, #f8f2f8); color:#a04ca0; border:1px solid #eadbeb; line-height:1">
+                            <span style="font-size:24px">06</span>
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-1" style=" font-size:16px; line-height:1.2; color:#0b2336">Faster process change rollout</h5>
+                            <p class="small text-muted mb-0" style=" font-size:13px; line-height:1.25">Update workflows visually, validate drafts, and publish new versions without code deployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: url('/icon.png'); background-size:cover; border:1px solid #e0e4eb">
+            <ul class="nav nav-tabs mb-3" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" style="color:#7f4282" data-bs-toggle="tab" href="#tab-overview" role="tab" aria-selected="true">Overview</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" style="color:#7f4282" data-bs-toggle="tab" href="#tab-demo" role="tab" aria-selected="false">Demo</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" style="color:#7f4282" data-bs-toggle="tab" href="#tab-support" role="tab" aria-selected="false">Support</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" style="color:#7f4282" data-bs-toggle="tab" href="#tab-tech" role="tab" aria-selected="false">Technical requirement</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" style="color:#7f4282" data-bs-toggle="tab" href="#tab-changelog" role="tab" aria-selected="false">Changes log</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab-overview" role="tabpanel">
+                    <div class="border rounded-3 p-3 mt-4 bg-white shadow-sm">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <h5 class="fw-bold mb-0" style=" font-size:16px; line-height:1.2; color:#0b2336">Workflow overview in one table</h5>
+                        </div>
+                        <div class="border rounded-3 overflow-hidden" style="border-color:#d9dce7 !important">
+                            <div class="row g-0 border-bottom">
+                                <div class="col-lg-3 p-3 text-white fw-bold" style="background-image: linear-gradient(135deg, #7F4282, #00BBCE)">Solution</div>
+                                <div class="col-lg-9 p-3 bg-white text-muted">BPMN 2.0 workflow engine for visual design, automated execution, and real-time monitoring in Odoo.</div>
+                            </div>
+                            <div class="row g-0 border-bottom" style="background-color:#fbfbfe">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#f2ebf2; color:#0b2336">Problems solved</div>
+                                <div class="col-lg-9 p-3 text-muted">Manual tracking, rigid automation rules, low process visibility, scattered logic, and inconsistent execution.</div>
+                            </div>
+                            <div class="row g-0 border-bottom">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#ebfafc; color:#0b2336">Design</div>
+                                <div class="col-lg-9 p-3 bg-white text-muted">Drag-and-drop BPMN editor with tasks, gateways, events, pools, lanes, XML editing, and workflow versioning.</div>
+                            </div>
+                            <div class="row g-0 border-bottom" style="background-color:#fbfbfe">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#f2ebf2; color:#0b2336">Triggers</div>
+                                <div class="col-lg-9 p-3 text-muted">Manual launch, event-based start on record changes, and recurring schedules by day, week, month, or year.</div>
+                            </div>
+                            <div class="row g-0 border-bottom">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#ebfafc; color:#0b2336">Execution</div>
+                                <div class="col-lg-9 p-3 bg-white text-muted">State-driven engine with automatic tasks, manual assignments, waiting events, error handling, and priority scheduling.</div>
+                            </div>
+                            <div class="row g-0 border-bottom" style="background-color:#fbfbfe">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#f2ebf2; color:#0b2336">Integration</div>
+                                <div class="col-lg-9 p-3 text-muted">Attach to any Odoo model, run server actions, assign users dynamically, use activities, and push live status updates.</div>
+                            </div>
+                            <div class="row g-0 border-bottom">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#ebfafc; color:#0b2336">Advanced control</div>
+                                <div class="col-lg-9 p-3 bg-white text-muted">Concurrent instances, conditional routing with domains, subprocesses, input/output mappings, retry, and skip with approval.</div>
+                            </div>
+                            <div class="row g-0 border-bottom" style="background-color:#fbfbfe">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#f2ebf2; color:#0b2336">Monitoring</div>
+                                <div class="col-lg-9 p-3 text-muted">Execution history, visual state viewer, stack-trace errors, progress tracking, log retention, and automated cleanup.</div>
+                            </div>
+                            <div class="row g-0 border-bottom">
+                                <div class="col-lg-3 p-3 fw-bold" style="background-color:#ebfafc; color:#0b2336">Security</div>
+                                <div class="col-lg-9 p-3 bg-white text-muted">Role-based, model-based, and record-level access control with organized task assignment by pools and lanes.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 mt-4">
+                        <h4 class="fw-bold text-center mb-2" style=" font-size:26px; line-height:1.15; color:#0b2336">Create workflow</h4>
+                        <p class="text-center text-muted mb-3" style=" font-size:18px; line-height:1.25">Draw workflow features directly inside the software with a visual BPMN design experience.</p>
+                        <img src="assets/automation_create.png" class="img-fluid w-100 rounded-4 shadow-sm" alt="Create workflow" style="object-fit:cover">
+                    </div>
+                    <div class="p-3 mt-4">
+                        <h4 class="fw-bold text-center mb-2" style=" font-size:26px; line-height:1.15; color:#0b2336">Set up Automation</h4>
+                        <p class="text-center text-muted mb-3" style=" font-size:18px; line-height:1.25">Configure conditions for each node to trigger automated activities or messages during execution.</p>
+                        <img src="assets/set_up_rule.png" class="img-fluid w-100 rounded-4 shadow-sm" alt="Set up workflow rule" style="object-fit:cover">
+                    </div>
+                    <div class="p-3 mt-4">
+                        <h4 class="fw-bold text-center mb-2" style=" font-size:26px; line-height:1.15; color:#0b2336">Complete workflow</h4>
+                        <p class="text-center text-muted mb-3" style=" font-size:18px; line-height:1.25">Finish an entire business workflow and track the completed operational flow from start to end.</p>
+                        <img src="assets/automation_complete.png" class="img-fluid w-100 rounded-4 shadow-sm" alt="Complete workflow" style="object-fit:cover">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-demo" role="tabpanel">
+                    <div class="border rounded-4 p-3 bg-white shadow-sm mt-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge" style="background-color:#00BBCE"><i class="fa fa-play-circle me-1"></i>Demo</span>
+                            <h5 class="fw-bold mb-0" style=" font-size:16px; line-height:1.2; color:#0b2336">Full Demo video</h5>
+                        </div>
+                        <div class="w-100 rounded-4 overflow-hidden">
+                            <div class="media_iframe_video w-100 rounded-4" data-oe-expression="//www.youtube.com/embed/ZOBzLQGQWo4?si=V7Hw0KH8fQ5h7y9o"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-support" role="tabpanel">
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="card border rounded-3 shadow-sm h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="h5 fw-bold">Pre-Sales Question</h3>
+                                    <p class="text-muted flex-grow-1">Need help before purchasing? Share module name &amp; version, edition (CE/EE), and the issue you want to automate. Attach screenshots or process diagrams if possible.</p>
+                                    <a class="btn w-100" href="mailto:sales@viindoo.com" style="background-color: #00BBCE; border:none; color: white !important">
+                                        <i class="fa fa-envelope-o me-1"></i> sales@viindoo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border rounded-3 shadow-sm h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="h5 fw-bold">Support</h3>
+                                    <p class="text-muted flex-grow-1">For technical assistance, include your order number, workflow scenario, expected result, actual result, and any screenshots or videos that reproduce the issue.</p>
+                                    <a class="btn w-100" href="mailto:apps.support@viindoo.com" style="background-color: #7F4282; border:none; color: white !important">
+                                        <i class="fa fa-envelope-o me-1"></i> apps.support@viindoo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-tech" role="tabpanel">
+                    <div class="border rounded-3 p-3 bg-white">
+                        <h5 class="fw-bold mb-2">Technical requirement</h5>
+                        <ul class="small text-muted mb-0">
+                            <li>Supported on Odoo Community Edition and Enterprise Edition.</li>
+                            <li>Recommended for environments that need workflow automation across standard or custom Odoo models.</li>
+                            <li>Uses OWL-based frontend components and BPMN-compatible workflow modeling.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-changelog" role="tabpanel">
+                    <div class="border rounded-3 p-3 bg-white">
+                        <h5 class="fw-bold mb-2">Changes log</h5>
+                        <ul class="small text-muted mb-0">
+                            <li><strong>v1.0.0</strong> - Initial release with BPMN 2.0 designer, flexible triggers, workflow execution engine, Odoo integration, monitoring, security, and automated test coverage.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-color: ghostwhite">
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="badge bg-warning text-dark"><i class="fa fa-users me-1"></i>Audience</span>
+                <h2 class="h4 fw-bold mb-0 section-title" style="color:#0b2336">Who should use this module?</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="h-100 border rounded-3 p-3 shadow-sm">
+                        <h6 class="fw-bold mb-1 card-title" style="color:#0b2336">Manufacturing companies</h6>
+                        <p class="small text-muted mb-0">Automate quality control, production approvals, and equipment maintenance workflows.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="h-100 border rounded-3 p-3 shadow-sm">
+                        <h6 class="fw-bold mb-1 card-title" style="color:#0b2336">Financial and service organizations</h6>
+                        <p class="small text-muted mb-0">Standardize multi-step approvals, onboarding, compliance, case handling, and escalations.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="h-100 border rounded-3 p-3 shadow-sm">
+                        <h6 class="fw-bold mb-1 card-title" style="color:#0b2336">Project-driven Odoo users</h6>
+                        <p class="small text-muted mb-0">Need visual process design, conditional routing, reusable subprocesses, and enterprise-grade workflow control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

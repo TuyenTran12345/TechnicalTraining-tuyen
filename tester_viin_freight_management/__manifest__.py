@@ -1,64 +1,79 @@
 {
-    'name': "All-in-One Freight Forwarder Management",
-    'name_vi_VN': "Giao nhận vận tải",
+    'name': "Viin Freight Complete Suite",
+    'name_vi_VN': "Bộ giải pháp Freight tổng thể",
 
-    'summary': "All-in-one freight forwarder management from inquiry to profitability with real-time tracking and customer portal.",
-    'summary_vi_VN': "Giải pháp giao nhận vận tải toàn diện từ tiếp nhận yêu cầu, đặt chỗ, vận hành shipment đến theo dõi và phân tích lợi nhuận.",
+    'summary': "Install the full freight & logistics suite: multi-modal shipments, consolidation, air/road/sea, logistics, sales, projects, supplier pricelist, on-behalf payments, documents, Gantt, dashboards, and accounting.",
+    'summary_vi_VN': "Trọn bộ giải pháp Freight: shipment đa phương thức, gom hàng, hàng không/đường bộ/đường biển, logistics, bán hàng, dự án, bảng giá NCC, thu hộ/chi hộ, tài liệu, Gantt, dashboard và kế toán.",
 
     'description': """
 
 Overview
 ========
-All-in-One Freight Forwarder Management centralizes the logistics operation for freight forwarders, from customer inquiry and quotation to booking, shipment execution, tracking, and profitability review.
+This strategic bundle installs every freight and logistics module in one click so forwarders and 3PLs get a production-ready, end-to-end stack spanning multi-modal operations, consolidation, sales, procurement, projects, documents, supplier pricing, and accounting.
 
-Key Features
-============
+Included Modules & Highlights
+============================
 
-**End-to-End Shipment Management**
+Freight Core
+------------
+- **Freight Management:** Multi-modal shipments (sea/air/land), bookings, tracking timeline (Kanban) & customer portal, HBL/MBL, HS/UN/DG cargo data, profitability sidebar, ETD/ETA reminders.
+- **Freight Consolidation:** LCL/groupage consolidation, master/house BL linking, surcharge management across consolidated shipments.
+- **Freight Air:** MAWB/HAWB management, air-specific cargo fields, airline carrier configuration.
+- **Freight Air Consolidation:** Air groupage consolidation, MAWB-level cost allocation across multiple HAWBs.
+- **Freight Road:** Road transport mode with truck/driver assignment, route-based cost tracking.
+- **Freight Document Parsing:** OCR / AI-assisted extraction from freight documents (Booking Confirmation, Shipping Instruction, AWB, BL) directly into shipment records.
 
-- Manage Sea, Air, Land, and multi-modal shipments with automatic numbering and HBL/MBL control.
-- Configure flexible workflow stages and monitor delivery performance in real time.
+Freight — Sales & Commercial
+------------------------------
+- **Freight Sale:** Freight-specific quotation templates, selling rates, service products, and customer-facing reports.
+- **Freight Sale ↔ Supplier Pricelist:** Manage buy rates from carriers/vendors alongside sell rates; compare margins per shipment.
+- **Freight Sale ↔ On-behalf:** Surface on-behalf collection/disbursement lines from sales orders directly in the shipment profitability sidebar.
+- **Freight Sale ↔ Purchase:** Auto-link subcontracted POs to routes/bookings; trace from customer order to vendor order and shipment execution.
 
-**Advanced Booking & Transport Planning**
+Freight — Projects & Operations
+---------------------------------
+- **Freight Project:** Link shipments to Odoo projects/tasks; auto-attach from freight service products; roll timesheet labor cost into shipment profitability.
+- **Freight Project Gantt:** Gantt view for freight project tasks — visualize shipment milestones and resource planning.
 
-- Build single or multi-leg bookings with vessel, flight, and trucking schedule synchronization.
-- Alert stakeholders about cutoff dates while keeping booking, routing, and shipment data aligned.
+Logistics
+---------
+- **Logistics Shipment:** Core logistics shipment management with QR codes, package tracking, and automation rules.
+- **Logistics Package Type:** Define and manage package types (pallet, box, drum…) used across logistics shipments.
+- **Logistics Cargo Template:** Reusable cargo templates for fast entry of recurring shipment cargo details.
+- **Logistics Routes:** Geo-based route planning, distance/transit-time data, map view of shipment locations, and route-to-shipment integration.
+- **Logistics Sale:** Link logistics shipments to sales orders; customer-facing logistics quotation and invoicing.
+- **Logistics Sales Team:** Assign sales teams to logistics shipments for performance tracking and commission calculation.
+- **Logistics Accounting:** Cost and revenue posting from logistics shipments to Odoo accounting.
 
-**Container, Package & Goods Management**
+Documents for Freight
+---------------------
+- **Freight & Document Integration:** Prebuilt workspaces, tags, and rules in Odoo Documents; quick access from bookings and shipments.
+- **Air Freight Document Integration:** Air-specific document workspace and AWB attachment workflow.
+- **Consolidation Document Integration:** Document management tailored to LCL consolidation (packing lists, cargo manifests).
 
-- Track containers, packages, seals, dimensions, and weight with customs-compliant cargo templates.
-- Manage HS Codes, UN Numbers, DG Classes, country of origin, and shipping marks in one place.
+Dashboards & Reporting
+-----------------------
+- **Freight Dashboard:** Spreadsheet-powered KPI dashboards covering freight sales, logistics routes, and project performance.
 
-**Real-Time Tracking & Customer Portal**
-
-- Use timeline and Kanban views with standardized status templates for operational visibility.
-- Publish shipment progress to a self-service portal with responsive search and filtering.
-
-**Sales Integration & Revenue Optimization**
-
-- Issue quotations, turn confirmed orders into shipments, and apply supplier price lists transparently.
-- Leverage templates and collection/disbursement tagging to optimize pricing and revenue capture.
-
-**Profitability Reports & Master Data Management**
-
-- Combine analytic accounts, pivot/graph reports, and dashboards to monitor margins by mode or customer.
-- Maintain complete libraries of routes, ports, airports, and logistics units with automated ETD/ETA reminders.
+Accounting Backbone
+-------------------
+- **Accounting:** Full accounting and analytic features to post entries, lock periods, and report profitability consistently across all freight and logistics flows.
 
 Benefits
 ========
-- **Streamline Operations:** Automate shipment workflows, reminders, and validation rules to reduce manual work and errors.
-- **Enhance Customer Experience:** Deliver real-time visibility and 24/7 portal access to keep stakeholders informed.
-- **Maximize Profitability:** Track costs, margins, and volume growth to identify high-value routes and customers.
-- **Ensure Compliance & Integration:** Keep customs and dangerous goods documentation accurate while integrating with Sales, Accounting, and related modules.
+- One installation brings a complete freight & logistics stack — no manual wiring between apps.
+- End-to-end traceability from quotation to booking, consolidation, shipment execution, documents, and financial entries.
+- Clear profitability per shipment by consolidating sell rates, buy rates, labor timesheets, surcharges, and on-behalf payment flows.
+- Faster onboarding with preconfigured document workspaces, cargo templates, route data, and accounting controls.
+- Full multi-modal coverage: sea (FCL/LCL), air (direct/consolidated), and road — managed under one unified interface.
 
 Who Should Use This Module
 ==========================
-- International Sea Freight (FCL and LCL operations)
-- Air Freight Cargo forwarding
-- Land Transport and trucking providers
-- Multi-modal transport coordinators
-- Import/Export and customs brokerage teams
-- Domestic logistics and regional freight agencies
+- Freight forwarders and 3PLs running multi-modal (sea/air/road) operations.
+- Teams needing unified sales–procurement–operations–accounting traceability.
+- Companies managing buy and sell rates with carrier/supplier pricelists.
+- Organizations tracking labor cost and on-behalf payments within shipment margins.
+- Operations teams requiring document management and Gantt-based shipment planning.
 
 Supported Editions
 ==================
@@ -71,56 +86,71 @@ Supported Editions
 
 Tổng quan
 =========
-Mô-đun **Giao nhận vận tải** tập trung hóa toàn bộ quy trình logistics cho doanh nghiệp giao nhận: từ tiếp nhận yêu cầu và báo giá, lập booking, vận hành shipment, theo dõi tiến độ đến đánh giá lợi nhuận.
+Gói chiến lược cài trọn bộ mô-đun Vận tải & Logistics trong một lần nhấn, mang lại hệ thống vận hành sẵn sàng triển khai bao phủ hoạt động đa phương thức, gom hàng, bán hàng, mua hàng, dự án, tài liệu, bảng giá nhà cung cấp và kế toán.
 
-Tính năng chính
-===============
+Các mô-đun & điểm nổi bật
+=========================
 
-**Quản lý Lô hàng end-to-end**
+Lõi Vận tải
+-----------
+- **Quản lý Vận tải:** Shipment đa phương thức (đường biển/hàng không/đường bộ), booking, tracking timeline (Kanban) & cổng thông tin khách hàng, HBL/MBL, dữ liệu hàng hóa HS/UN/DG, sidebar lợi nhuận, nhắc ETD/ETA.
+- **Gom hàng:** Consolidation LCL, liên kết Master/House BL, quản lý phụ phí trên toàn lô gom.
+- **Hàng không:** Quản lý MAWB/HAWB, trường hàng hóa đặc thù hàng không, cấu hình hãng bay.
+- **Gom hàng hàng không:** Gom hàng air groupage, phân bổ chi phí MAWB theo từng HAWB.
+- **Đường bộ:** Phương thức vận tải đường bộ với phân công xe/lái xe, theo dõi chi phí theo tuyến.
+- **OCR / Phân tích tài liệu:** Nhận dạng và trích xuất tự động (OCR/AI) từ chứng từ vận tải (Booking Confirmation, Shipping Instruction, AWB, BL) trực tiếp vào shipment.
 
-- Kiểm soát lô hàng đường biển, hàng không, đường bộ và đa phương thức với đánh số tự động cùng HBL/MBL.
-- Thiết lập các bước xử lý linh hoạt và giám sát hiệu suất giao hàng theo thời gian thực.
+Vận tải — Thương mại & Bán hàng
+---------------------------------
+- **Bán hàng vận tải:** Mẫu báo giá đặc thù, giá bán, sản phẩm dịch vụ và báo cáo xuất khách hàng.
+- **Bảng giá nhà cung cấp:** Quản lý giá mua từ hãng tàu/nhà thầu song song với giá bán; so sánh biên lợi nhuận theo shipment.
+- **Thu hộ/Chi hộ:** Hiển thị dòng thu hộ/chi hộ từ đơn bán trực tiếp trên sidebar lợi nhuận shipment.
+- **Liên kết Bán–Mua:** Tự liên kết PO thầu phụ với tuyến/booking, truy vết từ yêu cầu khách đến đơn mua và thực thi vận tải.
 
-**Lập kế hoạch Booking & vận tải nâng cao**
+Vận tải — Dự án & Vận hành
+----------------------------
+- **Dự án vận tải:** Gắn shipment với dự án/công việc; tự liên kết theo sản phẩm dịch vụ; cộng chi phí chấm công vào lợi nhuận shipment.
+- **Gantt dự án vận tải:** Giao diện Gantt cho công việc dự án vận tải — trực quan hóa mốc lô hàng và kế hoạch nguồn lực.
 
-- Tạo booking một chặng hoặc nhiều chặng đồng bộ với lịch tàu, chuyến bay và xe tải.
-- Cảnh báo ngày cut-off, quản lý các bên liên quan và duy trì dữ liệu Booking - Route - Shipment nhất quán.
+Logistics
+---------
+- **Quản lý Logistics:** Quản lý shipment logistics với mã QR, theo dõi kiện hàng và tự động hóa.
+- **Loại kiện hàng:** Định nghĩa và quản lý loại kiện (pallet, thùng, phuy…) dùng xuyên suốt logistics.
+- **Mẫu hàng hóa:** Mẫu hàng hóa tái sử dụng để nhập nhanh thông tin hàng hóa lặp lại.
+- **Tuyến logistics:** Lập kế hoạch tuyến dựa trên địa lý, dữ liệu khoảng cách/thời gian, xem vị trí lô hàng trên bản đồ và liên kết tuyến với shipment.
+- **Bán hàng logistics:** Liên kết shipment logistics với đơn bán; báo giá và xuất hóa đơn cho khách.
+- **Nhóm bán hàng logistics:** Gán nhóm bán hàng cho shipment logistics để theo dõi hiệu suất.
+- **Kế toán logistics:** Ghi nhận chi phí và doanh thu từ logistics shipment vào kế toán Odoo.
 
-**Quản lý container, kiện hàng & hàng hóa**
+Tài liệu cho Vận tải
+--------------------
+- **Tích hợp Tài liệu:** Tạo sẵn workspace/thẻ/quy tắc trên Tài liệu; truy cập nhanh từ booking/shipment.
+- **Tài liệu hàng không:** Workspace và luồng đính kèm AWB đặc thù cho vận tải hàng không.
+- **Tài liệu gom hàng:** Quản lý tài liệu LCL (packing list, cargo manifest).
 
-- Theo dõi container, kiện, seal, kích thước và trọng lượng bằng các mẫu hàng hóa đáp ứng quy định hải quan.
-- Quản lý HS Code, số UN, phân loại hàng nguy hiểm, xuất xứ và ký mã hiệu ngay trong một hệ thống.
+Dashboard & Báo cáo
+--------------------
+- **Dashboard Vận tải:** Dashboard KPI dạng bảng tính bao phủ doanh số vận tải, tuyến logistics và hiệu suất dự án.
 
-**Theo dõi thời gian thực & cổng thông tin khách hàng**
-
-- Sử dụng Timeline và Kanban với bộ trạng thái chuẩn hóa để tăng tầm nhìn vận hành.
-- Công bố tiến độ shipment trên cổng tự phục vụ với giao diện thân thiện, bộ lọc nâng cao.
-
-**Tích hợp bán hàng & tối ưu doanh thu**
-
-- Phát hành báo giá, tự động tạo shipment từ đơn bán và áp dụng bảng giá nhà cung cấp minh bạch.
-- Tận dụng mẫu báo giá và đánh dấu thu/chi để tối ưu hóa giá bán và ghi nhận doanh thu.
-
-**Báo cáo lợi nhuận & quản trị dữ liệu nền**
-
-- Kết hợp tài khoản phân tích, báo cáo Pivot/Graph và dashboard để theo dõi biên lợi nhuận theo khách hàng hay phương thức.
-- Duy trì thư viện tuyến đường, cảng, sân bay, đơn vị logistics với nhắc nhở ETD/ETA tự động.
+Nền tảng Kế toán
+----------------
+- **Kế toán:** Đầy đủ tính năng hạch toán và phân tích để ghi nhận, khóa kỳ và báo cáo lợi nhuận nhất quán trên toàn bộ luồng vận tải và logistics.
 
 Lợi ích
 =======
-- **Chuẩn hóa vận hành:** Tự động hóa quy trình shipment, nhắc việc và quy tắc kiểm tra để giảm thao tác và sai sót.
-- **Nâng cao trải nghiệm khách hàng:** Cung cấp khả năng theo dõi tức thì và cổng tự phục vụ 24/7 cho mọi bên liên quan.
-- **Gia tăng lợi nhuận:** Kiểm soát chi phí, biên lợi nhuận và tốc độ tăng trưởng để nhận diện tuyến và khách hàng hiệu quả nhất.
-- **Đảm bảo tuân thủ & tích hợp:** Lưu trữ đầy đủ chứng từ hải quan, hàng nguy hiểm và kết nối trơn tru với Bán hàng, Kế toán cùng các mô-đun liên quan.
+- Cài một lần có ngay toàn bộ bộ giải pháp Vận tải & Logistics, không cần tự kết nối các ứng dụng.
+- Truy vết xuyên suốt từ báo giá, booking, gom hàng, vận hành, chứng từ đến bút toán tài chính.
+- Đọc biên lợi nhuận rõ ràng theo từng shipment: giá bán, giá mua, công lao động, phụ phí và thu/chi hộ.
+- Rút ngắn triển khai nhờ cấu hình sẵn workspace tài liệu, mẫu hàng hóa, dữ liệu tuyến và thiết lập kế toán.
+- Bao phủ toàn bộ phương thức: đường biển (FCL/LCL), hàng không (trực tiếp/gom), đường bộ — quản lý trên một giao diện thống nhất.
 
-Phù hợp với doanh nghiệp
-========================
-- Giao nhận đường biển quốc tế (FCL/LCL)
-- Forwarder hàng không
-- Đơn vị vận tải đường bộ và đội xe
-- Điều phối vận tải đa phương thức
-- Doanh nghiệp xuất nhập khẩu và thông quan
-- Logistics nội địa và đại lý giao nhận khu vực
+Ai nên dùng
+===========
+- Forwarder và 3PL vận hành đa phương thức (đường biển/hàng không/đường bộ).
+- Doanh nghiệp cần liên thông bán–mua–vận hành–kế toán.
+- Đơn vị quản lý giá mua/giá bán với bảng giá hãng tàu/nhà thầu.
+- Tổ chức cần tính chi phí nhân công và thu/chi hộ ngay trong biên lợi nhuận lô hàng.
+- Nhóm vận hành cần quản lý tài liệu và lập kế hoạch Gantt cho shipment.
 
 Phiên bản hỗ trợ
 ================
@@ -129,130 +159,18 @@ Phiên bản hỗ trợ
 
 """,
 
+
     'author': 'Viindoo',
     'website': 'https://viindoo.com',
     'live_test_url': 'https://v17demo-int.viindoo.com',
     'live_test_url_vi_VN': 'https://v17demo-vn.viindoo.com',
     'support': 'apps.support@viindoo.com',
     'category': 'Operations/Logistics',
-    'depends': [
-        'sale_management',
-        'sale_stock',
-        'to_geo_routes',
-        'base_geolocalize',
-        'base_automation',
-    ],
-    'data': [
-        # Security
-        'security/freight_security.xml',
-        'security/ir.model.access.csv',
-
-        # Wizards
-        'wizards/booking_confirm_resolve_views.xml',
-
-        # Data
-        'data/ir_sequence_data.xml',
-        'data/mail_template_data.xml',
-        'data/freight_shipping_method_data.xml',
-        'data/shipment_stage_data.xml',
-        'data/cargo_type_data.xml',
-        'data/freight_dg_class_data.xml',
-        'data/product_attribute_data.xml',
-        'data/res.partner.csv',
-        'data/res_partner_data.xml',
-        'data/freight.un.number.csv',
-        'data/uom_data.xml',
-        'data/hs_code_data.xml',
-        'data/freight_shipment_status_template_data.xml',
-        'data/freight_base_automation_data.xml',
-
-        # Menu
-        'views/menu_views.xml',
-
-        # Reports
-        'reports/shipment_profitability_report_views.xml',
-        'reports/shipment_progress_reports_views.xml',
-        'reports/sale_report_views.xml',
-
-        # Views
-        'views/cargo_type_views.xml',
-        'views/freight_shipping_method_views.xml',
-        'views/hs_code_views.xml',
-        'views/dg_class_views.xml',
-        'views/un_number_views.xml',
-        'views/res_partner_views.xml',
-        'views/route_route_views.xml',
-        'views/product_template_views.xml',
-        'views/product_attribute_views.xml',
-        'views/uom_uom_views.xml',
-        'views/sale_order_views.xml',
-        'views/shipment_stage_views.xml',
-        'views/booking_views.xml',
-        'views/shipment_views.xml',
-        'views/cargo_commodity_views.xml',
-        'views/cargo_template_views.xml',
-        'views/cargo_template_data_views.xml',
-        'views/cargo_template_data_line_views.xml',
-        'views/shipment_status_template_views.xml',
-        'views/freight_package_views.xml',
-        'views/freight_route_views.xml',
-        'views/shipment_tracking_views.xml',
-        'views/stock_package_type_views.xml',
-        'views/res_config_setting_views.xml',
-
-        # Templates
-        'views/shipment_portal_templates.xml',
-        'views/freight_report_actions.xml',
-        'views/freight_report_template_views.xml',
-    ],
-    'demo': [
-        'demo/res_partner_demo.xml',
-        'demo/res_users_demo.xml',
-        'demo/stock_package_type_demo.xml',
-        'demo/route_demo.xml',
-        'demo/freight_product_demo.xml',
-        'demo/freight_service_demo.xml',
-        'demo/cargo_template_data_demo.xml',
-        'demo/shipment_demo.xml',
-        'demo/shipment_tracking_demo.xml',
-        'demo/sale_order_template_demo.xml',
-        'demo/sale_order_demo.xml',
-    ],
-    'assets': {
-        'web.assets_backend': [
-            'viin_freight_management/static/src/scss/shipment_dashboard.scss',
-            'viin_freight_management/static/src/scss/shipment_kanban.scss',
-            'viin_freight_management/static/src/scss/shipment_tracking_kanban.scss',
-            'viin_freight_management/static/src/scss/shipment_tracking_right_panel.scss',
-            'viin_freight_management/static/src/components/freight_state_selection/state_selection.js',
-            'viin_freight_management/static/src/components/freight_state_selection/views.scss',
-
-            # New Sidebar Components
-            'viin_freight_management/static/src/components/shipment_on_behalf/shipment_on_behalf.js',
-            'viin_freight_management/static/src/components/shipment_on_behalf/shipment_on_behalf.xml',
-            'viin_freight_management/static/src/components/shipment_profitability/shipment_profitability.js',
-            'viin_freight_management/static/src/components/shipment_profitability/shipment_profitability.xml',
-            'viin_freight_management/static/src/components/shipment_profitability_header/shipment_profitability_header.js',
-            'viin_freight_management/static/src/components/shipment_profitability_header/shipment_profitability_header.xml',
-            'viin_freight_management/static/src/components/shipment_tracking_right_side_panel/shipment_tracking_right_side_panel.js',
-            'viin_freight_management/static/src/components/shipment_tracking_right_side_panel/shipment_tracking_right_side_panel.xml',
-            'viin_freight_management/static/src/components/shipment_right_side_panel_section/shipment_right_side_panel_section.js',
-            'viin_freight_management/static/src/components/shipment_right_side_panel_section/shipment_right_side_panel_section.xml',
-
-            # Kanban View with Sidebar
-            'viin_freight_management/static/src/views/shipment_tracking_kanban/shipment_tracking_kanban_controller.js',
-            'viin_freight_management/static/src/views/shipment_tracking_kanban/shipment_tracking_kanban_view.js',
-            'viin_freight_management/static/src/views/shipment_tracking_kanban/shipment_tracking_kanban_view.xml',
-        ],
-        'web.assets_frontend': [
-            'viin_freight_management/static/src/scss/shipment_timeline.scss',
-        ],
-    },
     'images': ['static/description/main_screenshot.png'],
     'pre_init_hook': 'pre_init_hook',
     'installable': True,
     'application': True,
-    'price': 99,
+    'price': 10000,
     'currency': 'EUR',
     'license': 'OPL-1',
 }

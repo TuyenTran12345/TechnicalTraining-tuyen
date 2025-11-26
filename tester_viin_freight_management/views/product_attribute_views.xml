@@ -1,8 +1,0 @@
-<odoo>
-
-    <menuitem id="menu_product_attribute_action"
-        parent="freight_menu_config_product"
-        action="product.attribute_action"
-        groups="product.group_product_variant"
-        sequence="10"/>
-</odoo>
