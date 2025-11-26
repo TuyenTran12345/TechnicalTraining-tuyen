@@ -12,42 +12,45 @@
     <!-- The HTML and BODY tags here are only for preview purposes during development. The Odoo App Store and backend Apps Store will automatically remove these tags, so they will have no effect on the Odoo Apps Store or backend Apps Store. -->
 
     <!-- Hero -->
-    <section id="overview_block" class="mb-4">
-        <div class="p-4 p-lg-5 bg-primary bg-gradient text-white rounded-4 shadow-sm">
+    <section id="overview_block" class="mb-4" 
+    style="background-color:#00BBCE; 
+                    background-image: linear-gradient(135deg, #00BBCE 0%, #7F4282 100%);
+                    border-radius:15px;">
+        <div class="p-4 p-lg-5 text-white rounded-4 shadow-sm">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-7">
                     <div class="d-flex flex-wrap gap-2 mb-3">
-                        <span class="badge bg-light text-dark fw-bold"><i class="fa fa-check-circle-o me-1"></i>Odoo.sh</span>
-                        <span class="badge bg-light text-dark fw-bold"><i class="fa fa-check-circle-o me-1"></i>Community</span>
-                        <span class="badge bg-light text-dark fw-bold"><i class="fa fa-check-circle-o me-1"></i>Enterprise</span>
+                        <span class="badge bg-primary fw-bold"><i class="fa fa-check-circle-o me-1"></i>Odoo.sh</span>
+                        <span class="badge bg-primary fw-bold"><i class="fa fa-check-circle-o me-1"></i>Community</span>
+                        <span class="badge bg-primary fw-bold"><i class="fa fa-check-circle-o me-1"></i>Enterprise</span>
                     </div>
-                    <p class="text-uppercase small fw-semibold mb-1">Logistics workspace</p>
-                    <h1 class="h2 fw-bold mb-3">All-in-One Freight Forwarder Management</h1>
+                    <p class="text-uppercase text-black small fw-semibold mb-1">Logistics workspace</p>
+                    <h1 class="h2 fw-bold text-white mb-3">All-in-One Freight Forwarder Management</h1>
                     <p class="mb-4">Control the whole flow: inquiries, quotations, bookings, cargo handling, tracking, customer portal, and profitability analysis across Sea, Air, Land, and multi-modal shipments.</p>
                     <div class="row g-3">
                         <div class="col-md-4">
-                            <div class="p-3 bg-white text-dark rounded-3 h-100 shadow-sm">
-                                <div class="fw-bold">Sea / Air / Land</div>
-                                <div class="small text-muted">One workflow, flexible stages</div>
+                            <div class="p-3 border border-2 border-white rounded-3 h-100 shadow-lg">
+                                <div class="small fw-bold">Sea / Air / Land</div>
+                                <div class="text-white" style="font-size: 0.75rem;">One workflow, flexible stages</div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="p-3 bg-white text-dark rounded-3 h-100 shadow-sm">
-                                <div class="fw-bold">Customer portal</div>
-                                <div class="small text-muted">Live tracking & self-service</div>
+                            <div class="p-3 border border-2 border-white rounded-3 h-100 shadow-lg">
+                                <div class="small fw-bold">Customer portal</div>
+                                <div class="text-white" style="font-size: 0.75rem;">Live tracking & self-service</div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="p-3 bg-white text-dark rounded-3 h-100 shadow-sm">
-                                <div class="fw-bold">Margin control</div>
-                                <div class="small text-muted">Profitability sidebar & reminders</div>
+                            <div class="p-3 border border-2 border-white rounded-3 h-100 shadow-lg">
+                                <div class="small fw-bold">Margin control</div>
+                                <div class="text-white" style="font-size: 0.75rem;">Profitability sidebar & reminders</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="bg-white rounded-3 p-2 shadow-sm">
-                        <img src="/assets/viin_freight-intro.gif" class="img-fluid rounded-3" alt="Freight overview">
+                        <img src="/assets/banner.png" class="img-fluid rounded-3" alt="Freight overview">
                     </div>
                 </div>
             </div>
@@ -56,425 +59,129 @@
 
     <!-- Suite modules spotlight (pills + carousel + slider) -->
     <section class="mb-4" id="suite_modules_block">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
             <div class="d-flex flex-wrap align-items-center mb-3 gap-2">
-                <span class="badge bg-primary text-white">Suite modules</span>
-                <h2 class="h4 fw-bold mb-0">Tổng hợp module mở rộng quan trọng</h2>
+                <h2 class="h4 fw-bold mb-0">Key extension modules</h2>
             </div>
-            <p class="text-muted mb-4">Tab để xem tính năng chính, carousel để xem nhanh hình ảnh (thay ảnh sau), và slider mini nhắc lại key-value. Tất cả chỉ dùng Bootstrap.</p>
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-6 d-flex flex-column">
-                    <ul class="nav nav-pills flex-lg-column flex-sm-row mb-3 gap-2" id="moduleTab" role="tablist">
+                    <ul class="nav nav-pills bg-transparent flex-lg-column flex-sm-row mb-3 gap-2" id="moduleTab" role="tablist" style="--bs-nav-pills-link-active-bg:#00bbce; --bs-nav-pills-link-active-color:#fff;">
                         <li class="nav-item flex-fill" role="presentation">
-                            <button class="nav-link active w-100 text-start" id="charges-tab" data-bs-toggle="tab" data-bs-target="#charges" type="button" role="tab" aria-controls="charges" aria-selected="true">
+                            <a class="nav-link active w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="charges-tab" data-bs-toggle="tab" href="#charges" role="tab" aria-controls="charges" aria-selected="true" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-money me-2" aria-hidden="true" style="color:#00bbce;"></i>
                                 Freight Charges &amp; Local Fees
-                            </button>
+                            </a>
                         </li>
                         <li class="nav-item flex-fill" role="presentation">
-                            <button class="nav-link w-100 text-start" id="project-tab" data-bs-toggle="tab" data-bs-target="#project" type="button" role="tab" aria-controls="project" aria-selected="false">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="project-tab" data-bs-toggle="tab" href="#project" role="tab" aria-controls="project" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-tasks me-2" aria-hidden="true" style="color:#7f4282;"></i>
                                 Freight Project &amp; Operations Tasks
-                            </button>
+                            </a>
                         </li>
                         <li class="nav-item flex-fill" role="presentation">
-                            <button class="nav-link w-100 text-start" id="onbehalf-tab" data-bs-toggle="tab" data-bs-target="#onbehalf" type="button" role="tab" aria-controls="onbehalf" aria-selected="false">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="onbehalf-tab" data-bs-toggle="tab" href="#onbehalf" role="tab" aria-controls="onbehalf" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-exchange me-2" aria-hidden="true" style="color:#00bbce;"></i>
                                 On-behalf Payment in Freight
-                            </button>
+                            </a>
                         </li>
                         <li class="nav-item flex-fill" role="presentation">
-                            <button class="nav-link w-100 text-start" id="purchase-tab" data-bs-toggle="tab" data-bs-target="#purchase" type="button" role="tab" aria-controls="purchase" aria-selected="false">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="purchase-tab" data-bs-toggle="tab" href="#purchase" role="tab" aria-controls="purchase" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-shopping-cart me-2" aria-hidden="true" style="color:#00bbce;"></i>
                                 Freight Booking &amp; Purchase Integration
-                            </button>
+                            </a>
                         </li>
                         <li class="nav-item flex-fill" role="presentation">
-                            <button class="nav-link w-100 text-start" id="document-tab" data-bs-toggle="tab" data-bs-target="#document" type="button" role="tab" aria-controls="document" aria-selected="false">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="document-tab" data-bs-toggle="tab" href="#document" role="tab" aria-controls="document" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-file-text-o me-2" aria-hidden="true" style="color:#7f4282;"></i>
                                 Freight &amp; Document Integration
-                            </button>
+                            </a>
                         </li>
                     </ul>
-                    <div class="tab-content border rounded-3 p-3 bg-light h-100" id="moduleTabContent">
+                    <div class="tab-content border border-info bg-white bg-opacity-75 rounded-3 p-3 h-100 shadow-sm" id="moduleTabContent">
                         <div class="tab-pane fade show active" id="charges" role="tabpanel" aria-labelledby="charges-tab">
                             <h5 class="fw-bold mb-2">Freight Charges &amp; Local Fees</h5>
                             <ul class="text-muted small mb-3">
-                                <li>Menu "Fees" ngay trong Freight để import/export định nghĩa phụ phí (CSV/Excel) không cần qua Sales/Product.</li>
-                                <li>Thiết lập hàng loạt cước, phụ phí địa phương, thu hộ/chi hộ; áp dụng nhanh vào báo giá và Shipment/Booking.</li>
-                                <li>Kiểm soát biên lợi nhuận bằng việc đồng bộ biểu phí vào tính giá thành và doanh thu của từng tuyến.</li>
+                                <li>"Fees" menu right inside Freight to import/export surcharge definitions (CSV/Excel) without Sales/Product.</li>
+                                <li>Bulk setup freight rates, local surcharges, collect/disburse items; apply quickly to quotations and Shipments/Bookings.</li>
+                                <li>Control margins by syncing rate tables into cost and revenue for each lane.</li>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-white text-primary border">Bulk import/export</span>
-                                <span class="badge bg-white text-primary border">Margin control</span>
-                                <span class="badge bg-white text-primary border">Route-aware pricing</span>
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">Fee import/export</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Vendors comparison</span>
+                                <span class="badge border" style="background-color: #8F8F8F !important; color: white !important;">Pricelist rule</span>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="project" role="tabpanel" aria-labelledby="project-tab">
                             <h5 class="fw-bold mb-2">Freight Project &amp; Operations Tasks</h5>
                             <ul class="text-muted small mb-3">
-                                <li>Liên kết Shipment với Project/Task; tự động liên kết theo cấu hình sản phẩm vận tải.</li>
-                                <li>Checklist nhiệm vụ vận hành theo từng chặng; nhắc việc và ghi chú ngay trên giao diện tracking.</li>
-                                <li>Tự động cộng chi phí chấm công (timesheet) vào chi phí shipment để tính đúng lợi nhuận.</li>
+                                <li>Link Shipments with Projects/Tasks; auto-link based on transport product configuration.</li>
+                                <li>Operational task checklists per leg; reminders and notes right on the tracking interface.</li>
+                                <li>Automatically roll timesheet costs into shipment expenses to calculate accurate profit.</li>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-white text-secondary border">Task + Timesheet</span>
-                                <span class="badge bg-white text-secondary border">Project linkage</span>
-                                <span class="badge bg-white text-secondary border">Profitability sidebar</span>
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">Task + Stage</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Gantt</span>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="onbehalf" role="tabpanel" aria-labelledby="onbehalf-tab">
                             <h5 class="fw-bold mb-2">On-behalf Payment in Freight</h5>
                             <ul class="text-muted small mb-3">
-                                <li>Thêm mục "On-behalf Payments" trong sidebar Profitability của giao diện Shipment tracking (kanban).</li>
-                                <li>Tự động lấy dữ liệu từ dòng đơn bán được gắn cờ on-behalf, hiển thị số tiền collect/disburse và đối tác.</li>
-                                <li>Không cần chuyển ứng dụng vẫn nắm được ảnh hưởng thu hộ/chi hộ đến biên lợi nhuận lô hàng.</li>
+                                <li>Add "On-behalf Payments" section in the Profitability sidebar of Shipment tracking (kanban).</li>
+                                <li>Automatically pull data from sales order lines flagged on-behalf, showing collect/disburse amounts and partners.</li>
+                                <li>See how collect/disburse affects shipment profit without switching apps.</li>
                             </ul>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-white text-success border">COD visibility</span>
-                                <span class="badge bg-white text-success border">Auto data sync</span>
-                                <span class="badge bg-white text-success border">Shipment profitability</span>
-                            </div>
                         </div>
                         <div class="tab-pane fade" id="purchase" role="tabpanel" aria-labelledby="purchase-tab">
                             <h5 class="fw-bold mb-2">Freight Booking &amp; Purchase Integration</h5>
                             <ul class="text-muted small mb-3">
-                                <li>Tự động liên kết PO thầu phụ (phát sinh từ sale lines thầu phụ) với tuyến hoặc booking của Shipment.</li>
-                                <li>Truy cập PO liên quan trực tiếp từ form Shipment/Booking, đảm bảo tiến độ mua khớp vận hành.</li>
-                                <li>Truy vết xuyên suốt: yêu cầu khách hàng → booking → đơn mua NCC → thực thi logistics.</li>
+                                <li>Auto-link subcontractor POs (from subcontracted sale lines) to shipment routes or bookings.</li>
+                                <li>Access related POs directly from Shipment/Booking forms to keep procurement aligned with execution.</li>
+                                <li>End-to-end traceability: customer request → booking → vendor PO → logistics execution.</li>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-white text-primary border">PO ↔ Booking</span>
-                                <span class="badge bg-white text-primary border">Subcontract control</span>
-                                <span class="badge bg-white text-primary border">Audit trail</span>
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">PO ↔ Booking</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Subcontract control</span>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="document-tab">
                             <h5 class="fw-bold mb-2">Freight &amp; Document Integration</h5>
                             <ul class="text-muted small mb-3">
-                                <li>Tự tạo workspace, team, tag, rule tự động trong Documents app để giảm thời gian setup ban đầu.</li>
-                                <li>Mở tài liệu liên quan từ Booking/Shipment (AWB, BL, manifest, tờ khai...) ngay trong một cú nhấp.</li>
-                                <li>Tìm kiếm, phân quyền và versioning tài liệu gắn với chuyến, giúp đáp ứng kiểm toán và SLA.</li>
+                                <li>Auto-create workspaces, teams, tags, and rules in Documents to cut initial setup time.</li>
+                                <li>Open related documents from Booking/Shipment (AWB, BL, manifest, declaration, etc.) in one click.</li>
+                                <li>Search, permission, and version documents tied to trips to meet audits and SLAs.</li>
                             </ul>
                             <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-white text-secondary border">Auto workspace</span>
-                                <span class="badge bg-white text-secondary border">Fast access</span>
-                                <span class="badge bg-white text-secondary border">Document SLA</span>
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">Auto workspace</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Fast access</span>
+                                <span class="badge border" style="background-color: #8F8F8F !important; color: white !important;">Document SLA</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex flex-column">
-                    <div id="moduleCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-touch="true">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#moduleCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Charges"></button>
-                            <button type="button" data-bs-target="#moduleCarousel" data-bs-slide-to="1" aria-label="Project"></button>
-                            <button type="button" data-bs-target="#moduleCarousel" data-bs-slide-to="2" aria-label="On-behalf"></button>
-                            <button type="button" data-bs-target="#moduleCarousel" data-bs-slide-to="3" aria-label="Purchase"></button>
-                            <button type="button" data-bs-target="#moduleCarousel" data-bs-slide-to="4" aria-label="Document"></button>
-                        </div>
-                        <div class="carousel-inner rounded-3 shadow-sm">
-                            <div class="carousel-item active">
-                                <div class="card border-0">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="/assets/placeholder_charges.jpg" class="d-block w-100 rounded-top" alt="Freight Charges preview">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="fw-bold mb-1">Fees &amp; Surcharges</h5>
-                                        <p class="text-muted small mb-0">Biểu phí CSV/Excel → áp dụng tuyến, báo giá, booking. Đặt mục tiêu biên lợi nhuận theo lane.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="/assets/placeholder_project.jpg" class="d-block w-100 rounded-top" alt="Project & Tasks preview">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="fw-bold mb-1">Project &amp; Tasks</h5>
-                                        <p class="text-muted small mb-0">Checklist từng chặng, log timesheet → cộng vào chi phí shipment, hiển thị ngay sidebar tracking.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="/assets/placeholder_onbehalf.jpg" class="d-block w-100 rounded-top" alt="On-behalf preview">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="fw-bold mb-1">On-behalf payments</h5>
-                                        <p class="text-muted small mb-0">Thu hộ/chi hộ hiển thị ngay trong Profitability: phân biệt collect/disburse, theo đối tác.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="/assets/placeholder_purchase.jpg" class="d-block w-100 rounded-top" alt="Purchase Integration preview">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="fw-bold mb-1">Booking ↔ Purchase</h5>
-                                        <p class="text-muted small mb-0">PO thầu phụ khớp booking; truy vết từ đơn khách đến đơn NCC, giảm sai sót lịch trình.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card border-0">
-                                    <div class="ratio ratio-16x9">
-                                        <img src="/assets/placeholder_document.jpg" class="d-block w-100 rounded-top" alt="Document Integration preview">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="fw-bold mb-1">Document workspace</h5>
-                                        <p class="text-muted small mb-0">Tự tạo workspace/tag/rule; mở AWB/BL/manifest ngay từ Booking/Shipment.</p>
-                                    </div>
+                    <div id="videoPreview" class="slide h-100">
+                        <div class="rounded-3 shadow-sm h-100">
+                            <div class="card border-0 h-100">
+                                <div class="media_iframe_video w-100 h-100 rounded" data-oe-expression="//www.youtube.com/embed/nB-cC0hz35g"></div>
+                                <div class="card-body">
+                                    <h5 class="fw-bold mb-1">Freight Management Overview</h5>
+                                    <p class="text-muted small mb-0">Intro video: see how we create shipments, book carriers, track milestones, and share status with customers in minutes.</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#moduleCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#moduleCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                     <div class="bg-light rounded-3 p-3 mt-3 shadow-sm">
                         <div class="d-flex flex-wrap align-items-center gap-2">
-                            <span class="badge bg-secondary text-white">Tip</span>
-                            <p class="text-muted small mb-0">Thay ảnh `placeholder_*.jpg` bằng screenshot thật; thêm anchor tới video preview/demo bên dưới nếu cần.</p>
-                        </div>
-                        <div class="d-flex flex-wrap gap-2 mt-2">
-                            <span class="badge bg-white border text-primary">Video preview</span>
-                            <span class="badge bg-white border text-success">Video demo</span>
-                            <span class="badge bg-white border text-secondary">Screenshot carousel</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Highlights -->
-    <section class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
-            <h2 class="h3 fw-bold mb-3 text-center">What you get out of the box</h2>
-            <p class="text-center text-muted mb-4">Structured bookings, container accuracy, synchronized schedules, and clear communication to customers and partners.</p>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body d-flex align-items-start">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle me-3" style="width:44px;height:44px;"><i class="fa fa-ship"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">End-to-End Shipment</h5>
-                                <p class="text-muted small mb-0">HBL/MBL control, automatic numbering, and lifecycle for every mode.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body d-flex align-items-start">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle me-3" style="width:44px;height:44px;"><i class="fa fa-calendar-check-o"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Booking & Planning</h5>
-                                <p class="text-muted small mb-0">Auto-draft and confirm bookings with schedule synchronization.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body d-flex align-items-start">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle me-3" style="width:44px;height:44px;"><i class="fa fa-cubes"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Container & Goods</h5>
-                                <p class="text-muted small mb-0">Cargo templates, seals, HS code, UN number, DG class compliance.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body d-flex align-items-start">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle me-3" style="width:44px;height:44px;"><i class="fa fa-map-marker"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Real-Time Tracking</h5>
-                                <p class="text-muted small mb-0">Kanban and timeline views plus 24/7 customer portal.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body d-flex align-items-start">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle me-3" style="width:44px;height:44px;"><i class="fa fa-shopping-cart"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Sales & Revenue</h5>
-                                <p class="text-muted small mb-0">Quote logistics, auto-create shipments, and reconcile carrier rates.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body d-flex align-items-start">
-                            <div class="d-inline-flex align-items-center justify-content-center bg-light text-primary rounded-circle me-3" style="width:44px;height:44px;"><i class="fa fa-line-chart"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Profitability & Master Data</h5>
-                                <p class="text-muted small mb-0">Profit margin analytics, pivot/graph reports, and route libraries.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature deep dive (accordion layout instead of tabs) -->
-    <section class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
-            <div class="d-flex flex-wrap align-items-center mb-3 gap-2">
-                <span class="badge bg-primary text-white">Workflow tour</span>
-                <h2 class="h4 fw-bold mb-0">See the flows in detail</h2>
-            </div>
-            <div class="accordion" id="featureAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="featOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            End-to-End Shipment Management
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="featOne" data-bs-parent="#featureAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-3 align-items-center">
-                                <div class="col-xl-5">
-                                    <ul class="mb-0 text-muted">
-                                        <li>Sea, Air, Land, and multi-modal legs with flexible stages.</li>
-                                        <li>Automatic numbering and HBL/MBL control.</li>
-                                        <li>Real-time delivery tracking.</li>
-                                    </ul>
-                                </div>
-                                <div class="col-xl-7">
-                                    <img src="/assets/shipment-manage.gif" class="img-fluid rounded-3" alt="Shipment Management">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="featTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Advanced Booking & Transport Planning
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="featTwo" data-bs-parent="#featureAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-3 align-items-center">
-                                <div class="col-xl-6 order-2 order-xl-1">
-                                    <img src="/assets/booking_manage.gif" class="img-fluid rounded-3" alt="Booking Management">
-                                </div>
-                                <div class="col-xl-6 order-1 order-xl-2">
-                                    <ul class="mb-0 text-muted">
-                                        <li>Auto-generate bookings grouped by carrier and route.</li>
-                                        <li>Draft multi-leg bookings with ETD/ETA/Cutoff checks.</li>
-                                        <li>Confirmation syncs booking details back to shipments.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="featThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Container - Package & Goods Management
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="featThree" data-bs-parent="#featureAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-3 align-items-center">
-                                <div class="col-xl-5">
-                                    <ul class="mb-0 text-muted">
-                                        <li>Container, seal, and dimensions tracking with three input modes.</li>
-                                        <li>HS Code, UN Number, DG Class for customs compliance.</li>
-                                        <li>Operate faster with cargo templates.</li>
-                                    </ul>
-                                </div>
-                                <div class="col-xl-7">
-                                    <img src="/assets/cargo-package.gif" class="img-fluid rounded-3" alt="Cargo Management">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="featFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Real-Time Tracking & Customer Portal
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="featFour" data-bs-parent="#featureAccordion">
-                        <div class="accordion-body">
-                            <div class="text-center">
-                                <ul class="list-unstyled text-muted mb-3">
-                                    <li>Intuitive Kanban tracking with sidebar for operations team.</li>
-                                    <li>Timeline view with standardized status templates.</li>
-                                    <li>Customer self-service portal with advanced filters.</li>
-                                </ul>
-                                <img src="/assets/tracking_portal.gif" class="img-fluid rounded-3" alt="Tracking Portal">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="featFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Sales Integration & Revenue Optimization
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="featFive" data-bs-parent="#featureAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-3 align-items-center">
-                                <div class="col-xl-6 order-2 order-xl-1">
-                                    <img src="/assets/sale.gif" class="img-fluid rounded-3" alt="Sales Integration">
-                                </div>
-                                <div class="col-xl-6 order-1 order-xl-2">
-                                    <ul class="mb-0 text-muted">
-                                        <li>Create logistics quotations and auto-generate shipments from sales orders.</li>
-                                        <li>Trace order lines to routes.</li>
-                                        <li>Supplier pricelist integration with collection/disbursement marking.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="featSix">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Reports & Comprehensive Master Data
-                        </button>
-                    </h2>
-                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="featSix" data-bs-parent="#featureAccordion">
-                        <div class="accordion-body">
-                            <div class="text-center">
-                                <ul class="list-unstyled text-muted mb-3">
-                                    <li>Profit margin analysis and shipment progress tracking.</li>
-                                    <li>Pivot/Graph reports for profitability.</li>
-                                    <li>Port, airport, route library with logistics UoM.</li>
-                                    <li>Automated ETD/ETA reminders and base automation.</li>
-                                </ul>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <img src="/assets/report.gif" class="img-fluid rounded-3" alt="Profitability Report">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="/assets/data.gif" class="img-fluid rounded-3" alt="Master Data">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <span class="badge" style="background-color: #00BBCE !important; color: white !important;">Note</span>
+                            <p class="text-muted small mb-0">
+                                To unlock the full feature set, please ensure that all required companion modules are installed.
+                            </p>
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -483,50 +190,58 @@
 
     <!-- Benefits -->
     <section class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-color: ghostwhite"> 
             <h2 class="h3 text-center fw-bold mb-3">Benefits</h2>
             <p class="text-center text-muted mb-4">Built for forwarders needing reliable execution, customer-grade visibility, and margin control.</p>
-            <div class="row row-cols-1 row-cols-md-2 g-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 g-lg-4">
                 <div class="col">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body d-flex align-items-start">
-                            <span class="badge bg-primary me-3">01</span>
-                            <div>
-                                <h5 class="fw-bold mb-1">Streamline operations</h5>
-                                <p class="mb-0 text-muted small">Automated reminders, validation rules, and standardized flows to reduce manual steps and errors.</p>
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-cogs text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Streamline operations</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Automated reminders, validation rules, and standardized flows to reduce manual steps and errors.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body d-flex align-items-start">
-                            <span class="badge bg-primary me-3">02</span>
-                            <div>
-                                <h5 class="fw-bold mb-1">Customer-grade visibility</h5>
-                                <p class="mb-0 text-muted small">Live tracking, portal access, and proactive updates for all stakeholders.</p>
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-eye text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Customer-grade visibility</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Live tracking, portal access, and proactive updates for all stakeholders.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body d-flex align-items-start">
-                            <span class="badge bg-primary me-3">03</span>
-                            <div>
-                                <h5 class="fw-bold mb-1">Margin protection</h5>
-                                <p class="mb-0 text-muted small">Track costs and profitability per shipment to spot profitable routes and customers.</p>
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-line-chart text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Margin protection</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Track costs and profitability per shipment to spot profitable routes and customers.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body d-flex align-items-start">
-                            <span class="badge bg-primary me-3">04</span>
-                            <div>
-                                <h5 class="fw-bold mb-1">Compliance & integration</h5>
-                                <p class="mb-0 text-muted small">Support DG and customs documentation while syncing with Sales, Accounting, and Documents.</p>
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-shield text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Compliance & integration</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Support DG and customs documentation while syncing with Sales, Accounting, and Documents.</p>
                             </div>
                         </div>
                     </div>
@@ -537,34 +252,610 @@
 
     <!-- Video & Resources -->
     <section class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
-            <div class="d-flex flex-wrap align-items-center mb-3 gap-2">
-                <span class="badge bg-primary text-white">Media</span>
-                <h2 class="h5 fw-bold mb-0">Video preview &amp; demo</h2>
-                <span class="text-muted small">Chèn link YouTube vào thuộc tính data-oe-expression.</span>
-            </div>
-            <ul class="nav nav-tabs mb-3" id="videoTab" role="tablist">
+        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
+            <ul class="nav nav-tabs mb-3" id="presentationTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="video-preview-tab" data-bs-toggle="tab" data-bs-target="#video-preview" type="button" role="tab" aria-controls="video-preview" aria-selected="true">Preview (tổng quan)</button>
+                    <a class="nav-link active" style="color: #00BBCE;" id="overview-tab" data-bs-toggle="tab" href="#overview-pane" role="tab" aria-controls="overview-pane" aria-selected="true">Overview</a>
+                </li>
+                <li class="nav-item" role="videoTab">
+                    <a class="nav-link" style="color: #00BBCE;" id="video-demo-tab" data-bs-toggle="tab" href="#video-demo" role="tab" aria-controls="video-demo" aria-selected="false">Demo</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="video-demo-tab" data-bs-toggle="tab" data-bs-target="#video-demo" type="button" role="tab" aria-controls="video-demo" aria-selected="false">Demo (end-to-end)</button>
+                    <a class="nav-link" style="color: #00BBCE;" id="support-tab" data-bs-toggle="tab" href="#support-pane" role="tab" aria-controls="support-pane" aria-selected="false">Support</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="video-howto-tab" data-bs-toggle="tab" data-bs-target="#video-howto" type="button" role="tab" aria-controls="video-howto" aria-selected="false">How-to (chi tiết thao tác)</button>
+                    <a class="nav-link" style="color: #00BBCE;" id="technical-requirement-tab" data-bs-toggle="tab" href="#technical-requirement-pane" role="tab" aria-controls="technical-requirement-pane" aria-selected="false">Technical requirement</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" style="color: #00BBCE;" id="changelog-tab" data-bs-toggle="tab" href="#changelog-pane" role="tab" aria-controls="changelog-pane" aria-selected="false">Changes log</a>
                 </li>
             </ul>
-            <div class="tab-content" id="videoTabContent">
-                <div class="tab-pane fade show active" id="video-preview" role="tabpanel" aria-labelledby="video-preview-tab">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <h3 class="h6 fw-bold mb-0">Preview: giá trị &amp; module</h3>
-                                <span class="badge bg-secondary text-white">Preview</span>
+            <div class="tab-content" id="presentationTabContent">
+                <div class="tab-pane fade show active" id="overview-pane" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="rounded-4 p-4 p-lg-4 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
+                        <div class="row g-3 mb-3 align-items-stretch">
+                            <div class="col-lg-8">
+                                <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f4fbfd);">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                                            <span class="badge bg-opacity-10 fw-semibold" style="background-color: #00BBCE !important; color: white !important;">Control tower</span>
+                                            <span class="badge bg-opacity-10 fw-semibold" style="background-color: #7f4282 !important; color: white !important;">Customer portal ready</span>
+                                            <span class="badge bg-opacity-10 fw-semibold" style="background-color: #8F8F8F !important; color: white !important;">Margin-first</span>
+                                        </div>
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-md-7">
+                                                <h3 class="h5 fw-bold mb-2">Operate fast, never miss a step</h3>
+                                                <p class="text-muted small mb-0">One tab unifies multimodal shipments, bookings, charges, documents, and profitability. Per-leg checklists, ETD/ETA reminders, and customer portal updates keep operations, sales, and finance aligned.</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="bg-white rounded-3 p-3 shadow-sm h-100">
+                                                    <div class="fw-bold text-uppercase text-muted small mb-2">Snapshot</div>
+                                                    <ul class="list-unstyled text-muted small mb-0">
+                                                        <li class="d-flex align-items-center mb-1"><i class="fa fa-check text-info me-2"></i>Lane dashboards for Shipment</li>
+                                                        <li class="d-flex align-items-center mb-1"><i class="fa fa-check text-info me-2"></i>Quotation → Shipment → Booking → Profitability in one flow</li>
+                                                        <li class="d-flex align-items-center"><i class="fa fa-check text-info me-2"></i>Self-service portal: status, documents, charges, tasks</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-sm-3 g-2 mt-3">
+                                            <div class="col">
+                                                <div class="border rounded-3 bg-white p-2 h-100" style="color: #00BBCE;">
+                                                    <div class="fw-bold small mb-1">Operations team</div>
+                                                <p class="text-muted small mb-0">Checklists, cut-off reminders, subcontractor PO sync to bookings.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="border rounded-3 bg-white p-2 h-100" style="color: #7f4282;">
+                                                    <div class="fw-bold small mb-1">Sales</div>
+                                                <p class="text-muted small mb-0">Logistics quotations with rate tables, surcharges, terms, commissions.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="border rounded-3 bg-white p-2 h-100" style="color: #8F8F8F;">
+                                                    <div class="fw-bold small mb-1">Finance</div>
+                                                <p class="text-muted small mb-0">Track collect/disburse, margin, billing status, and payment document sets.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-muted small mb-3">Điểm nổi bật của Freight Management + bộ mở rộng: phụ phí, project/task, thu hộ/chi hộ, PO thầu phụ, tài liệu.</p>
-                            <div class="ratio ratio-16x9">
-                                <div class="media_iframe_video w-100 h-100 rounded" data-oe-expression="//www.youtube.com/embed/replace_with_preview"></div>
+                            <div class="col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body h-100 d-flex flex-column">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div class="fw-bold text-uppercase text-muted small">Sample flow</div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <span class="badge me-2" style="background-color: #00BBCE !important; color: white !important;">1</span>
+                                            <div>
+                                                <div class="fw-bold small mb-0">Generate shipment from quotation</div>
+                                                <p class="text-muted small mb-0">Auto-create shipment when confirming quotation.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <span class="badge me-2" style="background-color: #7f4282 !important; color: white !important;">2</span>
+                                            <div>
+                                                <div class="fw-bold small mb-0">Setup Shipments and Booking</div>
+                                                <p class="text-muted small mb-0">Generate Booking and cargos from template, set ETD/ETA, print HBL</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <span class="badge me-2" style="background-color: #8F8F8F !important; color: white !important;">3</span>
+                                            <div>
+                                                <div class="fw-bold small mb-0">Track & reconcile</div>
+                                                <p class="text-muted small mb-0">Update progress, view customer portal, reconcile collect/disburse</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-auto pt-2">
+                                            <div class="small text-muted fw-semibold mb-1">Outcomes</div>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge bg-light text-dark border">Fewer repetitive steps</span>
+                                                <span class="badge bg-light text-dark border">Complete documents</span>
+                                                <span class="badge bg-light text-dark border">Transparent profitability</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion" id="featureAccordion">
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featOne">
+                                    <a class="accordion-button" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Shipment & Booking Management
+                                    </a>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="featOne">
+                                    <div class="accordion-body bg-white p-4 d-flex justify-content-center" style="min-height: 500px;">
+                                        <div class="row g-4 align-items-center w-100 h-100 justify-content-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Set up shipment for multi-leg route and single-leg route
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Manage multi-routes shipment with ease</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="shipmentCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/shipment_multi_route.png" class="d-block w-100 rounded-3 shadow-sm" alt="Shipment multi route">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Multi-leg route</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/shipment_single_route.png" class="d-block w-100 rounded-3 shadow-sm" alt="Shipment single route">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Single-leg route</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#shipmentCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#shipmentCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Generate booking from shipment
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Reduce time to set-up one to many bookings</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/booking_create.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Booking create" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Auto-generate bookings from shipment</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/booking.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Booking view" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Send notification to carrier when booking is done</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featThree">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Container - Package & Goods Management
+                                    </a>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="featThree">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Generate cargos from template in shipment
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Improve efficiency with preset cargo templates</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/cargo_generate.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Cargo generate" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Enter cargo template and generate cargo</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/cargo.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Cargo" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">New cargo created</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/cargo_info.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Cargo info" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">View cargo information</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white d-flex justify-content-center" id="featFour">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;"role="button" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Real-Time Tracking & Customer Portal
+                                    </a>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="featFour">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-4 align-items-center w-100 h-100 justify-content-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Update and track shipment progress in real-time
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Have all your shipment data organized in one clear view.</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/tracking.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Tracking" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Update tracking information</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/tracking_info.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Tracking info" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Enter tracking information</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/dashboard.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Dashboard" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">View updated tracking on dashboard</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Portal view and tracking timeline
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Customer-facing timeline with live milestones, portal view, and documents together</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="trackingCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/tracking_timeline.png" class="d-block w-100 rounded-3 shadow-sm" alt="Tracking timeline">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Tracking timeline</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/portal.png" class="d-block w-100 rounded-3 shadow-sm" alt="Portal view">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Portal</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/portal_list.png" class="d-block w-100 rounded-3 shadow-sm" alt="Portal list">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">List of shipments on portal</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#trackingCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#trackingCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featFive">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Document Integration & Print HBL
+                                    </a>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="featFive">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Insert files to create workspace
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Shipment Document Centralization</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/document_insert.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Document Insert" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Insert file to chat log</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/document_button.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Document Button" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Click on document button</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/document.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Document" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">View shipment document</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Print HBL from template
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;"></span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/print.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Print" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Click on print HBL</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/hbl.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="HBL" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">View HBL PDF</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featSix">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Sales & Project Integration
+                                    </a>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="featSix">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Create shipment and project from sales order
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Unified and connect workflow</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/so.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="SO" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Add Freight Charges and confirm sales order</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/so_confirm.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="SO confirm" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">New shipment and project automatically created</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Manage tasks on project with Gantt
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Manage all tasks and dependencies tasks on one timeline</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/gantt.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Gantt" style="object-fit: cover;">
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/task.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Task" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Filter tasks with shipment stages</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featSeven">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        Freight Charges & Fees
+                                    </a>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="featSeven">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Generate All Additional Fees With One Click
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">One click populates every surcharge into cost and revenue, zero retyping</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/fee_generate.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Fee generate" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Select Freight Charge that have fees and click on Generate Fees button</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/fee.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Fee" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">All additional fees generated</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Compare prices between vendors
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Side-by-side vendor fees with instant highlights to decide fast</span>
+                                            </h4>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/vendor.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Vendor" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Select vendor on menu</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/vendor_hover.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Vendor hover" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Hover on icon next to vendor name</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/vendor_compare.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Vendor compare" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">See vendor available fees</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featEight">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        Collect & Disburse Payment
+                                    </a>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="featEight">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Set up sale order for collection and disbursement payments
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Define collect and disburse partners upfront so reconciliation is automatic</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/onbehalf.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="On-behalf" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Select collection partner on sale order line</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/invoice.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Invoice" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Create invoice for reconciliation</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Collection Payment from customer
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Reconcile payment instantly with just a few clicks</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/collection_customer.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Collection customer" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Create customer payment and select correct sale order to map payment</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/collection_vendor.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Collection vendor" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Make a payment for vendor then select "Suggest Lines" to generate payment lines</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/collection_done.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Collection done" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Collection is paid</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Disburse Payment to vendor
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Suggest lines navigate you to the right payments and accounts</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/disburse_vendor.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Disbursement vendor" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Create vendor payment and select On-behalf payment, then select customer and payment amount</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/disburse_customer.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Disbursement customer" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Make a payment for customer then select "Suggest Lines" to reconcile payment</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/disburse_done.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Disbursement done" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Disbursement is paid</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featNine">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        Reports & Comprehensive Master Data
+                                    </a>
+                                </h2>
+                                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="featNine">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Effective Financial and Shipment Reports with delivery-status tracking filter
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Interactive shipment and finance reports tie delivery status to margin instantly</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="reportCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/report_overview.png" class="d-block w-100 rounded-3 shadow-sm" alt="Overview chart">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Overview chart</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/overview.png" class="d-block w-100 rounded-3 shadow-sm" alt="Overview report">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Overview report</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/report_revenue.png" class="d-block w-100 rounded-3 shadow-sm" alt="Revenue chart">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Revenue chart</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/revenue.png" class="d-block w-100 rounded-3 shadow-sm" alt="Revenue report">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Revenue report</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#reportCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#reportCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Detailed master data
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Ports, routes, cargo profiles, and DG codes are structured and ready to reuse</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="masterDataCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/port.png" class="d-block w-100 rounded-3 shadow-sm" alt="Port">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Port</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/route.png" class="d-block w-100 rounded-3 shadow-sm" alt="Route">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Route</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/cargo_detail.png" class="d-block w-100 rounded-3 shadow-sm" alt="Cargo detail">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Cargo detail</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/cargo_type.png" class="d-block w-100 rounded-3 shadow-sm" alt="Cargo Type">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Cargo Type</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/hs.png" class="d-block w-100 rounded-3 shadow-sm" alt="HS Code">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">HS Code</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/dg.png" class="d-block w-100 rounded-3 shadow-sm" alt="DG Classes">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">DG Classes</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/un.png" class="d-block w-100 rounded-3 shadow-sm" alt="UN Numbers">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">UN Numbers</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#masterDataCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#masterDataCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -573,214 +864,173 @@
                     <div class="card border-0 shadow-sm">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
-                                <h3 class="h6 fw-bold mb-0">Demo: từ báo giá đến kết sổ</h3>
-                                <span class="badge bg-primary text-white">Demo</span>
+                                <h3 class="h6 fw-bold mb-0">Demo: from quotation to closing</h3>
+                                <span class="badge text-white" style="background-color: #00BBCE !important; color: white !important;">Demo</span>
                             </div>
-                            <p class="text-muted small mb-3">Flow tạo báo giá logistics → import phụ phí → tạo booking + PO → cập nhật timesheet → đối soát on-behalf → lưu AWB/BL.</p>
-                            <div class="ratio ratio-16x9">
-                                <div class="media_iframe_video w-100 h-100 rounded" data-oe-expression="//www.youtube.com/embed/replace_with_demo"></div>
+                            <p class="text-muted small mb-2">
+                                Watch the video to see how we create shipments, book carriers, track milestones, and share status with customers in minutes.
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <div class="media_iframe_video rounded" style="width:80%; aspect-ratio:16/9; min-height:400px;" data-oe-expression="//www.youtube.com/embed/x1BuGArh0DY?si=CGcezjQqj4YBPdG8"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mt-3">
+                        <div class="col-lg-4">
+                            <div class="row g-3 h-100">
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fa fa-book text-primary me-2"></i>
+                                                <h4 class="h6 fw-bold mb-0">Read the user guide</h4>
+                                            </div>
+                                            <span class="badge bg-light text-dark p-2">viindoo.com/documentation/16.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fa fa-desktop text-secondary me-2"></i>
+                                                <h4 class="h6 fw-bold mb-0">Explore the live demo</h4>
+                                            </div>
+                                            <span class="badge bg-light text-dark p-2">v16demo-vn.viindoo.com</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fa fa-list-alt text-secondary me-2"></i>
+                                        <h4 class="h6 fw-bold mb-0">Feature highlights</h4>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-2 g-2">
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Sea / Air / Land shipment workflow</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Profitability &amp; on-behalf tracking</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Customer portal &amp; document sync</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Bookings ↔ purchase integration</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="video-howto" role="tabpanel" aria-labelledby="video-howto-tab">
+                <div class="tab-pane fade" id="support-pane" role="tabpanel" aria-labelledby="support-tab">
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="h5 fw-bold">Pre-Sales Question</h3>
+                                    <p class="text-muted flex-grow-1">Need help before purchasing? Share module name &amp; version, edition (CE/EE), and the issue (trial, payment, installation). Attach screenshots if possible.</p>
+                                    <a class="btn btn-outline-info w-100" href="mailto:sales@viindoo.com" style="background-color: #00BBCE; border:none;">
+                                        <i class="fa fa-envelope-o me-1"></i> sales@viindoo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="h5 fw-bold">Support</h3>
+                                    <p class="text-muted flex-grow-1">For assistance, include your order number, issue description, expected resolution, and images/videos that replicate the issue.</p>
+                                    <a class="btn btn-outline-secondary w-100" href="mailto:apps.support@viindoo.com" style="background-color: #7F4282;">
+                                        <i class="fa fa-envelope-o me-1"></i> apps.support@viindoo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="technical-requirement-pane" role="tabpanel" aria-labelledby="technical-requirement-tab">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <h3 class="h6 fw-bold mb-0">How-to: thao tác chi tiết</h3>
-                                <span class="badge bg-success text-white">How-to</span>
-                            </div>
-                            <p class="text-muted small mb-3">Hướng dẫn thao tác Shipment tracking, checklist nhiệm vụ, nhập xuất phụ phí, gắn tài liệu, và hiển thị thu hộ/chi hộ.</p>
-                            <div class="ratio ratio-16x9">
-                                <div class="media_iframe_video w-100 h-100 rounded" data-oe-expression="//www.youtube.com/embed/x1BuGArh0DY?si=CGcezjQqj4YBPdG8"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-3 mt-3">
-                <div class="col-lg-8">
-                    <div id="videoCarousel" class="carousel slide shadow-sm rounded-3" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="p-3">
-                                    <h4 class="h6 fw-bold mb-1">Preview checklist</h4>
-                                    <p class="text-muted small mb-2">Nhớ highlight: phụ phí import/export, project/task + timesheet, thu hộ/chi hộ, PO thầu phụ, workspace tài liệu.</p>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-light text-dark border">Fees</span>
-                                        <span class="badge bg-light text-dark border">Project/Task</span>
-                                        <span class="badge bg-light text-dark border">On-behalf</span>
-                                        <span class="badge bg-light text-dark border">PO link</span>
-                                        <span class="badge bg-light text-dark border">Documents</span>
+                            <div class="mt-4">
+                                <h3 class="h6 fw-bold text-uppercase text-muted">Technical requirement</h3>
+                                <div class="row row-cols-1 row-cols-md-2 g-3">
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Odoo Version</div>
+                                                <p class="mb-0 text-muted small">16.0 or higher</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="p-3">
-                                    <h4 class="h6 fw-bold mb-1">Demo chapters</h4>
-                                    <p class="text-muted small mb-2">Gợi ý cắt chapter cho video demo: Quote &amp; Fees → Booking &amp; PO → Task &amp; Timesheet → On-behalf → Documents.</p>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-primary bg-opacity-10 text-primary">Quote</span>
-                                        <span class="badge bg-primary bg-opacity-10 text-primary">Booking</span>
-                                        <span class="badge bg-primary bg-opacity-10 text-primary">PO</span>
-                                        <span class="badge bg-primary bg-opacity-10 text-primary">Profitability</span>
-                                        <span class="badge bg-primary bg-opacity-10 text-primary">Docs</span>
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Required Modules</div>
+                                                <p class="mb-0 text-muted small">viin_freight_fee, viin_document_freight, viin_freight_project, viin_freight_sale_onbehalf, viin_freight_sale_purchase</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="p-3">
-                                    <h4 class="h6 fw-bold mb-1">CTA overlay</h4>
-                                    <p class="text-muted small mb-2">Đặt CTA tải tài liệu, mở demo, hoặc liên hệ tư vấn ngay dưới video preview/demo.</p>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge bg-secondary text-white">Call-to-action</span>
-                                        <span class="badge bg-secondary text-white">Live demo</span>
-                                        <span class="badge bg-secondary text-white">Docs</span>
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Editions</div>
+                                                <p class="mb-0 text-muted small">Community Edition and Enterprise Edition</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row g-3 h-100">
-                        <div class="col-12">
-                            <div class="card border-0 shadow-sm h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <i class="fa fa-book text-primary me-2"></i>
-                                        <h4 class="h6 fw-bold mb-0">Read the user guide</h4>
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">License</div>
+                                                <p class="mb-0 text-muted small">OPL-1 (Odoo Proprietary License)</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="text-muted small mb-3">Step-by-step triển khai, cấu hình phụ phí, project, on-behalf, PO liên kết và workspace tài liệu.</p>
-                                    <span class="badge bg-light text-dark p-2">viindoo.com/documentation/16.0</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="card border-0 shadow-sm h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <i class="fa fa-desktop text-secondary me-2"></i>
-                                        <h4 class="h6 fw-bold mb-0">Explore the live demo</h4>
-                                    </div>
-                                    <p class="text-muted small mb-3">Bộ dữ liệu mẫu đã bật phụ phí, task, thu hộ/chi hộ, PO thầu phụ, workspace tài liệu.</p>
-                                    <span class="badge bg-light text-dark p-2">v16demo-vn.viindoo.com</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Support & Requirements -->
-    <section class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
-            <div class="row g-3">
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm h-100">
+                <div class="tab-pane fade" id="changelog-pane" role="tabpanel" aria-labelledby="changelog-tab">
+                    <div class="card border-0 shadow-sm">
                         <div class="card-body">
-                            <h3 class="h5 fw-bold text-info">Pre-Sales Question</h3>
-                            <p class="text-muted">Need help before purchasing? Share module name & version, edition (CE/EE), and the issue (trial, payment, installation). Attach screenshots if possible.</p>
-                            <a class="btn btn-outline-info" href="mailto:sales@viindoo.com">
-                                <i class="fa fa-envelope-o me-1"></i> sales@viindoo.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm h-100">
-                        <div class="card-body">
-                            <h3 class="h5 fw-bold text-secondary">Support</h3>
-                            <p class="text-muted">For assistance, include your order number, issue description, expected resolution, and images/videos that replicate the issue.</p>
-                            <a class="btn btn-outline-secondary" href="mailto:apps.support@viindoo.com">
-                                <i class="fa fa-envelope-o me-1"></i> apps.support@viindoo.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-4">
-                <h3 class="h6 fw-bold text-uppercase text-muted">Technical requirement</h3>
-                <div class="row row-cols-1 row-cols-md-2 g-3">
-                    <div class="col">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body">
-                                <div class="fw-bold mb-1">Odoo Version</div>
-                                <p class="mb-0 text-muted small">16.0 or higher</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body">
-                                <div class="fw-bold mb-1">Required Modules</div>
-                                <p class="mb-0 text-muted small">viin_freight_fee, viin_document_freight, viin_freight_project, viin_freight_sale_onbehalf, viin_freight_sale_purchase</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body">
-                                <div class="fw-bold mb-1">Editions</div>
-                                <p class="mb-0 text-muted small">Community Edition and Enterprise Edition</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card border-0 shadow-sm h-100">
-                            <div class="card-body">
-                                <div class="fw-bold mb-1">License</div>
-                                <p class="mb-0 text-muted small">OPL-1 (Odoo Proprietary License)</p>
+                            <h2 class="h5 fw-bold mb-3">Changes log</h2>
+                            <div class="border-start border-4 border-primary ps-3">
+                                <h4 class="h6 fw-bold text-primary mb-1">16.0.0.1 <small class="text-muted">- 20/10/2025</small></h4>
+                                <ul class="text-muted mb-0">
+                                    <li>Initial public release of the All-in-One Freight Forwarder Management suite for Odoo 16.</li>
+                                    <li>End-to-end shipment workflow with bookings, cargo handling, tracking, profitability analysis, and customer portal.</li>
+                                    <li>Dashboards, automation reminders, and integration hooks with Sales, Accounting, and Documents.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Changes log -->
-    <section class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
-            <h2 class="h4 fw-bold mb-3">Changes log</h2>
-            <div class="border-start border-4 border-primary ps-3">
-                <h4 class="h6 fw-bold text-primary mb-1">16.0.0.1 <small class="text-muted">- 20/10/2025</small></h4>
-                <ul class="text-muted mb-0">
-                    <li>Initial public release of the All-in-One Freight Forwarder Management suite for Odoo 16.</li>
-                    <li>End-to-end shipment workflow with bookings, cargo handling, tracking, profitability analysis, and customer portal.</li>
-                    <li>Dashboards, automation reminders, and integration hooks with Sales, Accounting, and Documents.</li>
-                </ul>
             </div>
         </div>
     </section>
 
     <!-- Recommended Combos -->
     <section id="recommended_combos_block" class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-color: ghostwhite;">
             <h2 class="h3 text-center fw-bold mb-3">Works Great With These Modules</h2>
             <p class="text-center text-muted mb-4">Bundle freight operations with adjacent Viindoo apps for pricing, documentation, and on-behalf flows.</p>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <div class="d-flex align-items-start">
-                                <div class="d-inline-flex align-items-center justify-content-center bg-info bg-opacity-10 text-info rounded-circle me-3" style="width:46px;height:46px;"><i class="fa fa-money"></i></div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Freight Charges &amp; Local Fees</h5>
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-money text-info fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Freight Charges &amp; Local Fees</h5>
                                     <p class="text-muted small mb-2">Add surcharge templates and fees to quote routes faster and control margins.</p>
-                                    <a class="text-decoration-none" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_fee" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_fee" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
                                 </div>
                             </div>
                         </div>
@@ -789,12 +1039,12 @@
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <div class="d-flex align-items-start">
-                                <div class="d-inline-flex align-items-center justify-content-center bg-secondary bg-opacity-10 text-secondary rounded-circle me-3" style="width:46px;height:46px;"><i class="fa fa-tasks"></i></div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Freight Project &amp; Operations Tasks</h5>
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-tasks text-secondary fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Freight Project &amp; Operations Tasks</h5>
                                     <p class="text-muted small mb-2">Link shipments with projects, tasks, and timesheets to capture labor cost per move.</p>
-                                    <a class="text-decoration-none" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_project" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_project" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
                                 </div>
                             </div>
                         </div>
@@ -803,12 +1053,12 @@
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <div class="d-flex align-items-start">
-                                <div class="d-inline-flex align-items-center justify-content-center bg-success bg-opacity-10 text-success rounded-circle me-3" style="width:46px;height:46px;"><i class="fa fa-exchange"></i></div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">On-behalf Payment in Freight</h5>
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-exchange text-success fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">On-behalf Payment in Freight</h5>
                                     <p class="text-muted small mb-2">Collect-and-disburse flows from sales orders in the shipment profitability sidebar.</p>
-                                    <a class="text-decoration-none" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_onbehalf" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_onbehalf" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
                                 </div>
                             </div>
                         </div>
@@ -817,12 +1067,12 @@
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <div class="d-flex align-items-start">
-                                <div class="d-inline-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-circle me-3" style="width:46px;height:46px;"><i class="fa fa-link"></i></div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Freight Booking &amp; Purchase Integration</h5>
-                                    <p class="text-muted small mb-2">Tie subcontracted purchase orders to freight bookings so procurement matches execution.</p>
-                                    <a class="text-decoration-none" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_purchase" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-link text-primary fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Freight Booking &amp; Purchase Integration</h5>
+                                    <p class="text-muted small mb-2 flex-grow-1">Tie subcontracted purchase orders to freight bookings so procurement matches execution.</p>
+                                    <a class="text-decoration-none"style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_purchase" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
                                 </div>
                             </div>
                         </div>
@@ -831,12 +1081,12 @@
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <div class="d-flex align-items-start">
-                                <div class="d-inline-flex align-items-center justify-content-center bg-light text-secondary rounded-circle me-3 border" style="width:46px;height:46px;"><i class="fa fa-folder-open"></i></div>
-                                <div>
-                                    <h5 class="fw-bold mb-1">Freight &amp; Document Integration</h5>
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-folder-open text-secondary fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Freight &amp; Document Integration</h5>
                                     <p class="text-muted small mb-2">Sync document workspaces with freight bookings to keep airway bills and manifests handy.</p>
-                                    <a class="text-decoration-none" href="https://apps.odoo.com/apps/modules/16.0/viin_document_freight" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_document_freight" target="_blank" rel="noopener noreferrer">View on Odoo Apps</a>
                                 </div>
                             </div>
                         </div>
@@ -848,7 +1098,7 @@
 
     <!-- Target Users -->
     <section id="target_users_block" class="mb-4">
-        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
             <h2 class="h3 text-center fw-bold mb-3">Who Should Use This Module?</h2>
             <p class="text-center text-muted mb-4">For forwarders of any size running international or domestic routes who need repeatable execution and visibility.</p>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">

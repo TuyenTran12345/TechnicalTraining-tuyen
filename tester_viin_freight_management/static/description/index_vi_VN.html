@@ -1,774 +1,1178 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giải pháp quản lý giao nhận vận tải toàn diện</title>
-    <!-- Bootstrap CSS -->
+    <title>Quản Lý Giao Nhận Vận Tải</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<body class="bg-light">
+<div class="container py-4">
+    <!-- The HTML and BODY tags here are only for preview purposes during development. The Odoo App Store and backend Apps Store will automatically remove these tags, so they will have no effect on the Odoo Apps Store or backend Apps Store. -->
 
-<body>
-    <div class="container">
-        <section id="overview_block" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-            <div class="rounded p-4"
-                style="background-color:#00BBCE; 
+    <!-- Hero -->
+    <section id="overview_block" class="mb-4" 
+    style="background-color:#00BBCE; 
                     background-image: linear-gradient(135deg, #00BBCE 0%, #7F4282 100%);
                     border-radius:15px;">
-                <div class="row mx-0 p-3 align-items-center" style="border-radius: 15px; background-color: rgba(232, 249, 250, 0.95);">
-                    <div class="col-sm-12 col-md-12 col-lg-4 text-center text-lg-start p-2">
-                        <a href="/apps/modules/browse?author=Viindoo">
-                            <img src="https://raw.githubusercontent.com/Viindoo/branding/2a5af87f5d75189c1dba7021e165f8085b36b086/viin_brand/static/img/viindoo-logo-slogan.svg"
-                                style="width: auto; height: 80px;" alt="Logo Viindoo">
-                        </a>
+        <div class="p-4 p-lg-5 text-white rounded-4 shadow-sm">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary fw-bold"><i class="fa fa-check-circle-o me-1"></i>Odoo.sh</span>
+                        <span class="badge bg-primary fw-bold"><i class="fa fa-check-circle-o me-1"></i>Community</span>
+                        <span class="badge bg-primary fw-bold"><i class="fa fa-check-circle-o me-1"></i>Enterprise</span>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-8 d-flex flex-column flex-lg-row justify-content-end p-3" style="gap: 10px;">
-                        <div class="btn text-md-nowrap d-flex align-items-center justify-content-center" style="border-radius: 10px; color: #ffffff; background-color: #00BBCE; padding: 10px 20px;">
-                            <i class="fa fa-check-circle-o" style="margin-right: 8px;"></i>
-                            <span>Odoo.sh</span>
+                    <p class="text-uppercase text-black small fw-semibold mb-1">Không gian Logistics</p>
+                    <h1 class="h2 fw-bold text-white mb-3">Quản lý Giao nhận Vận tải Tất-cả-trong-một</h1>
+                    <p class="mb-4">Kiểm soát toàn bộ quy trình: yêu cầu, báo giá, đặt chỗ, xử lý hàng hóa, theo dõi, cổng khách hàng và phân tích lợi nhuận cho tuyến biển, hàng không, đường bộ và đa phương thức.</p>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="p-3 border border-2 border-white rounded-3 h-100 shadow-lg">
+                                <div class="small fw-bold">Đường biển / Hàng không / Đường bộ</div>
+                                <div class="text-white" style="font-size: 0.75rem;">Một luồng làm việc, giai đoạn linh hoạt</div>
+                            </div>
                         </div>
-                        <div class="btn text-md-nowrap d-flex align-items-center justify-content-center" style="border-radius: 10px; color: #ffffff; background-color: #00BBCE; padding: 10px 20px;">
-                            <i class="fa fa-check-circle-o" style="margin-right: 8px;"></i>
-                            <span>Odoo Community</span>
+                        <div class="col-md-4">
+                            <div class="p-3 border border-2 border-white rounded-3 h-100 shadow-lg">
+                                <div class="small fw-bold">Cổng khách hàng</div>
+                                <div class="text-white" style="font-size: 0.75rem;">Theo dõi trực tiếp &amp; tự phục vụ</div>
+                            </div>
                         </div>
-                        <div class="btn text-md-nowrap d-flex align-items-center justify-content-center" style="border-radius: 10px; color: #ffffff; background-color: #00BBCE; padding: 10px 20px;">
-                            <i class="fa fa-check-circle-o" style="margin-right: 8px;"></i>
-                            <span>Odoo Enterprise</span>
+                        <div class="col-md-4">
+                            <div class="p-3 border border-2 border-white rounded-3 h-100 shadow-lg">
+                                <div class="small fw-bold">Kiểm soát biên lợi nhuận</div>
+                                <div class="text-white" style="font-size: 0.75rem;">Khung lợi nhuận &amp; nhắc nhở</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4 text-center">
-                    <div class="col-md-12">
-                        <h2 style="color: #ffffff; font-weight: 700; font-size: 45px; margin-bottom: 20px;">
-                            Quản lý giao nhận vận tải tất cả trong một
-                        </h2>
-                        <div style="color: #ffffff; margin-bottom: 40px;">
-                            <p class="mx-auto" style="font-size: 18px; line-height: 25px; max-width: 75%;">
-                                Giải pháp quản lý logistics toàn diện cho doanh nghiệp giao nhận, bao phủ toàn bộ quy trình từ tiếp nhận yêu cầu khách hàng, báo giá, đặt chỗ, vận hành lô hàng cho đến theo dõi và phân tích lợi nhuận.
+                <div class="col-lg-5">
+                    <div class="bg-white rounded-3 p-2 shadow-sm">
+                        <img src="/assets/banner.png" class="img-fluid rounded-3" alt="Tổng quan giao nhận">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suite modules spotlight (pills + carousel + slider) -->
+    <section class="mb-4" id="suite_modules_block">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
+            <div class="d-flex flex-wrap align-items-center mb-3 gap-2">
+                <h2 class="h4 fw-bold mb-0">Các mô-đun mở rộng chính</h2>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-6 d-flex flex-column">
+                    <ul class="nav nav-pills bg-transparent flex-lg-column flex-sm-row mb-3 gap-2" id="moduleTab" role="tablist" style="--bs-nav-pills-link-active-bg:#00bbce; --bs-nav-pills-link-active-color:#fff;">
+                        <li class="nav-item flex-fill" role="presentation">
+                            <a class="nav-link active w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="charges-tab" data-bs-toggle="tab" href="#charges" role="tab" aria-controls="charges" aria-selected="true" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-money me-2" aria-hidden="true" style="color:#00bbce;"></i>
+                                Cước phí vận tải &amp; Phí địa phương
+                            </a>
+                        </li>
+                        <li class="nav-item flex-fill" role="presentation">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="project-tab" data-bs-toggle="tab" href="#project" role="tab" aria-controls="project" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-tasks me-2" aria-hidden="true" style="color:#7f4282;"></i>
+                                Dự án giao nhận &amp; Nhiệm vụ vận hành
+                            </a>
+                        </li>
+                        <li class="nav-item flex-fill" role="presentation">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="onbehalf-tab" data-bs-toggle="tab" href="#onbehalf" role="tab" aria-controls="onbehalf" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-exchange me-2" aria-hidden="true" style="color:#00bbce;"></i>
+                                Thanh toán thay mặt trong giao nhận
+                            </a>
+                        </li>
+                        <li class="nav-item flex-fill" role="presentation">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="purchase-tab" data-bs-toggle="tab" href="#purchase" role="tab" aria-controls="purchase" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-shopping-cart me-2" aria-hidden="true" style="color:#00bbce;"></i>
+                                Tích hợp Booking giao nhận &amp; Mua hàng
+                            </a>
+                        </li>
+                        <li class="nav-item flex-fill" role="presentation">
+                            <a class="nav-link w-100 text-start fw-bold rounded-pill shadow-sm py-3" id="document-tab" data-bs-toggle="tab" href="#document" role="tab" aria-controls="document" aria-selected="false" style="position:relative; border:1px solid rgba(0,187,206,0.35); background:#f7fbfc; color:#0b2336; padding-left:3rem; letter-spacing:0.1px; box-shadow:0 8px 18px rgba(0,0,0,0.05);">
+                                <span aria-hidden="true" style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff 15%, #00bbce 60%, #7f4282 100%); box-shadow:0 0 0 6px rgba(0,187,206,0.12); opacity:0.5;"></span>
+                                <i class="fa fa-file-text-o me-2" aria-hidden="true" style="color:#7f4282;"></i>
+                                Tích hợp Giao nhận &amp; Tài liệu
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content border border-info bg-white bg-opacity-75 rounded-3 p-3 h-100 shadow-sm" id="moduleTabContent">
+                        <div class="tab-pane fade show active" id="charges" role="tabpanel" aria-labelledby="charges-tab">
+                            <h5 class="fw-bold mb-2">Cước phí vận tải &amp; Phí địa phương</h5>
+                            <ul class="text-muted small mb-3">
+                                <li>Menu "Phí" ngay trong Giao nhận để nhập/xuất định nghĩa phụ phí (CSV/Excel) mà không cần Bán hàng/Sản phẩm.</li>
+                                <li>Thiết lập hàng loạt bảng giá cước, phụ phí địa phương, khoản thu/chi; áp dụng nhanh vào báo giá và Chuyến/Booking.</li>
+                                <li>Kiểm soát biên lợi nhuận bằng cách đồng bộ bảng giá vào chi phí và doanh thu cho từng tuyến.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">Nhập/Xuất phí</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">So sánh nhà cung cấp</span>
+                                <span class="badge border" style="background-color: #8F8F8F !important; color: white !important;">Quy tắc bảng giá</span>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="project" role="tabpanel" aria-labelledby="project-tab">
+                            <h5 class="fw-bold mb-2">Dự án giao nhận &amp; Nhiệm vụ vận hành</h5>
+                            <ul class="text-muted small mb-3">
+                                <li>Liên kết Chuyến với Dự án/Nhiệm vụ; tự động liên kết dựa trên cấu hình sản phẩm vận chuyển.</li>
+                                <li>Checklist nhiệm vụ vận hành cho từng chặng; nhắc việc và ghi chú ngay trên giao diện tracking.</li>
+                                <li>Tự động kết chuyển chi phí timesheet vào chi phí chuyến để tính lợi nhuận chính xác.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">Task + Stage</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Gantt</span>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="onbehalf" role="tabpanel" aria-labelledby="onbehalf-tab">
+                            <h5 class="fw-bold mb-2">Thanh toán thay mặt trong giao nhận</h5>
+                            <ul class="text-muted small mb-3">
+                                <li>Thêm khu vực "Thanh toán thay mặt" ở khung Lợi nhuận bên cạnh giao diện tracking Chuyến (kanban).</li>
+                                <li>Tự động lấy dữ liệu từ dòng đơn bán được đánh dấu thay mặt, hiển thị số thu/chi và đối tác.</li>
+                                <li>Xem tác động thu/chi tới lợi nhuận chuyến mà không cần chuyển ứng dụng.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="purchase" role="tabpanel" aria-labelledby="purchase-tab">
+                            <h5 class="fw-bold mb-2">Tích hợp Booking giao nhận &amp; Mua hàng</h5>
+                            <ul class="text-muted small mb-3">
+                                <li>Tự liên kết PO nhà thầu phụ (từ dòng bán thuê ngoài) với tuyến hoặc booking chuyến.</li>
+                                <li>Truy cập PO liên quan trực tiếp từ form Chuyến/Booking để đồng bộ mua hàng với thực thi.</li>
+                                <li>Truy vết đầu-cuối: yêu cầu khách hàng → booking → PO nhà cung cấp → thực thi logistics.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">PO ↔ Booking</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Kiểm soát thuê ngoài</span>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="document-tab">
+                            <h5 class="fw-bold mb-2">Tích hợp Giao nhận &amp; Tài liệu</h5>
+                            <ul class="text-muted small mb-3">
+                                <li>Tự tạo workspace, đội nhóm, tag và quy tắc trong Documents để rút ngắn thời gian thiết lập ban đầu.</li>
+                                <li>Mở tài liệu liên quan từ Booking/Chuyến (AWB, BL, manifest, khai báo, v.v.) chỉ với một nhấp chuột.</li>
+                                <li>Tìm kiếm, phân quyền và quản lý phiên bản tài liệu gắn với chuyến để đáp ứng kiểm toán và SLA.</li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge border" style="background-color: #00BBCE !important; color: white !important;">Tự tạo workspace</span>
+                                <span class="badge border" style="background-color: #7f4282 !important; color: white !important;">Truy cập nhanh</span>
+                                <span class="badge border" style="background-color: #8F8F8F !important; color: white !important;">SLA tài liệu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column">
+                    <div id="videoPreview" class="slide h-100">
+                        <div class="rounded-3 shadow-sm h-100">
+                            <div class="card border-0 h-100">
+                                <div class="media_iframe_video w-100 h-100 rounded" data-oe-expression="//www.youtube.com/embed/nB-cC0hz35g"></div>
+                                <div class="card-body">
+                                    <h5 class="fw-bold mb-1">Tổng quan Quản lý Giao nhận</h5>
+                                    <p class="text-muted small mb-0">Video giới thiệu: xem cách chúng tôi tạo chuyến, đặt chỗ hãng vận chuyển, theo dõi mốc và chia sẻ trạng thái với khách hàng chỉ trong vài phút.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded-3 p-3 mt-3 shadow-sm">
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <span class="badge" style="background-color: #00BBCE !important; color: white !important;">Lưu ý</span>
+                            <p class="text-muted small mb-0">
+                                Để mở khóa đầy đủ tính năng, hãy đảm bảo cài đặt toàn bộ các mô-đun đi kèm bắt buộc.
                             </p>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-color: ghostwhite"> 
+            <h2 class="h3 text-center fw-bold mb-3">Lợi ích</h2>
+            <p class="text-center text-muted mb-4">Dành cho đơn vị giao nhận cần thực thi ổn định, hiển thị cấp khách hàng và kiểm soát biên lợi nhuận.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 g-lg-4">
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-cogs text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Tinh gọn vận hành</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Nhắc việc tự động, quy tắc kiểm tra và luồng chuẩn hóa để giảm thao tác thủ công và lỗi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-eye text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Hiển thị như sản phẩm cho khách</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Theo dõi trực tiếp, truy cập cổng thông tin và cập nhật chủ động cho mọi bên liên quan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-line-chart text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Bảo vệ biên lợi nhuận</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Theo dõi chi phí và lợi nhuận từng chuyến để nhận diện tuyến và khách hàng hiệu quả.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f6fbff); border: 1px solid rgba(0,0,0,0.03); transition: transform 0.18s ease, box-shadow 0.18s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.06)';">
+                        <div class="card-body d-flex align-items-start gap-3">
+                            <div class="d-flex flex-column h-100">
+                                <div class="d-flex align-items-center mb-2 flex-grow-1">
+                                    <i class="fa fa-shield text-info me-3" aria-hidden="true"></i>
+                                    <h5 class="fw-bold mb-0">Tuân thủ &amp; tích hợp</h5>
+                                </div>
+                                <p class="mb-0 text-muted small" style="line-height:1.6;">Hỗ trợ chứng từ hàng nguy hiểm và hải quan, đồng bộ với Bán hàng, Kế toán và Documents.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-10 offset-md-1 text-center" style="border-radius: 20px; padding: 3px; background: linear-gradient(135deg, #00BBCE 0%, #7F4282 100%);">
-                    <img alt="Tổng quan giải pháp giao nhận" class="img-fluid" loading="lazy"
-                        src="/assets/viin_freight-intro_vn.gif"
-                        style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="key_features_block" class="py-4">
-            <div style="background-color: #EAF9FA; padding: 47px; border-radius: 15px;">
-                <h2 class="text-center mb-5" style="color: #21272B; font-size: 32px; font-weight: bold;">
-                    Tính năng chính
-                </h2>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-center flex-fill"
-                            style="padding: 30px 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-ship" style="font-size: 32px; color: #7F4282;"></i>
-                            </div>
-                            <p class="mb-0">Quản lý lô hàng toàn trình với kiểm soát HBL/MBL</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-center flex-fill"
-                            style="padding: 30px 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-calendar-check-o" style="font-size: 32px; color: #7F4282;"></i>
-                            </div>
-                            <p class="mb-0">Lập kế hoạch đặt chỗ &amp; vận chuyển nâng cao với đồng bộ lịch trình</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-center flex-fill"
-                            style="padding: 30px 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-cubes" style="font-size: 32px; color: #7F4282;"></i>
-                            </div>
-                            <p class="mb-0">Quản lý Container - Kiện hàng &amp; Hàng hóa</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-center flex-fill"
-                            style="padding: 30px 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-map-marker" style="font-size: 32px; color: #7F4282;"></i>
-                            </div>
-                            <p class="mb-0">Theo dõi thời gian thực &amp; cổng thông tin tự phục vụ cho khách hàng</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-center flex-fill"
-                            style="padding: 30px 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-shopping-cart" style="font-size: 32px; color: #7F4282;"></i>
-                            </div>
-                            <p class="mb-0">Tích hợp bán hàng &amp; tối ưu doanh thu với hiệu quả báo giá</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-center flex-fill"
-                            style="padding: 30px 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-line-chart" style="font-size: 32px; color: #7F4282;"></i>
-                            </div>
-                            <p class="mb-0">Báo cáo lợi nhuận &amp; quản trị dữ liệu nền tảng</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="benefit_block" class="py-4">
-            <div class="" style="background-color: #F2F2F2; padding: 45px; border-radius: 15px;">
-                <h2 class="text-center mb-5" style="color: #21272B; font-size: 32px; font-weight: bold;">Lợi ích</h2>
-
-                <div class=""
-                    style="padding: 24px; background-color: white; border-radius: 15px; border: 1px solid #F2F2F2;">
-                    <div class="d-flex align-items-start gap-3 p-3">
-                        <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282; margin-top: 5px;"></i>
-                        <div style="color: #282F33; line-height: 1.6; font-size: 16px;">
-                            <strong style="font-size: 18px; color: #21272B;">Chuẩn hóa vận hành:</strong> Tự động hóa luồng công việc lô hàng với hệ thống thống nhất và nhắc việc thông minh. Giảm nhập liệu thủ công, hạn chế sai sót bằng các quy tắc kiểm tra và chuẩn hóa quy trình trên toàn bộ dịch vụ giao nhận.
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-start gap-3 p-3">
-                        <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282; margin-top: 5px;"></i>
-                        <div style="color: #282F33; line-height: 1.6; font-size: 16px;">
-                            <strong style="font-size: 18px; color: #21272B;">Nâng cao trải nghiệm khách hàng:</strong> Cung cấp khả năng theo dõi thời gian thực và cổng thông tin tự phục vụ cho khách hàng. Thông báo trạng thái chủ động giúp mọi bên nắm rõ tiến độ trong suốt hành trình vận chuyển.
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-start gap-3 p-3">
-                        <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282; margin-top: 5px;"></i>
-                        <div style="color: #282F33; line-height: 1.6; font-size: 16px;">
-                            <strong style="font-size: 18px; color: #21272B;">Tối đa hóa lợi nhuận:</strong> Theo dõi chi phí và biên lợi nhuận cho từng lô hàng để nhận diện tuyến đường và khách hàng hiệu quả. Xử lý khối lượng lớn mà không gia tăng độ phức tạp vận hành và vẫn đảm bảo chất lượng dịch vụ.
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-start gap-3 p-3">
-                        <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282; margin-top: 5px;"></i>
-                        <div style="color: #282F33; line-height: 1.6; font-size: 16px;">
-                            <strong style="font-size: 18px; color: #21272B;">Đảm bảo tuân thủ &amp; tích hợp:</strong> Duy trì hồ sơ chứng từ cho hải quan, hàng nguy hiểm và các yêu cầu pháp lý. Tích hợp liền mạch với Bán hàng, Kế toán và các mô-đun nghiệp vụ khác.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tabs -->
-        <div id="tabs" class="container">
-            <ul class="nav nav-tabs justify-content-center bg-white py-2" id="myTab" role="tablist"
-                style="border-radius: 6px 6px 0 0;">
+    <!-- Video & Resources -->
+    <section class="mb-4">
+        <div class="bg-white rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
+            <ul class="nav nav-tabs mb-3" id="presentationTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="feature-tab" data-bs-toggle="tab" href="#feature"
-                        role="tab" aria-controls="feature" aria-selected="true"
-                        style="color:#121212; font-weight:500; font-size:16px">
-                        Tính năng</a>
+                    <a class="nav-link active" style="color: #00BBCE;" id="overview-tab" data-bs-toggle="tab" href="#overview-pane" role="tab" aria-controls="overview-pane" aria-selected="true">Tổng quan</a>
+                </li>
+                <li class="nav-item" role="videoTab">
+                    <a class="nav-link" style="color: #00BBCE;" id="video-demo-tab" data-bs-toggle="tab" href="#video-demo" role="tab" aria-controls="video-demo" aria-selected="false">Demo</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="demo-tab" data-bs-toggle="tab" href="#demo"
-                        role="tab" aria-controls="demo" aria-selected="false"
-                        style="color:#121212; font-weight:500; font-size:16px">Demo</a>
+                    <a class="nav-link" style="color: #00BBCE;" id="support-tab" data-bs-toggle="tab" href="#support-pane" role="tab" aria-controls="support-pane" aria-selected="false">Hỗ trợ</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="support-tab" data-bs-toggle="tab" href="#support"
-                        role="tab" aria-controls="support" aria-selected="false"
-                        style="color:#121212; font-weight:500; font-size:16px">
-                        Hỗ trợ</a>
+                    <a class="nav-link" style="color: #00BBCE;" id="technical-requirement-tab" data-bs-toggle="tab" href="#technical-requirement-pane" role="tab" aria-controls="technical-requirement-pane" aria-selected="false">Yêu cầu kỹ thuật</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="requirement-tab" data-bs-toggle="tab" href="#requirement"
-                        role="tab" aria-controls="requirement" aria-selected="false"
-                        style="color:#121212; font-weight:500; font-size:16px">Yêu cầu kỹ thuật</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="releases-tab" data-bs-toggle="tab" href="#releases"
-                        role="tab" aria-controls="releases" aria-selected="false"
-                        style="color:#121212; font-weight:500; font-size:16px">Nhật ký thay đổi</a>
+                    <a class="nav-link" style="color: #00BBCE;" id="changelog-tab" data-bs-toggle="tab" href="#changelog-pane" role="tab" aria-controls="changelog-pane" aria-selected="false">Nhật ký thay đổi</a>
                 </li>
             </ul>
-        </div>
-
-        <!-- Tab Content -->
-        <div class="tab-content" id="myTabContent">
-
-            <div aria-labelledby="feature-tab" class="tab-pane fade show active" id="feature" role="tabpanel">
-                <section id="feature_shipment" class="py-4">
-                    <div class="" style="background-color: #EAF9FA; padding: 32px; border-radius: 15px;">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-xl-4 order-1">
-                                <h3 class="text-xl-start text-center"
-                                    style="color: #21272B; font-weight:700; font-size:32px; line-height:38px;">
-                                    Quản lý lô hàng toàn trình
-                                </h3>
-                                <ul style="font-size: 16px; line-height: 28px; padding-left: 20px;">
-                                    <li>Quản lý đầy đủ vòng đời lô hàng cho đường biển, đường hàng không, đường bộ và vận tải đa phương thức</li>
-                                    <li>Đánh số tự động và kiểm soát HBL/MBL</li>
-                                    <li>Giai đoạn quy trình linh hoạt</li>
-                                    <li>Theo dõi giao hàng thời gian thực bảo đảm dịch vụ đúng hạn</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-12 col-xl-8 order-2 mt-3 mt-xl-0 d-flex justify-content-center">
-                                <img alt="Quản lý lô hàng" class="img-fluid " loading="lazy"
-                                    src="/assets/shipment-manage_vn.gif"
-                                    style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="feature_booking" class="py-4">
-                    <div class="" style="background-color: #F2F2F2; padding: 32px; border-radius: 15px;">
-                        <div class="row align-items-center">
-                            <div
-                                class="col-md-12 col-xl-8 order-2 order-xl-1 mt-3 mt-xl-0 d-flex justify-content-center">
-                                <img alt="Quản lý đặt chỗ" class="img-fluid " loading="lazy"
-                                    src="/assets/booking_manage_vn.gif"
-                                    style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                            </div>
-                            <div class="col-md-12 col-xl-4 order-1 order-xl-2">
-                                <h3 class="text-xl-end text-center"
-                                    style="color: #21272B; font-weight:700; font-size:32px; line-height:38px;">
-                                    Lập kế hoạch đặt chỗ &amp; vận chuyển nâng cao
-                                </h3>
-                                <ul style="font-size: 16px; line-height: 28px; padding-left: 20px;">
-                                    <li>Tự động tạo booking theo hãng vận chuyển và tuyến từ kiện hàng, khớp với các chặng thực tế</li>
-                                    <li>Bản nháp nhiều chặng tổng hợp ETD/ETA/Cutoff từ tuyến liên kết để kiểm tra lịch nhanh</li>
-                                    <li>Xác nhận tuân thủ yêu cầu hãng/tuyến và đồng bộ dữ liệu booking về lô hàng hoặc các chặng liên quan</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="feature_cargo" class="py-4">
-                    <div class="" style="background-color: #EAF9FA; padding: 32px; border-radius: 15px;">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-xl-4 order-1">
-                                <h3 class="text-xl-start text-center"
-                                    style="color: #21272B; font-weight:700; font-size:32px; line-height:38px;">
-                                    Quản lý Container - Kiện &amp; Hàng hóa
-                                </h3>
-                                <ul style="font-size: 16px; line-height: 28px; padding-left: 20px;">
-                                    <li>Ba chế độ nhập hàng hóa cùng theo dõi container, số niêm phong và kích thước</li>
-                                    <li>Quản lý đầy đủ mã HS, số UN, phân lớp DG để đáp ứng hải quan</li>
-                                    <li>Tăng tốc thao tác với các mẫu hàng hóa có sẵn</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-12 col-xl-8 order-2 mt-3 mt-xl-0 d-flex justify-content-center">
-                                <img alt="Quản lý hàng hóa" class="img-fluid " loading="lazy"
-                                    src="/assets/cargo-package_vn.gif"
-                                    style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="feature_tracking" class="py-4">
-                    <div class="" style="background-color: #F2F2F2; padding: 32px; border-radius: 15px;">
-                        <div class="order-1">
-                            <h3 class="text-center"
-                                style="color: #21272B; font-weight:700; font-size:32px; line-height:38px;">
-                                Theo dõi thời gian thực &amp; cổng thông tin khách hàng
-                            </h3>
-                            <ul class="mx-auto" style="font-size: 16px; line-height: 28px; max-width: 75%; padding-left: 20px;">
-                                <li>Theo dõi Kanban trực quan với thanh tiện ích dành cho đội vận hành</li>
-                                <li>Giao diện dòng thời gian với bộ mẫu trạng thái chuẩn hóa</li>
-                                <li>Cổng tự phục vụ để khách hàng tra cứu lô hàng 24/7 cùng bộ lọc nâng cao</li>
-                            </ul>
-                        </div>
-                        <div class="order-2 mt-3 mt-xl-0">
-                            <img alt="Cổng theo dõi" class="img-fluid " loading="lazy"
-                                src="/assets/tracking_portal_vn.gif"
-                                style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                        </div>
-                    </div>
-                </section>
-                <section id="feature_sales" class="py-4">
-                    <div class="" style="background-color: #EAF9FA; padding: 32px; border-radius: 15px;">
-                        <div class="row align-items-center">
-                            <div
-                                class="col-md-12 col-xl-8 order-2 order-xl-1 mt-3 mt-xl-0 d-flex justify-content-center">
-                                <img alt="Tích hợp bán hàng" class="img-fluid " loading="lazy"
-                                    src="/assets/sale_vn.gif"
-                                    style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                            </div>
-                            <div class="col-md-12 col-xl-4 order-1 order-xl-2">
-                                <h3 class="text-xl-end text-center"
-                                    style="color: #21272B; font-weight:700; font-size:32px; line-height:38px;">
-                                    Tích hợp bán hàng &amp; tối ưu doanh thu
-                                </h3>
-                                <ul style="font-size: 16px; line-height: 28px; padding-left: 20px;">
-                                    <li>Tạo báo giá logistics và tự động sinh lô hàng từ đơn bán</li>
-                                    <li>Truy vết đầy đủ từ dòng đơn hàng tới từng tuyến vận chuyển</li>
-                                    <li>Tích hợp bảng giá nhà cung cấp cùng đánh dấu thu hộ/chi hộ minh bạch</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="feature_profitability" class="py-4">
-                    <div class="" style="background-color: #F2F2F2; padding: 32px; border-radius: 15px;">
-                        <div class="order-1">
-                            <h3 class="text-center"
-                                style="color: #21272B; font-weight:700; font-size:32px; line-height:38px;">
-                                Báo cáo &amp; dữ liệu nền tảng toàn diện
-                            </h3>
-                            <ul class="mx-auto" style="font-size: 16px; line-height: 28px; max-width: 75%; padding-left: 20px;">
-                                <li>Quản lý báo cáo toàn diện với phân tích biên lợi nhuận và tiến độ lô hàng theo nhiều tiêu chí</li>
-                                <li>Báo cáo Pivot/Graph với phân tích lợi nhuận chuyên sâu</li>
-                                <li>Thư viện cảng, sân bay, tuyến vận chuyển cùng đơn vị đo lường logistics</li>
-                                <li>Nhắc ETD/ETA tự động và nền tảng tự động hóa đảm bảo chất lượng dịch vụ</li>
-                            </ul>
-                        </div>
-                        <div class="row order-2 mt-3">
-                            <div class="col-md-12 col-xl-6 order-1 mt-3 mt-xl-0">
-                                <img alt="Báo cáo lợi nhuận" class="img-fluid " loading="lazy"
-                                    src="/assets/report_vn.gif"
-                                    style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                            </div>
-                            <div class="col-md-12 col-xl-6 order-2 mt-3 mt-xl-0">
-                                <img alt="Dữ liệu nền tảng" class="img-fluid " loading="lazy"
-                                    src="/assets/data_vn.gif"
-                                    style="border-radius: 15px; display: block; width: 100%; height: auto;" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div aria-labelledby="demo-tab" class="tab-pane fade" id="demo" role="tabpanel">
-                <section id="demo_block" class="py-4">
-                    <div style="background-color: #EEF8FF; border-radius: 20px; padding: 48px 24px;">
-                        <div style="max-width: 960px; margin: 0 auto;">
-                            <div style="background-color: #ffffff; border-radius: 18px; padding: 36px 32px; text-align: center; box-shadow: 0 12px 28px rgba(8, 116, 255, 0.16);">
-                                <h3 style="font-size: 24px; font-weight: 700; color: #21272B; margin-bottom: 12px;">
-                                    Xem video hướng dẫn
-                                </h3>
-                                <p style="font-size: 16px; color: #4A4F55; line-height: 1.7; max-width: 640px; margin: 0 auto 24px auto;">
-                                    Theo dõi quy trình giao nhận từ đặt chỗ đến phân tích lợi nhuận trong chuyến tham quan sản phẩm có hướng dẫn.
-                                </p>
-                                <div class="media_iframe_video col-lg-10 rounded"
-                                    data-oe-expression="//www.youtube.com/embed/x1BuGArh0DY?si=CGcezjQqj4YBPdG8">
-                                </div>
-                            </div>
-                            <div class="row g-4 mt-3">
-                                <div class="col-12 col-lg-6">
-                                    <div style="background-color: #ffffff; border-radius: 16px; padding: 28px; height: 100%; box-shadow: 0 10px 24px rgba(0, 187, 206, 0.12);">
-                                        <div style="display: flex; align-items: flex-start; gap: 16px;">
-                                            <i class="fa fa-book me-2" style="font-size: 26px; color: #00BBCE;"></i>
-                                            <div>
-                                                <h4 style="font-size: 20px; font-weight: 600; color: #21272B;">Đọc hướng dẫn sử dụng</h4>
+            <div class="tab-content" id="presentationTabContent">
+                <div class="tab-pane fade show active" id="overview-pane" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="rounded-4 p-4 p-lg-4 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
+                        <div class="row g-3 mb-3 align-items-stretch">
+                            <div class="col-lg-8">
+                                <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(135deg, #ffffff, #f4fbfd);">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                                            <span class="badge bg-opacity-10 fw-semibold" style="background-color: #00BBCE !important; color: white !important;">Tháp điều hành</span>
+                                            <span class="badge bg-opacity-10 fw-semibold" style="background-color: #7f4282 !important; color: white !important;">Sẵn sàng cổng khách hàng</span>
+                                            <span class="badge bg-opacity-10 fw-semibold" style="background-color: #8F8F8F !important; color: white !important;">Ưu tiên lợi nhuận</span>
+                                        </div>
+                                        <div class="row g-3 align-items-center">
+                                            <div class="col-md-7">
+                                                <h3 class="h5 fw-bold mb-2">Vận hành nhanh, không bỏ sót bước</h3>
+                                                <p class="text-muted small mb-0">Một tab hợp nhất chuyến đa phương thức, booking, phí, tài liệu và lợi nhuận. Checklist theo chặng, nhắc ETD/ETA và cập nhật cổng khách hàng giúp vận hành, kinh doanh và tài chính luôn đồng bộ.</p>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="bg-white rounded-3 p-3 shadow-sm h-100">
+                                                    <div class="fw-bold text-uppercase text-muted small mb-2">Tóm tắt</div>
+                                                    <ul class="list-unstyled text-muted small mb-0">
+                                                        <li class="d-flex align-items-center mb-1"><i class="fa fa-check text-info me-2"></i>Bảng điều khiển tuyến cho Chuyến</li>
+                                                        <li class="d-flex align-items-center mb-1"><i class="fa fa-check text-info me-2"></i>Báo giá → Chuyến → Booking → Lợi nhuận trong một luồng</li>
+                                                        <li class="d-flex align-items-center"><i class="fa fa-check text-info me-2"></i>Cổng tự phục vụ: trạng thái, tài liệu, phí, nhiệm vụ</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div style="display: inline-flex; align-items: center; border-radius: 14px; overflow: hidden; border: 1px solid #00BBCE; box-shadow: 0 6px 14px rgba(0, 187, 206, 0.15);">
-                                            <span class="me-2" style="background-color: #ffffff; color: #00BBCE; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 11px 18px; white-space: nowrap;">
-                                                Sao chép liên kết
-                                            </span>
-                                            <span style="background-color: #00BBCE; color: #ffffff; font-size: 14px; font-weight: 500; padding: 11px 18px; user-select: all; white-space: nowrap;">
-                                                viindoo.com/documentation/16.0
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <div style="background-color: #ffffff; border-radius: 16px; padding: 28px; height: 100%; box-shadow: 0 10px 24px rgba(127, 66, 130, 0.12);">
-                                        <div style="display: flex; align-items: flex-start; gap: 16px;">
-                                            <i class="fa fa-desktop me-2" style="font-size: 26px; color: #7F4282;"></i>
-                                            <div>
-                                                <h4 style="font-size: 20px; font-weight: 600; color: #21272B;">Khám phá bản demo thực tế</h4>
+                                        <div class="row row-cols-1 row-cols-sm-3 g-2 mt-3">
+                                            <div class="col">
+                                                <div class="border rounded-3 bg-white p-2 h-100" style="color: #00BBCE;">
+                                                    <div class="fw-bold small mb-1">Đội vận hành</div>
+                                                <p class="text-muted small mb-0">Checklist, nhắc hạn cut-off, đồng bộ PO nhà thầu phụ với booking.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="border rounded-3 bg-white p-2 h-100" style="color: #7f4282;">
+                                                    <div class="fw-bold small mb-1">Kinh doanh</div>
+                                                <p class="text-muted small mb-0">Báo giá logistics với bảng giá, phụ phí, điều khoản, hoa hồng.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="border rounded-3 bg-white p-2 h-100" style="color: #8F8F8F;">
+                                                    <div class="fw-bold small mb-1">Tài chính</div>
+                                                <p class="text-muted small mb-0">Theo dõi thu/chi thay mặt, biên lợi nhuận, tình trạng hóa đơn và bộ chứng từ thanh toán.</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div style="display: inline-flex; align-items: center; border-radius: 14px; overflow: hidden; border: 1px solid #7F4282; box-shadow: 0 6px 14px rgba(127, 66, 130, 0.15);">
-                                            <span class="me-2" style="background-color: #ffffff; color: #7F4282; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 11px 18px; white-space: nowrap;">
-                                                Sao chép liên kết
-                                            </span>
-                                            <span style="background-color: #7F4282; color: #ffffff; font-size: 14px; font-weight: 500; padding: 11px 18px; user-select: all; white-space: nowrap;">
-                                                v16demo-vn.viindoo.com
-                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <div class="card-body h-100 d-flex flex-column">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div class="fw-bold text-uppercase text-muted small">Luồng mẫu</div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <span class="badge me-2" style="background-color: #00BBCE !important; color: white !important;">1</span>
+                                            <div>
+                                                <div class="fw-bold small mb-0">Tạo chuyến từ báo giá</div>
+                                                <p class="text-muted small mb-0">Tự động tạo chuyến khi xác nhận báo giá.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <span class="badge me-2" style="background-color: #7f4282 !important; color: white !important;">2</span>
+                                            <div>
+                                                <div class="fw-bold small mb-0">Thiết lập Chuyến và Booking</div>
+                                                <p class="text-muted small mb-0">Tạo Booking và hàng từ mẫu, đặt ETD/ETA, in HBL</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-2">
+                                            <span class="badge me-2" style="background-color: #8F8F8F !important; color: white !important;">3</span>
+                                            <div>
+                                                <div class="fw-bold small mb-0">Theo dõi &amp; đối soát</div>
+                                                <p class="text-muted small mb-0">Cập nhật tiến độ, xem cổng khách hàng, đối soát thu/chi</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-auto pt-2">
+                                            <div class="small text-muted fw-semibold mb-1">Kết quả</div>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge bg-light text-dark border">Giảm thao tác lặp</span>
+                                                <span class="badge bg-light text-dark border">Bộ chứng từ đầy đủ</span>
+                                                <span class="badge bg-light text-dark border">Lợi nhuận minh bạch</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-
-            <div aria-labelledby="support-tab" class="tab-pane fade" id="support" role="tabpanel">
-                <section id="support_block" class="py-4">
-                    <div style="padding: 47px; border-radius: 15px; background-color: #F2F2F2;">
-                        <h2 class="text-center" style="color: #21272B; font-size: 32px; font-weight: bold;">
-                            Cần hỗ trợ cho mô-đun này?
-                        </h2>
-                        <p class="mb-5" style="text-align: center; font-size: 18px;">
-                            Nếu bạn có câu hỏi, cần được hỗ trợ hoặc muốn yêu cầu tùy chỉnh, vui lòng liên hệ với chúng tôi
-                        </p>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 mb-4">
-                                <div class="d-flex flex-column align-items-center "
-                                    style="background-color: #EAF9FA; padding: 47px; border-radius: 15px; min-height: 500px;">
-                                    <h2 class="text-center mb-5" style="color: #00bcd4; font-size: 32px; font-weight: bold;">
-                                        Tư vấn trước khi mua
-                                    </h2>
-                                    <div class="d-flex align-items-center"
-                                        style="border-radius: 15px; overflow: hidden; border: 1px solid #00bcd4; background-color: white;">
-                                        <div class="d-flex align-items-center justify-content-center"
-                                            style="background-color: white; padding: 0px 26px;">
-                                            <a href="mailto:sales@viindoo.com">
-                                                <i class="fa fa-envelope-o" style="font-size: 28px; color: #00bcd4;"></i>
-                                            </a>
-                                        </div>
-                                        <div style="background-color: #00bcd4; padding: 14px 26px; flex: 1; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
-                                            <a href="mailto:sales@viindoo.com" style="color: white; font-size: 20px; font-weight: 500; text-decoration: none;">
-                                                sales@viindoo.com
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 text-left">
-                                        Nếu bạn cần hỗ trợ trước khi mua, vui lòng gửi email với các thông tin sau để chúng tôi hỗ trợ tốt nhất:
-                                        <ul class="pl-4 mt-2 d-inline-block text-left">
-                                            <li class="mb-2">
-                                                Mô-đun bạn đang tìm hiểu: tên và phiên bản
-                                            </li>
-                                            <li class="mb-2">
-                                                Phiên bản Odoo đang sử dụng: CE, EE
-                                            </li>
-                                            <li class="mb-2">
-                                                Vấn đề của bạn: dùng thử, thanh toán, cài đặt, v.v.
-                                            </li>
-                                            <li class="mb-2">
-                                                Đính kèm ảnh chụp màn hình hoặc video nếu có.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 mb-4">
-                                <div class="d-flex flex-column align-items-center "
-                                    style="background-color: #FFFAFF; padding: 47px; border-radius: 15px; min-height: 500px;">
-                                    <h2 class="text-center mb-5"
-                                        style="color: #7F4282; font-size: 32px; font-weight: bold;">Hỗ trợ
-                                    </h2>
-                                    <div class="d-flex align-items-center"
-                                        style="border-radius: 15px; overflow: hidden; border: 1px solid #7F4282; background-color: white; overflow: hidden;">
-                                        <div class="d-flex align-items-center justify-content-center"
-                                            style="background-color: white; padding: 0px 26px;">
-                                            <a href="mailto:apps.support@viindoo.com">
-                                                <i class="fa fa-envelope-o" style="font-size: 28px; color: #7F4282;"></i>
-                                            </a>
-                                        </div>
-                                        <div style="background-color: #7F4282; padding: 14px 26px; flex: 1; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
-                                            <a href="mailto:apps.support@viindoo.com" style="color: white; font-size: 20px; font-weight: 500; text-decoration: none;">
-                                                apps.support@viindoo.com
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 text-left">
-                                        Nếu bạn gặp sự cố khi sử dụng ứng dụng, vui lòng cung cấp đầy đủ thông tin sau để chúng tôi hỗ trợ nhanh nhất:
-                                        <ul class="pl-4 mt-2 d-inline-block text-left">
-                                            <li class="mb-2">
-                                                Số đơn hàng của bạn kèm ảnh chụp màn hình
-                                            </li>
-                                            <li class="mb-2">
-                                                Mô tả chi tiết vấn đề bạn đang gặp
-                                            </li>
-                                            <li class="mb-2">
-                                                Kỳ vọng của bạn về cách giải quyết
-                                            </li>
-                                            <li class="mb-2">
-                                                Đính kèm hình ảnh hoặc video tái hiện lỗi
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div aria-labelledby="requirement" class="tab-pane fade" id="requirement" role="tabpanel">
-                <section id="requirement_block" class="py-4">
-                    <div class="" style="background-color: #F2F2F2; padding: 45px; border-radius: 15px;">
-                        <h2 class="text-center mb-5" style="color: #21272B; font-size: 32px; font-weight: bold;">
-                            Yêu cầu
-                        </h2>
-                        <div class="p-3 bg-white rounded ">
-                            <div class="d-flex align-items-center gap-3 p-3">
-                                <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282;"></i>
-                                <div style="color: #282F33; line-height: 1.5; font-size: 16px;">
-                                    <strong>Phiên bản Odoo:</strong> 16.0 trở lên
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center gap-3 p-3">
-                                <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282;"></i>
-                                <div style="color: #282F33; line-height: 1.5; font-size: 16px;">
-                                    <strong>Mô-đun bắt buộc:</strong> viin_freight_management_fee, viin_document_freight, viin_freight_management_project, viin_freight_management_sale_onbehalf, viin_freight_management_sale_purchase
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center gap-3 p-3">
-                                <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282;"></i>
-                                <div style="color: #282F33; line-height: 1.5; font-size: 16px;">
-                                    <strong>Ấn bản hỗ trợ:</strong> Community Edition và Enterprise Edition
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center gap-3 p-3">
-                                <i class="fa fa-dot-circle-o me-3" style="font-size: 32px; color: #7F4282;"></i>
-                                <div style="color: #282F33; line-height: 1.5; font-size: 16px;">
-                                    <strong>Giấy phép:</strong> OPL-1 (Odoo Proprietary License)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <div aria-labelledby="releases-tab" class="tab-pane fade" id="releases" role="tabpanel">
-
-                <section id="changes_log_block" class="py-4">
-                    <div style="background-color: #F2F2F2; padding: 45px; border-radius: 15px;">
-                        <div class="row">
-                            <div class="col-md-12 col-xl-4 d-flex align-items-center justify-content-center index-1">
-                                <h2 class="font-weight-bold text-center text-lx-start" style="color: #21272B; font-size: 32px;">
-                                    Nhật ký thay đổi
+                        <div class="accordion" id="featureAccordion">
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featOne">
+                                    <a class="accordion-button" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Quản lý Chuyến &amp; Booking
+                                    </a>
                                 </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="featOne">
+                                    <div class="accordion-body bg-white p-4 d-flex justify-content-center" style="min-height: 500px;">
+                                        <div class="row g-4 align-items-center w-100 h-100 justify-content-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Thiết lập chuyến cho tuyến nhiều chặng và một chặng
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Quản lý chuyến nhiều tuyến dễ dàng</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="shipmentCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/shipment_multi_route.png" class="d-block w-100 rounded-3 shadow-sm" alt="Chuyến nhiều tuyến">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Tuyến nhiều chặng</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/shipment_single_route.png" class="d-block w-100 rounded-3 shadow-sm" alt="Chuyến một tuyến">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Tuyến một chặng</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#shipmentCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#shipmentCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Tạo booking từ chuyến
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Rút ngắn thời gian thiết lập nhiều booking</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/booking_create.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Tạo booking" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tự tạo booking từ chuyến</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/booking.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Xem booking" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Gửi thông báo cho hãng vận chuyển khi hoàn tất booking</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-12 col-xl-8 border-left" style="border-left: 2px solid #e0e0e0;">
-                                <div class="d-flex flex-column justify-content-center" style="height: 100%;">
-                                    <div class="mb-4">
-                                        <h2 class="font-weight-bold"
-                                            style="color: #282F33; margin-bottom: 10px; font-size: 20px;">
-                                            <span style="color: #3498db;">16.0.0.1</span> - 20/10/2025
-                                        </h2>
-                                        <ul class="list-unstyled" style="padding-left: 20px;">
-                                            <li style="color: #666; line-height: 1.6;">
-                                                Ra mắt công khai lần đầu bộ giải pháp Quản lý giao nhận vận tải All-in-One cho Odoo 16.
-                                            </li>
-                                            <li style="color: #666; line-height: 1.6;">
-                                                Bàn giao đầy đủ quy trình lô hàng end-to-end với booking, xử lý hàng, theo dõi vận hành, phân tích lợi nhuận và cổng khách hàng.
-                                            </li>
-                                            <li style="color: #666; line-height: 1.6;">
-                                                Đóng gói sẵn dashboard, nhắc tự động và móc tích hợp với Bán hàng, Kế toán, Documents.
-                                            </li>
-                                        </ul>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featThree">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Quản lý Container - Kiện hàng &amp; Hàng hóa
+                                    </a>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="featThree">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Tạo hàng hóa từ mẫu trong chuyến
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Tăng hiệu quả với mẫu hàng hóa dựng sẵn</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/cargo_generate.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Sinh hàng hóa" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Nhập mẫu hàng và tạo hàng hóa</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/cargo.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Hàng hóa" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Hàng hóa mới được tạo</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/cargo_info.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Thông tin hàng hóa" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Xem thông tin hàng hóa</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white d-flex justify-content-center" id="featFour">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;"role="button" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Theo dõi thời gian thực &amp; Cổng khách hàng
+                                    </a>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="featFour">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-4 align-items-center w-100 h-100 justify-content-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Cập nhật và theo dõi tiến độ chuyến theo thời gian thực
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Mọi dữ liệu chuyến tập trung trong một giao diện rõ ràng.</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/tracking.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Tracking" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Cập nhật thông tin tracking</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/tracking_info.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Thông tin tracking" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Nhập thông tin tracking</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/dashboard.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Bảng điều khiển" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Xem tracking cập nhật trên dashboard</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Giao diện cổng và timeline tracking
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Timeline hiển thị cho khách với mốc thời gian, cổng thông tin và tài liệu đi kèm</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="trackingCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/tracking_timeline.png" class="d-block w-100 rounded-3 shadow-sm" alt="Timeline tracking">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Timeline tracking</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/portal.png" class="d-block w-100 rounded-3 shadow-sm" alt="Giao diện portal">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Portal</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/portal_list.png" class="d-block w-100 rounded-3 shadow-sm" alt="Danh sách chuyến trên portal">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Danh sách chuyến trên portal</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#trackingCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#trackingCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featFive">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Tích hợp Tài liệu &amp; In HBL
+                                    </a>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="featFive">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Đính kèm tệp để tạo workspace
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Tự động tạo workspace từ nhật ký trò chuyện</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/document_insert.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Chèn tài liệu" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Chèn tệp vào nhật ký chat</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/document_button.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Nút tài liệu" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Nhấp nút tài liệu</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/document.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Tài liệu" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Xem tài liệu của chuyến</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                In HBL từ mẫu
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;"></span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/print.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="In ấn" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Nhấn in HBL</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/hbl.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="HBL" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Xem PDF HBL</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featSix">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Tích hợp Bán hàng &amp; Dự án
+                                    </a>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="featSix">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Tạo chuyến và dự án từ đơn bán
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Luồng thống nhất và kết nối</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/so.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="SO" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Thêm cước vận tải và xác nhận đơn bán</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/so_confirm.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Xác nhận SO" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tự động tạo chuyến và dự án mới</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Quản lý nhiệm vụ dự án bằng Gantt
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Quản lý mọi nhiệm vụ và phụ thuộc trên một timeline</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/gantt.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Gantt" style="object-fit: cover;">
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/task.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Task" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Lọc nhiệm vụ theo giai đoạn chuyến</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featSeven">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        Cước &amp; Phụ phí giao nhận
+                                    </a>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="featSeven">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Sinh toàn bộ phụ phí chỉ với một nhấp chuột
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Một cú nhấp đổ mọi phụ phí vào chi phí và doanh thu, không nhập lại</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/fee_generate.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Sinh phí" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Chọn Cước vận tải có phí và nhấn nút Sinh Phí</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/fee.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Phí" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Toàn bộ phụ phí đã sinh</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                So sánh giá giữa nhà cung cấp
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Đặt cạnh phí nhà cung cấp, tô đậm tức thời để quyết nhanh</span>
+                                            </h4>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/vendor.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Nhà cung cấp" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Chọn nhà cung cấp trên menu</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/vendor_hover.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Hover nhà cung cấp" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Di chuột vào biểu tượng bên cạnh tên nhà cung cấp</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/vendor_compare.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="So sánh nhà cung cấp" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Xem phụ phí khả dụng của nhà cung cấp</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featEight">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        Thu &amp; Chi thay mặt
+                                    </a>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="featEight">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Thiết lập đơn bán cho khoản thu và chi thay mặt
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Định nghĩa đối tác thu và chi trước để đối soát tự động</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/onbehalf.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Thanh toán thay mặt" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Chọn đối tác thu trên dòng đơn bán</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100">
+                                                <img src="/assets/invoice.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Hóa đơn" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tạo hóa đơn để đối soát</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Thu hộ từ khách hàng
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Đối soát thanh toán tức thì chỉ với vài cú nhấp</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/collection_customer.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Thu hộ khách hàng" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tạo thanh toán khách hàng và chọn đúng đơn bán để ánh xạ</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/collection_vendor.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Thu hộ nhà cung cấp" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tạo thanh toán cho nhà cung cấp rồi chọn "Gợi ý dòng" để sinh dòng thanh toán</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/collection_done.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Thu hộ xong" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Khoản thu hộ đã được thanh toán</div>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Chi hộ cho nhà cung cấp
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Gợi ý dòng dẫn bạn tới đúng khoản thanh toán và tài khoản</span>
+                                            </h4>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/disburse_vendor.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Chi hộ nhà cung cấp" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tạo thanh toán nhà cung cấp, chọn Thanh toán thay mặt, sau đó chọn khách hàng và số tiền</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/disburse_customer.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Chi hộ khách hàng" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Tạo thanh toán cho khách hàng rồi chọn "Gợi ý dòng" để đối soát</div>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative w-100 mb-3">
+                                                <img src="/assets/disburse_done.png" class="img-fluid w-100 rounded-3 shadow-sm" alt="Chi hộ xong" style="object-fit: cover;">
+                                                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-center">
+                                                    <div class="bg-800 mb-5">Khoản chi hộ đã thanh toán</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item overflow-hidden">
+                                <h2 class="accordion-header sticky-top bg-white" id="featNine">
+                                    <a class="accordion-button collapsed" style="color: #7f4282;" role="button" data-bs-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                        Báo cáo &amp; Master Data toàn diện
+                                    </a>
+                                </h2>
+                                <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="featNine">
+                                    <div class="accordion-body bg-white d-flex justify-content-center">
+                                        <div class="row g-3 align-items-center">
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Báo cáo tài chính và chuyến hiệu quả với bộ lọc trạng thái giao hàng
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Báo cáo chuyến và tài chính tương tác, gắn trạng thái giao hàng với biên lợi nhuận tức thời</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="reportCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/report_overview.png" class="d-block w-100 rounded-3 shadow-sm" alt="Biểu đồ tổng quan">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Biểu đồ tổng quan</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/overview.png" class="d-block w-100 rounded-3 shadow-sm" alt="Báo cáo tổng quan">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Báo cáo tổng quan</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/report_revenue.png" class="d-block w-100 rounded-3 shadow-sm" alt="Biểu đồ doanh thu">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Biểu đồ doanh thu</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/revenue.png" class="d-block w-100 rounded-3 shadow-sm" alt="Báo cáo doanh thu">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Báo cáo doanh thu</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#reportCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#reportCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <h4 class="fw-bold text-center mb-3" style="color:#0b2336; letter-spacing:0.3px;">
+                                                Master data chi tiết
+                                                <span class="d-block small text-muted fw-semibold" style="letter-spacing:0.2px;">Cảng, tuyến, hồ sơ hàng hóa và mã DG được cấu trúc sẵn, sẵn sàng tái sử dụng</span>
+                                            </h4>
+                                            <div class="col-lg-10 position-relative w-100">
+                                                <div id="masterDataCarousel" class="carousel slide position-sticky img-thumbnail mb-3 overflow-hidden" data-bs-ride="carousel" data-bs-interval="4000" style="border-radius:17px">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <img src="/assets/port.png" class="d-block w-100 rounded-3 shadow-sm" alt="Cảng">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Cảng</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/route.png" class="d-block w-100 rounded-3 shadow-sm" alt="Tuyến">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Tuyến</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/cargo_detail.png" class="d-block w-100 rounded-3 shadow-sm" alt="Chi tiết hàng hóa">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Chi tiết hàng hóa</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/cargo_type.png" class="d-block w-100 rounded-3 shadow-sm" alt="Loại hàng hóa">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Loại hàng hóa</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/hs.png" class="d-block w-100 rounded-3 shadow-sm" alt="Mã HS">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Mã HS</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/dg.png" class="d-block w-100 rounded-3 shadow-sm" alt="Nhóm nguy hiểm">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Nhóm nguy hiểm</h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <img src="/assets/un.png" class="d-block w-100 rounded-3 shadow-sm" alt="Số UN">
+                                                            <div class="carousel-caption d-none d-md-flex justify-content-center">
+                                                                <h4 class="bg-800 mb-0">Số UN</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="carousel-control-prev" role="button" href="#masterDataCarousel" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                    <a class="carousel-control-next" role="button" href="#masterDataCarousel" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" style="background-color:black; border-radius:5px; padding:15px"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+                <div class="tab-pane fade" id="video-demo" role="tabpanel" aria-labelledby="video-demo-tab">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h3 class="h6 fw-bold mb-0">Demo: từ báo giá đến hoàn tất</h3>
+                                <span class="badge text-white" style="background-color: #00BBCE !important; color: white !important;">Demo</span>
+                            </div>
+                            <p class="text-muted small mb-2">
+                                Xem video để biết cách chúng tôi tạo chuyến, đặt hãng vận chuyển, theo dõi mốc và chia sẻ trạng thái với khách hàng trong vài phút.
+                            </p>
+                            <div class="d-flex justify-content-center">
+                                <div class="media_iframe_video rounded" style="width:80%; aspect-ratio:16/9; min-height:400px;" data-oe-expression="//www.youtube.com/embed/x1BuGArh0DY?si=CGcezjQqj4YBPdG8"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mt-3">
+                        <div class="col-lg-4">
+                            <div class="row g-3 h-100">
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fa fa-book text-primary me-2"></i>
+                                                <h4 class="h6 fw-bold mb-0">Đọc hướng dẫn người dùng</h4>
+                                            </div>
+                                            <span class="badge bg-light text-dark p-2">viindoo.com/documentation/16.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fa fa-desktop text-secondary me-2"></i>
+                                                <h4 class="h6 fw-bold mb-0">Trải nghiệm demo trực tiếp</h4>
+                                            </div>
+                                            <span class="badge bg-light text-dark p-2">v16demo-vn.viindoo.com</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fa fa-list-alt text-secondary me-2"></i>
+                                        <h4 class="h6 fw-bold mb-0">Tính năng nổi bật</h4>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-2 g-2">
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Luồng chuyến Đường biển / Hàng không / Đường bộ</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Lợi nhuận &amp; thu/chi thay mặt</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Cổng khách hàng &amp; đồng bộ tài liệu</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge bg-light text-dark w-100 text-start p-2">Booking ↔ tích hợp mua hàng</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="support-pane" role="tabpanel" aria-labelledby="support-tab">
+                    <div class="row g-3">
+                        <div class="col">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="h5 fw-bold">Câu hỏi trước khi mua</h3>
+                                    <p class="text-muted flex-grow-1">Cần hỗ trợ trước khi mua? Vui lòng nêu tên &amp; phiên bản module, ấn bản (CE/EE) và vấn đề (dùng thử, thanh toán, cài đặt). Đính kèm ảnh nếu có thể.</p>
+                                    <a class="btn btn-outline-info w-100" href="mailto:sales@viindoo.com" style="background-color: #00BBCE; border:none;">
+                                        <i class="fa fa-envelope-o me-1"></i> sales@viindoo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="h5 fw-bold">Hỗ trợ</h3>
+                                    <p class="text-muted flex-grow-1">Khi cần hỗ trợ, hãy cung cấp số đơn hàng, mô tả vấn đề, kết quả mong muốn và hình ảnh/video tái hiện lỗi.</p>
+                                    <a class="btn btn-outline-secondary w-100" href="mailto:apps.support@viindoo.com" style="background-color: #7F4282;">
+                                        <i class="fa fa-envelope-o me-1"></i> apps.support@viindoo.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="technical-requirement-pane" role="tabpanel" aria-labelledby="technical-requirement-tab">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="mt-4">
+                                <h3 class="h6 fw-bold text-uppercase text-muted">Yêu cầu kỹ thuật</h3>
+                                <div class="row row-cols-1 row-cols-md-2 g-3">
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Phiên bản Odoo</div>
+                                                <p class="mb-0 text-muted small">16.0 trở lên</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Mô-đun bắt buộc</div>
+                                                <p class="mb-0 text-muted small">viin_freight_fee, viin_document_freight, viin_freight_project, viin_freight_sale_onbehalf, viin_freight_sale_purchase</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Ấn bản</div>
+                                                <p class="mb-0 text-muted small">Community Edition và Enterprise Edition</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body">
+                                                <div class="fw-bold mb-1">Giấy phép</div>
+                                                <p class="mb-0 text-muted small">OPL-1 (Odoo Proprietary License)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="changelog-pane" role="tabpanel" aria-labelledby="changelog-tab">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h5 fw-bold mb-3">Nhật ký thay đổi</h2>
+                            <div class="border-start border-4 border-primary ps-3">
+                                <h4 class="h6 fw-bold text-primary mb-1">16.0.0.1 <small class="text-muted">- 20/10/2025</small></h4>
+                                <ul class="text-muted mb-0">
+                                    <li>Phát hành công khai lần đầu bộ Quản lý Giao nhận Vận tải Tất-cả-trong-một cho Odoo 16.</li>
+                                    <li>Luồng chuyến đầu-cuối với booking, xử lý hàng, tracking, phân tích lợi nhuận và cổng khách hàng.</li>
+                                    <li>Dashboard, nhắc việc tự động và các hook tích hợp với Bán hàng, Kế toán và Tài liệu.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <section id="recommended_combos_block" class="py-4">
-            <div style="background-color: #F2F2F2; padding: 45px; border-radius: 15px;">
-                <h2 class="text-center mb-4" style="color: #21272B; font-size: 32px; font-weight: bold;">
-                    Kết hợp hiệu quả với các mô-đun sau
-                </h2>
-                <p class="text-center mx-auto mb-5" style="font-size: 18px; line-height: 1.6; max-width: 720px; color: #4A4F55;">
-                    Kết hợp Freight Forwarder Management với các giải pháp logistics của Viindoo để tối ưu cộng tác khách hàng, báo giá và thực thi mà không cần phụ thuộc chặt chẽ.
-                </p>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 justify-content-center">
-                    <div class="col">
-                        <div class="h-100 p-4 shadow-sm" style="border-radius: 15px; background-color: #ffffff; border-top: 4px solid #00BBCE;">
-                            <div class="d-flex flex-column h-100">
-                                <div class="d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border-radius: 12px; background-color: rgba(0, 187, 206, 0.12);">
-                                    <i class="fa fa-money" style="font-size: 26px; color: #00BBCE;"></i>
+    <!-- Recommended Combos -->
+    <section id="recommended_combos_block" class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-color: ghostwhite;">
+            <h2 class="h3 text-center fw-bold mb-3">Kết hợp hiệu quả với các mô-đun</h2>
+            <p class="text-center text-muted mb-4">Gộp vận hành giao nhận với các ứng dụng Viindoo lân cận để định giá, quản lý tài liệu và dòng thu/chi thay mặt.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-money text-info fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Cước phí vận tải &amp; Phí địa phương</h5>
+                                    <p class="text-muted small mb-2">Thêm mẫu phụ phí và phí để báo giá tuyến nhanh hơn và kiểm soát biên lợi nhuận.</p>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_fee" target="_blank" rel="noopener noreferrer">Xem trên Odoo Apps</a>
                                 </div>
-                                <h4 class="mb-3" style="font-size: 20px; font-weight: 600; color: #21272B;">Cước phí &amp; phụ phí vận tải</h4>
-                                <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #4A4F55;">
-                                    Thêm mẫu phụ phí và chi phí trực tiếp trong Freight Management để báo giá tuyến nhanh hơn và kiểm soát biên lợi nhuận.
-                                </p>
-                                <a class="mt-auto d-inline-block" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_fee" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: #00BBCE; text-decoration: underline;">
-                                    Xem trên Odoo Apps
-                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="h-100 p-4 shadow-sm" style="border-radius: 15px; background-color: #ffffff; border-top: 4px solid #7F4282;">
-                            <div class="d-flex flex-column h-100">
-                                <div class="d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border-radius: 12px; background-color: rgba(127, 66, 130, 0.12);">
-                                    <i class="fa fa-tasks" style="font-size: 26px; color: #7F4282;"></i>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-tasks text-secondary fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Dự án giao nhận &amp; Nhiệm vụ vận hành</h5>
+                                    <p class="text-muted small mb-2">Liên kết chuyến với dự án, nhiệm vụ và timesheet để ghi nhận chi phí lao động cho từng chuyến.</p>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_project" target="_blank" rel="noopener noreferrer">Xem trên Odoo Apps</a>
                                 </div>
-                                <h4 class="mb-3" style="font-size: 20px; font-weight: 600; color: #21272B;">Dự án &amp; công việc vận hành vận tải</h4>
-                                <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #4A4F55;">
-                                    Liên kết lô hàng với dự án, nhiệm vụ và timesheet để ghi nhận công lao động thực tế cho từng chuyến.
-                                </p>
-                                <a class="mt-auto d-inline-block" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_project" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: #7F4282; text-decoration: underline;">
-                                    Xem trên Odoo Apps
-                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="h-100 p-4 shadow-sm" style="border-radius: 15px; background-color: #ffffff; border-top: 4px solid #27AE60;">
-                            <div class="d-flex flex-column h-100">
-                                <div class="d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border-radius: 12px; background-color: rgba(39, 174, 96, 0.12);">
-                                    <i class="fa fa-exchange" style="font-size: 26px; color: #27AE60;"></i>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-exchange text-success fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Thanh toán thay mặt trong giao nhận</h5>
+                                    <p class="text-muted small mb-2">Luồng thu-chi thay mặt từ đơn bán ngay trong khung lợi nhuận chuyến.</p>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_onbehalf" target="_blank" rel="noopener noreferrer">Xem trên Odoo Apps</a>
                                 </div>
-                                <h4 class="mb-3" style="font-size: 20px; font-weight: 600; color: #21272B;">Thanh toán thay mặt trong vận tải</h4>
-                                <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #4A4F55;">
-                                    Hiển thị luồng thu hộ - chi hộ ngay trên sidebar lợi nhuận lô hàng từ đơn bán.
-                                </p>
-                                <a class="mt-auto d-inline-block" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_onbehalf" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: #27AE60; text-decoration: underline;">
-                                    Xem trên Odoo Apps
-                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="h-100 p-4 shadow-sm" style="border-radius: 15px; background-color: #ffffff; border-top: 4px solid #2980B9;">
-                            <div class="d-flex flex-column h-100">
-                                <div class="d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border-radius: 12px; background-color: rgba(41, 128, 185, 0.12);">
-                                    <i class="fa fa-link" style="font-size: 26px; color: #2980B9;"></i>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-link text-primary fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Tích hợp Booking giao nhận &amp; Mua hàng</h5>
+                                    <p class="text-muted small mb-2 flex-grow-1">Gắn PO thuê ngoài với booking giao nhận để mua hàng khớp với thực thi.</p>
+                                    <a class="text-decoration-none"style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_purchase" target="_blank" rel="noopener noreferrer">Xem trên Odoo Apps</a>
                                 </div>
-                                <h4 class="mb-3" style="font-size: 20px; font-weight: 600; color: #21272B;">Tích hợp đặt chỗ &amp; mua hàng vận tải</h4>
-                                <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #4A4F55;">
-                                    Liên kết đơn mua thuê ngoài với booking vận tải để tiến độ mua khớp với thực thi lô hàng.
-                                </p>
-                                <a class="mt-auto d-inline-block" href="https://apps.odoo.com/apps/modules/16.0/viin_freight_sale_purchase" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: #2980B9; text-decoration: underline;">
-                                    Xem trên Odoo Apps
-                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="h-100 p-4 shadow-sm" style="border-radius: 15px; background-color: #ffffff; border-top: 4px solid #8E44AD;">
-                            <div class="d-flex flex-column h-100">
-                                <div class="d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; border-radius: 12px; background-color: rgba(142, 68, 173, 0.12);">
-                                    <i class="fa fa-folder-open" style="font-size: 26px; color: #8E44AD;"></i>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start h-100">
+                                <i class="fa fa-folder-open text-secondary fs-4 me-3" aria-hidden="true"></i>
+                                <div class="d-flex flex-column h-100">
+                                    <h5 class="fw-bold mb-1 flex-grow-1">Tích hợp Giao nhận &amp; Tài liệu</h5>
+                                    <p class="text-muted small mb-2">Đồng bộ workspace tài liệu với booking giao nhận để luôn có AWB và manifest.</p>
+                                    <a class="text-decoration-none" style="color: #7f4282;" href="https://apps.odoo.com/apps/modules/16.0/viin_document_freight" target="_blank" rel="noopener noreferrer">Xem trên Odoo Apps</a>
                                 </div>
-                                <h4 class="mb-3" style="font-size: 20px; font-weight: 600; color: #21272B;">Tích hợp vận tải &amp; tài liệu</h4>
-                                <p class="mb-3" style="font-size: 15px; line-height: 1.6; color: #4A4F55;">
-                                    Đồng bộ workspace tài liệu với booking vận tải để giữ airway bill, manifest và hồ sơ hải quan trong tầm tay.
-                                </p>
-                                <a class="mt-auto d-inline-block" href="https://apps.odoo.com/apps/modules/16.0/viin_document_freight" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: #8E44AD; text-decoration: underline;">
-                                    Xem trên Odoo Apps
-                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <hr style="border-top: 2px solid #00BBCE;">
+        </div>
+    </section>
 
-        <section id="target_users_block" class="py-4">
-            <div class="" style="background-color: #EAF9FA; padding: 47px; border-radius: 15px;">
-                <h2 class="text-center mb-5" style="color: #21272B; font-size: 32px; font-weight: bold;">
-                    Ai nên sử dụng mô-đun này?
-                </h2>
-                <p class="text-center mx-auto w-75" style="font-size: 18px; line-height: 25px; margin-bottom: 3rem;">
-                    Dành cho các doanh nghiệp giao nhận mọi quy mô, từ nhà giao nhận chuyên biệt nhỏ đến nhà cung cấp logistics vừa và lớn, xử lý đa dạng loại hàng hóa và phương thức vận chuyển.
-                </p>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-start flex-fill"
-                            style="padding: 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-ship" style="font-size: 36px; color: #00BBCE;"></i>
-                            </div>
+    <!-- Target Users -->
+    <section id="target_users_block" class="mb-4">
+        <div class="rounded-4 p-4 p-lg-5 shadow-sm" style="background-image: linear-gradient(130deg, #00bbce00, #7f428229);">
+            <h2 class="h3 text-center fw-bold mb-3">Ai nên dùng mô-đun này?</h2>
+            <p class="text-center text-muted mb-4">Dành cho đơn vị giao nhận mọi quy mô, tuyến quốc tế hoặc nội địa, cần quy trình lặp lại và khả năng hiển thị rõ ràng.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <span class="badge bg-light text-primary me-3"><i class="fa fa-ship"></i></span>
                             <div>
-                                <p class="mb-1" style="font-size: 20px; font-weight: bold; color: #21272B;">
-                                    Vận tải biển quốc tế
-                                </p>
-                                <p class="mb-0 text-muted" style="line-height: 1.5;">
-                                    Các lô hàng FCL (Full Container Load) và LCL (Less than Container Load)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-start flex-fill"
-                            style="padding: 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-plane" style="font-size: 36px; color: #00BBCE;"></i>
-                            </div>
-                            <div>
-                                <p class="mb-1" style="font-size: 20px; font-weight: bold; color: #21272B;">
-                                    Vận tải hàng không
-                                </p>
-                                <p class="mb-0 text-muted" style="line-height: 1.5;">
-                                    Dịch vụ giao nhận hàng không nhanh và tiêu chuẩn
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-start flex-fill"
-                            style="padding: 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-truck" style="font-size: 36px; color: #00BBCE;"></i>
-                            </div>
-                            <div>
-                                <p class="mb-1" style="font-size: 20px; font-weight: bold; color: #21272B;">
-                                    Vận tải đường bộ
-                                </p>
-                                <p class="mb-0 text-muted" style="line-height: 1.5;">
-                                    Hoạt động vận tải xe tải và đường bộ
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-start flex-fill"
-                            style="padding: 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-exchange" style="font-size: 36px; color: #00BBCE;"></i>
-                            </div>
-                            <div>
-                                <p class="mb-1" style="font-size: 20px; font-weight: bold; color: #21272B;">
-                                    Vận tải đa phương thức
-                                </p>
-                                <p class="mb-0 text-muted" style="line-height: 1.5;">
-                                    Vận chuyển kết hợp nhiều phương thức
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-start flex-fill"
-                            style="padding: 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-globe" style="font-size: 36px; color: #00BBCE;"></i>
-                            </div>
-                            <div>
-                                <p class="mb-1" style="font-size: 20px; font-weight: bold; color: #21272B;">
-                                    Hoạt động nhập khẩu/xuất khẩu
-                                </p>
-                                <p class="mb-0 text-muted" style="line-height: 1.5;">
-                                    Logistics xuyên biên giới và thông quan hải quan
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex">
-                        <div class="d-flex align-items-start flex-fill"
-                            style="padding: 24px; border-radius: 12px; background-color: white; border: 1px solid #F2F2F2;">
-                            <div class="feature-icon me-3">
-                                <i class="fa fa-wf fa-map" style="font-size: 36px; color: #00BBCE;"></i>
-                            </div>
-                            <div>
-                                <p class="mb-1" style="font-size: 20px; font-weight: bold; color: #21272B;">
-                                    Logistics nội địa
-                                </p>
-                                <p class="mb-0 text-muted" style="line-height: 1.5;">
-                                    Dịch vụ giao nhận nội địa và khu vực
-                                </p>
+                                <div class="fw-bold">Vận tải biển quốc tế</div>
+                                <p class="text-muted mb-0 small">Chuyến FCL và LCL với hiển thị tập trung.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <span class="badge bg-light text-primary me-3"><i class="fa fa-plane"></i></span>
+                            <div>
+                                <div class="fw-bold">Vận tải hàng không</div>
+                                <p class="text-muted mb-0 small">Dịch vụ giao nhận hàng không nhanh và tiêu chuẩn.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </section>
-    </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <span class="badge bg-light text-primary me-3"><i class="fa fa-truck"></i></span>
+                            <div>
+                                <div class="fw-bold">Vận tải đường bộ</div>
+                                <p class="text-muted mb-0 small">Vận tải đường bộ và vận tải bằng xe tải.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <span class="badge bg-light text-primary me-3"><i class="fa fa-exchange"></i></span>
+                            <div>
+                                <div class="fw-bold">Vận tải đa phương thức</div>
+                                <p class="text-muted mb-0 small">Kết hợp nhiều phương thức vận chuyển.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <span class="badge bg-light text-primary me-3"><i class="fa fa-globe"></i></span>
+                            <div>
+                                <div class="fw-bold">Hoạt động xuất nhập khẩu</div>
+                                <p class="text-muted mb-0 small">Logistics xuyên biên giới và thông quan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <span class="badge bg-light text-primary me-3"><i class="fa fa-map"></i></span>
+                            <div>
+                                <div class="fw-bold">Logistics nội địa</div>
+                                <p class="text-muted mb-0 small">Dịch vụ giao nhận hàng hóa nội địa và vùng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
