@@ -1,0 +1,2029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="balance_sheet_c200_report" model="account.report">
+		<field name="name">Balance Sheet (B01-DN)</field>
+		<field name="default_opening_date_filter">today</field>
+		<field name="filter_date_range" eval="False"/>
+		<field name="filter_unfold_all" eval="True"/>
+		<field name="filter_journals" eval="True"/>
+		<field name="show_line_code" eval="True"/>
+		<field name="root_report_id" ref="to_account_reports.balance_sheet_report"/>
+		<field name="availability_condition">coa</field>
+		<field name="chart_template_id" ref="l10n_vn.vn_template"/>
+		<field name="template_ref">Template B01-DN</field>
+		<field name="column_ids">
+            <record id="balance_sheet_c200_column_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+                <field name="figure_type">monetary</field>
+            </record>
+        </field>
+        <field name="line_ids">
+        	<record id="balance_sheet_c200_line_01" model="account.report.line">
+        		<field name="name">TOTAL ASSETS (270 = 100 + 200)</field>
+        		<field name="code">BS200_270</field>
+        		<field name="display_code">270</field>
+        		<field name="expression_ids">
+	        		<record id="balance_sheet_c200_line_01_exp_01" model="account.report.expression">
+	        			<field name="label">balance</field>
+	        			<field name="engine">aggregation</field>
+	        			<field name="formula">BS200_100.balance + BS200_200.balance</field>
+	        		</record>
+        		</field>
+        		<field name="children_ids">
+        			<record id="balance_sheet_c200_line_01_01" model="account.report.line">
+	        			<field name="name">A - CURRENT ASSETS (100 = 110 + 120 + 130 + 140 + 150)</field>
+	        			<field name="code">BS200_100</field>
+	        			<field name="display_code">100</field>
+	        			<field name="expression_ids">
+		        			<record id="balance_sheet_c200_line_01_01_exp_01" model="account.report.expression">
+			        			<field name="label">balance</field>
+			        			<field name="engine">aggregation</field>
+			        			<field name="formula">BS200_110.balance + BS200_120.balance + BS200_130.balance + BS200_140.balance + BS200_150.balance</field>
+			        		</record>
+		        		</field>
+		        		<field name="children_ids">
+		        			<record id="balance_sheet_c200_line_01_01_01" model="account.report.line">
+		        				<field name="name">I. Cash and Cash Equivalents (110 = 111 + 112)</field>
+		        				<field name="code">BS200_110</field>
+		        				<field name="display_code">110</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_01_01_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_111.balance + BS200_112.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_01_01_01" model="account.report.line">
+				        				<field name="name">1. Bank &amp; Cash</field>
+				        				<field name="code">BS200_111</field>
+				        				<field name="display_code">111</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+						        			<record id="balance_sheet_c200_line_01_01_01_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.account_type', '=', 'asset_cash')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+						        		</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_01_02" model="account.report.line">
+				        				<field name="name">2. Cash equivalents</field>
+				        				<field name="code">BS200_112</field>
+				        				<field name="display_code">112</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">duration_3mo_orless</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_01_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|',
+							        				('account_id.code','=like','1281%'),
+							        				('account_id.code','=like','1288%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+		        			</record>
+		        			<record id="balance_sheet_c200_line_01_01_02" model="account.report.line">
+		        				<field name="name">II. Short-term financial investments (120 = 121 + 122 + 123)</field>
+		        				<field name="code">BS200_120</field>
+		        				<field name="display_code">120</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_01_02_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_121.balance + BS200_122.balance + BS200_123.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_01_02_01" model="account.report.line">
+				        				<field name="name">1. Trading securities</field>
+				        				<field name="code">BS200_121</field>
+				        				<field name="display_code">121</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_02_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','121%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_02_02" model="account.report.line">
+				        				<field name="name">2. Allowances for decline in value of trading securities</field>
+				        				<field name="code">BS200_122</field>
+				        				<field name="display_code">122</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_02_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2291%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_02_03" model="account.report.line">
+				        				<field name="name">3. Held to maturity investments</field>
+				        				<field name="code">BS200_123</field>
+				        				<field name="display_code">123</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">duration_4mo_to_12mo</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_02_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|',
+							        				('account_id.code','=like','1281%'),
+							        				('account_id.code','=like','1282%'),
+							        				('account_id.code','=like','1288%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+		        			</record>
+		        			<record id="balance_sheet_c200_line_01_01_03" model="account.report.line">
+		        				<field name="name">III. Short-term receivables (130 = 131 + 132 + 133 + 134 + 135 + 136 + 137 + 139)</field>
+		        				<field name="code">BS200_130</field>
+		        				<field name="display_code">130</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_01_03_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_131.balance + BS200_132.balance + BS200_133.balance + BS200_134.balance + BS200_135.balance + BS200_136.balance + BS200_137.balance + BS200_139.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_01_03_01" model="account.report.line">
+				        				<field name="name">1. Short-term trade receivables</field>
+				        				<field name="code">BS200_131</field>
+				        				<field name="display_code">131</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('debit', '>', 0), ('account_id.code','=like','131%')]" />
+							        			<field name="subformula">sum_if_pos</field>
+												<field name="use_amount_residual" eval="True"/>
+												<field name="use_reconcile" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_02" model="account.report.line">
+				        				<field name="name">2. Short-term prepayments to suppliers</field>
+				        				<field name="code">BS200_132</field>
+				        				<field name="display_code">132</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('debit', '>', 0), ('account_id.code','=like','331%')]" />
+							        			<field name="subformula">sum_if_pos</field>
+							        			<field name="use_amount_residual" eval="True"/>
+												<field name="use_reconcile" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_03" model="account.report.line">
+				        				<field name="name">3. Short-term intra-company receivables</field>
+				        				<field name="code">BS200_133</field>
+				        				<field name="display_code">133</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|',
+							        				('account_id.code','=like','1362%'),
+							        				('account_id.code','=like','1363%'),
+							        				('account_id.code','=like','1368%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_04" model="account.report.line">
+				        				<field name="name">4. Receivables under schedule of construction contract</field>
+				        				<field name="code">BS200_134</field>
+				        				<field name="display_code">134</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','337%')]</field>
+							        			<field name="subformula">sum_if_pos</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_05" model="account.report.line">
+				        				<field name="name">5. Short-term loan receivables</field>
+				        				<field name="code">BS200_135</field>
+				        				<field name="display_code">135</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','1283%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_06" model="account.report.line">
+				        				<field name="name">6. Other short-term receivables</field>
+				        				<field name="code">BS200_136</field>
+				        				<field name="display_code">136</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_06_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|','|','|','|',
+							        				('account_id.code','=like','334%'),
+							        				('account_id.code','=like','338%'),
+    												('account_id.code','=like','1385%'),
+    												('account_id.code','=like','1388%'),
+    												('account_id.code','=like','141%'),
+    												('account_id.code','=like','244%')]</field>
+							        			<field name="subformula">sum_if_pos</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_07" model="account.report.line">
+				        				<field name="name">7. Short-term allowances for doubtful debts</field>
+				        				<field name="code">BS200_137</field>
+				        				<field name="display_code">137</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_07_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2293%')]</field>
+							        			<field name="subformula">sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_03_08" model="account.report.line">
+				        				<field name="name">8. Shortage of assets awaiting resolution</field>
+				        				<field name="code">BS200_139</field>
+				        				<field name="display_code">139</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_03_08_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=','1381')]</field>
+							        			<field name="subformula">sum_if_pos</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+		        			</record>
+		        			<record id="balance_sheet_c200_line_01_01_04" model="account.report.line">
+		        				<field name="name">IV. Inventories (140 = 141 + 149)</field>
+		        				<field name="code">BS200_140</field>
+		        				<field name="display_code">140</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_01_04_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_141.balance + BS200_149.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_01_04_01" model="account.report.line">
+					        			<field name="name">1. Inventories</field>
+					        			<field name="code">BS200_141</field>
+					        			<field name="display_code">141</field>
+					        			<field name="expression_ids">
+						        			<record id="balance_sheet_c200_line_01_01_04_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+							        			<field name="formula">BS200_141a.balance + BS200_141b.balance + BS200_141c.balance</field>
+							        		</record>
+						        		</field>
+						        		<field name="children_ids">
+						        			<record id="balance_sheet_c200_line_01_01_04_01_01" model="account.report.line">
+						        				<field name="name">1.a. All Inventories</field>
+						        				<field name="code">BS200_141a</field>
+						        				<field name="display_code">141a</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_01_04_01_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','15%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        			<record id="balance_sheet_c200_line_01_01_04_01_02" model="account.report.line">
+						        				<field name="name">1.b. Minus Long-term work in progress</field>
+						        				<field name="code">BS200_141b</field>
+						        				<field name="display_code">141b</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_01_04_01_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">aggregation</field>
+									        			<field name="formula">BS200_241.balance</field>
+									        			<field name="subformula">-sum</field>
+									        			<field name="green_on_positive" eval="False"/>
+									        		</record>
+						        				</field>
+						        			</record>
+						        			<record id="balance_sheet_c200_line_01_01_04_01_03" model="account.report.line">
+						        				<field name="name">1.c. Minus Long-term equipment and spare parts for replacement</field>
+						        				<field name="code">BS200_141c</field>
+						        				<field name="display_code">141c</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_01_04_01_03_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">aggregation</field>
+									        			<field name="formula">BS200_263.balance</field>
+									        			<field name="subformula">-sum</field>
+									        			<field name="green_on_positive" eval="False"/>
+									        		</record>
+						        				</field>
+						        			</record>
+						        		</field>
+					        		</record>
+					        		<record id="balance_sheet_c200_line_01_01_04_02" model="account.report.line">
+					        			<field name="name">2. Allowances for decline in value of inventories</field>
+				        				<field name="code">BS200_149</field>
+				        				<field name="display_code">149</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_04_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2294%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+					        		</record>
+				        		</field>
+		        			</record>
+		        			<record id="balance_sheet_c200_line_01_01_05" model="account.report.line">
+		        				<field name="name">V. Other current assets (150 = 151 + 152 + 153 + 154 + 155)</field>
+		        				<field name="code">BS200_150</field>
+		        				<field name="display_code">150</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_01_05_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_151.balance + BS200_152.balance + BS200_153.balance + BS200_154.balance + BS200_155.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_01_05_01" model="account.report.line">
+				        				<field name="name">1. Short-term prepaid expenses</field>
+				        				<field name="code">BS200_151</field>
+				        				<field name="display_code">151</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_05_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[
+							        				('account_id.code','=like','242%'),
+							        				('analytic_tag_ids','in',[ref('viin_analytic_tag.account_analytic_tag_short_term_prepaid_expense')])]"/>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_05_02" model="account.report.line">
+				        				<field name="name">2. Deductible VAT</field>
+				        				<field name="code">BS200_152</field>
+				        				<field name="display_code">152</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_05_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','133%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_05_03" model="account.report.line">
+				        				<field name="name">3. Taxes and other receivables from government budget</field>
+				        				<field name="code">BS200_153</field>
+				        				<field name="display_code">153</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_05_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','333%')]</field>
+							        			<field name="subformula">sum_if_pos</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_05_04" model="account.report.line">
+				        				<field name="name">4. Government bonds purchased for resale</field>
+				        				<field name="code">BS200_154</field>
+				        				<field name="display_code">154</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_05_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','171%')]</field>
+							        			<field name="subformula">sum_if_pos</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_01_05_05" model="account.report.line">
+				        				<field name="name">5. Other current assets</field>
+				        				<field name="code">BS200_155</field>
+				        				<field name="display_code">155</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date</field>
+										<field name="duration_term_direction">past</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_01_05_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|', '|', '|', 
+													('account_id.code', '=like', '2288%'),
+													('account_id.code', '=like', '111%-0%'), 
+													('account_id.code', '=like', '112%-0%'),
+													('account_id.code', '=like', '113%-0%'),
+													'&amp;', 
+													'|', '|', 
+													('account_id.code', '=like', '111%'),
+													('account_id.code', '=like', '112%'), 
+													('account_id.code', '=like', '113%'),
+													('account_id.account_type', '=', 'asset_current')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+		        			</record>
+		        		</field>
+			        </record>
+			        <record id="balance_sheet_c200_line_01_02" model="account.report.line">
+	        			<field name="name">B - NON-CURRENT ASSETS (200 = 210 + 220 + 240 + 250 + 260)</field>
+	        			<field name="code">BS200_200</field>
+	        			<field name="display_code">200</field>
+	        			<field name="expression_ids">
+		        			<record id="balance_sheet_c200_line_01_02_exp_01" model="account.report.expression">
+			        			<field name="label">balance</field>
+			        			<field name="engine">aggregation</field>
+			        			<field name="formula">BS200_210.balance + BS200_220.balance + BS200_240.balance + BS200_250.balance + BS200_260.balance</field>
+			        		</record>
+		        		</field>
+		        		<field name="children_ids">
+		        			<record id="balance_sheet_c200_line_01_02_01" model="account.report.line">
+		        				<field name="name">I. Long-term receivables (210 = 211 + 212 + 213 + 214 + 215 + 216 + 219)</field>
+		        				<field name="code">BS200_210</field>
+		        				<field name="display_code">210</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_02_01_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_211.balance + BS200_212.balance + BS200_213.balance + BS200_214.balance + BS200_215.balance + BS200_216.balance + BS200_219.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_02_01_01" model="account.report.line">
+				        				<field name="name">1. Long-term trade receivables</field>
+				        				<field name="code">BS200_211</field>
+				        				<field name="display_code">211</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('debit', '>', 0), ('account_id.code','=like','131%')]" />
+							        			<field name="subformula">sum_if_pos</field>
+												<field name="use_reconcile" eval="True"/>
+												<field name="use_amount_residual" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_01_02" model="account.report.line">
+				        				<field name="name">2. Long-term prepayments to suppliers</field>
+				        				<field name="code">BS200_212</field>
+				        				<field name="display_code">212</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('debit', '>', 0), ('account_id.code','=like','331%')]" />
+							        			<field name="subformula">sum_if_pos</field>
+												<field name="use_reconcile" eval="True"/>
+												<field name="use_amount_residual" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_01_03" model="account.report.line">
+				        				<field name="name">3. Working capital provided to sub-units</field>
+				        				<field name="code">BS200_213</field>
+				        				<field name="display_code">213</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','1361%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_01_04" model="account.report.line">
+				        				<field name="name">4. Long-term intra-company receivables</field>
+				        				<field name="code">BS200_214</field>
+				        				<field name="display_code">214</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|',
+							        				('account_id.code','=like','1362%'),
+							        				('account_id.code','=like','1363%'),
+							        				('account_id.code','=like','1368%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_01_05" model="account.report.line">
+				        				<field name="name">5. Long-term loan receivables</field>
+				        				<field name="code">BS200_215</field>
+				        				<field name="display_code">215</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','1283%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_01_06" model="account.report.line">
+				        				<field name="name">6. Other long-term receivables</field>
+				        				<field name="code">BS200_216</field>
+				        				<field name="display_code">216</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_06_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+							        			<field name="formula">BS200_216a.balance + BS200_216b.balance</field>
+							        		</record>
+				        				</field>
+				        				<field name="children_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_06_01" model="account.report.line">
+				        						<field name="name">6a. Other long-term receivables (assets)</field>
+						        				<field name="code">BS200_216a</field>
+						        				<field name="display_code">216a</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="duration_term">long_term</field>
+												<field name="duration_term_date_field">date_maturity</field>
+												<field name="duration_term_direction">future</field>
+												<field name="duration_term_account_type">all</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_01_06_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[
+									        				'|','|','|',
+									        				('account_id.code','=like','1385%'),
+									        				('account_id.code','=like','1388%'),
+									        				('account_id.code','=like','141%'),
+									        				('account_id.code','=like','244%')]</field>
+									        			<field name="subformula">sum_if_pos</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        					<record id="balance_sheet_c200_line_01_02_01_06_02" model="account.report.line">
+				        						<field name="name">6b. Other long-term receivables (equity)</field>
+						        				<field name="code">BS200_216b</field>
+						        				<field name="display_code">216b</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="duration_term">long_term</field>
+												<field name="duration_term_date_field">date_maturity</field>
+												<field name="duration_term_direction">future</field>
+												<field name="duration_term_account_type">all</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_01_06_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[
+									        				'|',
+									        				('account_id.code','=like','334%'),
+									        				('account_id.code','=like','338%')]</field>
+									        			<field name="subformula">sum_if_pos</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_01_07" model="account.report.line">
+				        				<field name="name">7. Long-term allowances for doubtful debts</field>
+				        				<field name="code">BS200_219</field>
+				        				<field name="display_code">219</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_01_07_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2293%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+			        		</record>
+			        		<record id="balance_sheet_c200_line_01_02_02" model="account.report.line">
+			        			<field name="name">II. Fixed assets (220 = 221 + 224 + 227 + 230)</field>
+		        				<field name="code">BS200_220</field>
+		        				<field name="display_code">220</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_02_02_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_221.balance + BS200_224.balance + BS200_227.balance + BS200_230.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_02_02_01" model="account.report.line">
+				        				<field name="name">1. Tangible fixed assets (221 = 222 + 223)</field>
+		        						<field name="code">BS200_221</field>
+		        						<field name="display_code">221</field>
+		        						<field name="expression_ids">
+						        			<record id="balance_sheet_c200_line_01_02_02_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+							        			<field name="formula">BS200_222.balance + BS200_223.balance</field>
+							        		</record>
+						        		</field>
+						        		<field name="children_ids">
+						        			<record id="balance_sheet_c200_line_01_02_02_01_01" model="account.report.line">
+						        				<field name="name">- Historical costs</field>
+						        				<field name="code">BS200_222</field>
+						        				<field name="display_code">222</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_02_01_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','211%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        			<record id="balance_sheet_c200_line_01_02_02_01_02" model="account.report.line">
+						        				<field name="name">- Accumulated depreciation</field>
+						        				<field name="code">BS200_223</field>
+						        				<field name="display_code">223</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_02_01_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','2141%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        		</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_02_02" model="account.report.line">
+				        				<field name="name">2. Finance lease fixed assets (224 = 225 + 226)</field>
+		        						<field name="code">BS200_224</field>
+		        						<field name="display_code">224</field>
+		        						<field name="expression_ids">
+						        			<record id="balance_sheet_c200_line_01_02_02_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+							        			<field name="formula">BS200_225.balance + BS200_226.balance</field>
+							        		</record>
+						        		</field>
+						        		<field name="children_ids">
+						        			<record id="balance_sheet_c200_line_01_02_02_02_01" model="account.report.line">
+						        				<field name="name">- Historical costs</field>
+						        				<field name="code">BS200_225</field>
+						        				<field name="display_code">225</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_02_02_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','212%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        			<record id="balance_sheet_c200_line_01_02_02_02_02" model="account.report.line">
+						        				<field name="name">- Accumulated depreciation</field>
+						        				<field name="code">BS200_226</field>
+						        				<field name="display_code">226</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_02_02_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','2142%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        		</field>
+					        		</record>
+					        		<record id="balance_sheet_c200_line_01_02_02_03" model="account.report.line">
+				        				<field name="name">3. Intangible fixed assets (227 = 228 + 229)</field>
+		        						<field name="code">BS200_227</field>
+		        						<field name="display_code">227</field>
+		        						<field name="expression_ids">
+						        			<record id="balance_sheet_c200_line_01_02_02_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+							        			<field name="formula">BS200_228.balance + BS200_229.balance</field>
+							        		</record>
+						        		</field>
+						        		<field name="children_ids">
+						        			<record id="balance_sheet_c200_line_01_02_02_03_01" model="account.report.line">
+						        				<field name="name">- Historical costs</field>
+						        				<field name="code">BS200_228</field>
+						        				<field name="display_code">228</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_02_03_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','213%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        			<record id="balance_sheet_c200_line_01_02_02_03_02" model="account.report.line">
+						        				<field name="name">- Accumulated depreciation</field>
+						        				<field name="code">BS200_229</field>
+						        				<field name="display_code">229</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_01_02_02_03_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','2143%')]</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+						        				</field>
+						        			</record>
+						        		</field>
+					        		</record>
+				        		</field>
+			        		</record>
+			        		<record id="balance_sheet_c200_line_01_02_03" model="account.report.line">
+			        			<field name="name">III. Investment properties (230 = 231 + 232)</field>
+		        				<field name="code">BS200_230</field>
+		        				<field name="display_code">230</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_02_03_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_231.balance + BS200_232.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_02_03_01" model="account.report.line">
+				        				<field name="name">- Historical costs</field>
+				        				<field name="code">BS200_231</field>
+				        				<field name="display_code">231</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_03_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','217%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_03_02" model="account.report.line">
+				        				<field name="name">- Accumulated depreciation</field>
+				        				<field name="code">BS200_232</field>
+				        				<field name="display_code">232</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_03_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2147%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+			        		</record>
+			        		<record id="balance_sheet_c200_line_01_02_04" model="account.report.line">
+			        			<field name="name">IV. Long-term assets in progress (240 = 241 + 242)</field>
+		        				<field name="code">BS200_240</field>
+		        				<field name="display_code">240</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_02_04_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_241.balance + BS200_242.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_02_04_01" model="account.report.line">
+				        				<field name="name">1. Long-term work in progress</field>
+				        				<field name="code">BS200_241</field>
+				        				<field name="display_code">241</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_04_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','154%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_04_02" model="account.report.line">
+				        				<field name="name">2. Construction in progress</field>
+				        				<field name="code">BS200_242</field>
+				        				<field name="display_code">242</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_04_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','241%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+			        		</record>
+			        		<record id="balance_sheet_c200_line_01_02_05" model="account.report.line">
+			        			<field name="name">V. Long-term investments (250 = 251 + 252 + 253 + 254 + 255)</field>
+		        				<field name="code">BS200_250</field>
+		        				<field name="display_code">250</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_02_05_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_251.balance + BS200_252.balance + BS200_253.balance + BS200_254.balance + BS200_255.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_02_05_01" model="account.report.line">
+				        				<field name="name">1. Investments in subsidiaries</field>
+				        				<field name="code">BS200_251</field>
+				        				<field name="display_code">251</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_05_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','221%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_05_02" model="account.report.line">
+				        				<field name="name">2. Investments in joint ventures and associates</field>
+				        				<field name="code">BS200_252</field>
+				        				<field name="display_code">252</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_05_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','222%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_05_03" model="account.report.line">
+				        				<field name="name">3. Investments in equity of other entities</field>
+				        				<field name="code">BS200_253</field>
+				        				<field name="display_code">253</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_05_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2281%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_05_04" model="account.report.line">
+				        				<field name="name">4. Allowances for long-term investments</field>
+				        				<field name="code">BS200_254</field>
+				        				<field name="display_code">254</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_05_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2292%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_05_05" model="account.report.line">
+				        				<field name="name">5. Held to maturity investments</field>
+				        				<field name="code">BS200_255</field>
+				        				<field name="display_code">255</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_05_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|',
+							        				('account_id.code','=like','1281%'),
+							        				('account_id.code','=like','1282%'),
+							        				('account_id.code','=like','1288%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+			        		</record>
+			        		<record id="balance_sheet_c200_line_01_02_06" model="account.report.line">
+			        			<field name="name">VI. Other long-term assets (260 = 261 + 262 + 263 + 268)</field>
+		        				<field name="code">BS200_260</field>
+		        				<field name="display_code">260</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_01_02_06_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_261.balance + BS200_262.balance + BS200_263.balance + BS200_268.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_01_02_06_01" model="account.report.line">
+				        				<field name="name">1. Long-term prepaid expenses</field>
+				        				<field name="code">BS200_261</field>
+				        				<field name="display_code">261</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_06_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[
+							        				('account_id.code','=like','242%'),
+							        				('analytic_tag_ids','in',[ref('viin_analytic_tag.account_analytic_tag_long_term_prepaid_expense')])]"/>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_06_02" model="account.report.line">
+				        				<field name="name">2. Deferred income tax assets</field>
+				        				<field name="code">BS200_262</field>
+				        				<field name="display_code">262</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_06_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','243%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_06_03" model="account.report.line">
+				        				<field name="name">3. Long-term equipment and spare parts for replacement</field>
+				        				<field name="code">BS200_263</field>
+				        				<field name="display_code">263</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date</field>
+										<field name="duration_term_direction">past</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_06_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','1534%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_01_02_06_04" model="account.report.line">
+				        				<field name="name">4. Other long-term assets</field>
+				        				<field name="code">BS200_268</field>
+				        				<field name="display_code">268</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date</field>
+										<field name="duration_term_direction">past</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_01_02_06_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','2288%')]</field>
+							        			<field name="subformula">sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+			        		</record>
+		        		</field>
+	        		</record>
+        		</field>
+        	</record>
+        	<record id="balance_sheet_c200_line_02" model="account.report.line">
+        		<field name="name">TOTAL EQUITY (440 = 300 + 400)</field>
+        		<field name="code">BS200_440</field>
+        		<field name="display_code">440</field>
+        		<field name="expression_ids">
+	        		<record id="balance_sheet_c200_line_02_exp_01" model="account.report.expression">
+	        			<field name="label">balance</field>
+	        			<field name="engine">aggregation</field>
+	        			<field name="formula">BS200_300.balance + BS200_400.balance</field>
+	        		</record>
+        		</field>
+        		<field name="children_ids">
+        			<record id="balance_sheet_c200_line_02_01" model="account.report.line">
+        				<field name="name">C - LIABILITIES (300 = 310 + 330)</field>
+	        			<field name="code">BS200_300</field>
+	        			<field name="display_code">300</field>
+	        			<field name="expression_ids">
+		        			<record id="balance_sheet_c200_line_02_01_exp_01" model="account.report.expression">
+			        			<field name="label">balance</field>
+			        			<field name="engine">aggregation</field>
+			        			<field name="formula">BS200_310.balance + BS200_330.balance</field>
+			        		</record>
+		        		</field>
+		        		<field name="children_ids">
+		        			<record id="balance_sheet_c200_line_02_01_01" model="account.report.line">
+		        				<field name="name">I. Short-term liabilities (310 = 311 + 312 + 313 + 314 + 315 + 316 + 317 + 318 + 319 + 320 + 321 + 322 + 323 + 324)</field>
+		        				<field name="code">BS200_310</field>
+		        				<field name="display_code">310</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_02_01_01_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_311.balance + BS200_312.balance + BS200_313.balance + BS200_314.balance + BS200_315.balance + BS200_316.balance + BS200_317.balance + BS200_318.balance + BS200_319.balance + BS200_320.balance + BS200_321.balance + BS200_322.balance + BS200_323.balance + BS200_324.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_02_01_01_01" model="account.report.line">
+				        				<field name="name">1. Short-term trade payables</field>
+				        				<field name="code">BS200_311</field>
+				        				<field name="display_code">311</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('credit', '>', 0), ('account_id.code','=like','331%')]" />
+							        			<field name="subformula">-sum_if_neg</field>
+							        			<field name="use_amount_residual" eval="True"/>
+												<field name="use_reconcile" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_02" model="account.report.line">
+				        				<field name="name">2. Short-term prepayments from customers</field>
+				        				<field name="code">BS200_312</field>
+				        				<field name="display_code">312</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('credit', '>', 0), ('account_id.code','=like','131%')]" />
+							        			<field name="subformula">-sum_if_neg</field>
+							        			<field name="use_amount_residual" eval="True"/>
+												<field name="use_reconcile" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_03" model="account.report.line">
+				        				<field name="name">3. Taxes and other payables to government budget</field>
+				        				<field name="code">BS200_313</field>
+				        				<field name="display_code">313</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','333%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_04" model="account.report.line">
+				        				<field name="name">4. Payables to employees</field>
+				        				<field name="code">BS200_314</field>
+				        				<field name="display_code">314</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','334%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_05" model="account.report.line">
+				        				<field name="name">5. Short-term accrued expenses</field>
+				        				<field name="code">BS200_315</field>
+				        				<field name="display_code">315</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">not_asset_cash</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','335%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_06" model="account.report.line">
+				        				<field name="name">6. Short-term intra-company payables</field>
+				        				<field name="code">BS200_316</field>
+				        				<field name="display_code">316</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_06_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|',
+							        				('account_id.code','=like','3362%'),
+							        				('account_id.code','=like','3363%'),
+							        				('account_id.code','=like','3368%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_07" model="account.report.line">
+				        				<field name="name">7. Payables under schedule of construction contract</field>
+				        				<field name="code">BS200_317</field>
+				        				<field name="display_code">317</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_07_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','337%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_08" model="account.report.line">
+				        				<field name="name">8. Short-term unearned revenues</field>
+				        				<field name="code">BS200_318</field>
+				        				<field name="display_code">318</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_08_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','ilike','3387%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_09" model="account.report.line">
+				        				<field name="name">9. Other short-term payments</field>
+				        				<field name="code">BS200_319</field>
+				        				<field name="display_code">319</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_09_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				('account_id.code','not like','3387%'),
+    												'|','|','|',
+    												('account_id.code','=like','138%'),
+				    								('account_id.code','=like','338%'),
+				    								('account_id.code','=like','344%'),
+				    								('account_id.code','=like','141%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_10" model="account.report.line">
+				        				<field name="name">10. Short-term borrowings and finance lease liabilities</field>
+				        				<field name="code">BS200_320</field>
+				        				<field name="display_code">320</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_10_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|',
+							        				('account_id.code','=like','341%'),
+							        				('account_id.code','=like','34311%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_11" model="account.report.line">
+				        				<field name="name">11. Short-term provisions</field>
+				        				<field name="code">BS200_321</field>
+				        				<field name="display_code">321</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">short_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_11_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','352%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_12" model="account.report.line">
+				        				<field name="name">12. Bonus and welfare fund</field>
+				        				<field name="code">BS200_322</field>
+				        				<field name="display_code">322</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_12_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','353%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_13" model="account.report.line">
+				        				<field name="name">13. Price stabilization fund</field>
+				        				<field name="code">BS200_323</field>
+				        				<field name="display_code">323</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_13_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','357%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_01_14" model="account.report.line">
+				        				<field name="name">14. Government bonds purchased for resale</field>
+				        				<field name="code">BS200_324</field>
+				        				<field name="display_code">324</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_01_14_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','171%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+		        			</record>
+		        			<record id="balance_sheet_c200_line_02_01_02" model="account.report.line">
+		        				<field name="name">II. Long-term liabilities (330 = 331 + 332 + 333 + 334 + 335 + 336 + 337 + 338 + 339 + 340 + 341 + 342 + 343)</field>
+		        				<field name="code">BS200_330</field>
+		        				<field name="display_code">330</field>
+		        				<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_02_01_02_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_331.balance + BS200_332.balance + BS200_333.balance + BS200_334.balance + BS200_335.balance + BS200_336.balance + BS200_337.balance + BS200_338.balance + BS200_339.balance + BS200_340.balance + BS200_341.balance + BS200_342.balance + BS200_343.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_02_01_02_01" model="account.report.line">
+				        				<field name="name">1. Long-term trade payables</field>
+				        				<field name="code">BS200_331</field>
+				        				<field name="display_code">331</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+												<field name="formula" eval="[('credit', '>', 0), ('account_id.code','=like','331%')]" />
+							        			<field name="subformula">-sum_if_neg</field>
+												<field name="use_amount_residual" eval="True"/>
+												<field name="use_reconcile" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_02" model="account.report.line">
+				        				<field name="name">2. Long-term prepayments from customers</field>
+				        				<field name="code">BS200_332</field>
+				        				<field name="display_code">332</field>
+				        				<field name="groupby">partner_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula" eval="[('credit', '>', 0), ('account_id.code', '=like', '131')]" />
+							        			<field name="subformula">-sum_if_neg</field>
+												<field name="use_amount_residual" eval="True"/>
+												<field name="use_reconcile" eval="True"/>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_03" model="account.report.line">
+				        				<field name="name">3. Long-term accrued expenses</field>
+				        				<field name="code">BS200_333</field>
+				        				<field name="display_code">333</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','335%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_04" model="account.report.line">
+				        				<field name="name">4. Intra-company payables for operating capital received</field>
+				        				<field name="code">BS200_334</field>
+				        				<field name="display_code">334</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','3361%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_05" model="account.report.line">
+				        				<field name="name">5. Long-term intra-company payables</field>
+				        				<field name="code">BS200_335</field>
+				        				<field name="display_code">335</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|','|',
+							        				('account_id.code','=like','3362%'),
+							        				('account_id.code','=like','3363%'),
+							        				('account_id.code','=like','3368%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_06" model="account.report.line">
+				        				<field name="name">6. Long-term unearned revenues</field>
+				        				<field name="code">BS200_336</field>
+				        				<field name="display_code">336</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_06_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','ilike','3387%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_07" model="account.report.line">
+				        				<field name="name">7. Other long-term payables</field>
+				        				<field name="code">BS200_337</field>
+				        				<field name="display_code">337</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_07_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				('account_id.code','not ilike','3387%'),
+													'|',
+													'|','|',
+													('account_id.code','=like','338%'),
+													('account_id.code','=like','344%'),
+													('account_id.code','=like','141%'),
+													('account_id.code','=like','138%')]</field>
+							        			<field name="subformula">-sum_if_neg</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_08" model="account.report.line">
+				        				<field name="name">8. Long-term borrowings and finance lease liabilities</field>
+				        				<field name="code">BS200_338</field>
+				        				<field name="display_code">338</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_08_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+					        					<field name="formula">BS200_338a.balance + BS200_338b.balance</field>
+							        		</record>
+				        				</field>
+				        				<field name="children_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_08_01" model="account.report.line">
+				        						<field name="name">8a. Long-term borrowings and finance lease liabilities (via Credit Balance)</field>
+						        				<field name="code">BS200_338a</field>
+						        				<field name="display_code">338a</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="duration_term">long_term</field>
+												<field name="duration_term_date_field">date_maturity</field>
+												<field name="duration_term_direction">future</field>
+												<field name="duration_term_account_type">all</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_02_01_02_08_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[
+									        				'|',
+															'|',
+															('account_id.code','=like','341%'),
+															('account_id.code','=like','34311%'),
+															('account_id.code','=like','34313%')]</field>
+									        			<field name="subformula">-sum_if_neg</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        					<record id="balance_sheet_c200_line_02_01_02_08_02" model="account.report.line">
+				        						<field name="name">8b. Long-term borrowings and finance lease liabilities (via Debit Balance)</field>
+						        				<field name="code">BS200_338b</field>
+						        				<field name="display_code">338b</field>
+						        				<field name="groupby">account_id</field>
+						        				<field name="show_on_print_document" eval="False" />
+						        				<field name="duration_term">long_term</field>
+												<field name="duration_term_date_field">date_maturity</field>
+												<field name="duration_term_direction">future</field>
+												<field name="duration_term_account_type">all</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_02_01_02_08_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','34312%')]</field>
+									        			<field name="subformula">-sum_if_neg</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_01_02_09" model="account.report.line">
+				        				<field name="name">9. Convertible bonds</field>
+				        				<field name="code">BS200_339</field>
+				        				<field name="display_code">339</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_09_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','3432%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_01_02_10" model="account.report.line">
+				        				<field name="name">10. Preference shares</field>
+				        				<field name="code">BS200_340</field>
+				        				<field name="display_code">340</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_10_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				('account_id.code','=like','41112%'),
+							        				('date_maturity','!=',None)]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_01_02_11" model="account.report.line">
+				        				<field name="name">11. Deferred income tax payables</field>
+				        				<field name="code">BS200_341</field>
+				        				<field name="display_code">341</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_11_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','347%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_01_02_12" model="account.report.line">
+				        				<field name="name">12. Long-term provisions</field>
+				        				<field name="code">BS200_342</field>
+				        				<field name="display_code">342</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="duration_term">long_term</field>
+										<field name="duration_term_date_field">date_maturity</field>
+										<field name="duration_term_direction">future</field>
+										<field name="duration_term_account_type">all</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_12_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','352%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_01_02_13" model="account.report.line">
+				        				<field name="name">13. Science and technology development fund</field>
+				        				<field name="code">BS200_343</field>
+				        				<field name="display_code">343</field>
+				        				<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_01_02_13_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','356%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        			</field>
+			        		</record>
+		        		</field>
+        			</record>
+        			<record id="balance_sheet_c200_line_02_02" model="account.report.line">
+        				<field name="name">D - OWNER’S EQUITY (400 = 410 + 430)</field>
+	        			<field name="code">BS200_400</field>
+	        			<field name="display_code">400</field>
+	        			<field name="expression_ids">
+		        			<record id="balance_sheet_c200_line_02_02_exp_01" model="account.report.expression">
+			        			<field name="label">balance</field>
+			        			<field name="engine">aggregation</field>
+			        			<field name="formula">BS200_410.balance + BS200_430.balance</field>
+			        		</record>
+		        		</field>
+		        		<field name="children_ids">
+		        			<record id="balance_sheet_c200_line_02_02_01" model="account.report.line">
+		        				<field name="name">I. Owner’s equity (410 = 411 + 412 + 413 + 414 + 415 + 416 + 417 + 418 + 419 + 420 + 421 + 422)</field>
+	        					<field name="code">BS200_410</field>
+	        					<field name="display_code">410</field>
+	        					<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_02_02_01_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_411.balance + BS200_412.balance + BS200_413.balance + BS200_414.balance + BS200_415.balance + BS200_416.balance + BS200_417.balance + BS200_418.balance + BS200_419.balance + BS200_420.balance + BS200_421.balance + BS200_422.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_02_02_01_01" model="account.report.line">
+				        				<field name="name">1. Contributed capital</field>
+	        							<field name="code">BS200_411</field>
+	        							<field name="display_code">411</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','4111%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        				<field name="children_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_01_01" model="account.report.line">
+				        						<field name="name">- Ordinary shares with voting rights</field>
+			        							<field name="code">BS200_411a</field>
+			        							<field name="display_code">411a</field>
+			        							<field name="show_on_print_document" eval="False" />
+			        							<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_02_02_01_01_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','41111%')]</field>
+									        			<field name="subformula">-sum</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        					<record id="balance_sheet_c200_line_02_02_01_01_02" model="account.report.line">
+				        						<field name="name">- Preference shares</field>
+			        							<field name="code">BS200_411b</field>
+			        							<field name="display_code">411b</field>
+			        							<field name="show_on_print_document" eval="False" />
+			        							<field name="groupby">account_id</field>
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_02_02_01_01_02_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','41112%')]</field>
+									        			<field name="subformula">-sum</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_02_01_02" model="account.report.line">
+				        				<field name="name">2. Capital surplus</field>
+	        							<field name="code">BS200_412</field>
+	        							<field name="display_code">412</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','4112%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_03" model="account.report.line">
+				        				<field name="name">3. Conversion options on convertible bonds</field>
+	        							<field name="code">BS200_413</field>
+	        							<field name="display_code">413</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_03_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','4113%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_04" model="account.report.line">
+				        				<field name="name">4. Other capital</field>
+	        							<field name="code">BS200_414</field>
+	        							<field name="display_code">414</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_04_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','4118%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_05" model="account.report.line">
+				        				<field name="name">5. Treasury shares</field>
+	        							<field name="code">BS200_415</field>
+	        							<field name="display_code">415</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_05_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','419%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_06" model="account.report.line">
+				        				<field name="name">6. Differences upon asset revaluation</field>
+	        							<field name="code">BS200_416</field>
+	        							<field name="display_code">416</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_06_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','412%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_07" model="account.report.line">
+				        				<field name="name">7. Exchange rate differences</field>
+	        							<field name="code">BS200_417</field>
+	        							<field name="display_code">417</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_07_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','413%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_08" model="account.report.line">
+				        				<field name="name">8. Development and investment funds</field>
+	        							<field name="code">BS200_418</field>
+	        							<field name="display_code">418</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_08_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','414%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_09" model="account.report.line">
+				        				<field name="name">9. Enterprise reorganization assistance fund</field>
+	        							<field name="code">BS200_419</field>
+	        							<field name="display_code">419</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_09_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','417%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_10" model="account.report.line">
+				        				<field name="name">10. Other equity funds</field>
+	        							<field name="code">BS200_420</field>
+	        							<field name="display_code">420</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_10_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','418%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_11" model="account.report.line">
+				        				<field name="name">11. Undistributed profit after tax</field>
+	        							<field name="code">BS200_421</field>
+	        							<field name="display_code">421</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_11_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">aggregation</field>
+							        			<field name="formula">BS200_421a.balance + BS200_421b.balance</field>
+							        		</record>
+				        				</field>
+				        				<field name="children_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_11_01" model="account.report.line">
+				        						<field name="name">- Undistributed profit after tax brought forward</field>
+			        							<field name="code">BS200_421a</field>
+			        							<field name="display_code">421a</field>
+			        							<field name="show_on_print_document" eval="False" />
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_02_02_01_11_01_exp_01" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula">[('account_id.code','=like','4211%')]</field>
+								        				<field name="date_scope">from_beginning</field>
+									        			<field name="subformula">-sum</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        					<record id="balance_sheet_c200_line_02_02_01_11_02" model="account.report.line">
+				        						<field name="name">- Undistributed profit after tax for the current year</field>
+			        							<field name="code">BS200_421b</field>
+			        							<field name="display_code">421b</field>
+			        							<field name="show_on_print_document" eval="False" />
+						        				<field name="expression_ids">
+						        					<record id="balance_sheet_c200_line_02_02_01_11_02_exp_01" model="account.report.expression">
+									        			<field name="label">aggregate</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula" eval="[
+                                                            '|','|',
+                                                                '&amp;', ('account_id.account_type', 'in', ('income', 'income_other', 'income_financial')),
+                                                                        ('ctp_account_ids.account_type', '!=', 'income_deduction'),
+                                                                ('account_id.account_type', 'in', ('expense', 'expense_direct_cost')),
+                                                                ('account_id.account_type', '=', 'equity_unaffected')
+                                                        ]"/>
+									        			<field name="date_scope">strict_range</field>
+									        			<field name="subformula">-sum</field>
+									        		</record>
+                                                    <record id="balance_sheet_c200_line_02_02_01_11_02_exp_02" model="account.report.expression">
+                                                        <field name="label">profit</field>
+                                                        <field name="engine">domain</field>
+                                                        <field name="formula">[('account_id.code', '=like','4212%')]</field>
+                                                        <field name="date_scope">from_beginning</field>
+                                                        <field name="subformula">-sum</field>
+                                                    </record>
+						        					<record id="balance_sheet_c200_line_02_02_01_11_02_exp_03" model="account.report.expression">
+									        			<field name="label">income_deduction</field>
+									        			<field name="engine">domain</field>
+									        			<field name="formula" eval="[('debit', '>', 0), ('account_id.account_type', '=', 'income_deduction')]" />
+									        			<field name="date_scope">strict_range</field>
+									        			<field name="subformula">sum</field>
+									        		</record>
+									        		<record id="balance_sheet_c200_line_02_02_01_11_02_exp_04" model="account.report.expression">
+									        			<field name="label">balance</field>
+									        			<field name="engine">aggregation</field>
+									        			<field name="formula">BS200_421b.aggregate - BS200_421b.income_deduction + BS200_421b.profit</field>
+									        		</record>
+						        				</field>
+				        					</record>
+				        				</field>
+			        				</record>
+			        				<record id="balance_sheet_c200_line_02_02_01_12" model="account.report.line">
+			        					<field name="name">12. Capital expenditure funds</field>
+	        							<field name="code">BS200_422</field>
+	        							<field name="display_code">422</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_01_12_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','441%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+			        				</record>
+				        		</field>
+		        			</record>
+		        			<record id="balance_sheet_c200_line_02_02_02" model="account.report.line">
+		        				<field name="name">II. Funding sources and other funds (430 = 431 + 432)</field>
+	        					<field name="code">BS200_430</field>
+	        					<field name="display_code">430</field>
+	        					<field name="expression_ids">
+				        			<record id="balance_sheet_c200_line_02_02_02_exp_01" model="account.report.expression">
+					        			<field name="label">balance</field>
+					        			<field name="engine">aggregation</field>
+					        			<field name="formula">BS200_431.balance + BS200_432.balance</field>
+					        		</record>
+				        		</field>
+				        		<field name="children_ids">
+				        			<record id="balance_sheet_c200_line_02_02_02_01" model="account.report.line">
+				        				<field name="name">1. Funding sources</field>
+	        							<field name="code">BS200_431</field>
+	        							<field name="display_code">431</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_02_01_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[
+							        				'|',
+							        				('account_id.code','=like','161%'),
+							        				('account_id.code','=like','461%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        			<record id="balance_sheet_c200_line_02_02_02_02" model="account.report.line">
+				        				<field name="name">2. Funds used for fixed asset acquisition</field>
+	        							<field name="code">BS200_432</field>
+	        							<field name="display_code">432</field>
+	        							<field name="groupby">account_id</field>
+				        				<field name="expression_ids">
+				        					<record id="balance_sheet_c200_line_02_02_02_02_exp_01" model="account.report.expression">
+							        			<field name="label">balance</field>
+							        			<field name="engine">domain</field>
+							        			<field name="formula">[('account_id.code','=like','466%')]</field>
+							        			<field name="subformula">-sum</field>
+							        		</record>
+				        				</field>
+				        			</record>
+				        		</field>
+			        		</record>
+		        		</field>
+	        		</record>
+        		</field>
+        	</record>
+        </field>
+        <field name="custom_report_header_template">l10n_vn_viin_account_reports.header_template_print_vn</field>
+        <field name="custom_report_body_template">l10n_vn_viin_account_reports.main_template_print_vn</field>
+        <field name="custom_report_footer_template">l10n_vn_viin.accounting_external_footer_layout</field>
+	</record>
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterPartner" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'" manualOnly="true">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-user"/> Partners
+            </t>
+            <div class="container">
+            	<div class="row">
+            		<div class="col-3 ps-2 pe-2">
+                        <label>Partners</label>
+                    </div>
+                    <div class="col ps-2 pe-2">
+                    	<TagsList tags="parnerTags"/>
+                    	<Many2XAutocomplete
+			                resModel="'res.partner'"
+			                fieldString="'Partner'"
+			                activeActions="{'link': true}"
+			                update.bind="updatePartner"
+			                getDomain.bind="searchPartnerDomain"
+			                isToMany="true"
+			            />
+                    </div>
+            	</div>
+            </div>
+        </Dropdown>
+	</t>
+
+</templates>

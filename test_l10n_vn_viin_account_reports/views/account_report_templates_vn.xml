@@ -1,0 +1,40 @@
+<odoo>
+    <template id="header_template_print_vn">
+        <div class="row small">
+            <t t-call="l10n_vn_viin.accounting_external_header_left_layout"/>
+            <div t-if="report.template_ref" class="col-5 text-center">
+                <strong t-out="report.template_ref"/>
+                <br/>
+                <t t-if="chart_template.circular_code == 'c200'"
+                   t-call="l10n_vn_viin.accounting_circular_desc_layout_c200"/>
+                <t t-if="chart_template.circular_code == 'c133'"
+                   t-call="l10n_vn_viin.accounting_circular_desc_layout_c133"/>
+            </div>
+        </div>
+    </template>
+    <template id="main_template_generic_print_vn">
+        <div class="account_report_body">
+            <div class="text-center">
+                <h2 class="text-uppercase fw-bold">
+                    <t t-out="report.name"></t>
+                </h2>
+                <strong>
+                    <t t-if="options['current_date']" t-out="options['current_date'].get('date_string')"/>
+                </strong>
+            </div>
+            <div class="my-5">
+                <div class="text-end currency">
+                    Currency:
+                    <span t-out="company_currency"/>
+                </div>
+                <t t-out="body_html"/>
+            </div>
+        </div>
+        <div class="footer" style="page-break-inside: avoid;">
+            <t t-call="l10n_vn_viin.signature_block"/>
+        </div>
+    </template>
+    <template id="main_template_print_vn">
+        <t t-call="l10n_vn_viin_account_reports.main_template_generic_print_vn"/>
+    </template>
+</odoo>

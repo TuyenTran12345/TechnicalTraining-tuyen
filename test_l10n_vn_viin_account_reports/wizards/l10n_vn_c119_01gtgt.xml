@@ -1,0 +1,42 @@
+<odoo>
+	<!-- 	Action form view for Invoice Declaration, Ref Sale (01 -1/GTGT) -->
+	<record id="account_common_report_c119_01gtgt_view" model="ir.ui.view">
+		<field name="name">01 GTGT Form</field>
+		<field name="model">l10n_vn.c119.01gtgt</field>
+		<field name="arch" type="xml">
+			<form>
+				<group colspan="2" col="6">
+					<field name="type" widget="radio" options="{'horizontal': true}" />
+					<field name="month" attrs="{'invisible': [('type', '=', 'quarter')]}" />
+					<field name="quarter" attrs="{'invisible': [('type', '=', 'month')]}" />
+				</group>
+				<group colspan="2" col="4">
+					<field name="date_from" />
+					<field name="date_to" />
+				</group>
+				<footer>
+					<button name="print_sale" string="Print Excel" type="object" class="btn-primary" />
+					<button string="Cancel" class="btn-secondary" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<!-- Action window for Invoice Declaration, Ref Sale (01 -1/GTGT) -->
+	<record id="l10n_vn_c119_01gtgt_action" model="ir.actions.act_window">
+		<field name="name">LIST OF INVOICES, FINANCIAL PAPERS OF SOLD GOODS (01 -1/GTGT)</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">l10n_vn.c119.01gtgt</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="account_common_report_c119_01gtgt_view" />
+		<field name="target">new</field>
+	</record>
+
+	<!--Menu action -->
+	<menuitem id="l10n_vn_c119_01gtgt_menu"
+	name="List of Invoice, Financial paper of Sold Goods (01 -1/GTGT)"
+	parent="invoice_declaration_vn_statements_menu"
+	groups="account.group_account_user"
+	action="l10n_vn_c119_01gtgt_action"
+	sequence="1" />
+</odoo>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="cash_flow_report" model="account.report">
+		<field name="name">Cash Flow Statement</field>
+		<field name="filter_date_range" eval="True"/>
+		<field name="filter_unfold_all" eval="True"/>
+		<field name="filter_period_comparison" eval="False"/>
+		<field name="filter_journals" eval="True"/>
+		<field name="filter_show_draft" eval="True"/>
+		<field name="column_ids">
+            <record id="cash_flow_column_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+            </record>
+        </field>
+        <field name="line_ids">
+        	<record id="cash_flow_line_01" model="account.report.line">
+        		<field name="name">Cash and cash equivalents, beginning of period</field>
+                <field name="code">COPN</field>
+                <field name="foldable" eval="True"/>
+                <field name="has_empty_row" eval="True"/>
+                <field name="expression_ids">
+                	<record id="cash_flow_line_01_expr_01" model="account.report.expression">
+                		<field name="label">balance</field>
+                		<field name="engine">domain</field>
+                		<field name="formula" eval="[('account_id.account_type', '=', 'asset_cash')]"/>
+                		<field name="date_scope">to_beginning_of_period</field>
+                		<field name="subformula">sum</field>
+                	</record>
+                </field>
+        	</record>
+        	<record id="cash_flow_line_02" model="account.report.line">
+        		<field name="name">Net increase in cash and cash equivalents</field>
+                <field name="code">CNET</field>
+                <field name="aggregation_formula">COA.balance + CINEX.balance + CFA.balance + CUNCA.balance</field>
+                <field name="children_ids">
+                	<record id="cash_flow_line_02_01" model="account.report.line">
+                		<field name="name">Cash flows from operating activities</field>
+                		<field name="code">COA</field>
+                		<field name="aggregation_formula">APCUS.balance + CROA.balance + APSUP.balance + CPOA.balance</field>
+                		<field name="children_ids">
+                			<record id="cash_flow_line_02_01_01" model="account.report.line">
+                				<field name="name">Advance Payments received from customers</field>
+                				<field name="code">APCUS</field>
+                				<field name="groupby">partner_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_01_01_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('account_id.account_type', '=', 'asset_receivable'), ('credit', '>', 0),
+                							'|','|', '|', ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash'),
+                								('ctp_account_ids.account_type','=','asset_cash'),
+                							'&amp;', ('ctp_account_ids.account_type','=','asset_current'),
+                								('journal_id.type','in',('bank', 'cash')),
+                							'&amp;', ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_current'),
+                								('journal_id.type','in',('bank', 'cash'))]"/>
+                						<field name="subformula">-sum</field>
+                						<field name="use_amount_residual" eval="True"/>
+										<field name="use_reconcile">True</field>
+                					</record>
+                				</field>
+                			</record>
+                			<record id="cash_flow_line_02_01_02" model="account.report.line">
+                				<field name="name">Cash received from operating activities</field>
+                				<field name="code">CROA</field>
+                				<field name="groupby">account_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_01_02_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('credit', '>', 0),
+											('account_id.tag_ids', '=', ref('account.account_tag_operating')),
+											'|', ('ctp_account_ids.account_type','=','asset_cash'),
+												('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash')
+											]"/>
+                						<field name="subformula">-sum</field>
+                						<field name="use_amount_residual" eval="False"/>
+										<field name="use_reconcile">True</field>
+                					</record>
+                				</field>                				
+                			</record>
+                			<record id="cash_flow_line_02_01_03" model="account.report.line">
+                				<field name="name">Advance payments made to suppliers</field>
+                				<field name="code">APSUP</field>
+                				<field name="groupby">partner_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_01_03_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[
+                							('account_id.account_type', '=', 'liability_payable'),
+												'|', ('ctp_account_ids.account_type','=','asset_cash'),
+                							('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type','=','asset_cash')]"/>
+                						<field name="subformula">-sum</field>
+                						<field name="use_amount_residual" eval="True"/>
+										<field name="use_reconcile">True</field>
+                					</record>
+                				</field>
+                			</record>
+                			<record id="cash_flow_line_02_01_04" model="account.report.line">
+                				<field name="name">Cash paid for operating activities</field>
+                				<field name="code">CPOA</field>
+                				<field name="groupby">account_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_01_04_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('debit', '>', 0),
+											('account_id.tag_ids', '=', ref('account.account_tag_operating')),
+											'|', ('ctp_account_ids.account_type','=','asset_cash'),
+												('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type','=','asset_cash')
+											]"/>
+                						<field name="subformula">-sum</field>
+                						<field name="use_amount_residual" eval="False"/>
+											<field name="use_reconcile">True</field>
+                					</record>
+                				</field>                				
+                			</record>
+                		</field>
+                	</record>
+                	<record id="cash_flow_line_02_02" model="account.report.line">
+                		<field name="name">Cash flows from investing &amp; extraordinary activities</field>
+                		<field name="code">CINEX</field>
+                		<field name="aggregation_formula">INEX_IN.balance + INEX_OUT.balance</field>
+                		<field name="children_ids">
+                			<record id="cash_flow_line_02_02_01" model="account.report.line">
+                				<field name="name">Cash in</field>
+                				<field name="code">INEX_IN</field>
+                				<field name="groupby">account_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_02_01_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('credit', '>', 0),
+											('account_id.tag_ids', '=', ref('account.account_tag_investing')),
+											'|', ('ctp_account_ids.account_type','=','asset_cash'),
+												('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash')
+											]"/>
+                						<field name="subformula">-sum</field>
+                					</record>
+                				</field>
+                			</record>
+                			<record id="cash_flow_line_02_02_02" model="account.report.line">
+                				<field name="name">Cash out</field>
+                				<field name="code">INEX_OUT</field>
+                				<field name="groupby">account_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_02_02_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('debit', '>', 0),
+											('account_id.tag_ids', '=', ref('account.account_tag_investing')),
+											'|', ('ctp_account_ids.account_type','=','asset_cash'),
+												('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash')
+											]"/>
+                						<field name="subformula">-sum</field>
+                					</record>
+                				</field>
+                			</record>
+                		</field>
+                	</record>
+                	<record id="cash_flow_line_02_03" model="account.report.line">
+                		<field name="name">Cash flows from financing activities</field>
+                		<field name="code">CFA</field>
+                		<field name="aggregation_formula">CFA_IN.balance + CFA_OUT.balance</field>
+                		<field name="children_ids">
+                			<record id="cash_flow_line_02_03_01" model="account.report.line">
+                				<field name="name">Cash in</field>
+                				<field name="code">CFA_IN</field>
+                				<field name="groupby">account_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_03_01_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('credit', '>', 0),
+												('account_id.tag_ids', '=', ref('account.account_tag_financing')),
+											'|', ('ctp_account_ids.account_type','=','asset_cash'),
+												('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash')
+											]"/>
+                						<field name="subformula">-sum</field>
+                					</record>
+                				</field>
+                			</record>
+                			<record id="cash_flow_line_02_03_02" model="account.report.line">
+                				<field name="name">Cash out</field>
+                				<field name="code">CFA_OUT</field>
+                				<field name="groupby">account_id</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_03_02_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('debit', '>', 0),
+												('account_id.tag_ids', '=', ref('account.account_tag_financing')),
+											'|', ('ctp_account_ids.account_type','=','asset_cash'),
+												('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash')
+											]"/>
+                						<field name="subformula">-sum</field>
+                					</record>
+                				</field>
+                			</record>
+                		</field>
+                	</record>
+                	<record id="cash_flow_line_02_04" model="account.report.line">
+                		<field name="name">Cash flows from unclassified activities</field>
+                		<field name="code">CUNCA</field>
+                		<field name="aggregation_formula">UNCA_IN.balance + UNCA_OUT.balance</field>
+                		<field name="children_ids">
+                			<record id="cash_flow_line_02_04_01" model="account.report.line">
+                				<field name="name">Cash in</field>
+                				<field name="code">UNCA_IN</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_04_01_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+										<field name="engine">aggregation</field>
+                						<field name="formula">UNCA_IN.all_in - APCUS.balance - CROA.balance - INEX_IN.balance - CFA_IN.balance</field>
+                						<field name="subformula">sum</field>
+                					</record>
+                					<record id="cash_flow_line_02_04_01_expr_02" model="account.report.expression">
+                						<field name="label">all_in</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('debit', '>', 0), ('account_id.account_type', '=', 'asset_cash')]"/>
+                						<field name="subformula">sum</field>
+                					</record>
+                				</field>
+                			</record>
+                			<record id="cash_flow_line_02_04_02" model="account.report.line">
+                				<field name="name">Cash out</field>
+                				<field name="code">UNCA_OUT</field>
+                				<field name="expression_ids">
+                					<record id="cash_flow_line_02_04_02_expr_01" model="account.report.expression">
+                						<field name="label">balance</field>
+                						<field name="engine">aggregation</field>
+                						<field name="formula">UNCA_OUT.all_out - APSUP.balance - CPOA.balance - INEX_OUT.balance - CFA_OUT.balance</field>
+                						<field name="subformula">sum</field>
+                					</record>
+                					<record id="cash_flow_line_02_04_02_expr_02" model="account.report.expression">
+                						<field name="label">all_out</field>
+                						<field name="engine">domain</field>
+                						<field name="formula" eval="[('credit', '>', 0), ('account_id.account_type', '=', 'asset_cash')]"/>
+                						<field name="subformula">sum</field>
+                					</record>
+                				</field>
+                			</record>
+                		</field>
+                	</record>
+                </field>
+        	</record>
+        	<record id="cash_flow_line_03" model="account.report.line">
+        		<field name="name">Cash and cash equivalents, closing balance</field>
+                <field name="code">CCLS</field>
+                <field name="groupby">account_id</field>
+                <field name="foldable" eval="True"/>
+                <field name="expression_ids">
+                	<record id="cash_flow_line_03_expr_01" model="account.report.expression">
+                		<field name="label">balance</field>
+                		<field name="engine">domain</field>
+                		<field name="formula" eval="[('account_id.account_type', '=', 'asset_cash')]"/>
+                		<field name="subformula">sum</field>
+                	</record>
+                </field>
+        	</record>
+        </field>
+	</record>
+
+</odoo>

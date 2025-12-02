@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportLine" owl="1">
+		<t t-set="line" t-value="props.line" />
+		<tr t-if="line.visible" t-att-class="line.unfolded ? line.class + ' fw-bolder' : line.class ">
+			<t t-call="{{ props.currentReport.custom_line_name_template }}"/>
+			<td class="py-1" t-if="props.reportData.show_line_code">
+				<span style="margin-left:10px" t-esc="line.display_code" />
+			</td>
+			<t t-set="column_index" t-value="1"/>
+			<t t-foreach="props.reportData.columns" t-as="lineColumn" t-key="lineColumn_index">
+				<t t-set="column" t-value="line.columns[lineColumn['key']]"/>
+				<td t-attf-class="py-1 text-nowrap {{ (column_index % 2 == 0 and line.level != 1) ? 'account_report_column_active ' + column['column_class'] : column['column_class'] }}">
+					<t t-if="column['auditable']">
+						<span t-esc="column['formatted_value']"
+							t-on-click="() => this.clickAuditableColumn(line, lineColumn['key'])"
+							class="auditable" />
+					</t>
+					<t t-else="">
+						<span t-esc="column['formatted_value']"/>
+					</t>
+				</td>
+				<t t-set="column_index" t-value="column_index + 1"/>
+			</t>
+		</tr>
+		<br t-if="line.has_empty_row" />
+	</t>
+
+	<t t-name="to_account_reports.AccountReportLineNameDefault" owl="1">
+		<td class="py-1 text-nowrap account_report_line_name_default">
+		 	<span class="account_reports_caret_icon" t-if="line.unfoldable">
+		 		<i t-on-click="() => this.toggleFoldable()"
+					t-att-class="line.unfolded ? 'fa fa-fw fa-caret-down' : 'fa fa-fw fa-caret-right'" />
+		 	</span>
+			<t id="line_content">
+				<t t-if="line.action_id or line.action_dict">
+					<a href="#" t-on-click="() => this.openLineAction(line)">
+						<span class="account_report_line_name" t-att-title="line.name" t-esc="line.name" />
+					</a>
+				</t>
+				<t t-else="">
+					<span class="account_report_line_name" t-att-title="line.name" t-esc="line.name" />
+				</t>
+			</t>
+		</td>
+	</t>
+
+</templates>

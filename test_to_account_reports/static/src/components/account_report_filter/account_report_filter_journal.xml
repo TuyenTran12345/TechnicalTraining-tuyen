@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterJournal" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'" manualOnly="true">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-book"/> Journals
+            </t>
+            <div class="container">
+            	<div class="row">
+            		<div class="col-3 ps-2 pe-2">
+                        <label>Journals</label>
+                    </div>
+                    <div class="col ps-2 pe-2">
+                    	<TagsList tags="journalTags"/>
+                    	<Many2XAutocomplete
+			                resModel="'account.journal'"
+			                fieldString="'Journal'"
+			                activeActions="{'link': true}"
+			                update.bind="updateJournal"
+			                getDomain.bind="searchJournalDomain"
+			                isToMany="true"
+			            />
+                    </div>
+            	</div>
+            </div>
+        </Dropdown>
+
+	</t>
+
+</templates>

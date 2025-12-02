@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="aged_receivable_report" model="account.report">
+		<field name="name">Aged Receivable</field>
+		<field name="custom_line_python_function_suffix">aged_receivable</field>
+		<field name="filter_hierarchy">never</field>
+		<field name="default_opening_date_filter">today</field>
+        <field name="filter_date_range" eval="False"/>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="filter_period_comparison" eval="False"/>
+        <field name="filter_partner" eval="True"/>
+        <field name="filter_show_draft" eval="False"/>
+        <field name="column_ids">
+        	<record id="aged_receivable_column_due_date" model="account.report.column">
+                <field name="name">Invoice Date</field>
+                <field name="expression_label">invoice_date</field>
+                <field name="figure_type">date</field>
+                <field name="sortable" eval="True"/>
+            </record>
+            <record id="aged_receivable_column_amount_currency" model="account.report.column">
+                <field name="name">Amount Currency</field>
+                <field name="expression_label">amount_currency</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_account_name" model="account.report.column">
+                <field name="name">Account</field>
+                <field name="expression_label">account_name</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="aged_receivable_column_expected_date" model="account.report.column">
+                <field name="name">Due Date</field>
+                <field name="expression_label">due_date</field>
+                <field name="figure_type">date</field>
+            </record>
+            <record id="aged_receivable_column_period0" model="account.report.column">
+                <field name="name">At Date</field>
+                <field name="expression_label">period0</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_period1" model="account.report.column">
+                <field name="name">1-30</field>
+                <field name="expression_label">period1</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_period2" model="account.report.column">
+                <field name="name">31-60</field>
+                <field name="expression_label">period2</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_period3" model="account.report.column">
+                <field name="name">61-90</field>
+                <field name="expression_label">period3</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_period4" model="account.report.column">
+                <field name="name">91-120</field>
+                <field name="expression_label">period4</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_period5" model="account.report.column">
+                <field name="name">Older</field>
+                <field name="expression_label">period5</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="aged_receivable_column_total" model="account.report.column">
+                <field name="name">Total</field>
+                <field name="expression_label">total</field>
+                <field name="sortable" eval="True"/>
+                <field name="figure_type">monetary</field>
+            </record>
+        </field>
+	</record>
+
+</odoo>

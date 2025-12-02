@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterComparison" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-line-chart"/> Comparison: <span t-esc="props.filterOptions.current_comparison.date_string"/>
+            </t>
+            <t t-foreach="props.filterOptions.comparisons" t-as="comparisonOption" t-key="comparisonOption.key">
+           		<DropdownItem t-if="comparisonOption.key != 'custom'"
+            		class="{ selected: props.filterOptions.current_comparison.key == comparisonOption.key }"
+            		onSelected="() => this.props.selectComparison(comparisonOption.key)"
+            		t-esc="comparisonOption.string"/>
+            	<div t-if="comparisonOption.key != 'same_period_last_year'" class="dropdown-divider"/>
+           	</t>
+            <a t-att-class="`dropdown-item ${props.filterOptions.current_comparison.key == 'custom' ? 'selected' : ''}`" >
+            	Custom
+            </a>
+            <div class="container">
+            	<t t-if="props.filterOptions.use_filter_date_range == true">
+            		<label>Start Date :</label>
+	                <DatePicker
+	                	date="comparisonStartDate"
+	                    onDateTimeChanged="this.props.changeComparisonStartDate"
+	                />
+            	</t>
+                <label>End Date :</label>
+                <DatePicker
+                	date="comparisonEndDate"
+                    onDateTimeChanged="this.props.changeComparisonEndDate"
+                />
+                <button class="btn btn-primary" type="button"
+                	t-on-click="() => this.props.applyComparisonDate()" >
+                    Apply
+                </button>
+            </div>
+        </Dropdown>
+
+	</t>	
+
+</templates>

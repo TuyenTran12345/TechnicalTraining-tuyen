@@ -1,0 +1,52 @@
+<odoo>
+	<record id="account_common_report_s08dn_view" model="ir.ui.view">
+		<field name="name">L10n VN S08-DN Form</field>
+		<field name="model">l10n_vn.s08dn</field>
+		<field name="inherit_id" ref="viin_account.account_common_report_view" />
+		<field name="priority">110</field>
+		<field name="arch" type="xml">
+			<data>
+				<xpath expr="//field[@name='target_move']" position="replace">
+				</xpath>
+				<xpath expr="//field[@name='journal_ids']" position="attributes">
+					<attribute name="attrs">{'invisible': [('target_type', '!=', 'journal')], 'required': [('target_type', '=', 'journal')]}</attribute>
+					<attribute name="options">{'no_create': True}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='company_id']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='journal_ids']" position="before">
+					<field name="target_type" widget="radio" />
+					<field name="account_ids" widget="many2many_tags" options="{'no_create': True}" attrs="{'invisible': [('target_type', '!=', 'account')], 'required': [('target_type', '=', 'account')]}" />
+					<field name="include_extra_info" />
+					<newline />
+				</xpath>
+				<xpath expr="//button[@name='check_report']"
+					position="attributes">
+					<attribute name="string">Print Pdf</attribute>
+				</xpath>
+				<xpath expr="//button[@name='check_report']" position="after">
+					<button name="check_report_excel" string="Print Excel"
+						type="object" class="oe_highlight" />
+				</xpath>
+			</data>
+		</field>
+	</record>
+
+	<record id="l10n_vn_s08dn_action"
+		model="ir.actions.act_window">
+		<field name="name">ACCOUNT BANK DEPOSIT BOOK (S08-DN)</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">l10n_vn.s08dn</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="account_common_report_s08dn_view" />
+		<field name="target">new</field>
+	</record>
+
+	<menuitem id="l10n_vn_s08dn_menu"
+	name="Account Bank Deposit Book (S08-DN)"
+	parent="l10n_vn_viin.account_reports_vn_menu"
+	groups="account.group_account_user"
+	action="l10n_vn_s08dn_action"
+	sequence="6"/>
+</odoo>

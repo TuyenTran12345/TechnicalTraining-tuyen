@@ -1,0 +1,79 @@
+<odoo>
+	<template id="report_s03adn">
+		<t t-call="web.html_container">
+			<t t-call="l10n_vn_viin.accounting_circular_external_layout_standard">
+				<div class="page">
+					<div class="text-center">
+						<br />
+						<h3>GENERAL JOURNAL</h3>
+						<div class="small">
+							Date From:
+							<span t-field="doc.date_from" />
+							- Date To:
+							<span t-field="doc.date_to" />
+							<br />
+							Currency:
+							<span t-field="res_company.currency_id" />
+						</div>
+					</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; width: 60px;">No.</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; width: 120px;">Date</th>
+								<th colspan="2" class="text-center" style="vertical-align: middle;">Origin</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; width: 150px;">Description</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; width: 60px;">Registered</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle;">Account</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle;">Debit</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle;">Credit</th>
+							</tr>
+							<tr>
+								<th class="text-center">Origin No.</th>
+								<th class="text-center">Origin Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<t t-set="line_no" t-value="0" />
+							<t t-foreach="lines" t-as="line">
+								<t t-set="line_no" t-value="line_no + 1" />
+								<tr>
+									<td class="text-center">
+										<span t-esc="line_no" />
+									</td>
+									<td>
+										<span t-if="line['state'] == 'posted'" t-esc="format_date(line['date'])" />
+									</td>
+									<td>
+										<span t-esc="line['move_name']" />
+									</td>
+									<td>
+										<span t-esc="format_date(line['move_date'])" />
+									</td>
+									<td>
+										<span t-esc="line['lname']" />
+									</td>
+									<td class="text-center">
+										<span t-if="line['state'] =='posted'">X</span>
+									</td>
+									<td>
+										<span t-esc="line['account_code']" />
+									</td>
+									<td class="text-end">
+										<span t-esc="formatLang(line['debit'], digits=line['decimal_places'])" />
+									</td>
+									<td class="text-end">
+										<span t-esc="formatLang(line['credit'], digits=line['decimal_places'])" />
+									</td>
+								</tr>
+							</t>
+						</tbody>
+					</table>
+					<div style="page-break-inside: avoid;">
+						<t t-call="l10n_vn_viin.signature_block" />
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>

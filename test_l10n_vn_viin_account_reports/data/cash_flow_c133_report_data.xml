@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="cash_flow_c133_report" model="account.report">
+        <field name="name">Cash Flow Statement (B03-DNN)</field>
+        <field name="default_opening_date_filter">this_year</field>
+        <field name="filter_date_range" eval="True" />
+        <field name="filter_unfold_all" eval="True" />
+        <field name="filter_period_comparison" eval="True" />
+        <field name="filter_journals" eval="False" />
+        <field name="filter_show_draft" eval="True" />
+        <field name="show_line_code" eval="True" />
+        <field name="root_report_id" ref="to_account_reports.cash_flow_report" />
+        <field name="availability_condition">coa</field>
+        <field name="chart_template_id" ref="l10n_vn_viin.vn_template_c133" />
+        <field name="template_ref">Template B03-DNN</field>
+        <field name="column_ids">
+            <record id="cash_flow_c133_column_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+                <field name="figure_type">monetary</field>
+            </record>
+        </field>
+        <field name="line_ids">
+            <!-- I. Lưu chuyển tiền từ hoạt động kinh doanh -->
+            <record id="cash_flow_c133_line_01" model="account.report.line">
+                <field name="name">I. Cash flow from operating activities</field>
+                <field name="code">CF133_20</field>
+                <field name="display_code">20</field>
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_01_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">
+                            CF133_01.balance + CF133_02.balance + CF133_03.balance +
+                            CF133_04.balance + CF133_05.balance + CF133_06.balance +
+                            CF133_07.balance
+                        </field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <!-- 1. Tiền thu từ bán hàng, cung cấp dịch vụ và doanh thu khác -->
+                    <record id="cash_flow_c133_line_01_01" model="account.report.line">
+                        <field name="name">1. Receipts from sales of goods and provision of services</field>
+                        <field name="code">CF133_01</field>
+                        <field name="display_code">01</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_01_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_01_01.balance + CF133_01_02.balance - CF133_01_03.balance</field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <!-- Đối ứng qua tài khoản tiền-->
+                            <record id="cash_flow_c133_line_01_01_01" model="account.report.line">
+                                <field name="name">1.1 Direct cash payments</field>
+                                <field name="code">CF133_01_01</field>
+                                <field name="display_code">01.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_01_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.account_type', '=', 'asset_cash'), ('debit', '>', 0),
+                                            '|',
+                                                ('ctp_account_ids.account_type', 'in', ('income', 'income_financial')),
+                                                ('ctp_account_ids.code', '=like', '121%'),
+                                            ('ctp_aml_ids.analytic_tag_ids', 'not in', (
+                                                    ref('viin_analytic_tag.account_analytic_tag_liquidation_assets'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_lending_loan'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_interests_dividends_distributed_profits'),
+                                                )
+                                            )
+                                        ]"/>
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <!-- Đối ứng là tài khoản công nợ-->
+                            <record id="cash_flow_c133_line_01_01_02" model="account.report.line">
+                                <field name="name">1.2 Receivables</field>
+                                <field name="code">CF133_01_02</field>
+                                <field name="display_code">01.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_01_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                             ('account_id.code', '=like', '131%'), ('credit', '>', 0),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash'),
+                                            '|', ('matched_debit_ids.debit_move_id.ctp_account_ids.code', '=like', '121%'),
+                                                 ('matched_debit_ids.debit_move_id.ctp_account_ids.account_type', 'in', ('income', 'income_financial')),
+                                            ('analytic_tag_ids', 'not in', [
+                                                        ref('viin_analytic_tag.account_analytic_tag_liquidation_assets'),
+                                                        ref('viin_analytic_tag.account_analytic_tag_lending_loan'),
+                                                        ref('viin_analytic_tag.account_analytic_tag_interests_dividends_distributed_profits'),
+                                                ]
+                                            ),
+                                            ('matched_debit_ids.debit_move_id.ctp_aml_ids.analytic_tag_ids', 'not in', [
+                                                    ref('viin_analytic_tag.account_analytic_tag_liquidation_assets'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_lending_loan'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_interests_dividends_distributed_profits'),
+                                                ]
+                                            )
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <!-- Các khoản không bao gồm-->
+                            <!-- Các khoản tạm ứng-->
+                            <record id="cash_flow_c133_line_01_01_03" model="account.report.line">
+                                <field name="name">1.3 Exclusions</field>
+                                <field name="code">CF133_01_03</field>
+                                <field name="display_code">01.3</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_01_03_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.code', '=like', '141%'), ('credit', '>', 0),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                        ]"/>
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 2. Tiền chi trả cho người cung cấp hàng hóa và dịch vụ -->
+                    <record id="cash_flow_c133_line_01_02" model="account.report.line">
+                        <field name="name">2. Payments to suppliers of goods and services</field>
+                        <field name="code">CF133_02</field>
+                        <field name="display_code">02</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_02_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_02_01.balance + CF133_02_02.balance</field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <!-- Đối ứng qua tài khoản tiền-->
+                            <record id="cash_flow_c133_line_01_02_01" model="account.report.line">
+                                <field name="name">2.1 Direct cash payments</field>
+                                <field name="code">CF133_02_01</field>
+                                <field name="display_code">02.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_02_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('credit', '>', 0),
+                                            '|', ('account_id.account_type', '=', 'asset_cash'),
+                                                '&amp;', ('account_id.account_type', '=', 'asset_current'),
+                                                         ('matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('ctp_aml_ids.analytic_tag_ids', 'not in', [
+                                                    ref('viin_analytic_tag.account_analytic_tag_fixed_assets'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_liquidation_assets'),
+                                                ]
+                                            ),
+                                            '|', '|', '|', ('ctp_account_ids.code', '=like', '15%'),
+                                                           ('ctp_account_ids.code', '=like', '121%'),
+                                                           ('ctp_account_ids.code', '=like', '242%'),
+                                                      '&amp;', '&amp;',
+                                                           ('ctp_account_ids.account_type', '=', 'expense'),
+                                                           ('ctp_account_ids.code', 'not like', '635%'),
+                                                           ('ctp_account_ids.code', 'not like', '821%')
+                                        ]"/>
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <!-- Đối ứng là tài khoản công nợ-->
+                            <record id="cash_flow_c133_line_01_02_02" model="account.report.line">
+                                <field name="name">2.2. Payable</field>
+                                <field name="code">CF133_02_02</field>
+                                <field name="display_code">02.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_02_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.code', '=like', '331%'), ('debit', '>', 0),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('analytic_tag_ids', 'not in', [
+                                                    ref('viin_analytic_tag.account_analytic_tag_fixed_assets'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_liquidation_assets')
+                                                ]
+                                            ),
+                                            ('matched_credit_ids.credit_move_id.ctp_aml_ids.analytic_tag_ids', 'not in', [
+                                                    ref('viin_analytic_tag.account_analytic_tag_fixed_assets'),
+                                                    ref('viin_analytic_tag.account_analytic_tag_liquidation_assets')
+                                                ]
+                                            ),
+                                             '|', '|', '|', ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '15%'),
+                                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '121%'),
+                                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '242%'),
+                                                        '&amp;', '&amp;',
+                                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'expense'),
+                                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.code','not like','635%'),
+                                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.code','not like','821%')
+                                        ]"/>
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 3. Tiền chi trả cho người lao động -->
+                    <record id="cash_flow_c133_line_01_03" model="account.report.line">
+                        <field name="name">3. Payments to employees</field>
+                        <field name="code">CF133_03</field>
+                        <field name="display_code">03</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_03_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('account_id.code', '=like', '334%'), ('debit', '>', 0),
+                                    '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                         ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                ]"/>
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 4. Tiền chi lãi vay đã trả -->
+                    <record id="cash_flow_c133_line_01_04" model="account.report.line">
+                        <field name="name">4. Paid interest</field>
+                        <field name="code">CF133_04</field>
+                        <field name="display_code">04</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_04_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_04_01.balance + CF133_04_02.balance</field>
+                                <field name="subformula">sum</field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <record id="cash_flow_c133_line_01_04_01" model="account.report.line">
+                                <field name="name">4.1 Direct cash payments</field>
+                                <field name="code">CF133_04_01</field>
+                                <field name="display_code">04.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_04_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.account_type', '=', 'asset_cash'), ('credit', '>', 0),
+                                            '|', ('ctp_account_ids.code', '=like', '635%'),
+                                                 ('ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_borrowing_loan')),
+                                            '|', ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=like', '635%'),
+                                                 ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_borrowing_loan'))
+                                        ]"/>
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_01_04_02" model="account.report.line">
+                                <field name="name">4.2 Payable</field>
+                                <field name="code">CF133_04_02</field>
+                                <field name="display_code">04.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_01_04_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('debit', '>', 0),
+                                            '|', ('account_id.code', '=like', '331%'), ('account_id.code', '=like', '335%'),
+                                            '|', ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '635%'),
+                                                 ('matched_credit_ids.credit_move_id.ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_borrowing_loan')),
+                                            ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                        ]"/>
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 5. Thuế thu nhập doanh nghiệp đã nộp -->
+                    <record id="cash_flow_c133_line_01_05" model="account.report.line">
+                        <field name="name">5. Company income tax paid</field>
+                        <field name="code">CF133_05</field>
+                        <field name="display_code">05</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_05_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('account_id.code', '=like', '3334%'), ('debit', '>', 0),
+                                    '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                         ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                ]"/>
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 6. Tiền thu khác từ hoạt động kinh doanh -->
+                    <record id="cash_flow_c133_line_01_06" model="account.report.line">
+                        <field name="name">6. Other receipts from operating activities</field>
+                        <field name="code">CF133_06</field>
+                        <field name="display_code">06</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_06_exp_01" model="account.report.expression">
+                                <field name="label">total_received</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('debit','>',0),
+                                    ('account_id.account_type','=','asset_cash')
+                                ]"/>
+                                <field name="subformula">sum</field>
+                            </record>
+                            <record id="cash_flow_c133_line_01_06_exp_02" model="account.report.expression">
+                                <field name="label">other</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">
+                                    CF133_01.balance + CF133_22_01.balance + CF133_22_03.balance +
+                                    CF133_24.balance + CF133_25.balance + CF133_31.balance +
+                                    CF133_33.balance
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_01_06_exp_03" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_06.total_received - CF133_06.other</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 7. Tiền chi khác cho hoạt động kinh doanh -->
+                    <record id="cash_flow_c133_line_01_07" model="account.report.line">
+                        <field name="name">7. Other payments for operating activities</field>
+                        <field name="code">CF133_07</field>
+                        <field name="display_code">07</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_01_07_exp_01" model="account.report.expression">
+                                <field name="label">total_paid</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('credit', '>', 0),
+                                    ('account_id.account_type', '=', 'asset_cash')
+                                ]">
+                                </field>
+                                <field name="subformula">sum</field>
+                            </record>
+                            <record id="cash_flow_c133_line_01_07_exp_02" model="account.report.expression">
+                                <field name="label">other</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">
+                                    CF133_02.balance + CF133_03.balance + CF133_04.balance +
+                                    CF133_05.balance + CF133_21.balance + CF133_22_02.balance +
+                                    CF133_22_04.balance + CF133_23.balance + CF133_32.balance +
+                                    CF133_34.balance + CF133_35.balance
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_01_07_exp_03" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_07.total_paid - CF133_07.other</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <!-- II. Lưu chuyển tiền từ hoạt động đầu tư -->
+            <record id="cash_flow_c133_line_02" model="account.report.line">
+                <field name="name">II. Cash flows from investing activities</field>
+                <field name="code">CF133_30</field>
+                <field name="display_code">30</field>
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_02_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">
+                            CF133_21.balance + CF133_22.balance + CF133_23.balance +
+                            CF133_24.balance + CF133_25.balance
+                        </field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <!-- 1. Tiền chi để mua sắm, xây dựng TSCĐ, BĐSĐT và các tài sản dài hạn khác -->
+                    <record id="cash_flow_c133_line_02_01" model="account.report.line">
+                        <field name="name">1. Payments for additions to fixed assets and other long-term assets</field>
+                        <field name="code">CF133_21</field>
+                        <field name="display_code">21</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_02_01_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_21_01.balance + CF133_21_02.balance</field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <record id="cash_flow_c133_line_02_01_01" model="account.report.line">
+                                <field name="name">1.1 Direct cash payments</field>
+                                <field name="code">CF133_21_01</field>
+                                <field name="display_code">21.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_01_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('credit', '>', 0),
+                                            '|', ('account_id.account_type', '=', 'asset_cash'),
+                                                '&amp;', ('account_id.account_type', '=', 'asset_current'),
+                                                         ('matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            '|', '|', ('ctp_account_ids.account_type', '=', 'asset_fixed'),
+                                                      ('ctp_account_ids.code', '=like', '241%'),
+                                                      ('ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_fixed_assets')),
+                                        ]" />
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_02_01_02" model="account.report.line">
+                                <field name="name">1.2 Payable</field>
+                                <field name="code">CF133_21_02</field>
+                                <field name="display_code">21.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_01_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.code', '=like', '331%'), ('debit', '>', 0),
+                                            '|', '|', ('matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'asset_fixed'),
+                                                      ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '241%'),
+                                                      ('matched_credit_ids.credit_move_id.ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_fixed_assets')),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 2. Tiền thu từ thanh lý, nhượng bán TSCĐ, BĐSĐT và các tài sản dài hạn khác -->
+                    <record id="cash_flow_c133_line_02_02" model="account.report.line">
+                        <field name="name">2. Collections on disposals of fixed assets and other long-term assets</field>
+                        <field name="code">CF133_22</field>
+                        <field name="display_code">22</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_02_02_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">
+                                    CF133_22_01.balance + CF133_22_02.balance + CF133_22_03.balance +
+                                    CF133_22_04.balance
+                                </field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <record id="cash_flow_c133_line_02_02_01" model="account.report.line">
+                                <field name="name">2.1 Revenue of fixed assets and other long-term assets (Cash Direct)</field>
+                                <field name="code">CF133_22_01</field>
+                                <field name="display_code">22.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_02_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('debit', '>', 0),
+                                            '|', ('account_id.account_type', '=', 'asset_cash'),
+                                                 '&amp;', ('account_id.account_type', '=', 'asset_current'),
+                                                          ('matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_liquidation_assets')),
+                                            '|', ('ctp_account_ids.account_type', '=', 'income_other'),
+                                                 ('ctp_account_ids.code', '=like', '5117%')
+                                        ]" />
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_02_02_02" model="account.report.line">
+                                <field name="name">2.2 Expenses of fixed assets and other long-term assets (Cash Direct)</field>
+                                <field name="code">CF133_22_02</field>
+                                <field name="display_code">22.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_02_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('credit', '>', 0),
+                                            '|', ('account_id.account_type', '=', 'asset_cash'),
+                                                 '&amp;', ('account_id.account_type', '=', 'asset_current'),
+                                                          ('matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_liquidation_assets')),
+                                            ('ctp_account_ids.account_type', '=', 'expense')
+                                        ]" />
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_02_02_03" model="account.report.line">
+                                <field name="name">2.3 Revenue of fixed assets and other long-term assets (Via Receivables)</field>
+                                <field name="code">CF133_22_03</field>
+                                <field name="display_code">22.3</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_02_03_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.code', '=like', '131%'), ('credit', '>', 0),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('matched_debit_ids.debit_move_id.ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_liquidation_assets')),
+                                            '|', ('matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'income_other'),
+                                                 ('matched_debit_ids.debit_move_id.ctp_account_ids.code', '=like', '5117%')
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_02_02_04" model="account.report.line">
+                                <field name="name">2.4 Expenses of fixed assets and other long-term assets (Via Payables)</field>
+                                <field name="code">CF133_22_04</field>
+                                <field name="display_code">22.4</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_02_04_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.code', '=like', '331%'), ('debit', '>', 0),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('matched_credit_ids.credit_move_id.ctp_aml_ids.analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_liquidation_assets')),
+                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'expense')
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 3. Tiền chi cho vay, đầu tư góp vốn vào đơn vị khác -->
+                    <record id="cash_flow_c133_line_02_03" model="account.report.line">
+                        <field name="name">3. Granting loans, buying debt instruments of other entities</field>
+                        <field name="code">CF133_23</field>
+                        <field name="display_code">23</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_02_03_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('debit', '>', 0),
+                                    ('analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_lending_loan')),
+                                    '|', ('account_id.code','=like','128%'),
+                                         ('account_id.code','=like','171%'),
+                                    '|', ('ctp_account_ids.account_type','=','asset_cash'),
+                                         ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type','=','asset_cash')
+                                ]" />
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 4. Tiền thu hồi cho vay, đầu tư góp vốn vào đơn vị khác -->
+                    <record id="cash_flow_c133_line_02_04" model="account.report.line">
+                        <field name="name">4. Recovery of loan given and disposals of debt instruments of other entities</field>
+                        <field name="code">CF133_24</field>
+                        <field name="display_code">24</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_02_04_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('credit', '>', 0),
+                                    ('analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_lending_loan')),
+                                    '|', ('account_id.code','=like','128%'),
+                                         ('account_id.code','=like','171%'),
+                                    '|', ('ctp_account_ids.account_type','=','asset_cash'),
+                                         ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type','=','asset_cash')
+                                ]" />
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 5. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia -->
+                    <record id="cash_flow_c133_line_02_05" model="account.report.line">
+                        <field name="name">5. Investments in equity of other entities</field>
+                        <field name="code">CF133_25</field>
+                        <field name="display_code">25</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_02_05_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_25_01.balance + CF133_25_02.balance</field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <record id="cash_flow_c133_line_02_05_01" model="account.report.line">
+                                <field name="name">5.1 Direct cash payments</field>
+                                <field name="code">CF133_25_01</field>
+                                <field name="display_code">25.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_05_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('credit', '>', 0),
+                                            '|', ('account_id.account_type', '=', 'asset_cash'),
+                                                '&amp;', ('account_id.account_type', '=', 'asset_current'),
+                                                         ('matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            '|', '|', ('ctp_account_ids.code', '=like', '221%'),
+                                                      ('ctp_account_ids.code', '=like', '222%'),
+                                                      ('ctp_account_ids.code', '=like', '2281%')
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_02_05_02" model="account.report.line">
+                                <field name="name">5.2 Payable</field>
+                                <field name="code">CF133_25_02</field>
+                                <field name="display_code">25.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_02_05_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('debit', '>', 0), ('account_id.account_type', '=', 'liability_payable'),
+                                            '|', '|', ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '221%'),
+                                                      ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '222%'),
+                                                      ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '2281%'),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                        ]" />
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <!-- III. Lưu chuyển tiền từ hoạt động tài chính -->
+            <record id="cash_flow_c133_line_03" model="account.report.line">
+                <field name="name">III. Cash flows from financial activities</field>
+                <field name="code">CF133_40</field>
+                <field name="display_code">40</field>
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_03_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">
+                            CF133_31.balance + CF133_32.balance + CF133_33.balance +
+                            CF133_34.balance + CF133_35.balance
+                        </field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <!-- 1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu -->
+                    <record id="cash_flow_c133_line_03_01" model="account.report.line">
+                        <field name="name">1. Receipts from issuing shares, contribution of owners</field>
+                        <field name="code">CF133_31</field>
+                        <field name="display_code">31</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_03_01_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('credit', '>', 0),
+                                    '|', ('account_id.code', '=like', '419%'),
+                                         ('account_id.code', '=like', '411%'),
+                                    '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                         ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                ]"/>
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 2. Tiền trả lại vốn góp cho các chủ sở hữu, mua lại cổ phiếu của doanh nghiệp đã phát hành -->
+                    <record id="cash_flow_c133_line_03_02" model="account.report.line">
+                        <field name="name">2. Payments for returning Owner's equity, buying Treasury share</field>
+                        <field name="code">CF133_32</field>
+                        <field name="display_code">32</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_03_02_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('debit', '>', 0),
+                                    '|', ('account_id.code', '=like', '419%'),
+                                         ('account_id.code', '=like', '411%'),
+                                    '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                         ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                ]"/>
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 3. Tiền thu từ đi vay -->
+                    <record id="cash_flow_c133_line_03_03" model="account.report.line">
+                        <field name="name">3. Receipts from borrowings</field>
+                        <field name="code">CF133_33</field>
+                        <field name="display_code">33</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_03_03_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('credit', '>', 0),
+                                    '|', ('account_id.code', '=like', '341%'),
+                                         ('analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_borrowing_loan')),
+                                    '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                         ('ctp_aml_ids.matched_credit_ids.credit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                ]"/>
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 4. Tiền trả nợ gốc vay và nợ thuê tài chính -->
+                    <record id="cash_flow_c133_line_03_04" model="account.report.line">
+                        <field name="name">4. Payments to settle loan principals and financial lease principals</field>
+                        <field name="code">CF133_34</field>
+                        <field name="display_code">34</field>
+                        <field name="groupby">account_id</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_03_04_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('debit', '>', 0),
+                                    '|', ('account_id.code', '=like', '341%'),
+                                         ('analytic_tag_ids', '=', ref('viin_analytic_tag.account_analytic_tag_borrowing_loan')),
+                                    '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                         ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                ]"/>
+                                <field name="subformula">-sum</field>
+                            </record>
+                        </field>
+                    </record>
+                    <!-- 5. Cổ tức, lợi nhuận đã trả cho chủ sở hữu -->
+                    <record id="cash_flow_c133_line_03_05" model="account.report.line">
+                        <field name="name">5. Dividends and profits distributed</field>
+                        <field name="code">CF133_35</field>
+                        <field name="display_code">35</field>
+                        <field name="expression_ids">
+                            <record id="cash_flow_c133_line_03_05_exp_01" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">CF133_35_01.balance + CF133_35_02.balance</field>
+                            </record>
+                        </field>
+                        <field name="children_ids">
+                            <record id="cash_flow_c133_line_03_05_01" model="account.report.line">
+                                <field name="name">5.1 Direct cash payments</field>
+                                <field name="code">CF133_35_01</field>
+                                <field name="display_code">35.1</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_03_05_01_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('debit', '>', 0), ('account_id.code', '=like', '421%'),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                '&amp;', ('ctp_account_ids.account_type', '=', 'asset_current'),
+                                                         ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash')
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                            <record id="cash_flow_c133_line_03_05_02" model="account.report.line">
+                                <field name="name">5.2 Payable</field>
+                                <field name="code">CF133_35_02</field>
+                                <field name="display_code">35.2</field>
+                                <field name="groupby">account_id</field>
+                                <field name="show_on_print_document" eval="False" />
+                                <field name="expression_ids">
+                                    <record id="cash_flow_c133_line_03_05_02_exp_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('debit', '>', 0), ('account_id.code', '=like', '338%'),
+                                            '|', ('ctp_account_ids.account_type', '=', 'asset_cash'),
+                                                 ('ctp_aml_ids.matched_debit_ids.debit_move_id.ctp_account_ids.account_type', '=', 'asset_cash'),
+                                            ('matched_credit_ids.credit_move_id.ctp_account_ids.code', '=like', '421%')
+                                        ]" />
+                                        <field name="subformula">-sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+            <!-- Lưu chuyển tiền thuần trong kỳ (50 = 20 + 30 + 40) -->
+            <record id="cash_flow_c133_line_04" model="account.report.line">
+                <field name="name">Net cash flows during the fiscal year (50 = 20 + 30 + 40)</field>
+                <field name="code">CF133_50</field>
+                <field name="display_code">50</field>
+                <field name="has_empty_row" eval="True" />
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_04_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">CF133_20.balance + CF133_30.balance + CF133_40.balance</field>
+                    </record>
+                </field>
+            </record>
+            <!-- Tiền và tương đương tiền đầu kỳ -->
+            <record id="cash_flow_c133_line_05" model="account.report.line">
+                <field name="name">Cash and cash equivalents, beginning of fiscal year</field>
+                <field name="code">CF133_60</field>
+                <field name="display_code">60</field>
+                <field name="groupby">account_id</field>
+                <field name="has_empty_row" eval="True" />
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_05_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.account_type','=','asset_cash')]"/>
+                        <field name="date_scope">to_beginning_of_fiscalyear</field>
+                        <field name="subformula">sum</field>
+                    </record>
+                </field>
+            </record>
+            <!-- Ảnh hưởng của thay đổi tỷ giá hối đoái quy đổi ngoại tệ -->
+            <record id="cash_flow_c133_line_06" model="account.report.line">
+                <field name="name">Currency translation differences</field>
+                <field name="code">CF133_61</field>
+                <field name="display_code">61</field>
+                <field name="groupby">account_id</field>
+                <field name="has_empty_row" eval="True" />
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_06_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[
+                            ('account_id.account_type', '=', 'asset_cash'),
+                            ('ctp_account_ids.code','=like','413%')
+                        ]"/>
+                        <field name="subformula">sum</field>
+                    </record>
+                </field>
+            </record>
+            <!-- Tiền và tương đương tiền cuối kỳ (70 = 50 + 60 + 61) -->
+            <record id="cash_flow_c133_line_07" model="account.report.line">
+                <field name="name">Cash and cash equivalent at the end of the year (70 = 50 + 60 + 61)</field>
+                <field name="code">CF133_70</field>
+                <field name="display_code">70</field>
+                <field name="has_empty_row" eval="True" />
+                <field name="expression_ids">
+                    <record id="cash_flow_c133_line_07_exp_01" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">CF133_50.balance + CF133_60.balance + CF133_61.balance</field>
+                    </record>
+                </field>
+            </record>
+        </field>
+        <field name="custom_report_header_template">l10n_vn_viin_account_reports.header_template_print_vn</field>
+        <field name="custom_report_body_template">l10n_vn_viin_account_reports.main_template_print_vn</field>
+        <field name="custom_report_footer_template">l10n_vn_viin.accounting_external_footer_layout</field>
+    </record>
+
+</odoo>

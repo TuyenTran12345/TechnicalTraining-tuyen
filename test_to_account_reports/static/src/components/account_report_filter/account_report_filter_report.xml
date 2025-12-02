@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterReport" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'" t-if="props.reports.length > 1">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-book"/> Report: <span t-esc="props.currentReport.name"/>
+            </t>
+            <t t-foreach="props.reports" t-as="report" t-key="report.id">
+                <DropdownItem t-esc="report.name"
+                	class="{ selected: props.currentReport.id === report.id }"
+                	onSelected="() => this.props.changeReport(report.id)" />
+            </t>
+        </Dropdown>
+
+	</t>
+
+</templates>

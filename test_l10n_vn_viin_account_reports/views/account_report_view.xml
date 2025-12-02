@@ -1,0 +1,61 @@
+<odoo>
+	<record id="report_l10n_vn_s38dn_action" model="ir.actions.report">
+		<field name="name">Account Detail Sheet (S38-DN)</field>
+		<field name="model">l10n_vn.s38dn</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">l10n_vn_viin_account_reports.report_s38dn</field>
+		<field name="report_file">l10n_vn_viin_account_reports.report_s38dn</field>
+		<field name="binding_model_id" ref="model_l10n_vn_s38dn" />
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="report_paperformat_ads_vn_euro_landscape" />
+		<field name="legal_name">S38-DN</field>
+	</record>
+
+	<record id="report_l10n_vn_s03adn_action" model="ir.actions.report">
+		<field name="name">General Journal (S03a-DN)</field>
+		<field name="model">l10n_vn.s03adn</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">l10n_vn_viin_account_reports.report_s03adn</field>
+		<field name="report_file">l10n_vn_viin_account_reports.report_s03adn</field>
+		<field name="binding_model_id" ref="model_l10n_vn_s03adn" />
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="l10n_vn_viin.report_paperformat_template_paperformat_portrait" />
+		<field name="legal_name">S03a-DN</field>
+	</record>
+
+	<record id="report_l10n_vn_s03bdn_action" model="ir.actions.report">
+		<field name="name">Ledger (S03b-DN)</field>
+		<field name="model">l10n_vn.s03bdn</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">l10n_vn_viin_account_reports.report_s03bdn</field>
+		<field name="report_file">l10n_vn_viin_account_reports.report_s03bdn</field>
+		<field name="binding_model_id" ref="model_l10n_vn_s03bdn" />
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="report_paperformat_ads_vn_euro_landscape" />
+		<field name="legal_name">S03b-DN</field>
+	</record>
+
+	<record id="report_l10n_vn_s07dn_action" model="ir.actions.report">
+		<field name="name">Account Cash Book (S07-DN)</field>
+		<field name="model">l10n_vn.s07dn</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">l10n_vn_viin_account_reports.report_s07dn</field>
+		<field name="report_file">l10n_vn_viin_account_reports.report_s07dn</field>
+		<field name="binding_model_id" ref="model_l10n_vn_s07dn" />
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="l10n_vn_viin.report_paperformat_template_paperformat_landscape" />
+		<field name="legal_name">S07-DN</field>
+	</record>
+
+	<record id="report_l10n_vn_s08dn_action" model="ir.actions.report">
+		<field name="name">Account Bank Deposit Book (S08-DN)</field>
+		<field name="model">l10n_vn.s08dn</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="report_name">l10n_vn_viin_account_reports.report_s08dn</field>
+		<field name="report_file">l10n_vn_viin_account_reports.report_s08dn</field>
+		<field name="binding_model_id" ref="model_l10n_vn_s08dn" />
+		<field name="binding_type">report</field>
+		<field name="paperformat_id" ref="l10n_vn_viin.report_paperformat_template_paperformat_landscape" />
+		<field name="legal_name">S08-DN</field>
+	</record>
+</odoo>

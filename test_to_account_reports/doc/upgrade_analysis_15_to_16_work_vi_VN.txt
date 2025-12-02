@@ -1,0 +1,719 @@
+---Classes in module ---
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/__init__.py
+
+def _ensure_no_account_reports_installed(env):
+    """
+    This method ensures the Odoo EE's account_reports module is not installed before installing this to_account_reports
+    """
+
+def pre_init_hook(cr):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/controllers/__init__.py
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/controllers/main.py
+
+class FinancialReportController(http.Controller):
+
+    @http.route('/to_account_reports', type='http', auth='user', methods=['POST'], csrf=False)
+    def download_report(self, model, options, output_format, token, financial_id=None, **kw):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/formula_classes.py
+
+class FormulaLine(object):
+
+    def __init__(self, obj, currency_table, financial_report, type='balance', linesDict=None):
+                self.amount_residual = fields['amount_residual']
+            elif obj._name == 'account.move.line':
+                self.amount_residual = 0.0
+                field_names = ['debit', 'credit', 'balance', 'amount_residual']
+                res = obj.env['account.financial.dynamic.report.line']._compute_line(currency_table, financial_report)
+                self.amount_residual = fields['amount_residual']
+        elif type == 'not_computed':
+            for field in fields:
+                fields[field] = obj.get(field, 0)
+        self.balance = fields['balance']
+        self.credit = fields['credit']
+        self.debit = fields['debit']
+
+
+class FormulaContext(dict):
+
+    def __init__(self, reportLineObj, linesDict, currency_table, financial_report, curObj=None, only_sum=False, *data):
+        self.reportLineObj = reportLineObj
+        self.curObj = curObj
+        self.linesDict = linesDict
+        self.currency_table = currency_table
+        self.only_sum = only_sum
+        self.financial_report = financial_report
+        return super(FormulaContext, self).__init__(data)
+
+    def __getitem__(self, item):
+            d1 = fields.Date.from_string(self.curObj.env.context['date_from'])
+            d2 = fields.Date.from_string(self.curObj.env.context['date_to'])
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/ir_module_module.py
+
+class IrModuleModule(models.Model):
+    _inherit = "ir.module.module"
+
+
+    def button_immediate_install(self):
+    def _update_translations(self, filter_lang=None, overwrite=False):
+        """ Create missing translations after loading the one of account.financial.dynamic.report
+
+        Use the translations of the account.financial.dynamic.report to translate the linked
+        ir.actions.client and ir.ui.menu generated at the creation of the report
+        """
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_general_ledger.py
+
+class ReportAccountGeneralLedger(models.AbstractModel):
+    _name = "account.general.ledger"
+
+    _description = "General Ledger Report"
+    _inherit = "account.report"
+
+
+    def get_columns_name(self, options):
+    def get_templates(self):
+    def _get_with_statement(self, user_types, domain=None):
+    def _do_query(self, options, line_id, group_by_account=True, limit=False, group_by_partner=False):
+    def do_query(self, options, line_id, group_by_partner=False):
+        current_date = fields.Date.today()
+    def _get_unaffected_earnings_domain(self):
+    def do_query_unaffected_earnings(self, options, line_id):
+        """ Compute the sum of ending balances for all accounts that are of a type that does not bring forward the balance in new fiscal years.
+            This is needed to balance the trial balance and the general ledger reports (to have total credit = total debit)
+        """
+
+    def group_by_account_id(self, options, line_id,group_by_partner=False):
+    def _get_journal_total(self):
+    def _get_taxes(self, journal):
+    @api.model
+    def get_report_name(self):
+    @api.model
+    def get_lines(self, options, line_id=None):
+    def view_all_journal_items(self, options, params):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/ir_ui_menu.py
+
+class IrUiMenu(models.Model):
+    _inherit = 'ir.ui.menu'
+
+
+    chart_template_id = fields.Many2one('account.chart.template', help='The chart template for the menu (if any)')
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_report_coa.py
+
+class ReportAccountCoa(models.AbstractModel):
+    _name = "account.coa.report"
+
+    _description = "Chart of Account Report"
+    _inherit = "account.general.ledger"
+
+
+    def get_templates(self):
+    def get_columns_name(self, options):
+    def _get_super_columns(self, options):
+    def _post_process(self, grouped_accounts, initial_balances, options, comparison_table):
+    @api.model
+    def get_lines(self, options, line_id=None):
+    @api.model
+    def get_report_name(self):
+    def get_template_ref(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_chart_template.py
+
+class AccountChartTemplate(models.Model):
+    _inherit = "account.chart.template"
+
+
+    def _get_account_vals(self, company, account_template, code_acc, tax_template_ref):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_move_line.py
+
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+
+    expected_pay_date = fields.Date('Expected Payment Date', help="Expected payment date as manually set through the customer statement (e.g: if you had the customer on the phone and want to remember the date he promised he would pay)")
+    internal_note = fields.Text('Internal Note', help="Note you can set through the customer statement about a receivable journal item")
+    next_action_date = fields.Date('Next Action Date', help="Date where the next action should be taken for a receivable item. Usually, automatically set when sending reminders through the customer statement.")
+    def write_blocked(self, blocked):
+        """ This function is used to change the 'blocked' status of an aml.
+            You need to be able to change it even if the aml is locked by the lock date
+            (this function is used in the customer statements) """
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_account_template.py
+
+class AccountAccountTemplate(models.Model):
+    _inherit = "account.account.template"
+
+
+    show_both_dr_and_cr_trial_balance = fields.Boolean(string="Show both debit and credit on Trial Balance", default=False,
+                                                       help="Allow show both debit and credit on Trial Balance")
+    @api.model
+    def _get_show_both_dr_and_cr_trial_balance_domain(self):
+    @api.model
+    def _apply_show_both_dr_and_cr_trial_balance(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_generic_tax_report.py
+
+class GenericTaxReport(models.AbstractModel):
+    _inherit = 'account.report'
+
+    _name = 'account.generic.tax.report'
+
+    _description = "Account Generic Tax Report"
+
+    def get_columns_name(self, options):
+    def _get_with_statement(self, user_types, domain=None):
+    def _sql_from_amls_one(self):
+        sql = """SELECT "account_move_line".tax_line_id, COALESCE(SUM("account_move_line".debit-"account_move_line".credit), 0)
+                    FROM %s
+                    WHERE %s GROUP BY "account_move_line".tax_line_id"""
+
+    def _sql_from_amls_two(self):
+        sql = """SELECT r.account_tax_id, COALESCE(SUM("account_move_line".debit-"account_move_line".credit), 0)
+                 FROM %s
+                 INNER JOIN account_move_line_account_tax_rel r ON ("account_move_line".id = r.account_move_line_id)
+                 INNER JOIN account_tax t ON (r.account_tax_id = t.id)
+                 WHERE %s GROUP BY r.account_tax_id"""
+
+    def set_context(self, options):
+    def _compute_from_amls(self, options, taxes, period_number):
+    @api.model
+    def get_lines(self, options, line_id=None):
+    @api.model
+    def get_report_name(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/res_partner.py
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+
+    payment_next_action = fields.Text('Next Action', copy=False, company_dependent=True,
+                                      help="Note regarding the next action.")
+    payment_next_action_date = fields.Date('Next Action Date', copy=False, company_dependent=True,
+                                           help="The date before which no action should be taken.")
+    unreconciled_aml_ids = fields.One2many('account.move.line', 'partner_id', string='Unreconciled Journal Items', domain=[
+        ('reconciled', '=', False),
+        ('account_id.deprecated', '=', False),
+        ('account_id.internal_type', '=', 'receivable')])
+    total_due = fields.Monetary(compute='_compute_total_due', string="Total Due")
+    def _compute_total_due(self):
+        """ Returns the total due as will be displayed on the Followup Report """
+
+        today = fields.Date.context_today(self)
+    partner_ledger_label = fields.Char(compute='_compute_partner_ledger_label', help='The label to display on partner ledger button, in form view')
+    def _compute_partner_ledger_label(self):
+    def get_partners_in_need_of_action(self, overdue_only=False):
+        today = fields.Date.context_today(self)
+    def get_followup_lines_domain(self, date, overdue_only=False, only_unblocked=False):
+    def update_next_action(self, batch=False):
+        """Updates the next_action_date of the right account move lines"""
+
+        today = fields.Datetime.now()
+        today = fields.Date.context_today(self)
+    def open_action_followup(self):
+    def open_partner_ledger(self):
+    @api.returns('self', lambda value: value.id)
+    def message_post(self, body='', subject=None, message_type='notification',
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_aged_payable.py
+
+class ReportAccountAgedPayable(models.AbstractModel):
+    _name = "account.aged.payable"
+
+    _description = "Aged Payable"
+    _inherit = "account.aged.partner"
+
+
+    def set_context(self, options):
+    def get_report_name(self):
+    def get_templates(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_bank_reconciliation_report.py
+
+class AccountBankReconciliationReport(models.AbstractModel):
+    _name = 'account.bank.reconciliation.report'
+
+    _description = 'Bank Reconciliation Report'
+    _inherit = "account.report"
+
+
+    def get_columns_name(self, options):
+    def _add_bank_statement_line(self, line, amount):
+    def _add_title_line(self, options, title, amount=None, level=0, date=False):
+    def _add_total_line(self, amount):
+    def print_pdf(self, options):
+    def print_xlsx(self, options):
+    @api.model
+    def get_report_name(self):
+    @api.model
+    def _get_bank_rec_report_data(self, options, line_id=None):
+    @api.model
+    def get_lines(self, options, line_id=None):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account.py
+
+class AccountAccount(models.Model):
+    _inherit = "account.account"
+
+
+    show_both_dr_and_cr_trial_balance = fields.Boolean(string="Show both debit and credit on Trial Balance", default=False, help="Allow show both debit and credit on Trial Balance")
+    @api.model
+    def _get_show_both_dr_and_cr_trial_balance_domain(self):
+    @api.model
+    def _apply_show_both_dr_and_cr_trial_balance(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_report_multi_company.py
+
+class AccountReportMulticompanyManager(models.TransientModel):
+    _name = 'account.report.multicompany.manager'
+
+    _description = 'Manages Multi-company for Reports'
+
+    @api.model
+    def _default_company_ids(self):
+    multi_company = fields.Boolean('Allow multi-company', compute='_compute_multi_company', store=False)
+    company_ids = fields.Many2many('res.company', relation='account_report_context_company', string='Companies', default=lambda s: s._default_company_ids())
+    available_company_ids = fields.Many2many('res.company', relation='account_report_context_available_company', string='Available companies', default=lambda s: s._default_company_ids())
+    def _compute_multi_company(self):
+    def get_available_company_ids_and_names(self):
+    @api.model
+    def get_available_companies(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_followup_report.py
+
+class AccountReportFollowupManager(models.Model):
+    _inherit = 'account.report.manager'
+
+
+    partner_id = fields.Many2one('res.partner')
+class ReportAccountFollowupReport(models.AbstractModel):
+    _name = "account.followup.report"
+
+    _description = "Followup Report"
+    _inherit = 'account.report'
+
+
+    def get_columns_name(self, options):
+    def get_lines(self, options, line_id=None):
+        today = fields.Date().today()
+    def open_partner_form(self, options, params):
+    def get_default_summary(self, options):
+    def get_report_manager(self, options):
+    def get_html(self, options, line_id=None, additional_context=None):
+        additional_context['today'] = fields.Date.to_string(fields.Date.today())
+    def get_pdf(self, options, minimal_layout=True):
+    def get_report_name(self):
+    def get_reports_buttons(self):
+    def get_report_value(self, partner, options):
+    def get_templates(self):
+    def get_history(self, partner):
+    @api.model
+    def change_next_action(self, partner_id, date, note):
+    def get_post_message(self, options):
+    @api.model
+    def send_email(self, options):
+    def print_followup(self, options, params):
+class AccountReportFollowupAll(models.AbstractModel):
+    _name = "account.followup.report.all"
+
+    _description = "A progress bar for followup reports"
+    _inherit = 'account.followup.report'
+
+
+    def get_options(self, previous_options):
+    def get_templates(self):
+    def get_lines(self, options, line_id=None):
+    def get_partners_in_need_of_action(self, options):
+    def compute_pages(self, options):
+    def get_rp_informations(self, options):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_analytic_report.py
+
+class analytic_report(models.AbstractModel):
+    _inherit = 'account.report'
+
+    _name = 'account.analytic.report'
+
+    _description = 'Account Analytic Report'
+
+    def get_columns_name(self, options):
+    @api.model
+    def get_report_name(self):
+    def open_analytic_entries(self, options, params):
+    def _get_amount_of_parents(self, group):
+    def _get_balance_for_group(self, group, analytic_line_domain):
+    def _generate_analytic_account_lines(self, analytic_accounts, parent_id=False):
+    def _generate_analytic_group_line(self, group, analytic_line_domain, unfolded=False):
+    @api.model
+    def get_lines(self, options, line_id=None):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_partner_ledger.py
+
+class ReportPartnerLedger(models.AbstractModel):
+    _inherit = "account.report"
+
+    _name = "account.partner.ledger"
+
+    _description = "Partner Ledger"
+
+    # TODO add support for partner_id
+    def get_templates(self):
+    def get_account_domains(self):
+    def _get_super_columns(self, options):
+    def get_columns_name(self, options):
+    def do_query(self, options, line_id):
+    def group_by_partner_id(self, options, line_id):
+    @api.model
+    def get_lines(self, options, line_id=None):
+    @api.model
+    def get_report_name(self):
+    def set_context(self, options):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_financial_dynamic_report_line.py
+
+class AccountFinancialDynamicReportLine(models.Model):
+    _name = "account.financial.dynamic.report.line"
+
+    _description = "Account Report Line"
+    _order = "sequence"
+
+    name = fields.Char('Section Name', translate=True)
+    code = fields.Char('Code')
+    report_code = fields.Char(string='Report Code', help="The code to show on the report if specified while the corresponding report of the line allows that")
+    show_report_code = fields.Boolean(string='Show Report Code', compute='_compute_show_report_code', store=True, recursive=True,
+                                      help="Technical field to indicate if the report code should display on the reports")
+    report_note = fields.Char(string='Report Note', help="The note to show on the report if specified while the corresponding report of the line allows that")
+    show_report_note = fields.Boolean(string='Show Report Note', compute='_compute_show_report_note', store=True, recursive=True,
+                                      help="Technical field to indicate if the report note should display on the reports")
+    show_on_pdf = fields.Boolean(string='Show On Report Printed', default=True,
+                                 help="Technical field to indicate if this report line should display on pdf printed.")
+    financial_report_id = fields.Many2one('account.financial.dynamic.report', 'Financial Report')
+    parent_id = fields.Many2one('account.financial.dynamic.report.line', string='Parent')
+    children_ids = fields.One2many('account.financial.dynamic.report.line', 'parent_id', string='Children')
+    sequence = fields.Integer()
+    domain = fields.Char(default=None)
+    formulas = fields.Char()
+    groupby = fields.Char("Group by", default=False)
+    figure_type = fields.Selection([('float', 'Float'), ('percents', 'Percents'), ('no_unit', 'No Unit')],
+                                   string='Type', default='float', required=True)
+    green_on_positive = fields.Boolean('Is growth good when positive', default=True)
+    level = fields.Integer(required=True)
+    special_date_changer = fields.Selection([
+        ('from_beginning', 'From the beginning'),
+        ('to_beginning_of_period', 'At the beginning of the period'),
+        ('normal', 'Use given dates'),
+        ('strict_range', 'Force given dates for all accounts and account types'),
+        ('from_fiscalyear', 'From the beginning of the fiscal year'),
+    ], default='normal')
+    show_domain = fields.Selection([
+        ('always', 'Always'),
+        ('never', 'Never'),
+        ('foldable', 'Foldable')
+    hide_if_zero = fields.Boolean(string='Hide if Zero', default=False)
+    action_id = fields.Many2one('ir.actions.actions', string='Client Action')
+#    report_code = fields.Char(string='Report Code', help='Code of an item witch will be shown in reports (if defined)')
+    account_chart_template_id = fields.Many2one('account.chart.template', string='Account Chart Template', help="Leave empty to apply this rule no matter the"
+                                                " company's chart template is. When specified, this rule is activated for all the companies of the given chart"
+                                                " template.")
+    duration_term = fields.Selection([
+        ('normal', 'N/A'),
+        ('duration_3m_orless', '3 Months or less'),
+        ('duration_4mo_to_12mo', 'more than 3 month & less than 12 months'),
+        ('duration_more_3mo', 'more than 3 months'),
+        ('short_term', '12 months or less'),
+        ('long_term', 'Non Current (more than 12 months)')], string='Duration Term', default='normal', required=True)
+    duration_term_date_field = fields.Char(string='Duration Term Date Field', default='date_maturity', required=True,
+                                           help="The date field of journal item for usage with Duration Term. Default value is date_maturity (Due Date)")
+    duration_term_direction = fields.Selection([('past', 'To the Past'), ('future', 'To the Future')], string='Duration Term Direction',
+                                               help="The direction of the Duration Term which is either:\n"
+                                               "- To the Past: the condition will compare the data from the past.\n"
+                                               "- To the Future: the condition will compare the data to the future\n")
+    duration_term_base_on = fields.Selection([('all', 'All'), ('not_liquidity', 'Not liquidity'), ('liquidity', 'Liquidity')], string='Duration Term Base On', default='all',
+                                             help="Khi tính toán các chỉ tiêu có liên quan dài hạn, ngắn hạn, có một số chỉ tiêu như Khách hàng trả trước,\n"
+                                             "hoặc Trả trước người bán (chọn Liquidity) thì cần lấy due date của các bút toán mà tài khoản đối ứng của nó có kiểu Thanh khoản\n"
+                                             "(bút toán liên quan đến thanh toán) để tính toán. Trường hợp chọn Not liquidity thì sẽ lấy date due của các bút toán có tài\n"
+                                             "khoản đối ứng không thuộc kiểu thanh khoản để tính toán.")
+    _sql_constraints = [
+        ('code_uniq', 'unique (code)', "A report line with the same code already exists."),
+
+    ]
+
+    @api.constrains('duration_term_date_field')
+    def _check_date_field_exist(self):
+    @api.constrains('code')
+    def _code_constrains(self):
+    @api.depends('financial_report_id', 'financial_report_id.show_report_code', 'report_code', 'parent_id.show_report_code')
+    def _compute_show_report_code(self):
+    @api.onchange('duration_term')
+    def _onchange_duration_term(self):
+    @api.depends('financial_report_id', 'financial_report_id.show_report_note', 'report_note', 'parent_id.show_report_note')
+    def _compute_show_report_note(self):
+    def _get_copied_code(self):
+    def copy_hierarchy(self, report_id=None, copied_report_id=None, parent_id=None, code_mapping=None):
+    def _query_get_select_sum(self, currency_table):
+    def _get_with_statement(self, financial_report):
+    def _compute_line(self, currency_table, financial_report, group_by=None, domain=[]):
+    def _compute_date_range(self):
+    def report_move_lines_action(self):
+    @api.constrains('groupby')
+    def _check_same_journal(self):
+    @api.model
+    def _prepare_duration_term_domain(self, date_to):
+    def _prepare_legal_report_off_domain(self):
+        """
+        For potential inheritance
+        """
+
+    def _get_sum(self, currency_table, financial_report, field_names=None):
+        """ Returns the sum of the amls in the domain """
+
+    def _get_balance(self, linesDict, currency_table, financial_report, field_names=None):
+    def _get_rows_count(self):
+    def _get_value_from_context(self):
+    def _format(self, value):
+    def _get_gb_name(self, gb_id):
+    def _build_cmp(self, balance, comp):
+    def _split_formulas(self):
+    def _eval_formula(self, financial_report, debit_credit, currency_table, linesDict):
+    def _put_columns_together(self, data, domain_ids):
+    def get_lines(self, financial_report, currency_table, options, linesDicts):
+    def _divide_line(self, line, financial_report=False):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_report_manager.py
+
+class AccountReportManager(models.Model):
+    _name = 'account.report.manager'
+
+    _description = 'manage summary and footnotes of reports'
+
+    report_name = fields.Char(required=True, help='name of the model of the report')
+    summary = fields.Char()
+    footnotes_ids = fields.One2many('account.report.footnote', 'manager_id')
+    company_id = fields.Many2one('res.company')
+    financial_report_id = fields.Many2one('account.financial.dynamic.report')
+    def add_footnote(self, text, line):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_consolidated_journals.py
+
+class ReportAccountConsolidatedJournal(models.AbstractModel):
+    _name = "account.consolidated.journal"
+
+    _description = "Consolidated Journals Report"
+    _inherit = 'account.report'
+
+
+    @api.model
+    def get_options(self, previous_options=None):
+    def get_report_name(self):
+    def get_columns_name(self, options):
+    def get_sum(self, value, field, results):
+    def get_total(self, current_journal, results):
+    def get_line_total_per_month(self, options, current_company, results):
+    def get_main_line(self, options, current_journal, results, record):
+    @api.model
+    def get_lines(self, options, line_id=None):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/res_company.py
+
+class ResCompany(models.Model):
+    _inherit = "res.company"
+
+
+    days_between_two_followups = fields.Integer(string='Number of days between two follow-ups', default=14)
+    overdue_msg = fields.Text(string='Overdue Payments Message', translate=True,
+        default=lambda s: _("""Dear Sir/Madam,
+
+Our records indicate that some payments on your account are still due. Please find details below.
+If the amount has already been paid, please disregard this notice. Otherwise, please forward us the total amount stated below.
+If you have any queries regarding your account, Please contact us.
+
+Thank you in advance for your cooperation.
+Best Regards,"""))
+    totals_below_sections = fields.Boolean(
+        string='Add totals below sections',
+        help='If checked, totals and subtotals appear below the sections of the report.')
+#     property_report_financial_template = fields.Char(string='Report Financial Template',
+#                                                      help='This template is used when displaying a financial report on backend')
+#     property_report_financial_print_pdf_template = fields.Char(string='Report Financial Print PDF Template',
+#                                                      help='This template is only used when printing a financial report to a PDF output')
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/abstract_account_aged_partner.py
+
+class ReportAccountAgedPartner(models.AbstractModel):
+    _name = "account.aged.partner"
+
+    _description = "Aged Partner Balances"
+    _inherit = 'account.report'
+
+
+    def get_columns_name(self, options):
+    def get_templates(self):
+    @api.model
+    def get_lines(self, options, line_id=None):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/res_config_settings.py
+
+class ResConfigSettings(models.TransientModel):
+    _inherit = 'res.config.settings'
+
+
+    days_between_two_followups = fields.Integer(related='company_id.days_between_two_followups', string='Minimum days between two follow-ups',
+                                                readonly=False)
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_aged_receivable.py
+
+class ReportAccountAgedReceivable(models.AbstractModel):
+    _name = "account.aged.receivable"
+
+    _description = "Aged Receivable"
+    _inherit = "account.aged.partner"
+
+
+    def set_context(self, options):
+    def get_report_name(self):
+    def get_templates(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_financial_dynamic_report.py
+
+class AccountFinancialDynamicReport(models.Model):
+    _name = "account.financial.dynamic.report"
+
+    _description = "Account Report"
+    _inherit = "account.report"
+
+
+    name = fields.Char(translate=True)
+    debit_credit = fields.Boolean('Show Credit and Debit Columns')
+    line_ids = fields.One2many('account.financial.dynamic.report.line', 'financial_report_id', string='Lines')
+    date_range = fields.Boolean('Based on date ranges', default=True, help='specify if the report use date_range or single date')
+    comparison = fields.Boolean('Allow comparison', default=True, help='display the comparison filter')
+    analytic = fields.Boolean('Allow analytic filter', help='display the analytic filter')
+    hierarchy_option = fields.Boolean('Enable the hierarchy option', help='Display the hierarchy choice in the report options')
+    show_journal_filter = fields.Boolean('Allow filtering by journals', help='display the journal filter in the report')
+    unfold_all_filter = fields.Boolean('Show unfold all filter', help='display the unfold all options in report')
+    company_id = fields.Many2one('res.company', string='Company')
+    generated_menu_id = fields.Many2one(
+        string='Menu Item', comodel_name='ir.ui.menu', copy=False,
+        help="The menu item generated for this report, or None if there isn't any."
+    )
+    parent_id = fields.Many2one('ir.ui.menu', related="generated_menu_id.parent_id")
+    tax_report = fields.Boolean('Tax Report', help="Set to True to automatically filter out journal items that have the boolean field 'tax_exigible' set to False")
+    template_ref = fields.Char(string='Reference', translate=True)
+    show_report_code = fields.Boolean(string='Show Report Code', help="If set, another column will be displayed on the report to show the code for"
+                                      " each and every report line, if a code is specified.")
+    show_report_note = fields.Boolean(string='Show Report Note', help="If set, another column will be displayed on the report to show the note for"
+                                      " each and every report line.")
+    chart_template_id = fields.Many2one('account.chart.template', help='The chart template for the report (if any)')
+    @api.model
+    def get_options(self, previous_options=None):
+    def get_columns_name(self, options):
+    def create_action_and_menu(self, parent_id):
+    @api.model
+    def create(self, vals):
+    def write(self, vals):
+    def unlink(self):
+    def copy(self, default=None):
+    def _get_currency_table(self):
+    def get_lines(self, options, line_id=None):
+    def get_report_name(self):
+    def _get_copied_name(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/__init__.py
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_aged_partner_balance.py
+
+class ReportAgedPartnerBalance(models.AbstractModel):
+
+    _name = 'report.account.report_agedpartnerbalance'
+
+    def _get_partner_move_lines(self, account_type, date_from, target_move, period_length):
+        date_from = fields.Date.from_string(date_from)
+    @api.model
+    def _get_report_values(self, docids, data=None):
+        date_from = fields.Date.from_string(data['form'].get('date_from')) or fields.Date.today()
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_report_footnote.py
+
+class AccountReportFootnote(models.Model):
+    _name = "account.report.footnote"
+
+    _description = "Footnote for reports"
+
+    text = fields.Char()
+    line = fields.Char(index=True)
+    manager_id = fields.Many2one('account.report.manager')
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/to_account_reports/models/account_report.py
+
+class AccountReport(models.AbstractModel):
+    _name = 'account.report'
+
+    _description = 'Accounting Report'
+
+    show_parent_line_first = fields.Boolean(string='Show Parent Lines First', default=False,
+                                            help="If set, the parent lines should be displayed before the child lines on reports.")
+    def _build_options(self, previous_options=None):
+    @api.model
+    def get_options(self, previous_options=None):
+    def get_columns_name(self, options):
+    def get_lines(self, options, line_id=None):
+    def get_templates(self):
+    def get_report_name(self):
+    def get_report_filename(self, options):
+        """The name that will be used for the file when downloading pdf,xlsx,..."""
+
+    def execute_action(self, options, params=None):
+    def open_tax(self, options, params=None):
+    def open_document(self, options, params=None):
+    def view_too_many(self, options, params=None):
+    def open_journal_items(self, options, params):
+        date_to = fields.Date.context_today(self).strftime("%Y-%m-%d")
+    def open_general_ledger(self, options, params=None):
+    def set_context(self, options):
+        """This method will set information inside the context based on the options dict as some options need to be in context for the query_get method defined in account_move_line"""
+
+    def reverse(self, values):
+        """Utility method used to reverse a list, this method is used during template generation in order to reverse periods for example"""
+
+    def get_account_domains(self):
+    def get_rp_informations(self, options):
+    @api.model
+    def create_hierarchy(self, lines):
+        def get_account(id):
+        def get_account_codes(account):
+        def add_line_to_hierarchy(line, codes, level_dict, depth=None):
+        def merge_columns(columns):
+        def get_hierarchy_lines(values, depth=1):
+        def deep_merge_dict(source, destination):
+    def get_html(self, options, line_id=None, additional_context=None):
+    def get_html_footnotes(self, footnotes):
+    def get_report_manager(self, options):
+    def get_reports_buttons(self):
+    def _get_filter_journals(self):
+    def get_journals(self):
+    def format_date(self, dt_to, dt_from, options, dt_filter='date'):
+    def format_value(self, value, currency=False):
+    def apply_cmp_filter(self, options):
+    def apply_date_filter(self, options):
+        today = fields.Date.today()
+    def print_pdf(self, options):
+    def get_pdf(self, options, minimal_layout=True):
+    def print_xml(self, options):
+    def get_xml(self, options):
+    def print_xlsx(self, options):
+    def get_xlsx(self, options, response):
+                    lines[y]['name'] = fields.Date.to_string(lines[y]['name'])
+    def _get_super_columns(self, options):
+    def replace_class(self):
+    def get_template_ref(self):

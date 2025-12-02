@@ -1,0 +1,1502 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* to_account_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-16 08:29+0000\n"
+"PO-Revision-Date: 2024-08-16 08:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "(Signature, Full Name)"
+msgstr "(Chữ ký, Họ và Tên)"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "(Signature, Full Name, Job Title)"
+msgstr "(Chữ ký, Họ và Tên, Dấu chức danh)"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period1
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period1
+msgid "1-30"
+msgstr "1-30"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__short_term
+msgid "12 months or less"
+msgstr "12 tháng hoặc ít hơn"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__duration_3mo_orless
+msgid "3 Months or less"
+msgstr "3 tháng hoặc ít hơn"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period2
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period2
+msgid "31-60"
+msgstr "31-60"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period3
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period3
+msgid "61-90"
+msgstr "61-90"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period4
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period4
+msgid "91-120"
+msgstr "91-120"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.partner_view_buttons
+msgid "<span class=\"o_stat_text\">Partner Ledger</span>"
+msgstr "<span class=\"o_stat_text\">Sổ cái Đối tác</span>"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+msgid "<span>VAT:</span>"
+msgstr "<span>Thuế GTGT:</span>"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01
+msgid "ASSETS"
+msgstr "TÀI SẢN"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_account_name
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_account_name
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_account_code
+msgid "Account"
+msgstr "Tài khoản"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_account_type.xml:0
+#, python-format
+msgid "Account Type:"
+msgstr "Kiểu tài khoản:"
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report
+msgid "Accounting Report"
+msgstr "Báo cáo kế toán"
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report_column
+msgid "Accounting Report Column"
+msgstr "Cột báo cáo kế toán"
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report_expression
+msgid "Accounting Report Expression"
+msgstr "Biểu thức Báo cáo Kế toán"
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report_line
+msgid "Accounting Report Line"
+msgstr "Chi tiết báo cáo kế toán"
+
+#. module: to_account_reports
+#: model:ir.actions.act_window,name:to_account_reports.account_report_action
+#: model:ir.ui.menu,name:to_account_reports.account_report_menu
+msgid "Accounting Reports"
+msgstr "Báo cáo kế Toán"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_analytic_account.xml:0
+#, python-format
+msgid "Accounts"
+msgstr "Tài khoản"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Address: "
+msgstr "Địa chỉ: "
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_01
+msgid "Advance Payments received from customers"
+msgstr "Tiền ứng trước từ khách hàng"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_03
+msgid "Advance payments made to suppliers"
+msgstr "Tiền ứng trước cho nhà cung cấp"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Advanced"
+msgstr "Nâng cao"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.aged_payable_report
+#: model:ir.actions.client,name:to_account_reports.aged_payable_client_action
+#: model:ir.ui.menu,name:to_account_reports.aged_payable_client_menu
+msgid "Aged Payable"
+msgstr "Tuổi nợ phải trả"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_reports_journal_dashboard_kanban_view
+msgid "Aged Payables"
+msgstr "Tuổi nợ phải trả"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.aged_receivable_report
+#: model:ir.actions.client,name:to_account_reports.aged_receivable_client_action
+#: model:ir.ui.menu,name:to_account_reports.aged_receivable_client_menu
+msgid "Aged Receivable"
+msgstr "Tuổi nợ phải thu"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_reports_journal_dashboard_kanban_view
+msgid "Aged Receivables"
+msgstr "Tuổi nợ phải thu"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_account_type__all
+msgid "All"
+msgstr "Tất cả"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "All Journals"
+msgstr "Tất cả sổ nhật ký"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_amount_currency
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_amount_currency
+#: model:account.report.column,name:to_account_reports.general_ledger_column_amount_currency
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_amount_currency
+msgid "Amount Currency"
+msgstr "Nguyên tệ"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Analytic Account"
+msgstr "Tài khoản KT quản trị"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_analytic_account.xml:0
+#, python-format
+msgid "Analytic Accounts"
+msgstr "Tài khoản KT quản trị"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "Apply"
+msgstr "Áp dụng"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "As of %s"
+msgstr "Tính đến %s"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period0
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period0
+msgid "At Date"
+msgstr "Vào ngày"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,name:to_account_reports.audit_reports_root_menu
+msgid "Audit Reports"
+msgstr "Báo cáo kiểm toán"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_02
+msgid "Average creditors days"
+msgstr "Ngày trả trung bình"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_01
+msgid "Average debtors days"
+msgstr "Ngày nợ trung bình"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.balance_sheet_column_balance
+#: model:account.report.column,name:to_account_reports.cash_flow_column_balance
+#: model:account.report.column,name:to_account_reports.executive_summary_column_balance
+#: model:account.report.column,name:to_account_reports.general_ledger_column_balance
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_balance
+#: model:account.report.column,name:to_account_reports.profit_and_loss_column_balance
+msgid "Balance"
+msgstr "Số dư"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.balance_sheet_report
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03
+#: model:ir.actions.client,name:to_account_reports.balance_sheet_client_action
+#: model:ir.ui.menu,name:to_account_reports.balance_sheet_client_menu
+msgid "Balance Sheet"
+msgstr "Bảng cân đối kế toán"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_account_type__asset_cash
+msgid "Bank and Cash"
+msgstr "Ngân hàng và tiền mặt"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_01
+msgid "Bank and Cash Accounts"
+msgstr "Tài khoản Ngân hàng và Tiền mặt"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_expression.py:0
+#, python-format
+msgid "Cannot find expression for '%s'"
+msgstr "Không thể tìm thấy biểu thức cho '%s'"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_expression.py:0
+#, python-format
+msgid "Cannot find report line has code '%s'"
+msgstr "Không thể tìm thấy dòng báo cáo có mã '%s'"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01
+msgid "Cash"
+msgstr "Tiền"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.cash_flow_report
+#: model:ir.actions.client,name:to_account_reports.cash_flow_client_action
+#: model:ir.ui.menu,name:to_account_reports.cash_flow_client_menu
+msgid "Cash Flow Statement"
+msgstr "Báo cáo lưu chuyển tiền tệ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_01
+msgid "Cash and cash equivalents, beginning of period"
+msgstr "Tiền và tương đương tiền đầu kỳ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_03
+msgid "Cash and cash equivalents, closing balance"
+msgstr "Tiền và tương đương tiền cuối kỳ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_03
+msgid "Cash flows from financing activities"
+msgstr "Lưu chuyển tiền từ hoạt động tài chính"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_02
+msgid "Cash flows from investing & extraordinary activities"
+msgstr "Lưu chuyển tiền từ hoạt động đầu tư & các hoạt động khác"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01
+msgid "Cash flows from operating activities"
+msgstr "Lưu chuyển tiền từ hoạt động sản xuất kinh doanh"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_04
+msgid "Cash flows from unclassified activities"
+msgstr "Lưu chuyển tiền từ các hoạt động chưa phân loại"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_02_01
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_03_01
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_04_01
+msgid "Cash in"
+msgstr "Tiền vào"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_02_02
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_03_02
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_04_02
+msgid "Cash out"
+msgstr "Tiền ra"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_04
+msgid "Cash paid for operating activities"
+msgstr "Tiền trả cho hoạt động SXKD"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_01
+msgid "Cash received"
+msgstr "Tiền nhận được"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_02
+msgid "Cash received from operating activities"
+msgstr "Tiền Thu được từ hoạt động SXKD"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_02
+msgid "Cash spent"
+msgstr "Tiền đã chi"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_03
+msgid "Cash surplus"
+msgstr "Số dư tiền mặt"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Chief Accountant"
+msgstr "Kế toán trưởng"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_04
+msgid "Closing bank balance"
+msgstr "Số dư ngân hàng cuối kỳ"
+
+#. module: to_account_reports
+#. odoo-javascript
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/static/src/components/account_report_content/account_report_content.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_content/account_report_content.xml:0
+#, python-format
+msgid "Code"
+msgstr "Mã số"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Columns"
+msgstr "Cột"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_communication
+msgid "Communication"
+msgstr "Ghi chú"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Company: "
+msgstr "Công ty: "
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#, python-format
+msgid "Comparison:"
+msgstr "So sánh:"
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_02
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01_03
+msgid "Cost of Revenue"
+msgstr "Giá vốn Hàng bán"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_credit
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_credit
+#: model:account.report.column,name:to_account_reports.trial_balance_column_credit
+msgid "Credit"
+msgstr "Có"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Currency: %s"
+msgstr "Tiền tệ: %s"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_03
+msgid "Current Assets"
+msgstr "Tài sản Ngắn hạn"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_01
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_01_01
+msgid "Current Liabilities"
+msgstr "Nợ Ngắn hạn"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_01_02
+msgid "Current Year Allocated Earnings"
+msgstr "Thu nhập được phân bổ năm nay"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_01_01
+msgid "Current Year Earnings"
+msgstr "Thu nhập năm nay"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_01
+msgid "Current Year Unallocated Earnings"
+msgstr "Thu nhập chưa phân bổ năm nay"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_04
+msgid "Current assets to liabilities"
+msgstr "Tỉ suất giữa tài sản lưu động và nợ ngắn hạn"
+
+#. module: to_account_reports
+#. odoo-javascript
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "Custom"
+msgstr "Tùy chọn"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Custom Comparison"
+msgstr "So sánh Tùy chọn"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_report_body_template
+msgid "Custom Report Body Template"
+msgstr "Mẫu tùy nội dung báo cáo Tùy chỉnh"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_report_footer_template
+msgid "Custom Report Footer Template"
+msgstr "Mẫu chân trang báo cáo Tùy chỉnh"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_report_header_template
+msgid "Custom Report Header Template"
+msgstr "Mẫu tiêu đề báo cáo Tùy chỉnh"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_report_body_template
+msgid ""
+"Custom body template for printing report templates.\n"
+"                                                      Useful when you want to customize different print layouts for each country or each type of report you want."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_report_footer_template
+msgid ""
+"Custom footer template for printing report templates.\n"
+"                                                        Useful when you want to customize different print layouts for each country or each type of report you want."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_report_header_template
+msgid ""
+"Custom header template for printing report templates.\n"
+"                                                        Useful when you want to customize different print layouts for each country or each type of report you want."
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_date
+msgid "Date"
+msgstr "Ngày"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_debit
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_debit
+#: model:account.report.column,name:to_account_reports.trial_balance_column_debit
+msgid "Debit"
+msgstr "Nợ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01_02
+msgid "Deduction Income"
+msgstr "Giảm trừ doanh thu"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_expression_view_form
+msgid "Defination"
+msgstr "Định nghĩa"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_03_02
+msgid "Depreciation"
+msgstr "Khấu hao"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Director/CEO"
+msgstr "Giám đốc/TGĐ"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__display_code
+msgid "Display Code"
+msgstr "Mã số trên Báo cáo"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_expected_date
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_expected_date
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_date_maturity
+msgid "Due Date"
+msgstr "Ngày Đến hạn"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term
+msgid "Duration Term"
+msgstr "Thời hạn"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term_account_type
+msgid "Duration Term Base On"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term_date_field
+msgid "Duration Term Date Field"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term_direction
+msgid "Duration Term Direction"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03
+msgid "EQUITY"
+msgstr "NGUỒN VỐN"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#, python-format
+msgid "End Balance"
+msgstr "Số dư Cuối kỳ"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "End Date :"
+msgstr "Đến ngày:"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#, python-format
+msgid "End Date cannot be empty"
+msgstr "Đến Ngày không thể để trống"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "End of Last Financial Year"
+msgstr "Ngày cuối cùng của Năm tài chính"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "End of Last Month"
+msgstr "Ngày cuối cùng của Tháng trước"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "End of Last Quarter"
+msgstr "Ngày cuối cùng của Quý trước"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.executive_summary_report
+#: model:ir.actions.client,name:to_account_reports.executive_summary_client_action
+#: model:ir.ui.menu,name:to_account_reports.executive_summary_client_menu
+msgid "Executive Summary"
+msgstr "Bảng tóm tắt Hoạt động"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_04
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_03
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_03_01
+msgid "Expenses"
+msgstr "Chi phí"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_expression_view_form
+msgid "Expression"
+msgstr "Biểu thức"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_line_view_form
+msgid "Expressions"
+msgstr "Biểu thức"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Filters"
+msgstr "Bộ lọc"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "From %s <br/> to  %s"
+msgstr "Từ %s <br/> đến  %s"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.general_ledger_report
+#: model:ir.actions.client,name:to_account_reports.general_ledger_client_action
+#: model:ir.ui.menu,name:to_account_reports.general_ledger_client_menu
+msgid "General Ledger"
+msgstr "Sổ cái"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01
+msgid "Gross Profit"
+msgstr "Lợi nhuận Gộp"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_03
+msgid "Gross profit"
+msgstr "Lợi nhuận Gộp"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04_01
+msgid "Gross profit margin (gross profit / operating income)"
+msgstr "Biên lợi nhuận gộp (lợi nhuận gộp / doanh thu từ hoạt động SXKD)"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_expression__use_reconcile
+msgid ""
+"If checked, this expression will be get amount of Reconcile instead matched "
+"of move line. In some case, we need reconcile amount not balance, for "
+"example:  'Revenue of fixed assets and other long-term assets' of Cash Flow "
+"Statement"
+msgstr "Nếu được chọn, kết quả tính toán sẽ dựa vào biểu thức để lấy ra số tiền từ đối soát được khớp của bút toán. "
+"Tại một số chỉ tiêu, báo cáo cần lấy giá trị được đối soát thay vì giá trị của bút tóan phát sinh, Ví dụ: "
+"Chỉ tiêu: 'Tiền thu thanh lý tài sản' của báo cáo lưu chuyển tiền tệ"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_expression__use_amount_residual
+msgid ""
+"If checked, this expression will be get amount_residual of move line instead"
+" of balance. In some case, we need amount_residual not balance, for example:"
+"  'Advance Payments received from customers' of Cash Flow Statement"
+msgstr ""
+"Nếu được đánh dấu thì biểu thức này sẽ lấy số tiền còn lại thay vì số dư "
+"Trong một số trường hợp, chúng ta cần số tiền còn lại chứ không phải số dư, "
+"ví dụ:  'Tiền ứng trước từ khách hàng' trên báo cáo Lưu chuyển tiền tệ"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__has_empty_row
+msgid "Include Empty Row?"
+msgstr "Bao gồm Dòng trống?"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#, python-format
+msgid "Include Unposted Entries"
+msgstr "Bao gồm bút toán chưa vào sổ"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Include Unposted Entry"
+msgstr "Bao gồm bút toán chưa vào sổ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_01
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02
+msgid "Income"
+msgstr "Doanh thu"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/general_ledger_report.py:0
+#: code:addons/to_account_reports/models/partner_ledger_report.py:0
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "Số dư Đầu kỳ"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_due_date
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_due_date
+msgid "Invoice Date"
+msgstr "Ngày Hóa đơn"
+
+#. module: to_account_reports
+#. odoo-javascript
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/static/src/components/account_report_content/account_report_content.xml:0
+#, python-format
+msgid "Items"
+msgstr "Chỉ tiêu"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_journal_code
+msgid "Journal"
+msgstr "Sổ nhật ký"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/general_ledger_report.py:0
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#: code:addons/to_account_reports/models/partner_ledger_report.py:0
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#, python-format
+msgid "Journal Items"
+msgstr "Phát sinh kế toán"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_journal.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_journal.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Journals"
+msgstr "Sổ nhật ký"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02
+msgid "LIABILITIES"
+msgstr "NỢ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_04
+msgid "LIABILITIES + EQUITY"
+msgstr "NỢ + NGUỒN VỐN"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Last Financial Year"
+msgstr "Năm tài chính trước"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Last Month"
+msgstr "Tháng trước"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Last Quarter"
+msgstr "Quý trước"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Lines"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_matching_number
+msgid "Matching"
+msgstr "MS khớp"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Month ..... Day ..... Year ....."
+msgstr "Tháng ..... Ngày ..... Năm ....."
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__none
+msgid "N/A"
+msgstr "N/A"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_05
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_01
+msgid "Net Profit"
+msgstr "Lợi nhuận thuần"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03_03
+msgid "Net assets"
+msgstr "Tài sản thuần"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02
+msgid "Net increase in cash and cash equivalents"
+msgstr "Lưu chuyển tiền thuần trong kỳ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04_02
+msgid "Net profit margin (net profit / income)"
+msgstr "Biên lợi nhuận thuần (lợi nhuận thuần / doanh thu)"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "No Comparison"
+msgstr "Không so sánh"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__long_term
+msgid "Non Current (more than 12 months)"
+msgstr "Dài hạn (trên 12 tháng)"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Non Trade Payable"
+msgstr "Phải trả Phi Thương mại"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Non Trade Receivable"
+msgstr "Phải thu Phi Thương mại"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#, python-format
+msgid "None"
+msgstr "Không xác định"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_account_type__not_asset_cash
+msgid "Not Bank and Cash"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_05
+msgid "OFF BALANCE SHEET ACCOUNTS"
+msgstr "TÀI KHOẢN NGOÀI BẢNG"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period5
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period5
+msgid "Older"
+msgstr "Lâu hơn"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01_01
+msgid "Operating Income"
+msgstr "Doanh thu Bán hàng và Cung cấp Dịch vụ"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_expression_view_form
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Options"
+msgstr "Tùy chọn"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Options:"
+msgstr "Tùy chọn:"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_02
+msgid "Other Income"
+msgstr "Thu nhập Khác"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_control_panel/account_report_control_panel.xml:0
+#, python-format
+msgid "PDF"
+msgstr "PDF"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_partner_name
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.partner_ledger_report
+#: model:ir.actions.client,name:to_account_reports.partner_ledger_client_action
+#: model:ir.ui.menu,name:to_account_reports.partner_ledger_client_menu
+#: model_terms:ir.ui.view,arch_db:to_account_reports.partner_view_buttons
+msgid "Partner Ledger"
+msgstr "Sổ cái đối tác"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,name:to_account_reports.partner_reports_root_menu
+msgid "Partner Reports"
+msgstr "Báo cáo đối tác"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_partner.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_partner.xml:0
+#, python-format
+msgid "Partners"
+msgstr "Đối tác"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+msgid "Partners:"
+msgstr "Đối tác:"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Payable"
+msgstr "Phải trả"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_01_02
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03_02
+msgid "Payables"
+msgstr "Phải trả"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04
+msgid "Performance"
+msgstr "Hiệu suất"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_02
+msgid "Plus Fixed Assets"
+msgstr "Cộng Tài sản Cố định"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_03
+msgid "Plus Non-current Assets"
+msgstr "Cộng Tài sản Dài hạn"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_02
+msgid "Plus Non-current Liabilities"
+msgstr "Cộng Nợ Dài hạn"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05
+msgid "Position"
+msgstr "Vị trí"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Posted Entries Only"
+msgstr "Chỉ bút toán đã vào sổ"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Prepared By"
+msgstr "Người lập phiếu"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_04
+msgid "Prepayments"
+msgstr "Trả trước"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Previous Period"
+msgstr "Kỳ trước"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_02
+msgid "Previous Years Unallocated Earnings"
+msgstr "Thu nhập chưa phân bổ năm trước"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.profit_and_loss_report
+#: model:ir.actions.client,name:to_account_reports.profit_and_loss_client_action
+#: model:ir.ui.menu,name:to_account_reports.profit_and_loss_client_menu
+msgid "Profit and Loss"
+msgstr "Lãi và lỗ"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02
+msgid "Profitability"
+msgstr "Lợi nhuận"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#, python-format
+msgid "Purchases"
+msgstr "Mua hàng"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_line_python_function_suffix
+msgid "Python Function Suffix for Customs Lines"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Receivable"
+msgstr "Phải thu"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_02
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03_01
+msgid "Receivables"
+msgstr "Phải thu"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_expression__reconcile_domain
+msgid "Reconcile Domain"
+msgstr "Điều kiện lọc đối soát"
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_ref
+msgid "Ref"
+msgstr "Tham chiếu"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__template_ref
+msgid "Reference"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Report"
+msgstr "Báo cáo"
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_line_view_form
+msgid "Report Line"
+msgstr "Dòng báo cáo"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_report.xml:0
+#, python-format
+msgid "Report:"
+msgstr "Báo cáo:"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_02
+msgid "Retained Earnings"
+msgstr "Thu nhập Giữ lại"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04_03
+msgid "Return on investments (net profit / assets)"
+msgstr "Lợi tức đầu tư (lợi nhuận thuần / tài sản)"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#, python-format
+msgid "Sales"
+msgstr "Bán hàng"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Same Period Last Year"
+msgstr "Cùng kỳ năm trước"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_03
+msgid "Short term cash forecast"
+msgstr "Dự báo tiền ngắn hạn"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__show_line_code
+msgid "Show Line Code"
+msgstr "Hiển thị mã dòng"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__show_on_print_document
+msgid "Show On Print Document"
+msgstr "Hiển thị trên tài liệu in"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__display_code
+msgid ""
+"Some countries require line code to be displayed on the reports. Ex. Vietnam. And because 'Code' field is unique identifier for all report, so sometime its value is not the value we want to be displayed on the report. In this case, we use this field to display on the report.\n"
+"Note: this field is only displayed on the report provided that the report is marked as Show Line Code"
+msgstr ""
+"Một vài quốc gia yêu cầu mã số của chỉ tiêu trên báo cáo. Ví dụ như Việt nam. Và bởi vì trường Mã số của dòng báo cáo là duy nhất trên toàn hệ thống nên đôi khi giá trị của nó không phải là giá trị muốn hiển thị trên báo cáo. Trong trường hợp này, trường này sẽ được sử dụng để hiển thị trên báo cáo theo nhu cầu.\n"
+"Lưu ý: trường này chỉ được hiển thị trên báo cáo với điều kiện trường 'Hiển thị mã dòng' được đánh dấu"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__show_line_code
+msgid ""
+"Some countries require line code to be displayed on the reports. Ex. "
+"Vietnam. If this field checked then 'Display Code' of all lines will be "
+"displayed on this report."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__has_empty_row
+msgid ""
+"Some line has not any children and we want to separate them from other "
+"lines. Then we need to mark the line has empty row. So it will have a blank "
+"line added below."
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "Start Date :"
+msgstr "Từ ngày:"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#, python-format
+msgid "Start Date cannot be empty"
+msgstr "Từ Ngày không thể để trống"
+
+#. module: to_account_reports
+#: model:ir.actions.client,name:to_account_reports.tax_report_client_action
+#: model:ir.ui.menu,name:to_account_reports.tax_report_client_menu
+msgid "Tax Report"
+msgstr "Báo cáo thuế"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__show_on_print_document
+msgid ""
+"Technical field to indicate if this report line should display on pdf or "
+"xlsx printed."
+msgstr ""
+"Trường kỹ thuật để xác định dòng báo cáo này có hiển thị trên pdf hoặc xlsx "
+"không?"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_line_name_template
+msgid "Template for Custom Line Name"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_expression.py:0
+#, python-format
+msgid "The custom python function %s must be start with '_report_custom'"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__duration_term_date_field
+msgid ""
+"The date field of journal item for usage with Duration Term. Default value "
+"is date_maturity (Due Date)"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__duration_term_direction
+msgid ""
+"The direction of the Duration Term which is either:\n"
+"- To the Past: the condition will compare the data from the past.\n"
+"- To the Future: the condition will compare the data to the future\n"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "This Financial Year"
+msgstr "Năm tài chính hiện hành"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "This Month"
+msgstr "Tháng này"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "This Quarter"
+msgstr "Quý này"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_expression__reconcile_domain
+msgid ""
+"This field is used for domain engine. It will be added to domain of report "
+"line before calculate."
+msgstr "Trường được sử dụng cho việc tính toán từ bộ lọc. Giúp xác định chính xác kết quả từ nghiệp vụ đối soát."
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_line_python_function_suffix
+msgid ""
+"This is technical field used when a report does not use existing rules, also"
+" known as report lines. For example: General Ledger, Partner Ledger,... "
+"these reports will define python functions to generate the customs lines "
+"they want. this functions must has suffix to identify. This field set by "
+"developer when create new report"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_direction__future
+msgid "To the Future"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_direction__past
+msgid "To the Past"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Today"
+msgstr "Hôm nay"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/aged_balance_report.py:0
+#: code:addons/to_account_reports/models/partner_ledger_report.py:0
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#: model:account.report.column,name:to_account_reports.aged_payable_column_total
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_total
+#, python-format
+msgid "Total"
+msgstr "Tổng"
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.trial_balance_report
+#: model:ir.actions.client,name:to_account_reports.trial_balance_client_action
+#: model:ir.ui.menu,name:to_account_reports.trial_balance_client_menu
+msgid "Trial Balance"
+msgstr "Bảng cân đối phát sinh"
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01
+msgid "Unallocated Earnings"
+msgstr "Lợi nhuận Chưa phân phối"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_line.py:0
+#, python-format
+msgid "Unknown"
+msgstr "Không xác định"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_expression__use_amount_residual
+msgid "Use Amount Residual"
+msgstr "Sử dụng Số tiền Còn lại"
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_expression__use_reconcile
+msgid "Use Reconcile"
+msgstr "Có sử dụng đối soát"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#, python-format
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__duration_term_account_type
+msgid ""
+"When calculating long-term and short-term lines, there are some lines need "
+"to calculate base on counter part account of Bank and Cash type or not or "
+"all"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_control_panel/account_report_control_panel.xml:0
+#, python-format
+msgid "XLSX"
+msgstr "XLSX"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.partner_ledger_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/account-payables/steps-to-record-payment-in-"
+"purchase.html#accounts-payable-reports"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/account-payables/steps-to-record-payment-in-"
+"purchase.html#accounts-payable-reports"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.aged_payable_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#aged-"
+"payable-receivable-report"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-report.html#aged-"
+"payable-receivable-report"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.aged_receivable_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#aged-"
+"payable-receivable-reports"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-report.html#aged-"
+"payable-receivable-reports"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.balance_sheet_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#balance-"
+"sheet"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-"
+"report.html#balance-sheet"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.cash_flow_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#cash-flow-"
+"statement"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-report.html#cash-"
+"flow-statement"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.general_ledger_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#general-"
+"ledger"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-"
+"report.html#general-ledger"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.profit_and_loss_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#profit-and-"
+"loss"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-report.html#profit-"
+"and-loss"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.tax_report_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#tax-report"
+msgstr ""
+"https://viindoo.com/documentation/16.0/vi/applications/finance/accounting-"
+"and-invoicing/reporting/reports/accounting-data-analysis-report.html#tax-"
+"report"
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.balance_sheet_client_menu
+#: model:ir.ui.menu,help_link_video:to_account_reports.cash_flow_client_menu
+#: model:ir.ui.menu,help_link_video:to_account_reports.tax_report_client_menu
+msgid "https://youtu.be/yBWRD39CSPg"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.aged_payable_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=14"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.aged_receivable_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=145"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.general_ledger_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=170"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.profit_and_loss_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=20"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__duration_4mo_to_12mo
+msgid "more than 3 month & less than 12 months"
+msgstr "trên 3 tháng và dưới 12 tháng"
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__duration_more_3mo
+msgid "more than 3 months"
+msgstr "trên 3 tháng"
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_line/general_leadger_line.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_line/partner_leadger_line.xml:0
+#, python-format
+msgid "⇒ Journal Items"
+msgstr "⇒ Phát sinh Kế toán"

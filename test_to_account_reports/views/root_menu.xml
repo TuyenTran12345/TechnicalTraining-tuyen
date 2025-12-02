@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<menuitem id="audit_reports_root_menu" name="Audit Reports" parent="account.menu_finance_reports" sequence="2"
+        groups="account.group_account_readonly,account.group_account_manager"/>
+	<menuitem id="partner_reports_root_menu" name="Partner Reports" parent="account.menu_finance_reports" sequence="3"
+        groups="account.group_account_readonly,account.group_account_manager"/>
+
+</odoo>

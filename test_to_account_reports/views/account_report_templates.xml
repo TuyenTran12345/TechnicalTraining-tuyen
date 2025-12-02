@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="account_report_print_header_default">
+        <div class="container header_container bg-200 p-3 mb-5">
+            <h1 class="fw-bold header_name mb-4" t-out="report.name"/>
+            <div class="row">
+                <div class="col-8 header_left">
+                    <div t-out="company.name"/>
+                    <address class="mb-0" t-field="company.partner_id"
+                             t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}'
+                    />
+                    <t t-if="company.vat">
+                        <span>VAT:</span>
+                        <span t-out="company.vat"/>
+                    </t>
+                </div>
+                <div class="col-4 header_right filter_opts" style="flex-basis: 10%">
+                    <div class="date" t-if="options['current_date']"
+                         t-out="options['current_date'].get('date_string')"/>
+                    <t t-if="options.get('partner_ids')">
+                        <div class="row">
+                            <t t-set="partners" t-value="env['res.partner'].browse(options.get('partner_ids'))"/>
+                            <t t-set="partner_list" t-value="partners.mapped('name')"/>
+                            <t t-if="partner_list">
+                                <div>
+                                    Partners:
+                                    <span t-out="', '.join(partner_list)"/>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                    <t t-if="options.get('journal_ids')">
+                        <div class="row">
+                            <t t-set="journals" t-value="env['account.journal'].browse(options.get('journal_ids'))"/>
+                            <t t-set="journal_list" t-value="journals.mapped('name')"/>
+                            <t t-if="journal_list">
+                                <div>
+                                    Journals
+                                    <span t-out="', '.join(journal_list)"/>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                    <div class="row">
+                        <div>
+                            Options:
+                            <span t-if="options.get('include_unposted_entry')">
+                                Include Unposted Entry
+                            </span>
+                            <span t-else="">
+                                Posted Entries Only
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="account_report_print_body_default">
+        <div class="account_report_body">
+            <t t-call="to_account_reports.account_report_print_header_default"/>
+            <t t-out="body_html"/>
+        </div>
+    </template>
+
+    <template id="account_report_print_template">
+        <base t-att-href="base_url"/>
+        <html>
+            <head>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <t t-call-assets="to_account_reports.assets_account_report" t-js="False"/>
+            </head>
+            <body class="account_report_print_body">
+                <div class="my-5" t-call="{{ body_template }}"/>
+            </body>
+        </html>
+    </template>
+
+</odoo>

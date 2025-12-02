@@ -1,0 +1,421 @@
+---Classes in module ---
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/__init__.py
+
+def pre_init_hook(cr):
+def _update_show_both_dr_and_cr_trial_balance(env):
+def post_init_hook(cr, registry):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py
+
+class WizardL10n_vn_s08dn(models.TransientModel):
+    _name = 'l10n_vn.s08dn'
+
+    _inherit = 'l10n_vn.s07dn'
+
+    _description = 'VietNam S08dn Report Wizard'
+
+    def _default_account_ids(self):
+    account_ids = fields.Many2many('account.account', string='Accounts', default=_default_account_ids, domain="[('code', '=like', '112%')]", required=True)
+    journal_ids = fields.Many2many('account.journal', domain="[('company_id', '=', company_id),('type','=','bank')]")
+    @api.onchange('company_id')
+    def _onchange_company_id(self):
+    def _print_report(self, data):
+    def check_report_excel(self):
+    def _export_excel(self, data):
+        """Method Create file Excel"""
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/account_common_report.py
+
+class AccountCommonReport(models.TransientModel):
+    _inherit = 'account.common.report'
+
+
+    @api.model
+    def _validate_date_from_and_date_to(self, date_from, date_to):
+    def _build_contexts(self, data):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py
+
+class WizardL10n_vn_s38dn(models.TransientModel):
+    _name = 'l10n_vn.s38dn'
+
+    _inherit = 'account.common.report'
+
+    _description = 'VietNam S38-DN Report Wizard'
+
+    date_from = fields.Date(default=fields.Date.today().replace(day=1, month=1), required=True)
+    date_to = fields.Date(default=fields.Date.today, required=True)
+    target_type = fields.Selection([
+        ('journal', 'Journals'),
+        ('account', 'Accounts')
+    journal_ids = fields.Many2many('account.journal', required=False)
+    account_ids = fields.Many2many('account.account', string='Accounts')
+    account_type_ids = fields.Many2many('account.account.type', string='Account Types')
+    partner_ids = fields.Many2many('res.partner', string='Partners')
+    target_move = fields.Selection([
+        ('posted', 'All Posted Entries'),
+        ('all', 'All Entries'),
+        ], string='Target Moves', default='posted')
+    check_split_counterpart_line = fields.Boolean(string='Split Counterpart Line')
+    @api.onchange('account_type_ids')
+    def _onchange_account_type_ids(self):
+    def _prepare_check_report(self):
+    def check_report(self):
+    def _build_contexts(self, data):
+    def _print_report(self, data):
+    def check_report_excel(self):
+    def report_excel(self):
+    def _data_report_excel(self, data):
+        dict_data['today'] = fields.Date.today()
+    def _export_excel(self, data):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py
+
+class WizardL10n_vn_s03adn(models.TransientModel):
+    _name = 'l10n_vn.s03adn'
+
+    _inherit = 'account.common.report'
+
+    _description = 'VietNam S03a-DN Report Wizard'
+
+    date_from = fields.Date(default=fields.Date.today().replace(day=1, month=1))
+    date_to = fields.Date(default=fields.Date.today)
+    target_move = fields.Selection([
+        ('posted', 'All Posted Entries'),
+        ('all', 'All Entries'),
+        ], string='Target Moves')
+    def _print_report(self, data):
+    def check_report_excel(self):
+    def report_excel(self):
+    def _prepare_check_report(self):
+    def _build_contexts(self, data):
+    def _export_excel(self, data):
+        """ Method use create file Excel"""
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/abstract_l10n_vn_c119_gtgt.py
+
+class AbstractL10n_vn_c119Wizard(models.AbstractModel):
+    _name = 'abstract.l10n_vn.c119.gtgt'
+
+    _description = 'Invoice Declaration Abstract'
+
+    company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.company)
+    date_from = fields.Date(string='Date from', required=True)
+    date_to = fields.Date(string='Date to', required=True)
+    type = fields.Selection([('month', 'Month'), ('quarter', 'Quarter')], string='Types', required=True, default='month')
+    month = fields.Selection(MONTH_SELECTION, string='Month', default='1')
+    quarter = fields.Selection([('I', 'Quarter I'), ('II', 'Quarter II'), ('III', 'Quarter III'), ('IV', 'Quarter IV')], string='Quarter', default='I')
+    def _get_domain(self):
+    def _add_content_body(self, moves, content_body):
+    def _get_data(self):
+        """Method use get data export to Excel"""
+
+    def _create_file_worksheet(self):
+        """ Create an new Excel file, add a worksheet and define type format cell
+        :return: file data, workbook, worksheet and type format cell"""
+
+    @api.onchange('type', 'month', 'quarter')
+    def _onchange_type(self):
+                self.date_from = fields.Date.today().replace(day=1, month=1)
+                self.date_to = fields.Date.today().replace(day=31, month=3)
+                self.date_from = fields.Date.today().replace(day=1, month=4)
+                self.date_to = fields.Date.today().replace(day=30, month=6)
+                self.date_from = fields.Date.today().replace(day=1, month=7)
+                self.date_to = fields.Date.today().replace(day=30, month=9)
+                self.date_from = fields.Date.today().replace(day=1, month=10)
+                self.date_to = fields.Date.today().replace(day=31, month=12)
+    @api.model
+    def _validate_date_from_and_date_to(self, date_from, date_to):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py
+
+class WizardL10n_vn_s07dn(models.TransientModel):
+    _name = 'l10n_vn.s07dn'
+
+    _inherit = 'account.common.report'
+
+    _description = 'VietNam S07dn Report Wizard'
+
+    def _default_account_ids(self):
+    date_from = fields.Date(default=fields.Date.today().replace(day=1, month=1), required=True, string='Date from')
+    date_to = fields.Date(default=fields.Date.today, required=True, string='Date to')
+    account_ids = fields.Many2many('account.account', string='Accounts', default=_default_account_ids, domain="[('code', '=like', '111%')]", required=True)
+    target_type = fields.Selection([
+        ('journal', 'Journals'),
+        ('account', 'Accounts')
+    journal_ids = fields.Many2many('account.journal', domain="[('company_id', '=', company_id),('type','=','cash')]")
+    @api.onchange('company_id')
+    def _onchange_company_id(self):
+    def _get_journal_accounts(self):
+    def _prepare_check_report(self):
+    def check_report(self):
+    def _build_contexts(self, data):
+    def _print_report(self, data):
+    def check_report_excel(self):
+    def report_excel(self):
+    def _data_report_excel(self, data):
+        dict_data['today'] = fields.Date.today()
+    def _export_excel(self, data):
+        """Method Create file Excel"""
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py
+
+class WizardL10n_vn_s03bdn(models.TransientModel):
+    _name = 'l10n_vn.s03bdn'
+
+    _inherit = 'l10n_vn.s38dn'
+
+    _description = 'VietNam S03b-DN Report Wizard'
+
+    target_type = fields.Selection(default='account')
+    def _print_report(self, data):
+    def check_report_excel(self):
+    def _export_excel(self, data):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/__init__.py
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py
+
+class WizardL10n_vn119_02GTGT (models.TransientModel):
+    _name = 'l10n_vn.c119.02gtgt'
+
+    _inherit = 'abstract.l10n_vn.c119.gtgt'
+
+    _description = 'Vietnam Invoice Declaration purchase 01 -2/GTGT'
+
+    def _get_domain(self):
+        """Method use get domain"""
+
+    def _add_content_body(self, moves, content_body):
+    def export_excel_purchase(self):
+        """Method Create file Excel"""
+
+    def print_purchase(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py
+
+class WizardL10n_vn119_01GTGT (models.TransientModel):
+    _name = 'l10n_vn.c119.01gtgt'
+
+    _inherit = 'abstract.l10n_vn.c119.gtgt'
+
+    _description = 'Vietnam Invoice Declaration sale 01 -1/GTGT'
+
+    def _get_domain(self):
+        """Method use get domain"""
+
+    def _add_content_body(self, moves, content_body):
+    def export_excel_sale(self):
+        """Method Create file Excel"""
+
+    def print_sale(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/reports/report_l10n_vn_s38dn.py
+
+class Report_L10n_Vn_S38dn(models.AbstractModel):
+    _name = 'report.l10n_vn_viin_account_reports.report_s38dn'
+
+    _inherit = 'report.l10n_vn.common'
+
+    _description = 'Vietnam S38-DN Report'
+
+    @api.model
+    def _get_report_values(self, docids, data=None):
+        res['today'] = fields.Date.today()
+    def group_by_account_id(self):
+        initial_bal_date_to = fields.Date.from_string(ctx_date_from) + timedelta(days=-1)
+    def _do_query(self, line_id, group_by_account=True):
+    def do_query(self, line_id=None):
+        # TODO: date should match the move line date instead of today
+    @api.model
+    def _get_lines(self, data):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/reports/report_l10n_vn_s03bdn.py
+
+class Report_L10n_Vn_S03bdn(models.AbstractModel):
+    _name = 'report.l10n_vn_viin_account_reports.report_s03bdn'
+
+    _inherit = 'report.l10n_vn_viin_account_reports.report_s38dn'
+
+    _description = 'Vietnam S03b-DN Report'
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/reports/report_l10n_vn_s07dn.py
+
+class Report_L10n_Vn_S07dn(models.AbstractModel):
+    _name = 'report.l10n_vn_viin_account_reports.report_s07dn'
+
+    _inherit = 'report.l10n_vn.common'
+
+    _description = 'VietNam S07dn Report'
+
+    @api.model
+    def _get_report_values(self, docids, data=None):
+        res['today'] = fields.Date.today()
+    def group_by_account_id(self):
+        initial_bal_date_to = fields.Date.to_date(ctx_date_from) + timedelta(days=-1)
+    def _do_query(self, line_id, group_by_account=True):
+    def do_query(self, line_id=None):
+        current_date = fields.Date.today()
+    @api.model
+    def _get_lines(self, data):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/reports/__init__.py
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/reports/report_l10n_vn_s08dn.py
+
+class Report_L10n_Vn_S08dn(models.AbstractModel):
+    _name = 'report.l10n_vn_viin_account_reports.report_s08dn'
+
+    _inherit = 'report.l10n_vn_viin_account_reports.report_s07dn'
+
+    _description = 'VietNam S08dn Report'
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/reports/report_l10n_vn_s03adn.py
+
+class Report_L10n_Vn_S03adn(models.AbstractModel):
+    _name = 'report.l10n_vn_viin_account_reports.report_s03adn'
+
+    _inherit = 'report.l10n_vn.common'
+
+    _description = 'Vietnam S03a-DN Report'
+
+    @api.model
+    def _get_lines(self, data):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/controllers/__init__.py
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/controllers/main.py
+
+class ReportController(http.Controller):
+
+    def download_excel (self, wizard_id, res_model, file_name, method_print_excel='report_excel'):
+        """Method use download excel
+        :return: file excel"""
+
+    @http.route('/account-detail-sheet/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def l10n_vn_s38dn_export_xlsx(self, wizard_id, **kwargs):
+    @http.route('/account-cash-book/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def l10n_vn_s07dn_export_xlsx(self, wizard_id, **kwargs):
+    @http.route('/account-bank-book/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def l10n_vn_s08dn_export_xlsx(self, wizard_id, **kwargs):
+    @http.route('/general-journal/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def l10n_vn_s03adn_export_xlsx(self, wizard_id, **kwargs):
+    @http.route('/ledger/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def l10n_vn_s03bdn_export_xlsx(self, wizard_id, **kwargs):
+    @http.route('/invoice-declaration-sales/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def c119_01gtgt_export_xlsx(self, wizard_id, **kwargs):
+    @http.route('/invoice-declaration-purchase/download/xlsx/<int:wizard_id>', type='http', auth='user')
+    def c119_02gtgt_export_xlsx(self, wizard_id, **kwargs):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_general_ledger.py
+
+class ReportAccountGeneralLedger(models.AbstractModel):
+    _inherit = "account.general.ledger"
+
+
+    def _get_unaffected_earnings_domain(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_report_coa.py
+
+class AccountReportCoa(models.AbstractModel):
+    _inherit = 'account.coa.report'
+
+
+    def get_template_ref(self):
+    def get_templates(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_chart_template.py
+
+class AccountChartTemplate(models.Model):
+    _inherit = 'account.chart.template'
+
+
+    af_report_render_print_template = fields.Char(string='Account Report Print PDF Template', default='l10n_vn_viin_account_reports.main_template_print_vn',
+                                                  help="This template is only used when printing a financial report to a PDF output")
+    coa_report_print_template = fields.Char(string='Trial Balance Report Print PDF Template', default='l10n_vn_viin_account_reports.template_coa_report_print_vn')
+    af_report_header_layout = fields.Char(string='Account Report Print PDF Header Layout', default='l10n_vn_viin_account_reports.header_template_print_vn')
+    af_report_footer_layout = fields.Char(string='Account Report Print PDF Footer Layout', default='l10n_vn_viin.accounting_external_footer_layout')
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_account_template.py
+
+class AccountAccountTemplate(models.Model):
+    _inherit = 'account.account.template'
+
+
+    @api.model
+    def _get_show_both_dr_and_cr_trial_balance_domain(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_partner_ledger.py
+
+class AccountParnerLedger(models.AbstractModel):
+    _inherit = 'account.partner.ledger'
+
+
+    def get_templates(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_financial_dynamic_report_line.py
+
+class AccountFinanciaDynamiclReportLine(models.Model):
+    _inherit = 'account.financial.dynamic.report.line'
+
+
+    def _put_columns_together(self, data, domain_ids):
+    def _get_with_statement(self, financial_report):
+    def _divide_line(self, line, financial_report=False):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/__init__.py
+
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_account.py
+
+class AccountAccount(models.Model):
+    _inherit = 'account.account'
+
+
+    @api.model
+    def _get_show_both_dr_and_cr_trial_balance_domain(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/models/account_report.py
+
+class AccountReport(models.AbstractModel):
+    _inherit = 'account.report'
+
+
+    def get_templates(self):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/migrations/13.0.1.1.2/post-migration.py
+
+def migrate(cr, version):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/migrations/12.0.1.0.1/post-migration.py
+
+def migrate(cr, version):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/migrations/12.0.1.1.1/post-migration.py
+
+def migrate(cr, version):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/migrations/13.0.1.1.3/post-migration.py
+
+def migrate(cr, version):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/migrations/15.0.0.1.1/post-migration.py
+
+def migrate(cr, version):
+
+FILE: /home/royle/Viindoo/erponline-enterprise-16.0/l10n_vn_viin_account_reports/migrations/10.0.1.2/pre-migration.py
+
+def migrate(env, version):
+    env.execute("""
+        ALTER TABLE account_move_line ADD COLUMN due_duration integer DEFAULT NULL;
+
+        UPDATE account_move_line SET due_duration = (date_maturity - date)
+    """)
+

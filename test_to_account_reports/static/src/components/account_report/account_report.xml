@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<div t-name="to_account_reports.AccountReportComponent" class="o_action" owl="1">
+		<AccountReportControlPanel
+			reports="reports"
+			currentReport="state.currentReport"
+			journals="journals"
+		 	filterOptions="state.filterOptions"
+		 	changeReport.bind="onChangeReport"
+		 	changeAccountType.bind="onChangeAccountType"
+		 	selectUnpostedEntry.bind="onSelectUnpostedEntry"
+		 	selectUnfoldAll.bind="onSelectUnfoldAll"
+		 	changeDateFilter.bind="onChangeDateFilter"
+		 	selectComparison.bind="onSelectComparison"
+		 	updateMany2X.bind="onUpdateMany2X"
+		 	applyCustomDate.bind="onApplyCustomDate"
+		 	changeCustomStartDate.bind="onChangeCustomStartDate"
+		 	changeCustomEndDate.bind="onChangeCustomEndDate"
+		 	changeComparisonStartDate.bind="onChangeComparisonStartDate"
+		 	changeComparisonEndDate.bind="onChangeComparisonEndDate"
+		 	applyComparisonDate.bind="onApplyComparisonDate"
+			onExport.bind="onExport"
+			/>
+
+		<AccountReportContent
+		 	currentReport = "state.currentReport"
+		 	filterOptions="state.filterOptions"
+		 	reportData="state.reportData"
+			/>
+	</div>
+
+</templates>

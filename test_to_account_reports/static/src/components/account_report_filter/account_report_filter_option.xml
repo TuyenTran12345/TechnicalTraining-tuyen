@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterOption" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'"
+        	t-if="props.filterOptions.use_filter_show_draft or props.filterOptions.use_filter_unreconciled">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-filter"/> Options: 
+            	<t t-if="props.filterOptions.include_unposted_entry">
+            		Include Unposted Entry
+            	</t>
+            	<t t-else="">
+            		Posted Entries Only
+            	</t>
+            </t>
+            <t t-if="props.filterOptions.use_filter_show_draft">
+            	<DropdownItem class="{ selected: props.filterOptions.include_unposted_entry }" onSelected="() => this.props.selectUnpostedEntry()">
+            		Include Unposted Entries
+            	</DropdownItem>
+            </t>
+            <!-- TODO: support this feature in the future
+            <t t-if="props.filterOptions.user_filter_unfold_all">
+            	<DropdownItem class="{ selected: props.filterOptions.unfold_all }" onSelected="() => this.props.selectUnfoldAll()">
+            		Unfold All
+            	</DropdownItem>
+            </t> 
+             -->           
+        </Dropdown>
+
+	</t>	
+
+</templates>

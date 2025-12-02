@@ -1,0 +1,3205 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * l10n_vn_viin_account_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-06 09:47+0000\n"
+"PO-Revision-Date: 2023-12-06 09:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid " - Date To: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid ""
+"%s. Goods & Services for Investment Projects be eligible for VAT deduction"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid "%s. VAT Exemption Goods & Services"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "%s. VAT Exemption Goods & Services for Production and Business"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid "%s. VAT Taxable Goods & Services %s%s"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid ""
+"%s. VAT Taxable Goods & Services for Production and Business be eligible for"
+" VAT deduction"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid ""
+"%s. VAT Taxable and Exemption Goods & Services for Production and Business "
+"be eligible for VAT deduction"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/models/account_report.py:0
+#, python-format
+msgid "(Released Under the Circular No. 133/2016/TT-BTC"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/models/account_report.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "(Released Under the Circular No. 200/2014/TT-BTC"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "(Signature, Full Name)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "(Signature, Full Name, Job Title)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#, python-format
+msgid "(Used for general journal accounting)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_05_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_06_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_03_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_03_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_03_02
+msgid "- Accumulated depreciation"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid "- Date To:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "- Date To: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid "- Date to:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_05_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_06_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_03_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_03_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_03_01
+msgid "- Historical costs"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_08
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_08
+msgid "- In which: Interest expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid "- Issue Date:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "- Issue Date: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_01_01
+msgid "- Ordinary shares with voting rights"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_01_02
+msgid "- Preference shares"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "- This report has ... pages, from page 01 to page ..."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_11_01
+msgid "- Undistributed profit after tax brought forward"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_11_02
+msgid "- Undistributed profit after tax for the current year"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_01_01
+msgid "1. Bank & Cash"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_01
+msgid ""
+"1. Collection on share issuance and capital contributions from shareholders"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_01
+msgid "1. Contributed capital"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_08_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_05_01
+msgid "1. Deductible VAT"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_02_01
+msgid "1. Funding sources"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_04_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_04_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_04_01
+msgid "1. Inventories"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_05_01
+msgid "1. Investments in equity of other entities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_05_01
+msgid "1. Investments in subsidiaries"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_06_01
+msgid "1. Long-term prepaid expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_01
+msgid "1. Long-term trade payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_01
+msgid "1. Long-term trade receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_04_01
+msgid "1. Long-term work in progress"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_01
+msgid "1. Payments for additions to fixed assets and other long-term assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_01
+msgid "1. Receipts from issuing shares, contribution of owners"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_01
+msgid "1. Receipts from sales of goods and provision of services"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_01
+msgid "1. Revenues from sales and services rendered"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_05_01
+msgid "1. Short-term prepaid expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_01
+msgid "1. Short-term trade payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_03_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_01
+msgid "1. Short-term trade receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_01
+msgid "1. Tangible fixed assets (221 = 222 + 223)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_01
+msgid "1. Trade payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03_01
+msgid "1. Trade receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_02_01
+msgid "1. Trading securities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_01_01
+msgid "1.1 Direct cash payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_01_02
+msgid "1.2 Payable"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_01_02
+msgid "1.2 Receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_01_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_01_03
+msgid "1.3 Exclusions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_04_01_01
+msgid "1.a. All Inventories"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_04_01_02
+msgid "1.b. Minus Long-term work in progress"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_04_01_03
+msgid "1.c. Minus Long-term equipment and spare parts for replacement"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid "10"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_11
+msgid ""
+"10. Net profits from operating activities 30 = 20 + (21 - 22) - (25 + 26)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_11
+msgid "10. Other Income"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_10
+msgid "10. Other equity funds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_10
+msgid "10. Preference shares"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_10
+msgid "10. Science and technology development fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_10
+msgid "10. Short-term borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid "11"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_11
+msgid "11. Deferred income tax payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_12
+msgid "11. Other Expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_12
+msgid "11. Other Income"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_11
+msgid "11. Short-term provisions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_11
+msgid "11. Undistributed profit after tax"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid "12"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_12
+msgid "12. Bonus and welfare fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_12
+msgid "12. Capital expenditure funds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_12
+msgid "12. Long-term provisions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_13
+msgid "12. Other Expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_13
+msgid "12. Other profits (40 = 31 - 32)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid "13"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_14
+msgid "13. Other profits (40 = 31 - 32)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_13
+msgid "13. Price stabilization fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_13
+msgid "13. Science and technology development fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_14
+msgid "13. Total net profits before tax (50 = 30 + 40)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_15
+msgid "14. Current corporate income tax expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_14
+msgid "14. Government bonds purchased for resale"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_15
+msgid "14. Total net profits before tax (50 = 30 + 40)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_16
+msgid "15. Current corporate income tax expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_16
+msgid "15. Profits after enterprise income tax (60 = 50 - 51)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_17
+msgid "16. Deferred corporate income tax expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_18
+msgid "17. Profits after enterprise income tax (60 = 50 - 51 - 52)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_04_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_04_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_04_02
+msgid "2. Allowances for decline in value of inventories"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_02_02
+msgid "2. Allowances for decline in value of trading securities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_05_02
+msgid "2. Allowances for long-term investments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_02
+msgid "2. Capital surplus"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_01_02
+msgid "2. Cash equivalents"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_02
+msgid "2. Collections on disposals of fixed assets and other long-term assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_04_02
+msgid "2. Construction in progress"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_05_02
+msgid "2. Deductible VAT"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_06_02
+msgid "2. Deferred income tax assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_02
+msgid "2. Finance lease fixed assets (224 = 225 + 226)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_02_02
+msgid "2. Funds used for fixed asset acquisition"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_02_02
+msgid "2. Held to maturity investments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_05_02
+msgid "2. Investments in joint ventures and associates"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_02
+msgid "2. Long-term prepayments from customers"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_02
+msgid "2. Long-term prepayments to suppliers"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_08_02
+msgid "2. Other assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_05_02
+msgid "2. Other current assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_02
+msgid "2. Payments for returning Owner's equity, buying Treasury share"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_02
+msgid "2. Payments to suppliers of goods and services"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_02
+msgid "2. Prepayments from customers"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03_02
+msgid "2. Prepayments to suppliers"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_02
+msgid "2. Returning Owner's capital in cash and Purchasing Treasury Stocks"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_02
+msgid "2. Revenue deductions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_02
+msgid "2. Short-term prepayments from customers"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_03_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_02
+msgid "2. Short-term prepayments to suppliers"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_02_01
+msgid "2.1 Direct cash payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_02_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_02_01
+msgid "2.1 Revenue of fixed assets and other long-term assets (Cash Direct)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_02_02
+msgid "2.2 Expenses of fixed assets and other long-term assets (Cash Direct)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_02_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_02_02
+msgid "2.2. Payable"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_02_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_02_03
+msgid ""
+"2.3 Revenue of fixed assets and other long-term assets (Via Receivables)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_02_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_02_04
+msgid "2.4 Expenses of fixed assets and other long-term assets (Via Payables)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_03
+msgid "3. Conversion options on convertible bonds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_02_03
+msgid "3. Equipty investment in other entity"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_03
+msgid "3. Granting loans, buying debt instruments of other entities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_02_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_05_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_02_03
+msgid "3. Held to maturity investments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02_03
+msgid "3. Intangible fixed assets (227 = 228 + 229)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_03
+msgid "3. Intra-company payables for operating capital received"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_05_03
+msgid "3. Investments in equity of other entities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_03
+msgid "3. Long-term accrued expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_06_03
+msgid "3. Long-term equipment and spare parts for replacement"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_03
+msgid "3. Net revenues from sales and services rendered (10 = 01 - 02)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_03
+msgid "3. Other capital"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_03_03
+msgid "3. Other short-term receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_03
+msgid "3. Payments to employees"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_03
+msgid "3. Receipts from borrowings"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_03
+msgid "3. Short-term intra-company receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_03
+msgid "3. Taxes and other payables to government budget"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_05_03
+msgid "3. Taxes and other receivables from government budget"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_01_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_03
+msgid "3. Working capital provided to sub-units"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_02_04
+msgid "4. Allowance for diminution in the value of financial investments (*)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_05_04
+msgid "4. Allowances for long-term investments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_04
+msgid "4. Costs of goods sold"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_05_04
+msgid "4. Government bonds purchased for resale"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_04
+msgid "4. Intra-company payables for operating capital received"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_04
+msgid "4. Long-term intra-company receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_04
+msgid "4. Other capital"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_06_04
+msgid "4. Other long-term assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_04
+msgid "4. Other long-term payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_01_04
+msgid "4. Other long-term receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03_04
+msgid "4. Other receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_04
+msgid "4. Paid interest"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_04
+msgid "4. Payables to employees"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_04
+msgid "4. Payments to settle loan principals"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_04
+msgid "4. Payments to settle loan principals and financial lease principals"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_04
+msgid "4. Receivables under schedule of construction contract"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_04
+msgid ""
+"4. Recovery of loan given and disposals of debt instruments of other "
+"entities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_03_04
+msgid "4. Shortage of assets awaiting resolution"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_04
+msgid "4. Treasury shares"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_04_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_04_01
+msgid "4.1 Direct cash payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_04_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_04_02
+msgid "4.2 Payable"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_05
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_05
+msgid "5. Company income tax paid"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_05
+msgid "5. Dividends and profits distributed"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_05
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_05
+msgid "5. Exchange rate differences"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_05
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_05
+msgid "5. Gross revenues from sales and services rendered (20 = 10 - 11)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_05_05
+msgid "5. Held to maturity investments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_05
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_05
+msgid "5. Investments in equity of other entities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_01_05
+msgid "5. Long-term allowances for doubtful debts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_05
+msgid "5. Long-term borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_05
+msgid "5. Long-term intra-company payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_05
+msgid "5. Long-term loan receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_05_05
+msgid "5. Other current assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_05
+msgid "5. Other payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_05
+msgid "5. Other short-term payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_05
+msgid "5. Payments to settle financial lease principals"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_05
+msgid "5. Short-term accrued expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_03_05
+msgid "5. Short-term allowances for doubtful debts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_05
+msgid "5. Short-term loan receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03_05
+msgid "5. Shortage of assets awaiting resolution"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_05
+msgid "5. Treasury shares"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_05_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_05_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_05_01
+msgid "5.1 Direct cash payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02_05_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03_05_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_05_02
+msgid "5.2 Payable"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03_06
+msgid "6. Allowances for doubtful debts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_06
+msgid "6. Borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_06
+msgid "6. Differences upon asset revaluation"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_06
+msgid "6. Dividends, profits distributed"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_06
+msgid "6. Equity funds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_06
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_06
+msgid "6. Financial income"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_06
+msgid "6. Long-term provisions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_06
+msgid "6. Long-term unearned revenues"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_06
+msgid "6. Other equity funds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_06
+msgid "6. Other long-term receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_06
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_06
+msgid "6. Other receipts from operating activities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_06
+msgid "6. Other short-term receivables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_06
+msgid "6. Short-term borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_06
+msgid "6. Short-term intra-company payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_06
+msgid "6. Withdrawals of investments in other entities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_06_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_06_01
+msgid "6.1 Direct cash payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_06_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03_06_02
+msgid "6.2 Payable"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_06_01
+msgid "6a. Other long-term receivables (assets)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_06_02
+msgid "6b. Other long-term receivables (equity)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_07
+msgid "7. Exchange rate differences"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_07
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_07
+msgid "7. Financial expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_07
+msgid "7. Interests, dividends and profits distributed"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_07
+msgid "7. Intra-company payables for operating capital received"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01_07
+msgid "7. Long-term allowances for doubtful debts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_07
+msgid "7. Other long-term payables"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01_07
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01_07
+msgid "7. Other payments for operating activities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_07
+msgid "7. Payables under schedule of construction contract"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02_07
+msgid "7. Science and technology development fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_07
+msgid "7. Short-term allowances for doubtful debts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_07
+msgid "7. Short-term provisions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02_07
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02_07
+msgid "7. Undistributed profit after tax"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_07_01
+msgid "7.1 Direct cash payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02_07_02
+msgid "7.2 Payable"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01_08
+msgid "8. Bonus and welfare fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_09
+msgid "8. Business administration expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_08
+msgid "8. Development and investment funds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_08
+msgid "8. Long-term borrowings and finance lease liabilities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_08
+msgid "8. Provisions"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_09
+msgid "8. Selling expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_08
+msgid "8. Short-term unearned revenues"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03_08
+msgid "8. Shortage of assets awaiting resolution"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_08_01
+msgid ""
+"8a. Long-term borrowings and finance lease liabilities (via Credit Balance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_08_02
+msgid ""
+"8b. Long-term borrowings and finance lease liabilities (via Debit Balance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01_09
+msgid "9. Bonus and welfare fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02_09
+msgid "9. Convertible bonds"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01_09
+msgid "9. Enterprise reorganization assistance fund"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c200_line_10
+msgid "9. General administration expenses"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.profit_and_loss_c133_line_10
+msgid "9. Net profits from operating activities 30 = 20 + 21 - 22 - 24"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01_09
+msgid "9. Other short-term payments"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid ""
+"<br/>\n"
+"\t\t\t\t\t\t\tAddress To Open Trading Account: ... ...\n"
+"\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\tAccount Number At The Place Of Sending: ... ..."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid ""
+"<br/>\n"
+"\t\t\t\t\t\t\tCurrency:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01
+msgid "A - CURRENT ASSETS (100 = 110 + 120 + 130 + 140 + 150)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_s08dn_action
+msgid "ACCOUNT BANK DEPOSIT BOOK (S08-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_s07dn_action
+msgid "ACCOUNT CASH BOOK (S07-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "ACCOUNT DETAIL SHEET"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_s38dn_action
+msgid "ACCOUNT DETAIL SHEET (S38-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#, python-format
+msgid "Account"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Account Bank Book.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,name:l10n_vn_viin_account_reports.report_l10n_vn_s08dn_action
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_s08dn_menu
+msgid "Account Bank Deposit Book (S08-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,name:l10n_vn_viin_account_reports.report_l10n_vn_s07dn_action
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_s07dn_menu
+msgid "Account Cash Book (S07-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Account Cash Book.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_account_common_report
+msgid "Account Common Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,name:l10n_vn_viin_account_reports.report_l10n_vn_s38dn_action
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_s38dn_menu
+msgid "Account Detail Sheet (S38-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Account Detail Sheet.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid "Account Number At The Place Of Sending: ... ..."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_account_report
+msgid "Accounting Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__account_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__account_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__account_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__account_ids
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s03bdn__target_type__account
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s07dn__target_type__account
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s08dn__target_type__account
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s38dn__target_type__account
+msgid "Accounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid "Accounts:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Accounts: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid "Address To Open Trading Account: ... ..."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Address: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s03adn__target_move__all
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s03bdn__target_move__all
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s38dn__target_move__all
+msgid "All Entries"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s03adn__target_move__posted
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s03bdn__target_move__posted
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s38dn__target_move__posted
+msgid "All Posted Entries"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#, python-format
+msgid "Amount"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid ""
+"Amount \n"
+" Currency"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__4
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__4
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__4
+msgid "April"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__8
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__8
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__8
+msgid "August"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02
+msgid "B - NON-CURRENT ASSETS (200 = 210 + 220 + 230 + 240 + 250 + 260)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02
+msgid "B - NON-CURRENT ASSETS (200 = 210 + 220 + 240 + 250 + 260)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model:account.report.column,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_column_balance
+#: model:account.report.column,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_column_balance
+#: model:account.report.column,name:l10n_vn_viin_account_reports.balance_sheet_c200_column_balance
+#: model:account.report.column,name:l10n_vn_viin_account_reports.cash_flow_c133_column_balance
+#: model:account.report.column,name:l10n_vn_viin_account_reports.cash_flow_c200_column_balance
+#: model:account.report.column,name:l10n_vn_viin_account_reports.profit_and_loss_c133_column_balance
+#: model:account.report.column,name:l10n_vn_viin_account_reports.profit_and_loss_c200_column_balance
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Balance"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.balance_sheet_c200_report
+msgid "Balance Sheet (B01-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_report
+msgid "Balance Sheet (B01a-DNN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_report
+msgid "Balance Sheet (B01b-DNN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01
+msgid "C - LIABILITIES (300 = 310 + 330)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01
+msgid "C - LIABILITIES (400 = 410 + 420)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#, python-format
+msgid "CASH BOOK"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#, python-format
+msgid "CASH IN BANK DEPOSIT BOOK"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_c119_01gtgt_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_c119_02gtgt_view
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.cash_flow_c200_report
+msgid "Cash Flow Statement (B03-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.cash_flow_c133_report
+msgid "Cash Flow Statement (B03-DNN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_05
+msgid "Cash and cash equivalent at the beginning of the year"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_07
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_07
+msgid "Cash and cash equivalent at the end of the year (70 = 50 + 60 + 61)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_05
+msgid "Cash and cash equivalents, beginning of fiscal year"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,help:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__include_extra_info
+#: model:ir.model.fields,help:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__include_extra_info
+#: model:ir.model.fields,help:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__include_extra_info
+#: model:ir.model.fields,help:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__include_extra_info
+msgid ""
+"Check this field if you want the report to include the Extra Info column "
+"(Indirect Counterpart Account, Reference No)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Chief Accountant"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_abstract_l10n_vn_c119_gtgt__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__company_id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__company_id
+msgid "Company"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Company: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid ""
+"Counterpart\n"
+"\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\tAccounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid ""
+"Counterpart \n"
+" Accounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid ""
+"Counterpart \n"
+"Accounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Counterpart Accounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__create_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__create_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__create_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__create_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__create_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__create_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__create_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Credit"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_06
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_06
+msgid "Currency translation differences"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.main_template_generic_print_vn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#, python-format
+msgid "Currency:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Currency: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid "Customer"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02
+msgid "D - OWNER’S EQUITY (400 = 410 + 430)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_02
+msgid "D - OWNER’S EQUITY (500 = 511 + 512 + 513 + 514 + 515 + 516 + 517)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid "Date From:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Date From: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_abstract_l10n_vn_c119_gtgt__date_from
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__date_from
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__date_from
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__date_from
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__date_from
+msgid "Date from"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid "Date from:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Date from: %s - Date to: %s"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_abstract_l10n_vn_c119_gtgt__date_to
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__date_to
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__date_to
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__date_to
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__date_to
+msgid "Date to"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/models/account_report.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Dated 22/12/2014 by the Ministry of Finance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/models/account_report.py:0
+#, python-format
+msgid "Dated 26/8/2016 by the Ministry of Finance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Debit"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__12
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__12
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__12
+msgid "December"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Description"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Director/CEO"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__display_name
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__display_name
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__display_name
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__display_name
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__display_name
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__display_name
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__date_to
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__date_to
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__date_to
+msgid "End Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/reports/report_l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/reports/report_l10n_vn_s38dn.py:0
+#, python-format
+msgid "Ending Balance"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid ""
+"Exchange \n"
+" Rate"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s03bdn_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s38dn_view
+msgid "Export Excel"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Extra Info"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__2
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__2
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__2
+msgid "February"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#, python-format
+msgid "GENERAL JOURNAL"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_s03adn_action
+msgid "GENERAL JOURNAL (S03a-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,name:l10n_vn_viin_account_reports.report_l10n_vn_s03adn_action
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_s03adn_menu
+msgid "General Journal (S03a-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "General Journal S03a-DN.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_01
+msgid "I. Cash and Cash Equivalents"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_01
+msgid "I. Cash and Cash Equivalents (110 = 111 + 112)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_01
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_01
+msgid "I. Cash flow from operating activities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_01
+msgid ""
+"I. Liabilities (300 = 311 + 312 + 313 + 314 + 315 + 316 + 317 + 318 + 319 + "
+"320)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_01
+msgid ""
+"I. Long-term receivables (210 = 211 + 212 + 213 + 214 + 215 + 216 + 219)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_01
+msgid "I. Long-term receivables (210 = 211 + 212 + 213 + 214 + 215)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_01
+msgid ""
+"I. Owner’s equity (410 = 411 + 412 + 413 + 414 + 415 + 416 + 417 + 418 + 419"
+" + 420 + 421 + 422)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_01
+msgid ""
+"I. Short-term liabilities (310 = 311 + 312 + 313 + 314 + 315 + 316 + 317 + "
+"318 + 319 + 320 + 321 + 322 + 323 + 324)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_01
+msgid ""
+"I. Short-term liabilities (410 = 411 + 412 + 413 + 414 + 415 + 416 + 417 + "
+"418)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__id
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_02
+msgid "II. Cash flows from investing activities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_02
+msgid "II. Short-term financial investments (120 = 121 + 122 + 123 + 124)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_02
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_02
+msgid "II. Short-term financial investments (120 = 121 + 122 + 123)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_02
+msgid "II. Fixed assets (220 = 221 + 222)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_02
+msgid "II. Fixed assets (220 = 221 + 224 + 227 + 230)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_02_02
+msgid "II. Funding sources and other funds (430 = 431 + 432)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02_01_02
+msgid ""
+"II. Long-term liabilities (330 = 331 + 332 + 333 + 334 + 335 + 336 + 337 + "
+"338 + 339 + 340 + 341 + 342 + 343)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02_01_02
+msgid ""
+"II. Long-term liabilities (420 = 421 + 422 + 423 + 424 + 425 + 426 + 427)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02_02
+msgid "II. OWNER’S EQUITY (400 = 411 + 412 + 413 + 414 + 415 + 416 + 417)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_03
+msgid "III. Cash flows from financial activities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_03
+msgid "III. Cash flows from financing activities"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_03
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_03
+msgid "III. Investment properties (230 = 231 + 232)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_03
+msgid "III. Receivables (130 = 131 + 132 + 133 + 134 + 135 + 136)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_03
+msgid ""
+"III. Short-term receivables (130 = 131 + 132 + 133 + 134 + 135 + 136 + 137 +"
+" 139)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_03
+msgid "III. Short-term receivables (130 = 131 + 132 + 133 + 134 + 135)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_04
+msgid "IV. Construction in progress"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_04
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_04
+msgid "IV. Inventories (140 = 141 + 142)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_04
+msgid "IV. Inventories (140 = 141 + 149)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_04
+msgid "IV. Long-term assets in progress (240 = 241 + 242)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__include_extra_info
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__include_extra_info
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__include_extra_info
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__include_extra_info
+msgid "Include Extra Info"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Incurred"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid ""
+"Indirect\n"
+"\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\tCounterpart\n"
+"\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\tAccounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid ""
+"Indirect Counterpart \n"
+" Accounts"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.invoice_declaration_vn_statements_menu
+msgid "Invoice Declaration"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_abstract_l10n_vn_c119_gtgt
+msgid "Invoice Declaration Abstract"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Invoice Declaration Puchases.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Invoice Declaration Sales.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Invoice No"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Invoice, Bill"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__1
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__1
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__1
+msgid "January"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__journal_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__journal_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__journal_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__journal_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__journal_ids
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s03bdn__target_type__journal
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s07dn__target_type__journal
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s08dn__target_type__journal
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_s38dn__target_type__journal
+msgid "Journals"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid "Journals:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Journals: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__7
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__7
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__7
+msgid "July"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__6
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__6
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__6
+msgid "June"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#, python-format
+msgid "LEDGER"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_s03bdn_action
+msgid "LEDGER (S03b-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "LIST OF INVOICES, FINANCIAL PAPERS OF PURCHASED GOODS AND SERVICES"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_c119_02gtgt_action
+msgid ""
+"LIST OF INVOICES, FINANCIAL PAPERS OF PURCHASED GOODS AND SERVICES (01 "
+"-2/GTGT)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid "LIST OF INVOICES, FINANCIAL PAPERS OF SOLD GOODS"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.act_window,name:l10n_vn_viin_account_reports.l10n_vn_c119_01gtgt_action
+msgid "LIST OF INVOICES, FINANCIAL PAPERS OF SOLD GOODS (01 -1/GTGT)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt____last_update
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt____last_update
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn____last_update
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn____last_update
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn____last_update
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn____last_update
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__write_uid
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__write_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__write_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__write_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__write_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__write_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__write_date
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,name:l10n_vn_viin_account_reports.report_l10n_vn_s03bdn_action
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_s03bdn_menu
+msgid "Ledger (S03b-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Ledger S03b-DN.xlsx"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_c119_02gtgt_menu
+msgid ""
+"List of Invoice, Financial paper of Purchased and Services (01 -2/GTGT)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.ui.menu,name:l10n_vn_viin_account_reports.l10n_vn_c119_01gtgt_menu
+msgid "List of Invoice, Financial paper of Sold Goods (01 -1/GTGT)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__3
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__3
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__3
+msgid "March"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__5
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__5
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__5
+msgid "May"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_abstract_l10n_vn_c119_gtgt__month
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__month
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__month
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__type__month
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__type__month
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__type__month
+msgid "Month"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Month ..... Day ..... Year ....."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c133_line_04
+msgid "Net cash flows during the fiscal year (50 = 20 + 30 + 40)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.cash_flow_c200_line_04
+msgid "Net cash flows during the year (50 = 20 + 30 + 40)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "No"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#, python-format
+msgid "No."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#, python-format
+msgid "Note"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__11
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__11
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__11
+msgid "November"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__10
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__10
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__10
+msgid "October"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/reports/report_l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/reports/report_l10n_vn_s38dn.py:0
+#, python-format
+msgid "Opening Balance"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Origin"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#, python-format
+msgid "Origin Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#, python-format
+msgid "Origin No."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid "Partner"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__partner_ids
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__partner_ids
+msgid "Partners"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+msgid "Partners:"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Partners: "
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#, python-format
+msgid "Payment"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid ""
+"Payment\n"
+"\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t(WithDraw)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid ""
+"Payment \n"
+" (WithDraw)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/reports/report_l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/reports/report_l10n_vn_s38dn.py:0
+#, python-format
+msgid "Period Total"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid ""
+"Posting \n"
+" Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid "Posting Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Prepared By"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_c119_01gtgt_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_c119_02gtgt_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s03adn_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s07dn_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s08dn_view
+msgid "Print Excel"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s03adn_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s07dn_view
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.account_common_report_s08dn_view
+msgid "Print Pdf"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.profit_and_loss_c200_report
+msgid "Profit and Loss (B02-DN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,name:l10n_vn_viin_account_reports.profit_and_loss_c133_report
+msgid "Profit and Loss (B02-DNN)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_abstract_l10n_vn_c119_gtgt__quarter
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__quarter
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__quarter
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__type__quarter
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__type__quarter
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__type__quarter
+msgid "Quarter"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__quarter__i
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__quarter__i
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__quarter__i
+msgid "Quarter I"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__quarter__ii
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__quarter__ii
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__quarter__ii
+msgid "Quarter II"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__quarter__iii
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__quarter__iii
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__quarter__iii
+msgid "Quarter III"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__quarter__iv
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__quarter__iv
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__quarter__iv
+msgid "Quarter IV"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#, python-format
+msgid "Receipt"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+msgid ""
+"Receipt\n"
+"\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t(Deposit)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid ""
+"Receipt \n"
+" (Deposit)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/controllers/main.py:0
+#, python-format
+msgid "Record not found: id: %s, uid: %s"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Ref Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Reference"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03bdn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s38dn
+#, python-format
+msgid "Reference No."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s03adn
+#, python-format
+msgid "Registered"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,legal_name:l10n_vn_viin_account_reports.report_l10n_vn_s03adn_action
+msgid "S03a-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,legal_name:l10n_vn_viin_account_reports.report_l10n_vn_s03bdn_action
+msgid "S03b-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,legal_name:l10n_vn_viin_account_reports.report_l10n_vn_s07dn_action
+msgid "S07-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,legal_name:l10n_vn_viin_account_reports.report_l10n_vn_s08dn_action
+msgid "S08-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.actions.report,legal_name:l10n_vn_viin_account_reports.report_l10n_vn_s38dn_action
+msgid "S38-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__abstract_l10n_vn_c119_gtgt__month__9
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_01gtgt__month__9
+#: model:ir.model.fields.selection,name:l10n_vn_viin_account_reports.selection__l10n_vn_c119_02gtgt__month__9
+msgid "September"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__check_split_counterpart_line
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__check_split_counterpart_line
+msgid "Split Counterpart Line"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__date_from
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__date_from
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__date_from
+msgid "Start Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01
+msgid "TOTAL ASSETS (200 = 110 + 120 + 130 + 140 + 150 + 160 + 170 + 180)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01
+msgid "TOTAL ASSETS (270 = 100 + 200)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01
+msgid "TOTAL ASSETS (300 = 100 + 200)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_02
+msgid "TOTAL EQUITY (440 = 300 + 400)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_02
+msgid "TOTAL EQUITY (500 = 300 + 400)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_02
+msgid "TOTAL EQUITY (600 = 400 + 500)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03adn__target_move
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__target_move
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__target_move
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__target_move
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__target_move
+msgid "Target Moves"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s03bdn__target_type
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s07dn__target_type
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s08dn__target_type
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_s38dn__target_type
+msgid "Target Type"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Tax Id"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Taxes"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Taxes Total (Purchase)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid "Taxes Total (Sales)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.balance_sheet_c200_report
+msgid "Template B01-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_report
+msgid "Template B01a-DNN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_report
+msgid "Template B01b-DNN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.profit_and_loss_c200_report
+msgid "Template B02-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.profit_and_loss_c133_report
+msgid "Template B02-DNN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.cash_flow_c200_report
+msgid "Template B03-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report,template_ref:l10n_vn_viin_account_reports.cash_flow_c133_report
+msgid "Template B03-DNN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03adn.py:0
+#, python-format
+msgid "Template S03a-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s03bdn.py:0
+#, python-format
+msgid "Template S03b-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s38dn.py:0
+#, python-format
+msgid "Template S38-DN"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid ""
+"Template: 01 -1/GTGT (Released Under the Circular No. 119/2014/TT-BTC Dated "
+"22/12/2014 by the Ministry of Finance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid ""
+"Template: 01 -2/GTGT (Released Under the Circular No. 119/2014/TT-BTC Dated "
+"22/12/2014 by the Ministry of Finance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#, python-format
+msgid ""
+"Template: S07-DN \n"
+" (Released Under the Circular No. 200/2014/TT-BTC Dated 22/12/2014 by the Ministry of Finance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#, python-format
+msgid ""
+"Template: S08-DN \n"
+" (Released Under the Circular No. 200/2014/TT-BTC Dated 22/12/2014 by the Ministry of Finance)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/abstract_l10n_vn_c119_gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/account_common_report.py:0
+#, python-format
+msgid "The Date From cannot be greater than the Date To"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/abstract_l10n_vn_c119_gtgt.py:0
+#, python-format
+msgid "The method '_add_content_body' has NOT been implemented."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/abstract_l10n_vn_c119_gtgt.py:0
+#, python-format
+msgid "The method '_get_domain' has NOT been implemented."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_abstract_l10n_vn_c119_gtgt__type
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_01gtgt__type
+#: model:ir.model.fields,field_description:l10n_vn_viin_account_reports.field_l10n_vn_c119_02gtgt__type
+msgid "Types"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Untaxed Amount"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Untaxed Amount Total (Purchase)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_01gtgt.py:0
+#, python-format
+msgid "Untaxed Amount Total (Sales)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_05
+msgid "V. Fixed assets (150 = 151 + 152)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_05
+msgid "V. Long-term investments (250 = 251 + 252 + 253 + 254 + 255)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_05
+msgid "V. Long-term investments (250 = 251 + 252 + 253)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_01_05
+msgid "V. Other current assets (150 = 151 + 152 + 153 + 154 + 155)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_01_05
+msgid "V. Other current assets (150 = 151 + 152)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_06
+msgid "VI. Investment properties (160 = 161 + 162)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01b_line_01_02_06
+msgid "VI. Other long-term assets"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/models/partner_ledger_report.py:0
+#, python-format
+msgid "Total of incurrence"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c200_line_01_02_06
+msgid "VI. Other long-term assets (260 = 261 + 262 + 263 + 268)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_07
+msgid "VII. Construction in progress"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:account.report.line,name:l10n_vn_viin_account_reports.balance_sheet_c133_b01a_line_01_08
+msgid "VIII. Other assets (180 = 181 + 182)"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "Vendor"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_s03adn
+msgid "VietNam S03a-DN Report Wizard"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_s03bdn
+msgid "VietNam S03b-DN Report Wizard"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_report_l10n_vn_viin_account_reports_report_s07dn
+msgid "VietNam S07dn Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_s07dn
+msgid "VietNam S07dn Report Wizard"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_report_l10n_vn_viin_account_reports_report_s08dn
+msgid "VietNam S08dn Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_s08dn
+msgid "VietNam S08dn Report Wizard"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_s38dn
+msgid "VietNam S38-DN Report Wizard"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_c119_02gtgt
+msgid "Vietnam Invoice Declaration purchase 01 -2/GTGT"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_l10n_vn_c119_01gtgt
+msgid "Vietnam Invoice Declaration sale 01 -1/GTGT"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_report_l10n_vn_viin_account_reports_report_s03adn
+msgid "Vietnam S03a-DN Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_report_l10n_vn_viin_account_reports_report_s03bdn
+msgid "Vietnam S03b-DN Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model:ir.model,name:l10n_vn_viin_account_reports.model_report_l10n_vn_viin_account_reports_report_s38dn
+msgid "Vietnam S38-DN Report"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s08dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s08dn
+#, python-format
+msgid "Voucher"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#, python-format
+msgid ""
+"Voucher \n"
+" Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+msgid "Voucher Date"
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_s07dn.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_vn_viin_account_reports.report_s07dn
+#, python-format
+msgid "Voucher No."
+msgstr ""
+
+#. module: l10n_vn_viin_account_reports
+#. odoo-python
+#: code:addons/l10n_vn_viin_account_reports/wizards/l10n_vn_c119_02gtgt.py:0
+#, python-format
+msgid "is a summary of non-deductible tax"
+msgstr ""

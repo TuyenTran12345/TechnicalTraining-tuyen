@@ -1,0 +1,7 @@
+<odoo>
+	<menuitem id="invoice_declaration_vn_statements_menu"
+	name="Invoice Declaration"
+	parent="account.menu_finance_reports"
+	groups="account.group_account_user"
+	sequence="4" />
+</odoo>

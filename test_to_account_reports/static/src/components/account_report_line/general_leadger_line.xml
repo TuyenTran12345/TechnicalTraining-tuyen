@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="to_account_reports.GeneralLedgerReportLineName" t-inherit="to_account_reports.AccountReportLineNameDefault" owl="1">
+    	<xpath expr="//t[@id='line_content']" position="replace">
+    		<t t-if="line.action_id or line.action_dict">
+    			<t t-if="line.level > 3">
+    				<a href="#" t-on-click="() => this.openLineAction(line)">
+						<span class="account_report_line_name" t-att-title="line.name" t-esc="line.name" />
+					</a>
+    			</t>
+    			<t t-else="">
+    				<span class="account_report_line_name" t-att-title="line.name" t-esc="line.name" />
+    				<a class="export_hide" t-on-click="() => this.openLineAction(line)" t-if="line.unfolded" href="#"> ⇒ Journal Items</a>
+    			</t>
+			</t>
+			<t t-else="">
+				<span t-if="line.is_expanded_line == false" class="account_report_line_name" t-att-title="line.name" t-esc="line.name" />
+				<a href="#" t-if="line.is_expanded_line == true"><span class="account_report_line_name" t-att-title="line.name" t-esc="line.name"/></a>
+			</t>
+    	</xpath>
+    </t>
+</templates>

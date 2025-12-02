@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<div t-name="to_account_reports.AccountReportFilter" owl="1">
+
+        <t t-call="to_account_reports.AccountReportFilterDate"/>
+        <t t-call="to_account_reports.AccountReportFilterComparison" t-if="props.filterOptions.comparisons.length > 0"/>
+        <t t-call="to_account_reports.AccountReportFilterJournal" t-if="props.filterOptions.use_filter_journals"/>
+        <t t-call="to_account_reports.AccountReportFilterAccountType" t-if="props.filterOptions.use_filter_account_type"/>
+        <t t-call="to_account_reports.AccountReportFilterAnalyticAccount" t-if="props.filterOptions.use_filter_analytic"/>
+        <t t-call="to_account_reports.AccountReportFilterPartner" t-if="props.filterOptions.use_filter_partner"/>
+        <t t-call="to_account_reports.AccountReportFilterOption"/>
+        <t t-call="to_account_reports.AccountReportFilterReport"/>
+
+	</div>
+
+</templates>

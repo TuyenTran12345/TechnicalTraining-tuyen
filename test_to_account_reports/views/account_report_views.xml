@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="account_report_view_tree" model="ir.ui.view">
+	    <field name="name">account.report.view.tree</field>
+	    <field name="model">account.report</field>
+	    <field name="arch" type="xml">
+	    	<tree>
+	    		<field name="name"/>
+	    		<field name="root_report_id"/>
+	    		<field name="country_id"/>
+	    	</tree>
+	    </field>
+	</record>
+	
+	<record id="account_report_view_form" model="ir.ui.view">
+        <field name="name">account.report.view.form</field>
+        <field name="model">account.report</field>
+        <field name="arch" type="xml">
+            <form>
+            	<sheet>
+            		<div class="oe_button_box" name="button_box"></div>
+            		<div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Report"/>
+                        </h1>
+                    </div>
+                    <group>
+                    	<group>
+                    		<field name="root_report_id"/>
+                    		<field name="availability_condition" attrs="{'invisible': [('root_report_id', '=', False)]}"/>
+                    	</group>
+                    	<group>
+                    		<field name="country_id" attrs="{
+                    			'invisible': [('availability_condition', '!=', 'country')],
+                    			'required': [('availability_condition', '=', 'country')]}"/>
+                    		<field name="chart_template_id" attrs="{
+                    			'invisible': [('availability_condition', '!=', 'coa')],
+                    			'required': [('availability_condition', '=', 'coa')]}"/>
+                    	</group>
+                    </group>
+                    <notebook>
+                    	<page name="lines" string="Lines">
+                    		<field name="line_ids">
+                    			<tree limit="1000">
+						    		<field name="sequence" widget="handle"/>
+					              	<field name="name"/>
+					              	<field name="code" optional="hide"/>
+					              	<field name="parent_id" optional="hide"/>
+					              	<field name="foldable" optional="hide"/>
+					              	<field name="hide_if_zero" optional="hide"/>
+					              	<field name="groupby" optional="hide"/>
+					              	<field name="hierarchy_level" optional="hide"/>
+					              	<field name="print_on_new_page" optional="hide"/>
+						    	</tree>
+                    		</field>
+                    	</page>
+                    	<page name="columns" string="Columns">
+                    		<field name="column_ids">
+                    			<tree editable="bottom">
+                    				<field name="sequence" widget="handle"/>
+					              	<field name="name"/>
+                                    <field name="expression_label"/>
+                                    <field name="figure_type"/>
+                                    <field name="sortable"/>
+                                    <field name="blank_if_zero"/>
+                    			</tree>
+                    		</field>
+                    	</page>
+                    	<page name="option" string="Options">
+                    		<group>
+                    			<group>
+                    				<field name="load_more_limit"/>
+                    				<field name="filter_hierarchy"/>
+                    			</group>
+                    			<group>
+                    				<field name="default_opening_date_filter"/>
+                    				<field name="show_line_code"/>
+                    			</group>
+                    			<group name="advanced" string="Advanced">
+                   					<field name="filter_date_range"/>
+                   					<field name="filter_unfold_all"/>
+                   					<field name="filter_growth_comparison"/>
+                   					<field name="filter_period_comparison"/>
+                    			</group>
+                    			<group name="filter" string="Filters">
+                   					<field name="filter_account_type"/>
+                   					<field name="filter_analytic" groups="analytic.group_analytic_accounting" string="Analytic Account"/>
+                   					<field name="filter_journals"/>
+                   					<field name="filter_partner"/>
+                   					<field name="filter_show_draft"/>
+                   					<field name="filter_unreconciled"/>
+                    			</group>
+                    		</group>
+                    	</page>
+                    </notebook>
+            	</sheet>
+            </form>
+        </field>
+    </record>
+	
+	<record id="account_report_action" model="ir.actions.act_window">
+        <field name="name">Accounting Reports</field>
+        <field name="res_model">account.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="account_report_menu" sequence="99" parent="account.account_management_menu" action="account_report_action" groups="base.group_no_one"/>
+    
+    <!-- Statement Reports -->
+    <record id="balance_sheet_client_action" model="ir.actions.client">
+        <field name="name">Balance Sheet</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.balance_sheet_report')}"/>
+    </record>
+    <menuitem id="balance_sheet_client_menu" action="balance_sheet_client_action" parent="account.account_reports_legal_statements_menu" sequence="10"/>
+    <!-- pylint: disable=duplicate-xml-record-id -->
+    <record id="executive_summary_line_03" model="account.report.line">
+        <field name="action_id" ref="balance_sheet_client_action"/>
+    </record>
+    
+    <record id="profit_and_loss_client_action" model="ir.actions.client">
+        <field name="name">Profit and Loss</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.profit_and_loss_report')}"/>
+    </record>
+    <menuitem id="profit_and_loss_client_menu" action="profit_and_loss_client_action" parent="account.account_reports_legal_statements_menu" sequence="20"/>
+    <!-- pylint: disable=duplicate-xml-record-id -->
+    <record id="executive_summary_line_02" model="account.report.line">
+        <field name="action_id" ref="profit_and_loss_client_action"/>
+    </record>
+    
+    <record id="cash_flow_client_action" model="ir.actions.client">
+        <field name="name">Cash Flow Statement</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.cash_flow_report')}"/>
+    </record>
+    <menuitem id="cash_flow_client_menu" action="cash_flow_client_action" parent="account.account_reports_legal_statements_menu" sequence="30"/>
+    
+    <record id="executive_summary_client_action" model="ir.actions.client">
+        <field name="name">Executive Summary</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.executive_summary_report')}"/>
+    </record>    
+    <menuitem id="executive_summary_client_menu" action="executive_summary_client_action" parent="account.account_reports_legal_statements_menu" sequence="40"/>
+    
+    <record id="tax_report_client_action" model="ir.actions.client">
+        <field name="name">Tax Report</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('account.generic_tax_report')}"/>
+    </record>
+    <menuitem id="tax_report_client_menu" action="tax_report_client_action" parent="account.account_reports_legal_statements_menu" sequence="90"/>
+    
+    <!-- Audit Reports -->
+    <record id="general_ledger_client_action" model="ir.actions.client">
+        <field name="name">General Ledger</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.general_ledger_report')}"/>
+    </record>
+    <menuitem id="general_ledger_client_menu" action="general_ledger_client_action" parent="audit_reports_root_menu" sequence="10"/>
+    
+    <record id="trial_balance_client_action" model="ir.actions.client">
+        <field name="name">Trial Balance</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.trial_balance_report')}"/>
+    </record>
+    <menuitem id="trial_balance_client_menu" action="trial_balance_client_action" parent="audit_reports_root_menu" sequence="20"/>
+    
+    <!-- TODO: support Journal Report in the future -->
+    
+    <!-- Partner Reports -->
+    <record id="partner_ledger_client_action" model="ir.actions.client">
+        <field name="name">Partner Ledger</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.partner_ledger_report')}"/>
+    </record>
+    <menuitem id="partner_ledger_client_menu" action="partner_ledger_client_action" parent="partner_reports_root_menu" sequence="10"/>
+    
+    <record id="aged_receivable_client_action" model="ir.actions.client">
+        <field name="name">Aged Receivable</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.aged_receivable_report')}"/>
+    </record>
+    <menuitem id="aged_receivable_client_menu" action="aged_receivable_client_action" parent="partner_reports_root_menu" sequence="20"/>
+    
+    <record id="aged_payable_client_action" model="ir.actions.client">
+        <field name="name">Aged Payable</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('to_account_reports.aged_payable_report')}"/>
+    </record>
+    <menuitem id="aged_payable_client_menu" action="aged_payable_client_action" parent="partner_reports_root_menu" sequence="30"/>
+
+</odoo>

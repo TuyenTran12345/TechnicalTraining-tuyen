@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterDate" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'">
+          	<t t-set-slot="toggler">
+            	<span class="fa fa-fw fa-calendar"/> <span t-esc="props.filterOptions.current_date.date_string"/>
+            </t>
+           	<t t-foreach="props.filterOptions.date_range" t-as="dateOption" t-key="dateOption.key">
+           		<DropdownItem t-if="dateOption.key != 'custom'"
+            		class="{ selected: props.filterOptions.current_date.key == dateOption.key }"
+            		onSelected="() => this.props.changeDateFilter(dateOption.key)"
+            		t-esc="dateOption.string"/>
+            	<div t-if="dateOption.key == 'this_year'" class="dropdown-divider"/>
+           	</t>
+
+            <div class="dropdown-divider"/>
+            <a t-att-class="`dropdown-item ${props.filterOptions.current_date.key == 'custom' ? 'selected' : ''}`" >
+            	Custom
+            </a>
+            <div class="container">
+            	<t t-if="props.filterOptions.use_filter_date_range == true">
+	            	<label>Start Date :</label>
+	                <DatePicker
+	                	date="customStartDate"
+	                    onDateTimeChanged="this.props.changeCustomStartDate"
+	                />
+                </t>
+                <label>End Date :</label>
+                <DatePicker
+                	date="customEndDate"
+                    onDateTimeChanged="this.props.changeCustomEndDate"
+                />
+                <button class="btn btn-primary" type="button"
+                	t-on-click="() => this.props.applyCustomDate()" >
+                    Apply
+                </button>
+            </div>
+        </Dropdown>
+
+	</t>	
+
+</templates>

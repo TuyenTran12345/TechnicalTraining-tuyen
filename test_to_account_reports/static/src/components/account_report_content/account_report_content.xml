@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<div t-name="to_account_reports.AccountReportContent" class="o_content mt16" owl="1">
+		<div class="account_report_body">
+			<div class="mx-auto account_report_page">
+				<table class="table table-sm table-hover">
+					<thead class="account_report_header">
+						<!-- for view -->
+						<tr class="export_hide">
+							<th class="border-0"></th>
+							<th class="border-0" t-if="props.reportData.show_line_code"></th>
+							<t t-foreach="props.reportData.columns_header" t-as="columnHeader" t-key="columnHeader_index">
+								<th t-att-colspan="columnHeader.colspan" class="border-0 account_report_column_header">
+									<span t-esc="columnHeader.name"/>
+								</th>
+							</t>
+						</tr>
+						<!-- for printing -->
+						<tr class="export_row_show">
+							<th class="align-middle" rowspan="2">
+								<span class="export_only"
+									  t-if="props.reportData.lines.find(l => l.id.includes('~account.report.line~'))">
+									Items
+								</span>
+							</th>
+							<th class="account_report_column_header align-middle" rowspan="2"
+								t-if="props.reportData.show_line_code">
+								Code
+							</th>
+							<t t-foreach="props.reportData.columns_header" t-as="columnHeader" t-key="columnHeader_index">
+								<t t-set="rowspan" t-value="columnHeader.rowspan || 1"/>
+								<t t-if="columnHeader.key === 'percent'">
+									<t t-set="rowspan" t-value="2"/>
+								</t>
+								<th t-att-colspan="columnHeader.colspan || columnHeader.key" t-att-rowspan="rowspan"
+									class="account_report_column_header" t-att-class="{'align-middle': rowspan > 1}">
+									<span t-esc="columnHeader.name"/>
+								</th>
+							</t>
+						</tr>
+						<tr>
+							<th class="export_hide"></th>
+							<th class="export_hide" t-if="props.reportData.show_line_code">Code</th>
+							<t t-set="column_index" t-value="1"/>
+							<t t-foreach="props.reportData.columns" t-as="column" t-key="column_index">
+								<th t-attf-class="{{ column_index % 2 == 0 ? '' : 'account_report_column_active' }}"
+									t-att-class="{'d-none': column.key === 'percent'}">
+									<span t-if="column.key != 'percent'" t-esc="column.name"/>
+								</th>
+								<t t-set="column_index" t-value="column_index + 1"/>
+							</t>
+						</tr>
+					</thead>
+					<tbody>
+						<t t-set="lineIndex" t-value="1" />
+						<t t-foreach="props.reportData.lines" t-as="line" t-key="line.id">
+							<AccountReportLine 
+								line="line"
+								reportData="props.reportData"
+								filterOptions="props.filterOptions"
+								lines="props.reportData.lines"
+								lineIndex="lineIndex"
+								currentReport = "props.currentReport"
+								/>
+							<t t-set="lineIndex" t-value="lineIndex + 1"/>
+						</t>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+
+</templates>

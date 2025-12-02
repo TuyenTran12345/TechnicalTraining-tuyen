@@ -1,0 +1,1469 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* to_account_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-16 08:29+0000\n"
+"PO-Revision-Date: 2024-08-16 08:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "(Signature, Full Name)"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "(Signature, Full Name, Job Title)"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period1
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period1
+msgid "1-30"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__short_term
+msgid "12 months or less"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__duration_3mo_orless
+msgid "3 Months or less"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period2
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period2
+msgid "31-60"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period3
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period3
+msgid "61-90"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period4
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period4
+msgid "91-120"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.partner_view_buttons
+msgid "<span class=\"o_stat_text\">Partner Ledger</span>"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+msgid "<span>VAT:</span>"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01
+msgid "ASSETS"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_account_name
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_account_name
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_account_code
+msgid "Account"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_account_type.xml:0
+#, python-format
+msgid "Account Type:"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report
+msgid "Accounting Report"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report_column
+msgid "Accounting Report Column"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report_expression
+msgid "Accounting Report Expression"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_account_report_line
+msgid "Accounting Report Line"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.actions.act_window,name:to_account_reports.account_report_action
+#: model:ir.ui.menu,name:to_account_reports.account_report_menu
+msgid "Accounting Reports"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_analytic_account.xml:0
+#, python-format
+msgid "Accounts"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Address: "
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_01
+msgid "Advance Payments received from customers"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_03
+msgid "Advance payments made to suppliers"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Advanced"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.aged_payable_report
+#: model:ir.actions.client,name:to_account_reports.aged_payable_client_action
+#: model:ir.ui.menu,name:to_account_reports.aged_payable_client_menu
+msgid "Aged Payable"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_reports_journal_dashboard_kanban_view
+msgid "Aged Payables"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.aged_receivable_report
+#: model:ir.actions.client,name:to_account_reports.aged_receivable_client_action
+#: model:ir.ui.menu,name:to_account_reports.aged_receivable_client_menu
+msgid "Aged Receivable"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_reports_journal_dashboard_kanban_view
+msgid "Aged Receivables"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_account_type__all
+msgid "All"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "All Journals"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_amount_currency
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_amount_currency
+#: model:account.report.column,name:to_account_reports.general_ledger_column_amount_currency
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_amount_currency
+msgid "Amount Currency"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Analytic Account"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_analytic_account.xml:0
+#, python-format
+msgid "Analytic Accounts"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "Apply"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "As of %s"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period0
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period0
+msgid "At Date"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,name:to_account_reports.audit_reports_root_menu
+msgid "Audit Reports"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_02
+msgid "Average creditors days"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_01
+msgid "Average debtors days"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.balance_sheet_column_balance
+#: model:account.report.column,name:to_account_reports.cash_flow_column_balance
+#: model:account.report.column,name:to_account_reports.executive_summary_column_balance
+#: model:account.report.column,name:to_account_reports.general_ledger_column_balance
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_balance
+#: model:account.report.column,name:to_account_reports.profit_and_loss_column_balance
+msgid "Balance"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.balance_sheet_report
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03
+#: model:ir.actions.client,name:to_account_reports.balance_sheet_client_action
+#: model:ir.ui.menu,name:to_account_reports.balance_sheet_client_menu
+msgid "Balance Sheet"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_account_type__asset_cash
+msgid "Bank and Cash"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_01
+msgid "Bank and Cash Accounts"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_expression.py:0
+#, python-format
+msgid "Cannot find expression for '%s'"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_expression.py:0
+#, python-format
+msgid "Cannot find report line has code '%s'"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01
+msgid "Cash"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.cash_flow_report
+#: model:ir.actions.client,name:to_account_reports.cash_flow_client_action
+#: model:ir.ui.menu,name:to_account_reports.cash_flow_client_menu
+msgid "Cash Flow Statement"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_01
+msgid "Cash and cash equivalents, beginning of period"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_03
+msgid "Cash and cash equivalents, closing balance"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_03
+msgid "Cash flows from financing activities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_02
+msgid "Cash flows from investing & extraordinary activities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01
+msgid "Cash flows from operating activities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_04
+msgid "Cash flows from unclassified activities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_02_01
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_03_01
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_04_01
+msgid "Cash in"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_02_02
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_03_02
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_04_02
+msgid "Cash out"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_04
+msgid "Cash paid for operating activities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_01
+msgid "Cash received"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02_01_02
+msgid "Cash received from operating activities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_02
+msgid "Cash spent"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_03
+msgid "Cash surplus"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Chief Accountant"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_01_04
+msgid "Closing bank balance"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/static/src/components/account_report_content/account_report_content.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_content/account_report_content.xml:0
+#, python-format
+msgid "Code"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Columns"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_communication
+msgid "Communication"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Company: "
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#, python-format
+msgid "Comparison:"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model,name:to_account_reports.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_02
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01_03
+msgid "Cost of Revenue"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_credit
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_credit
+#: model:account.report.column,name:to_account_reports.trial_balance_column_credit
+msgid "Credit"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Currency: %s"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_03
+msgid "Current Assets"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_01
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_01_01
+msgid "Current Liabilities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_01_02
+msgid "Current Year Allocated Earnings"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_01_01
+msgid "Current Year Earnings"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_01
+msgid "Current Year Unallocated Earnings"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_04
+msgid "Current assets to liabilities"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "Custom"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Custom Comparison"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_report_body_template
+msgid "Custom Report Body Template"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_report_footer_template
+msgid "Custom Report Footer Template"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_report_header_template
+msgid "Custom Report Header Template"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_report_body_template
+msgid ""
+"Custom body template for printing report templates.\n"
+"                                                      Useful when you want to customize different print layouts for each country or each type of report you want."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_report_footer_template
+msgid ""
+"Custom footer template for printing report templates.\n"
+"                                                        Useful when you want to customize different print layouts for each country or each type of report you want."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_report_header_template
+msgid ""
+"Custom header template for printing report templates.\n"
+"                                                        Useful when you want to customize different print layouts for each country or each type of report you want."
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_date
+msgid "Date"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_debit
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_debit
+#: model:account.report.column,name:to_account_reports.trial_balance_column_debit
+msgid "Debit"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01_02
+msgid "Deduction Income"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_expression_view_form
+msgid "Defination"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_03_02
+msgid "Depreciation"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Director/CEO"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__display_code
+msgid "Display Code"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_expected_date
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_expected_date
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_date_maturity
+msgid "Due Date"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term
+msgid "Duration Term"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term_account_type
+msgid "Duration Term Base On"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term_date_field
+msgid "Duration Term Date Field"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__duration_term_direction
+msgid "Duration Term Direction"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03
+msgid "EQUITY"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#, python-format
+msgid "End Balance"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "End Date :"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#, python-format
+msgid "End Date cannot be empty"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "End of Last Financial Year"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "End of Last Month"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "End of Last Quarter"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.executive_summary_report
+#: model:ir.actions.client,name:to_account_reports.executive_summary_client_action
+#: model:ir.ui.menu,name:to_account_reports.executive_summary_client_menu
+msgid "Executive Summary"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_04
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_03
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_03_01
+msgid "Expenses"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_expression_view_form
+msgid "Expression"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_line_view_form
+msgid "Expressions"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Filters"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "From %s <br/> to  %s"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.general_ledger_report
+#: model:ir.actions.client,name:to_account_reports.general_ledger_client_action
+#: model:ir.ui.menu,name:to_account_reports.general_ledger_client_menu
+msgid "General Ledger"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01
+msgid "Gross Profit"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_03
+msgid "Gross profit"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04_01
+msgid "Gross profit margin (gross profit / operating income)"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_expression__use_reconcile
+msgid ""
+"If checked, this expression will be get amount of Reconcile instead matched "
+"of move line. In some case, we need reconcile amount not balance, for "
+"example:  'Revenue of fixed assets and other long-term assets' of Cash Flow "
+"Statement"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_expression__use_amount_residual
+msgid ""
+"If checked, this expression will be get amount_residual of move line instead"
+" of balance. In some case, we need amount_residual not balance, for example:"
+"  'Advance Payments received from customers' of Cash Flow Statement"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__has_empty_row
+msgid "Include Empty Row?"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#, python-format
+msgid "Include Unposted Entries"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Include Unposted Entry"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_01
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02
+msgid "Income"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/general_ledger_report.py:0
+#: code:addons/to_account_reports/models/partner_ledger_report.py:0
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_due_date
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_due_date
+msgid "Invoice Date"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/static/src/components/account_report_content/account_report_content.xml:0
+#, python-format
+msgid "Items"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_journal_code
+msgid "Journal"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/general_ledger_report.py:0
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#: code:addons/to_account_reports/models/partner_ledger_report.py:0
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#, python-format
+msgid "Journal Items"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_journal.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_journal.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Journals"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02
+msgid "LIABILITIES"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_04
+msgid "LIABILITIES + EQUITY"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Last Financial Year"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Last Month"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Last Quarter"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Lines"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_matching_number
+msgid "Matching"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Month ..... Day ..... Year ....."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__none
+msgid "N/A"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02_05
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_01
+msgid "Net Profit"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03_03
+msgid "Net assets"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.cash_flow_line_02
+msgid "Net increase in cash and cash equivalents"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04_02
+msgid "Net profit margin (net profit / income)"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "No Comparison"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__long_term
+msgid "Non Current (more than 12 months)"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Non Trade Payable"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Non Trade Receivable"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#, python-format
+msgid "None"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_account_type__not_asset_cash
+msgid "Not Bank and Cash"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_05
+msgid "OFF BALANCE SHEET ACCOUNTS"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.aged_payable_column_period5
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_period5
+msgid "Older"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_01_01
+msgid "Operating Income"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_expression_view_form
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Options"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Options:"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.profit_and_loss_line_02_02
+msgid "Other Income"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_control_panel/account_report_control_panel.xml:0
+#, python-format
+msgid "PDF"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.general_ledger_column_partner_name
+msgid "Partner"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.partner_ledger_report
+#: model:ir.actions.client,name:to_account_reports.partner_ledger_client_action
+#: model:ir.ui.menu,name:to_account_reports.partner_ledger_client_menu
+#: model_terms:ir.ui.view,arch_db:to_account_reports.partner_view_buttons
+msgid "Partner Ledger"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,name:to_account_reports.partner_reports_root_menu
+msgid "Partner Reports"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_partner.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_partner.xml:0
+#, python-format
+msgid "Partners"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+msgid "Partners:"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Payable"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_01_02
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03_02
+msgid "Payables"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04
+msgid "Performance"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_02
+msgid "Plus Fixed Assets"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_03
+msgid "Plus Non-current Assets"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_02_02
+msgid "Plus Non-current Liabilities"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05
+msgid "Position"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_option.xml:0
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_print_header_default
+#, python-format
+msgid "Posted Entries Only"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Prepared By"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_04
+msgid "Prepayments"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Previous Period"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01_02
+msgid "Previous Years Unallocated Earnings"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.profit_and_loss_report
+#: model:ir.actions.client,name:to_account_reports.profit_and_loss_client_action
+#: model:ir.ui.menu,name:to_account_reports.profit_and_loss_client_menu
+msgid "Profit and Loss"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_02
+msgid "Profitability"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#, python-format
+msgid "Purchases"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_line_python_function_suffix
+msgid "Python Function Suffix for Customs Lines"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Receivable"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_01_01_02
+#: model:account.report.line,name:to_account_reports.executive_summary_line_03_01
+msgid "Receivables"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_expression__reconcile_domain
+msgid "Reconcile Domain"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.column,name:to_account_reports.partner_ledger_column_ref
+msgid "Ref"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__template_ref
+msgid "Reference"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_view_form
+msgid "Report"
+msgstr ""
+
+#. module: to_account_reports
+#: model_terms:ir.ui.view,arch_db:to_account_reports.account_report_line_view_form
+msgid "Report Line"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_report.xml:0
+#, python-format
+msgid "Report:"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_02
+msgid "Retained Earnings"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_04_03
+msgid "Return on investments (net profit / assets)"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/generic_tax_report.py:0
+#, python-format
+msgid "Sales"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Same Period Last Year"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.executive_summary_line_05_03
+msgid "Short term cash forecast"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__show_line_code
+msgid "Show Line Code"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_line__show_on_print_document
+msgid "Show On Print Document"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__display_code
+msgid ""
+"Some countries require line code to be displayed on the reports. Ex. Vietnam. And because 'Code' field is unique identifier for all report, so sometime its value is not the value we want to be displayed on the report. In this case, we use this field to display on the report.\n"
+"Note: this field is only displayed on the report provided that the report is marked as Show Line Code"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__show_line_code
+msgid ""
+"Some countries require line code to be displayed on the reports. Ex. "
+"Vietnam. If this field checked then 'Display Code' of all lines will be "
+"displayed on this report."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__has_empty_row
+msgid ""
+"Some line has not any children and we want to separate them from other "
+"lines. Then we need to mark the line has empty row. So it will have a blank "
+"line added below."
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_comarison.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_filter/account_report_filter_date.xml:0
+#, python-format
+msgid "Start Date :"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#, python-format
+msgid "Start Date cannot be empty"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.actions.client,name:to_account_reports.tax_report_client_action
+#: model:ir.ui.menu,name:to_account_reports.tax_report_client_menu
+msgid "Tax Report"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__show_on_print_document
+msgid ""
+"Technical field to indicate if this report line should display on pdf or "
+"xlsx printed."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report__custom_line_name_template
+msgid "Template for Custom Line Name"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_expression.py:0
+#, python-format
+msgid "The custom python function %s must be start with '_report_custom'"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__duration_term_date_field
+msgid ""
+"The date field of journal item for usage with Duration Term. Default value "
+"is date_maturity (Due Date)"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__duration_term_direction
+msgid ""
+"The direction of the Duration Term which is either:\n"
+"- To the Past: the condition will compare the data from the past.\n"
+"- To the Future: the condition will compare the data to the future\n"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "This Financial Year"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "This Month"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "This Quarter"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_expression__reconcile_domain
+msgid ""
+"This field is used for domain engine. It will be added to domain of report "
+"line before calculate."
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report__custom_line_python_function_suffix
+msgid ""
+"This is technical field used when a report does not use existing rules, also"
+" known as report lines. For example: General Ledger, Partner Ledger,... "
+"these reports will define python functions to generate the customs lines "
+"they want. this functions must has suffix to identify. This field set by "
+"developer when create new report"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_direction__future
+msgid "To the Future"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term_direction__past
+msgid "To the Past"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report.py:0
+#: code:addons/to_account_reports/models/account_report.py:0
+#, python-format
+msgid "Today"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/aged_balance_report.py:0
+#: code:addons/to_account_reports/models/partner_ledger_report.py:0
+#: code:addons/to_account_reports/models/trial_balance_report.py:0
+#: model:account.report.column,name:to_account_reports.aged_payable_column_total
+#: model:account.report.column,name:to_account_reports.aged_receivable_column_total
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report,name:to_account_reports.trial_balance_report
+#: model:ir.actions.client,name:to_account_reports.trial_balance_client_action
+#: model:ir.ui.menu,name:to_account_reports.trial_balance_client_menu
+msgid "Trial Balance"
+msgstr ""
+
+#. module: to_account_reports
+#: model:account.report.line,name:to_account_reports.balance_sheet_line_03_01
+msgid "Unallocated Earnings"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-python
+#: code:addons/to_account_reports/models/account_report_line.py:0
+#, python-format
+msgid "Unknown"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_expression__use_amount_residual
+msgid "Use Amount Residual"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,field_description:to_account_reports.field_account_report_expression__use_reconcile
+msgid "Use Reconcile"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#: code:addons/to_account_reports/static/src/components/account_report/account_report.js:0
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields,help:to_account_reports.field_account_report_line__duration_term_account_type
+msgid ""
+"When calculating long-term and short-term lines, there are some lines need "
+"to calculate base on counter part account of Bank and Cash type or not or "
+"all"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_control_panel/account_report_control_panel.xml:0
+#, python-format
+msgid "XLSX"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.partner_ledger_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/account-payables/steps-to-record-payment-in-"
+"purchase.html#accounts-payable-reports"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.aged_payable_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#aged-"
+"payable-receivable-report"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.aged_receivable_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#aged-"
+"payable-receivable-reports"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.balance_sheet_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#balance-"
+"sheet"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.cash_flow_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#cash-flow-"
+"statement"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.general_ledger_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#general-"
+"ledger"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.profit_and_loss_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#profit-and-"
+"loss"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_doc:to_account_reports.tax_report_client_menu
+msgid ""
+"https://viindoo.com/documentation/16.0/applications/finance/accounting-and-"
+"invoicing/reporting/reports/accounting-data-analysis-report.html#tax-report"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.balance_sheet_client_menu
+#: model:ir.ui.menu,help_link_video:to_account_reports.cash_flow_client_menu
+#: model:ir.ui.menu,help_link_video:to_account_reports.tax_report_client_menu
+msgid "https://youtu.be/yBWRD39CSPg"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.aged_payable_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=14"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.aged_receivable_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=145"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.general_ledger_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=170"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.ui.menu,help_link_video:to_account_reports.profit_and_loss_client_menu
+msgid "https://youtu.be/yBWRD39CSPg?t=20"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__duration_4mo_to_12mo
+msgid "more than 3 month & less than 12 months"
+msgstr ""
+
+#. module: to_account_reports
+#: model:ir.model.fields.selection,name:to_account_reports.selection__account_report_line__duration_term__duration_more_3mo
+msgid "more than 3 months"
+msgstr ""
+
+#. module: to_account_reports
+#. odoo-javascript
+#: code:addons/to_account_reports/static/src/components/account_report_line/general_leadger_line.xml:0
+#: code:addons/to_account_reports/static/src/components/account_report_line/partner_leadger_line.xml:0
+#, python-format
+msgid "⇒ Journal Items"
+msgstr ""

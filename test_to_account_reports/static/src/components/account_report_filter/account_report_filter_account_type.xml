@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterAccountType" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-filter"/> Account Type: <span t-esc="currentAccountTypeNames"/>
+            </t>
+            <t t-foreach="props.filterOptions.display_account_type" t-as="optionKey" t-key="optionKey">
+            	<DropdownItem t-esc="props.filterOptions.display_account_type[optionKey]"
+            		class="{ selected: props.filterOptions.account_type[optionKey] }"
+            		onSelected="() => this.props.changeAccountType(optionKey)"/>
+            </t>
+        </Dropdown>
+
+	</t>	
+
+</templates>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="to_account_reports.AccountReportFilterAnalyticAccount" owl="1">
+
+		<Dropdown class="'btn-group'" togglerClass="'btn btn-secondary'" manualOnly="true">
+        	<t t-set-slot="toggler">
+            	<span class="fa fa-book"/> Analytic Accounts
+            </t>
+            <div class="container">
+            	<div class="row">
+            		<div class="col-3 ps-2 pe-2">
+                        <label>Accounts</label>
+                    </div>
+                    <div class="col ps-2 pe-2">
+                    	<TagsList tags="analyticAccountTags"/>
+                    	<Many2XAutocomplete
+			                resModel="'account.analytic.account'"
+			                fieldString="'Analytic Account'"
+			                activeActions="{'link': true}"
+			                update.bind="updateAnalyticAccount"
+			                getDomain.bind="searchAnalyticAccountDomain"
+			                isToMany="true"
+			            />
+                    </div>
+            	</div>
+            </div>
+        </Dropdown>
+
+	</t>	
+
+</templates>

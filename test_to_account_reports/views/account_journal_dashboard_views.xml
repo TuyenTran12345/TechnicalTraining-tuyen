@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="account_reports_journal_dashboard_kanban_view">
+        <field name="name">account.reports.journal.dashboard.kanban.view</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_kanban_manage_reports')]" position="inside">
+                <div t-if="journal_type == 'sale'">
+                    <a type="action" name="%(aged_receivable_client_action)d">Aged Receivables</a>
+                </div>
+                <div t-if="journal_type == 'purchase'">
+                    <a type="action" name="%(aged_payable_client_action)d">Aged Payables</a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="profit_and_loss_report" model="account.report">
+		<field name="name">Profit and Loss</field>
+		<field name="default_opening_date_filter">this_year</field>
+		<field name="filter_unfold_all" eval="True"/>
+		<field name="filter_journals" eval="True"/>
+		<field name="column_ids">
+            <record id="profit_and_loss_column_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+            </record>
+        </field>
+        <field name="line_ids">
+        	<record id="profit_and_loss_line_01" model="account.report.line">
+        		<field name="name">Net Profit</field>
+                <field name="code">NEP</field>
+                <field name="has_empty_row" eval="True"/>
+                <field name="expression_ids">
+                	<record id="profit_and_loss_line_01_expr_01" model="account.report.expression">
+                		<field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">OPINC.balance -INCOME_DEDUCTION.balance + OIN.balance - COS.balance - EXP.balance - DEP.balance</field>
+                	</record>
+                </field>
+        	</record>
+        	<record id="profit_and_loss_line_02" model="account.report.line">
+        		<field name="name">Income</field>
+                <field name="code">INC</field>
+                <field name="expression_ids">
+                	<record id="profit_and_loss_line_02_expr_01" model="account.report.expression">
+                		<field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">OPINC.balance - INCOME_DEDUCTION.balance + OIN.balance</field>
+                	</record>
+                </field>
+                <field name="children_ids">
+                	<record id="profit_and_loss_line_02_01" model="account.report.line">
+                		<field name="name">Gross Profit</field>
+                        <field name="code">GRP</field>
+                        <field name="expression_ids">
+                        	<record id="profit_and_loss_line_02_01_expr_01" model="account.report.expression">
+                        		<field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">OPINC.balance - INCOME_DEDUCTION.balance - COS.balance</field>
+                        	</record>
+                        </field>
+                        <field name="children_ids">
+                        	<record id="profit_and_loss_line_02_01_01" model="account.report.line">
+                        		<field name="name">Operating Income</field>
+                                <field name="code">OPINC</field>
+                                <field name="groupby">account_id</field>
+                                <field name="foldable" eval="True"/>
+                                <field name="expression_ids">
+	                        		<record id="profit_and_loss_line_02_01_01_expr_01" model="account.report.expression">
+	                        			<field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.account_type', 'in', ('income', 'income_financial')),
+                                            ('ctp_account_ids.account_type', 'not in', ['equity_unaffected', 'income_deduction'])
+                                        ]"/>
+                                        <field name="date_scope">strict_range</field>
+                                        <field name="subformula">-sum</field>
+	                        		</record>
+	                        	</field>
+                        	</record>
+                            <record id="profit_and_loss_line_02_01_02" model="account.report.line">
+                                <field name="name">Deduction Income</field>
+                                <field name="code">INCOME_DEDUCTION</field>
+                                <field name="groupby">account_id</field>
+                                <field name="foldable" eval="True"/>
+                                <field name="expression_ids">
+                                    <record id="profit_and_loss_line_02_01_02_expr_01" model="account.report.expression">
+                                        <field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.account_type', '=', 'income_deduction'),
+                                            ('ctp_account_ids.account_type', 'not in', ['income'])
+                                        ]"/>
+                                        <field name="date_scope">strict_range</field>
+                                        <field name="subformula">sum</field>
+                                    </record>
+                                </field>
+                            </record>
+                        	<record id="profit_and_loss_line_02_01_03" model="account.report.line">
+                        		<field name="name">Cost of Revenue</field>
+                                <field name="code">COS</field>
+                                <field name="groupby">account_id</field>
+                                <field name="foldable" eval="True"/>
+                                <field name="expression_ids">
+                                	<record id="profit_and_loss_line_02_01_03_expr_01" model="account.report.expression">
+                                		<field name="label">balance</field>
+                                        <field name="engine">domain</field>
+                                        <field name="formula" eval="[
+                                            ('account_id.account_type', '=', 'expense_direct_cost'),
+                                            ('ctp_account_ids.account_type', 'not in', ['equity_unaffected'])
+                                        ]"/>
+                                        <field name="date_scope">strict_range</field>
+                                        <field name="subformula">sum</field>
+                                        <field name="green_on_positive" eval="False"/>
+                                	</record>
+                                </field>
+                        	</record>
+                        </field>
+                	</record>
+                	<record id="profit_and_loss_line_02_02" model="account.report.line">
+                		<field name="name">Other Income</field>
+                        <field name="code">OIN</field>
+                        <field name="groupby">account_id</field>
+                        <field name="foldable" eval="True"/>
+                        <field name="expression_ids">
+                        	<record id="profit_and_loss_line_02_02_expr_01" model="account.report.expression">
+                        		<field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('account_id.account_type', '=', 'income_other'),
+                                    ('ctp_account_ids.account_type', 'not in', ['equity_unaffected'])
+                                ]"/>
+                                <field name="date_scope">strict_range</field>
+                                <field name="subformula">-sum</field>
+                        	</record>
+                        </field>
+                	</record>
+                </field>
+        	</record>
+        	<record id="profit_and_loss_line_03" model="account.report.line">
+        		<field name="name">Expenses</field>
+                <field name="code">LEX</field>
+                <field name="expression_ids">
+                	<record id="profit_and_loss_line_03_expr_01" model="account.report.expression">
+                		<field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">EXP.balance + DEP.balance</field>
+                        <field name="green_on_positive" eval="False"/>
+                	</record>
+                </field>
+                <field name="children_ids">
+                	<record id="profit_and_loss_line_03_01" model="account.report.line">
+                		<field name="name">Expenses</field>
+                        <field name="code">EXP</field>
+                        <field name="groupby">account_id</field>
+                        <field name="foldable" eval="True"/>
+                        <field name="expression_ids">
+                        	<record id="profit_and_loss_line_03_01_expr_01" model="account.report.expression">
+                        		<field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('account_id.account_type', '=', 'expense'),
+                                    ('ctp_account_ids.account_type', 'not in', ['equity_unaffected'])
+                                ]"/>
+                                <field name="date_scope">strict_range</field>
+                                <field name="subformula">sum</field>
+                                <field name="green_on_positive" eval="False"/>
+                        	</record>
+                        </field>
+                	</record>
+                	<record id="profit_and_loss_line_03_02" model="account.report.line">
+                		<field name="name">Depreciation</field>
+                        <field name="code">DEP</field>
+                        <field name="groupby">account_id</field>
+                        <field name="foldable" eval="True"/>
+                        <field name="expression_ids">
+                        	<record id="profit_and_loss_line_03_02_expr_01" model="account.report.expression">
+                        		<field name="label">balance</field>
+                                <field name="engine">domain</field>
+                                <field name="formula" eval="[
+                                    ('account_id.account_type', '=', 'expense_depreciation'),
+                                    ('ctp_account_ids.account_type', 'not in', ['equity_unaffected'])
+                                ]"/>
+                                <field name="date_scope">strict_range</field>
+                                <field name="subformula">sum</field>
+                                <field name="green_on_positive" eval="False"/>
+                        	</record>
+                        </field>
+                	</record>
+                </field>
+        	</record>
+        </field>
+	</record>
+
+</odoo>

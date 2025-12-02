@@ -1,0 +1,181 @@
+.account_report_body {
+	.account_report_line_name_default{
+		max-width: 50rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.export_only {
+		visibility: hidden;
+	}
+	.export_row_show {
+		display: none;
+	}
+	.account_report_page {
+		width: fit-content;
+		background-color: $o-view-background-color;
+		min-width: 900px;
+		padding: 24px;
+		}		
+		.auditable {
+			cursor: pointer;
+		}
+		span.auditable:hover {
+			color: $o-brand-primary;
+		}
+		.account_report_header {
+			position: sticky;
+			top: 0;
+			background-color: $o-view-background-color;
+			z-index: 1;
+		}
+		.account_report_column_header {
+			border: 1px solid $gray-200;
+		}
+		.account_report_column_active {
+			background-color: $gray-100;
+		}
+		table > thead > tr > th {
+	        text-align: center;
+	        font-weight: bold;
+	        text-wrap: nowrap;
+	    }
+	    .account_reports_caret_icon {
+	        position: absolute;
+	        cursor: pointer;
+	    }
+	    .account_report_line_name {
+			> .line_name_body {display: flex;}
+		}
+	    .account_report_level1 {
+	        background-color: $gray-200;
+	        .account_report_line_name {
+	            margin-left: 10px;
+	        }
+	    }
+	    /* TODO: using for loop */
+	    .account_report_level2 {
+	        .account_report_line_name {
+	            margin-left: 20px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 10px;
+	        }
+	    }
+	    .account_report_level3 {
+	        .account_report_line_name {
+	            margin-left: 30px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 10px;
+	        }
+	    }
+	    .account_report_level4 {
+	        .account_report_line_name {
+	            margin-left: 40px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 20px;
+	        }
+	    }
+	    .account_report_level5 {
+	        .account_report_line_name {
+	            margin-left: 50px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 30px;
+	        }
+	    }
+	    .account_report_level6 {
+	        .account_report_line_name {
+	            margin-left: 60px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 40px;
+	        }
+	    }
+	    .account_report_level7 {
+	        .account_report_line_name {
+	            margin-left: 70px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 50px;
+	        }
+	    }
+	    .account_report_level8 {
+	        .account_report_line_name {
+	            margin-left: 80px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 60px;
+	        }
+	    }
+	    .account_report_level9 {
+	        .account_report_line_name {
+	            margin-left: 90px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 70px;
+	        }
+	    }
+	    .account_report_level10 {
+	        .account_report_line_name {
+	            margin-left: 100px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 80px;
+	        }
+	    }
+	    .account_report_level11 {
+	        .account_report_line_name {
+	            margin-left: 110px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 90px;
+	        }
+	    }
+	    .account_report_level12 {
+	        .account_report_line_name {
+	            margin-left: 120px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 100px;
+	        }
+	    }
+	    .account_report_level13 {
+	        .account_report_line_name {
+	            margin-left: 130px;
+	        }
+			.account_reports_caret_icon {
+	            margin-left: 110px;
+	        }
+	    }
+	}
+
+.account_report_print_body {
+	.account_report_page {
+		padding: 0;
+	}
+	.export_row_show {
+		display: table-row;
+	}
+	.export_hide {
+		display: none;
+	}
+	.export_only {
+		visibility: visible;
+	}
+	table {
+		th:first-child {
+			width: 100%;
+			border: none !important;
+		}
+		th {
+			vertical-align: middle;
+			white-space: nowrap;
+		}
+		page-break-inside: avoid;
+	}
+	div[name='financial_infos'] {
+		display: none;
+	}
+}

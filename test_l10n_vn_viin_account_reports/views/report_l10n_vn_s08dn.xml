@@ -1,0 +1,181 @@
+<odoo>
+	<template id="report_s08dn">
+		<t t-call="web.html_container">
+			<t t-call="l10n_vn_viin.accounting_circular_external_layout_standard">
+				<div class="page">
+					<div class="text-center">
+						<br />
+						<h3>
+								CASH IN BANK DEPOSIT BOOK
+							</h3>
+						<h5>
+							<t t-if="account_ids">
+								Accounts:
+								<span t-esc="account_ids" />
+							</t>
+							<t t-if="journal_ids">
+								Journals:
+								<span t-esc="journal_ids" />
+							</t>
+						</h5>
+
+						<div class="small">
+							Date from:
+							<span t-field="doc.date_from" />
+							- Date to:
+							<span t-field="doc.date_to" />
+							<br />
+							Address To Open Trading Account: ... ...
+							<br />
+							Account Number At The Place Of Sending: ... ...
+						</div>
+						<div class="text-end mt-3" >
+							Currency:
+							<span t-field="doc.company_id.currency_id" />
+						</div>
+					</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; width: 100px;">Posting Date</th>
+								<th colspan="2" class="text-center" style="vertical-align: middle; width: 100px;">Voucher</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; min-width: 300px;">Description</th>
+								<th rowspan="2" class="text-center" style="vertical-align: middle; width: 100px;">
+									Counterpart
+									<br />
+									Accounts
+								</th>
+								<th colspan="3" class="text-center" style="vertical-align: middle;">Amount</th>
+								<t t-if="doc.include_extra_info">
+									<th colspan="2" class="text-center" style="vertical-align: middle;">Extra Info</th>
+								</t>
+								<th rowspan="2" class="text-center" style="vertical-align: middle;">Note</th>
+							</tr>
+							<tr>
+								<th class="text-center">No.</th>
+								<th class="text-center">Date</th>
+								<th class="text-center" style="vertical-align: middle; min-width: 120px">
+									Receipt
+									<br />
+									(Deposit)
+								</th>
+								<th class="text-center" style="vertical-align: middle; min-width: 120px">
+									Payment
+									<br />
+									(WithDraw)
+								</th>
+								<th class="text-center" style="vertical-align: middle; min-width: 120px">Balance</th>
+								<t t-if="doc.include_extra_info">
+									<th class="text-center" style="vertical-align: middle; min-width: 100px">
+										Reference No.
+									</th>
+									<th class="text-center" style="vertical-align: middle; min-width: 120px">
+										Indirect
+										<br />
+										Counterpart
+										<br />
+										Accounts
+									</th>
+								</t>
+							</tr>
+							<tr>
+								<th class="text-center">A</th>
+								<th class="text-center">B</th>
+								<th class="text-center">C</th>
+								<th class="text-center">D</th>
+								<th class="text-center">E</th>
+								<th class="text-center">1</th>
+								<th class="text-center">2</th>
+								<th class="text-center">3</th>
+								<th class="text-center">F</th>
+								<t t-if="doc.include_extra_info">
+									<th class="text-center">G</th>
+									<th class="text-center">H</th>
+								</t>
+							</tr>
+						</thead>
+						<tbody>
+							<t t-set="line_no" t-value="0" />
+							<t t-foreach="lines" t-as="line">
+								<tr>
+									<t t-if="line['type'] == 'account_title'">
+										<td t-att-colspan="'11' if doc.include_extra_info else '9'">
+											<b t-esc="line['account_name']" />
+										</td>
+									</t>
+
+									<t t-if="line['type'] != 'account_title'" >
+
+										<t t-if="line['type'] != 'move_line'">
+											<td colspan="3" />
+										</t>
+
+										<td t-if="line['type'] == 'move_line'">
+											<span t-esc="format_date(line['date'])" />
+										</td>
+
+										<td class="text-center" t-if="line['type'] == 'move_line'">
+											<span t-esc="line['ref_name']" />
+										</td>
+
+										<td t-if="line['type'] == 'move_line'">
+											<span t-esc="format_date(line['ref_date'])" />
+										</td>
+
+										<td style="word-break: break-all;" t-if="line['type'] != 'account_title'">
+											<span t-out="line['name']" t-options="{'widget': 'html'}"/>
+										</td>
+
+										<td class="text-center" t-if="line['type'] != 'account_title'">
+											<span t-if="line['direct_ctp_account_id']" t-esc="line['direct_ctp_account_id']" />
+										</td>
+
+										<td class="text-end" t-if="line['type'] != 'account_title'">
+											<span t-if="line['type'] not in ('account_end', 'account_init')" t-esc="formatLang(line['debit'], digits=line['decimal_places'])" />
+										</td>
+
+										<td class="text-end" t-if="line['type'] != 'account_title'">
+											<span t-if="line['type'] not in ('account_end', 'account_init')" t-esc="formatLang(line['credit'], digits=line['decimal_places'])" />
+										</td>
+
+										<td class="text-end" t-if="line['type'] != 'account_title'">
+											<t t-if="line['type'] != 'account_total'">
+												<span t-esc="formatLang(line['progress'], digits=line['decimal_places'])" />
+											</t>
+										</td>
+
+										<t t-if="doc.include_extra_info">
+											<td class="text-center" t-if="line['type'] == 'move_line'">
+												<span t-out="line['ref_indirect_ctp_aml']" t-options="{'widget': 'html'}"/>
+											</td>
+
+											<td class="text-center" t-if="line['type'] != 'account_title'">
+												<span t-if="line['indirect_ctp_account_id']" t-esc="line['indirect_ctp_account_id']" />
+											</td>
+
+											<td class="text-end" t-if="line['type'] != 'move_line'"></td>
+										</t>
+
+										<td class="text-end"></td>
+									</t>
+								</tr>
+							</t>
+						</tbody>
+					</table>
+					<div class="row">
+						<div class="col-12">
+							<br />
+							<p>
+								- Issue Date:
+								<t t-esc="format_date(today)" />
+							</p>
+						</div>
+					</div>
+					<div style="page-break-inside: avoid;">
+						<t t-call="l10n_vn_viin.signature_block" />
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+	<record id="account_common_report_s03adn_view" model="ir.ui.view">
+		<field name="name">L10n VN S03a-DN Form</field>
+		<field name="model">l10n_vn.s03adn</field>
+		<field name="inherit_id" ref="viin_account.account_common_report_view" />
+		<field name="arch" type="xml">
+			<data>
+				<xpath expr="//button[@name='check_report']" position="attributes">
+					<attribute name="string">Print Pdf</attribute>
+				</xpath>
+				<xpath expr="//button[@name='check_report']" position="after">
+					<button name="check_report_excel" string="Print Excel" type="object" class="oe_highlight" />
+				</xpath>
+			</data>
+		</field>
+	</record>
+
+	<record id="l10n_vn_s03adn_action" model="ir.actions.act_window">
+		<field name="name">GENERAL JOURNAL (S03a-DN)</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">l10n_vn.s03adn</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="account_common_report_s03adn_view" />
+		<field name="target">new</field>
+	</record>
+
+	<menuitem id="l10n_vn_s03adn_menu"
+	name="General Journal (S03a-DN)"
+	parent="l10n_vn_viin.account_reports_vn_menu"
+	groups="account.group_account_user,account.group_account_manager"
+	action="l10n_vn_s03adn_action"
+	sequence="3"/>
+</odoo>
